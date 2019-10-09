@@ -45,8 +45,16 @@
                 <span class="nav-text">Spring</span>
             </a>
         
+            <a class="nav-item" href="/categories/linux">
+                <span class="nav-text">Linux</span>
+            </a>
+        
             <a class="nav-item" href="/categories/java-basic">
                 <span class="nav-text">java基础</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/alg">
+                <span class="nav-text">每日一道算法</span>
             </a>
         
             <a class="nav-item" href="/tags">
@@ -130,6 +138,417 @@
 </header>
 
         <div id="content" class="content">
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2019/10/09/空格替换/">空格替换</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-10-09T03:08:39.000Z" itemprop="datePublished">2019-10-09</time>
+</a>
+
+            
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <blockquote>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。</p>
+</blockquote>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">replaceSpace</span><span class="params">(StringBuffer str)</span> </span>&#123;</span><br><span class="line">	        <span class="keyword">if</span>(str ==<span class="keyword">null</span>)</span><br><span class="line">	        	<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">	        <span class="keyword">if</span>(str.length() == <span class="number">0</span> || str.indexOf(<span class="string">" "</span>)==-<span class="number">1</span>)</span><br><span class="line">	        	<span class="keyword">return</span> str.toString();</span><br><span class="line">	        </span><br><span class="line">	        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;str.length();i++) &#123;</span><br><span class="line">	        	<span class="keyword">if</span>(str.charAt(i) == <span class="string">' '</span>) &#123;</span><br><span class="line">	        		str.replace(i,i+<span class="number">1</span>,<span class="string">"%20"</span>);</span><br><span class="line">	        	&#125;</span><br><span class="line">	        &#125;</span><br><span class="line">	        <span class="keyword">return</span> str.toString();</span><br><span class="line">	    &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2019/10/03/springboot注解/">springboot注解</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-10-03T02:01:45.000Z" itemprop="datePublished">2019-10-03</time>
+</a>
+
+            
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h1 id="RestController"><a href="#RestController" class="headerlink" title="@RestController"></a>@RestController</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Spring4之后新加入的注解，原来返回json需要@ResponseBody和@Controller配合。</span><br><span class="line"></span><br><span class="line">即@RestController是@ResponseBody和@Controller的组合注解。</span><br></pre></td></tr></table></figure>
+
+
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2019/10/03/springboot-mybatis复盘/">springboot-mybatis复盘</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-10-03T01:44:01.000Z" itemprop="datePublished">2019-10-03</time>
+</a>
+
+            
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​        最近在做一个项目，基于springboot以及mybatis做后端的一个小程序。已经大三啦所以希望能够尽量提升一下技术栈。之前按照视频教程以及自己上网找的一些文章大致完成了一些简单的功能。但是很多代码和步骤都是照着别人的想法做的，所以功能虽然完成了但是还是有很多不清晰的点在里面。所以希望自己能复盘一下已经完成的东西的一些完整的流程，并且在已经完成的基础上希望能再做一点提高。下面写一篇东西来记录一下。Anyway，let’s go get it.</p>
+<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><h2 id="1-配置pom-xml"><a href="#1-配置pom-xml" class="headerlink" title="1.配置pom.xml"></a>1.配置pom.xml</h2><h2 id="2-配置mybatis"><a href="#2-配置mybatis" class="headerlink" title="2.配置mybatis"></a>2.配置mybatis</h2><ul>
+<li><p>配置mybatis-generator.xml文件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE generatorConfiguration</span></span><br><span class="line"><span class="meta">        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"</span></span><br><span class="line"><span class="meta">        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd"&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">generatorConfiguration</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--&lt;classPathEntry location="/Program Files/IBM/SQLLIB/java/db2java.zip" /&gt;--&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">context</span> <span class="attr">id</span>=<span class="string">"DB2Tables"</span> <span class="attr">targetRuntime</span>=<span class="string">"MyBatis3"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">jdbcConnection</span> <span class="attr">driverClass</span>=<span class="string">"com.mysql.jdbc.Driver"</span></span></span><br><span class="line"><span class="tag">                        <span class="attr">connectionURL</span>=<span class="string">"jdbc:mysql://localhost:3306/seck"</span></span></span><br><span class="line"><span class="tag">                        <span class="attr">userId</span>=<span class="string">"root"</span></span></span><br><span class="line"><span class="tag">                        <span class="attr">password</span>=<span class="string">"abc89895051"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">jdbcConnection</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">javaTypeResolver</span> &gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"forceBigDecimals"</span> <span class="attr">value</span>=<span class="string">"false"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">javaTypeResolver</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--dataobject--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">javaModelGenerator</span> <span class="attr">targetPackage</span>=<span class="string">"com.example.demoo.dataProject"</span> <span class="attr">targetProject</span>=<span class="string">"src/main/java"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"enableSubPackages"</span> <span class="attr">value</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"trimStrings"</span> <span class="attr">value</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">javaModelGenerator</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--映射文件--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">sqlMapGenerator</span> <span class="attr">targetPackage</span>=<span class="string">"mapping"</span>  <span class="attr">targetProject</span>=<span class="string">"src/main/resources"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"enableSubPackages"</span> <span class="attr">value</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">sqlMapGenerator</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">javaClientGenerator</span> <span class="attr">type</span>=<span class="string">"XMLMAPPER"</span> <span class="attr">targetPackage</span>=<span class="string">"com.example.demoo.dao"</span>  <span class="attr">targetProject</span>=<span class="string">"src/main/java"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"enableSubPackages"</span> <span class="attr">value</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">javaClientGenerator</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">table</span> <span class="attr">tableName</span>=<span class="string">"user"</span> <span class="attr">domainObjectName</span>=<span class="string">"UserDO"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">enableCountByExample</span>=<span class="string">"false"</span> <span class="attr">enableUpdateByExample</span>=<span class="string">"false"</span> <span class="attr">enableDeleteByExample</span>=<span class="string">"false"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">enableSelectByExample</span>=<span class="string">"false"</span> <span class="attr">selectByExampleQueryId</span>=<span class="string">"false"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">table</span> <span class="attr">tableName</span>=<span class="string">"article"</span> <span class="attr">domainObjectName</span>=<span class="string">"ArticleDO"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">enableCountByExample</span>=<span class="string">"false"</span> <span class="attr">enableUpdateByExample</span>=<span class="string">"false"</span> <span class="attr">enableDeleteByExample</span>=<span class="string">"false"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">enableSelectByExample</span>=<span class="string">"false"</span> <span class="attr">selectByExampleQueryId</span>=<span class="string">"false"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">context</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">generatorConfiguration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置mybatis-generator</p>
+</li>
+<li><p>启动生成dao,dataproject和xml文件</p>
+<p>app.java的三个注解</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span>(scanBasePackages=&#123;<span class="string">"lllr.test.testp"</span>&#125;)</span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@MapperScan</span>(<span class="string">"lllr.test.testp.dao"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestpApplication</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> ArticleDOMapper articleDOMapper;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/hello"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">home</span><span class="params">()</span></span>&#123;</span><br><span class="line">        ArticleDO articleDO = articleDOMapper.selectByPrimaryKey(<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span>(articleDO==<span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"用户不存在"</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> articleDO.getDetail();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-Service"><a href="#3-Service" class="headerlink" title="3.Service"></a>3.Service</h2><ul>
+<li>一个简单的service</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> lllr.test.testp.service.impl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lllr.test.testp.dao.ArticleDOMapper;</span><br><span class="line"><span class="keyword">import</span> lllr.test.testp.dataProject.ArticleDO;</span><br><span class="line"><span class="keyword">import</span> lllr.test.testp.service.ArticleService;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArticleServiceImpl</span> <span class="keyword">implements</span> <span class="title">ArticleService</span></span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> ArticleDOMapper articleDOMapper;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;ArticleDO&gt; <span class="title">articleList</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        List&lt;ArticleDO&gt; articleDOList = articleDOMapper.selectArticleList();</span><br><span class="line">        <span class="keyword">return</span> articleDOList;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-Controller"><a href="#4-Controller" class="headerlink" title="4.Controller"></a>4.Controller</h2><ul>
+<li><p>简单的controller示例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> lllr.test.testp.controller;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lllr.test.testp.dataProject.ArticleDO;</span><br><span class="line"><span class="keyword">import</span> lllr.test.testp.response.CommonReturnType;</span><br><span class="line"><span class="keyword">import</span> lllr.test.testp.service.ArticleService;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ResponseBody;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span>(<span class="string">"/article"</span>)</span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/article"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArticleController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> ArticleService articleService;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/list"</span>)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> CommonReturnType <span class="title">getArticleList</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//调用service把文章列表返回给前端</span></span><br><span class="line">        List&lt;ArticleDO&gt;  articleDOList = articleService.articleList();</span><br><span class="line">        <span class="keyword">for</span>(ArticleDO articleDO:articleDOList)&#123;</span><br><span class="line">            System.out.println(articleDO.getTitle());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> CommonReturnType.create(articleDOList);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+</li>
+</ul>
+<h2 id="5-抽出来的模板"><a href="#5-抽出来的模板" class="headerlink" title="5. 抽出来的模板"></a>5. 抽出来的模板</h2><h4 id="⭐commonReturnType"><a href="#⭐commonReturnType" class="headerlink" title="⭐commonReturnType"></a>⭐commonReturnType</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> lllr.test.testp.response;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CommonReturnType</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String status;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//如果satus == true ,data返回前端需要的json数据</span></span><br><span class="line">    <span class="keyword">private</span> Object data;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//定义通用的创建方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> CommonReturnType <span class="title">create</span><span class="params">(Object result)</span></span>&#123;</span><br><span class="line">       <span class="keyword">return</span> CommonReturnType.create(result,<span class="string">"success"</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> CommonReturnType <span class="title">create</span><span class="params">(Object result,String status)</span></span>&#123;</span><br><span class="line">         CommonReturnType commonReturnType = <span class="keyword">new</span> CommonReturnType();</span><br><span class="line">         commonReturnType.setStatus(status);</span><br><span class="line">         commonReturnType.setData(result);</span><br><span class="line">         <span class="keyword">return</span> commonReturnType;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getStatus</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> status;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setStatus</span><span class="params">(String status)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.status = status;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">getData</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> data;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setData</span><span class="params">(Object data)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.data = data;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="⭐commonError"><a href="#⭐commonError" class="headerlink" title="⭐commonError"></a>⭐commonError</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> lllr.test.testp.error;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">CommonError</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getErrorCode</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getErrorMsg</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> CommonError <span class="title">setErrorMsg</span><span class="params">(String errorMsg)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="⭐EmBusinessError"><a href="#⭐EmBusinessError" class="headerlink" title="⭐EmBusinessError"></a>⭐EmBusinessError</h3><p>通常错误会被包装成一个枚举类型</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> lllr.test.testp.error;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> EnBusinessError implements CommonError &#123;</span><br><span class="line"></span><br><span class="line">    ARTICLE_NOT_EXIST(<span class="number">001</span>,<span class="string">"该文章不存在"</span>),</span><br><span class="line">    UNKNOW_ERROR(<span class="number">002</span>,<span class="string">"未知错误"</span>)</span><br><span class="line">    ;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> errorCode;</span><br><span class="line">    <span class="keyword">private</span> String errorMsg;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">EnBusinessError</span><span class="params">(<span class="keyword">int</span> errorCode,String errorMsg)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.errorCode=errorCode;</span><br><span class="line">        <span class="keyword">this</span>.errorMsg=errorMsg;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getErrorCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getErrorMsg</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> CommonError <span class="title">setErrorMsg</span><span class="params">(String errorMsg)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="⭐BusinessException"><a href="#⭐BusinessException" class="headerlink" title="⭐BusinessException"></a>⭐BusinessException</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> lllr.test.testp.error;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BusinessException</span> <span class="keyword">extends</span>  <span class="title">Exception</span> <span class="keyword">implements</span> <span class="title">CommonError</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> CommonError commonError;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">BusinessException</span><span class="params">(CommonError commonError)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="keyword">this</span>.commonError=commonError;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">BusinessException</span><span class="params">(CommonError commonError,String errorMsg)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="keyword">this</span>.commonError=commonError;</span><br><span class="line">        <span class="keyword">this</span>.commonError.setErrorMsg(errorMsg);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getErrorCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.commonError.getErrorCode();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getErrorMsg</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.commonError.getErrorMsg();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> CommonError <span class="title">setErrorMsg</span><span class="params">(String errorMsg)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.commonError.setErrorMsg(errorMsg);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="⭐BaseController"><a href="#⭐BaseController" class="headerlink" title="⭐BaseController"></a>⭐BaseController</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//定义exceptionhandler解决未被controller层吸收的异常</span></span><br><span class="line">    <span class="meta">@ExceptionHandler</span>(Exception.class)</span><br><span class="line">    <span class="meta">@ResponseStatus</span>(HttpStatus.OK)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">handlerException</span><span class="params">(HttpServletRequest request, Exception ex)</span></span>&#123;</span><br><span class="line">        Map&lt;String,Object&gt; responseData = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span>(ex <span class="keyword">instanceof</span> BusinessException)&#123;</span><br><span class="line">            BusinessException businessException = (BusinessException)ex;</span><br><span class="line">            responseData.put(<span class="string">"errorCode"</span>,businessException.getErrorCode());</span><br><span class="line">            responseData.put(<span class="string">"errorMsg"</span>,businessException.getErrorMsg());</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            responseData.put(<span class="string">"errorCode"</span>,EnBusinessError.UNKNOW_ERROR);</span><br><span class="line">            responseData.put(<span class="string">"errorMsg"</span>,EnBusinessError.UNKNOW_ERROR.getErrorMsg());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> CommonReturnType.create(responseData,<span class="string">"fail"</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="🏃‍前端"><a href="#🏃‍前端" class="headerlink" title="🏃‍前端"></a>🏃‍前端</h2><h4 id="获取文章列表"><a href="#获取文章列表" class="headerlink" title="获取文章列表"></a>获取文章列表</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    jQuery(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//定义全局数据信息</span></span><br><span class="line">        <span class="keyword">var</span> g_articleList = [];</span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">            type:<span class="string">"GET"</span>,</span><br><span class="line">            url:<span class="string">"http://localhost:8090/article/list"</span>,</span><br><span class="line">            xhrFields:&#123;<span class="attr">withCredentials</span>:<span class="literal">true</span>&#125;,</span><br><span class="line">            success:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(data.status == <span class="string">"success"</span>)&#123;</span><br><span class="line">                    g_articleList = data.data;</span><br><span class="line">                    reloadDom();</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    alert(<span class="string">"获取文章信息失败，原因为"</span>+data.data.errMsg);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            error:<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">                alert(<span class="string">"获取商品信息失败，原因为"</span>+data.responseText);</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">reloadDom</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;g_articleList.length;i++)&#123;</span><br><span class="line">                <span class="keyword">var</span> articleVO =g_articleList[i];</span><br><span class="line">                <span class="keyword">var</span> dom = <span class="string">"&lt;tr&gt;"</span> +</span><br><span class="line">                    <span class="string">"&lt;td&gt;"</span> +articleVO.id+<span class="string">"&lt;/td&gt;"</span> +</span><br><span class="line">                    <span class="string">"&lt;td&gt;"</span> +articleVO.title+<span class="string">"&lt;/td&gt;"</span> +</span><br><span class="line">                    <span class="string">"&lt;td&gt;"</span> +articleVO.subtitle+<span class="string">"&lt;/td&gt;"</span> +</span><br><span class="line">                    <span class="string">"&lt;td&gt;&lt;img src='"</span> +articleVO.imgUrl+<span class="string">"'/&gt;&lt;/td&gt;"</span> +</span><br><span class="line">                    <span class="string">"&lt;td&gt;"</span> +articleVO.detail+<span class="string">"&lt;/td&gt;"</span> +</span><br><span class="line">                    <span class="string">"&lt;/tr&gt;"</span>;</span><br><span class="line">                $(<span class="string">"#container"</span>).append($(dom));</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2019/09/11/0911随笔/">0911随笔</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-09-11T14:35:39.000Z" itemprop="datePublished">2019-09-11</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/随笔/">随笔</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <p>​        外面突然下起了大雨，这个星期状态都很不对劲。回到学校之后从一开始的经历充沛到现在打开IDEA就很烦躁。最近经常性地无法控制情绪，整个人都很易怒，无理地揣测别人。</p>
+<p>​      今晚调了一个小时的bug，因为不熟悉jquery一直没办法解决。好像唯一可走的路就是把整个工程推翻重来了。我想要不还是早点回去睡觉算了。可又看起了剪辑视频之类的东西，想看一些别的教程，学习一些新鲜的东西，不想大脑里面全都是代码，java，未来，比较。</p>
+<p>​        有一些改变无法做到，我想做，但实在不知道怎么入手。我想我已经这么大了，有些内在的东西它已经是这样了，那就让它先这样着吧，扭转不是想做就能做到的事情。只能学着和它和平共处。</p>
+<p>​      关于兴趣，希望自己能花时间学学修照片和摄影。</p>
+<p>​      关于学习，只有三个想改进的地方。希望自己能每天学一些算法，做一点java基础的深入，把SSM学好。嵌入式测试的比赛大概斟酌着参加吧。</p>
+<p>​     关于健康，希望自己能每天运动，吃蔬菜，补充蛋白。</p>
+
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2019/09/11/常用命令2/">常用命令2</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-09-10T23:50:42.000Z" itemprop="datePublished">2019-09-11</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/linux/">linux</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h1 id="帮助命令y"><a href="#帮助命令y" class="headerlink" title="帮助命令y"></a>帮助命令y</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">👉man</span><br><span class="line">man 命令</span><br><span class="line"></span><br><span class="line"><span class="comment">//查看用于拥有哪个级别的帮助（用whatis 命令 也能查看到）</span></span><br><span class="line">man -f 命令</span><br><span class="line"></span><br><span class="line"><span class="comment">//查看与级别相关命令的帮助</span></span><br><span class="line">man <span class="number">5</span>(假如拥有<span class="number">5</span>级别) passwd</span><br><span class="line"></span><br><span class="line"><span class="comment">//用于查看所有相关的命令</span></span><br><span class="line">man -k 命令（相当于aprops命令）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">👉 命令 --help</span><br><span class="line"></span><br><span class="line">👉help 命令（只能获取shell内部封装的命令）</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2019/09/11/51CZGKgtQsJN4bX.png" alt></p>
+<p>👉<strong>man</strong></p>
+<p><img src="https://raw.githubusercontent.com/llllllllr/FigureBed/master/img/20190911080813.png" alt></p>
+<p>👉<strong>help</strong></p>
+<p><img src="https://raw.githubusercontent.com/llllllllr/FigureBed/master/img/20190912075629.png" alt></p>
+<h1 id="压缩与解压缩命令"><a href="#压缩与解压缩命令" class="headerlink" title="压缩与解压缩命令"></a>压缩与解压缩命令</h1><ul>
+<li>linux常见压缩格式:<ul>
+<li>.zip </li>
+<li>.gz</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">👉zip</span><br><span class="line"><span class="comment">//压缩文件</span></span><br><span class="line">zip 压缩文件名 源文件</span><br><span class="line"><span class="comment">//压缩目录</span></span><br><span class="line">zip -r 压缩文件名 源目录</span><br><span class="line"><span class="comment">//解压缩文件</span></span><br><span class="line">unzip 压缩文件</span><br><span class="line"></span><br><span class="line">👉.gz</span><br><span class="line"><span class="comment">//压缩为.gz格式的压缩文件，源文件会消失</span></span><br><span class="line">gzip 源文件</span><br><span class="line"><span class="comment">//压缩为.gz格式，源文件保留</span></span><br><span class="line">gzip -c 源文件 &gt; 压缩文件</span><br><span class="line"><span class="comment">//压缩目录下所有的子文件，但是不能压缩目录</span></span><br><span class="line">gzip -r</span><br></pre></td></tr></table></figure>
+
+<p>👉<strong>zip</strong></p>
+<ul>
+<li>touch新建文件</li>
+<li>mkdir新建文件夹（目录）</li>
+</ul>
+
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2019/09/10/操作系统笔记/">操作系统笔记</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-09-10T13:50:58.000Z" itemprop="datePublished">2019-09-10</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/操作系统/">操作系统</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h1 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h1><h2 id="进程概念"><a href="#进程概念" class="headerlink" title="进程概念"></a>进程概念</h2>
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2019/09/10/Linux/">Linux</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-09-09T23:57:59.000Z" itemprop="datePublished">2019-09-10</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/linux/">linux</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h1 id="命令格式"><a href="#命令格式" class="headerlink" title="命令格式"></a>命令格式</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令 [选项] [参数]</span><br></pre></td></tr></table></figure>
+
+<h1 id="查询目录中的内容"><a href="#查询目录中的内容" class="headerlink" title="查询目录中的内容"></a>查询目录中的内容</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ls [选项] [文件或目录]</span><br><span class="line"></span><br><span class="line">选项：</span><br><span class="line">-a 显示所有文件，包括隐藏文件（.开头的，系统文件，以免误操作，其实是可以查看的）</span><br><span class="line">-l 显示详细信息</span><br><span class="line">-d 查看目录属性</span><br><span class="line">-h 人性化显示文件大小</span><br><span class="line">-i 显示inode</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls -l的结果（可以简写为ll)</span><br><span class="line"></span><br><span class="line">-rw-r--r-- 1 llllll6r llllll6r     8980  2月 16  2019 examples.desktop</span><br></pre></td></tr></table></figure>
+
+<h4 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h4><p>-(第一个)： 文件类型（- 文件 d 目录 | 软链接文件）</p>
+<p>rw-  （u所有者）</p>
+<p>r–      (g所属组)</p>
+<p>r–      (o其他人)</p>
+<p>（用户和文件的关系）</p>
+<p>用户组：相同身份相同权限的人</p>
+<p>r 读</p>
+<p>w 写</p>
+<p>x 执行</p>
+<h4 id="引用计数"><a href="#引用计数" class="headerlink" title="引用计数"></a>引用计数</h4><p>1</p>
+<h4 id="所有者"><a href="#所有者" class="headerlink" title="所有者"></a>所有者</h4><p>llllll6r</p>
+<h4 id="所属组"><a href="#所属组" class="headerlink" title="所属组"></a>所属组</h4><p>llllll6r</p>
+<h4 id="文件大小"><a href="#文件大小" class="headerlink" title="文件大小"></a>文件大小</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls -lh之后 ⭐文件大小以8.8k显示（本来显示8980）</span><br><span class="line"></span><br><span class="line">-rw-r--r-- 1 llllll6r llllll6r 8.8K  2月 16  2019 examples.desktop</span><br></pre></td></tr></table></figure>
+
+<h4 id="文件的最后一次修改时间"><a href="#文件的最后一次修改时间" class="headerlink" title="文件的最后一次修改时间"></a>文件的最后一次修改时间</h4><h1 id="目录-文件处理命令"><a href="#目录-文件处理命令" class="headerlink" title="目录/文件处理命令"></a>目录/文件处理命令</h1><p>🏃‍目录：普通文件用来保存数据，目录用来保存文件（类似windows中的文件夹）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建目录（make directories)</span></span><br><span class="line">mkdir -p [目录名]</span><br><span class="line"></span><br><span class="line">-p 递归创建</span><br><span class="line"></span><br><span class="line"><span class="comment">//切换所在目录(change directory)</span></span><br><span class="line">cd [目录]</span><br><span class="line">cd ~  进入当前用户的家目录</span><br><span class="line">cd -  进入上次目录</span><br><span class="line">cd .. 进入上一及目录</span><br><span class="line">cd .  进入当前目录</span><br><span class="line"></span><br><span class="line"><span class="comment">//查询所在目录位置(print working directory)</span></span><br><span class="line">pwd</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除空目录（remove empty directories)</span></span><br><span class="line">rmdir [目录名]</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除文件或目录（remove)</span></span><br><span class="line">rm -rf [文件或目录]</span><br><span class="line"></span><br><span class="line">选项</span><br><span class="line">-r 删除目录</span><br><span class="line">-f 强制</span><br><span class="line"></span><br><span class="line">⭐ 别执行 rm -rf /(别把根目录直接删掉)</span><br><span class="line">    </span><br><span class="line"><span class="comment">//复制命令（copy)</span></span><br><span class="line">cp [选项] [源文件或目录] [目标目录]</span><br><span class="line"></span><br><span class="line">选项</span><br><span class="line">-r 复制目录</span><br><span class="line">-p 连带文件属性复制</span><br><span class="line">-d 若源文件是链接文件，则复制链接属性</span><br><span class="line">-a 相当于 -pdr(完全一样，包括创建时间等等)</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="comment">//剪切或改名命令（move)</span></span><br><span class="line">mv [源文件或目录] [目标目录]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">如果源文件和目标文件在统一目录下，那就是改名命令，否则是剪切</span><br></pre></td></tr></table></figure>
+
+<h1 id="常用目录的作用"><a href="#常用目录的作用" class="headerlink" title="常用目录的作用"></a>常用目录的作用</h1><ul>
+<li>/根目录</li>
+<li>/bin命令保存目录（普通用户就可以读取的命令）</li>
+<li>/boot启动目录，启动相关文件</li>
+<li>/dev设备文件保存目录</li>
+<li>/etc配置文件保存目录</li>
+<li>/home普通用户的家目录</li>
+<li>/lib系统库保存目录</li>
+<li>/mnt系统挂载目录</li>
+<li>/media挂载目录</li>
+<li>/root超级用户的家目录</li>
+<li>/tmp临时目录</li>
+<li>/sbin命令保存目录</li>
+<li>/proc直接写入内存的</li>
+<li>/sys同上</li>
+<li>/usr系统软件资源目录<ul>
+<li>/usr/bin/系统命令（普通用户）</li>
+<li>/usr/sbin/系统命令（超级用户）</li>
+</ul>
+</li>
+<li>/var系统相关文档内容</li>
+</ul>
+<p>⭐可以在家目录root或home，以及tmp目录下随便放内容</p>
+<p>⭐只把必要的数据放在根目录，其它放在别的盘</p>
+<h1 id="链接命令"><a href="#链接命令" class="headerlink" title="链接命令"></a>链接命令</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//生成链接文件 ln(link)</span></span><br><span class="line"></span><br><span class="line">ln -s [源文件] [目标文件]</span><br><span class="line">选项：</span><br><span class="line">-s 创建软连接</span><br><span class="line"></span><br><span class="line">👉例子</span><br><span class="line">输入： ln shadow.sh ttmp/ana.har</span><br><span class="line">结果：</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">   进入ana.har发现和shaow.sh的内容是一样的</span></span><br><span class="line"><span class="comment">   且如下图1所示，他们两个的i结点也是一样的</span></span><br><span class="line"><span class="comment">   如图2，ana.har引用计数为2</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="C:%5CUsers%5C12284%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1567468833982.png" alt="1567468833982"></p>
+<p><img src="C:%5CUsers%5C12284%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1567468928510.png" alt="1567468928510"></p>
+<blockquote>
+<p>硬链接特征：</p>
+<ol>
+<li>拥有相同的i结点和block存储快，可以看作是同一个文件</li>
+<li>可以通过I结点识别</li>
+<li>不能跨分区</li>
+<li>不能针对目录使用</li>
+</ol>
+<p>软连接特征：</p>
+<ol>
+<li>类似windows快捷方式</li>
+<li>软连接拥有自己的I结点和block块，但是数据块中只保存源文件的文件名和I结点好，并没有实际的文件数据</li>
+<li>lrwxrwxrwx l软连接（L）且软连接文件权限都为 rwxrwxrwx（软链接里面存储的是源文件的i结点和存储位置，访问软链接的内容只是找到i结点和存储位置，当根据这些信息找到源文件时，如果源文件不是777，那也是看不了的）</li>
+<li>修改任一文件，另一个都会改变</li>
+<li>删除源文件，软链接不能使用</li>
+</ol>
+</blockquote>
+<p>👉首先给shadow.sh创建一个软连接和一个硬链接</p>
+<p><img src="C:%5CUsers%5C12284%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1567554289130.png" alt="1567554289130"></p>
+<p>👉查看I结点</p>
+<p><img src="C:%5CUsers%5C12284%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1567554469692.png" alt="1567554469692"></p>
+<p>⭐</p>
+<ul>
+<li>可以看到硬链接的i结点和源文件一模一样，而软链接的不一样</li>
+<li>而且软连接的开头是l(L)，说明它是一个软链接</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">👉简略</span><br><span class="line"><span class="comment">//修改文件</span></span><br><span class="line">echo [内容] &gt;&gt; 文件</span><br><span class="line"></span><br><span class="line"><span class="comment">//查看内容</span></span><br><span class="line">cat 文件名</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:%5CUsers%5C12284%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1567555307415.png" alt="1567555307415"></p>
+<p>⭐有一个很奇怪的点，软链接修改了之后和原文件是不一样的，和老师演示的结果不同</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s [原文件] [目标文件]</span><br></pre></td></tr></table></figure>
+
+<p>软链接：</p>
+<p>==如果源文件不写绝对路径，源文件和软链接只有在同一个目录下才能找到!!!!!==</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch xxx</span><br></pre></td></tr></table></figure>
+
+<h1 id="搜索命令"><a href="#搜索命令" class="headerlink" title="搜索命令"></a>搜索命令</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">👉文件搜索命令</span><br><span class="line"><span class="comment">//locate 速度块</span></span><br><span class="line">locate 文件名</span><br><span class="line"><span class="number">1</span>.在后台数据库中按文件搜索</span><br><span class="line"><span class="number">2</span>./<span class="keyword">var</span>/lib/molocate---&gt;locate命令搜索的后台数据库</span><br><span class="line"><span class="number">3</span>.updatedb---&gt;更新数据库</span><br><span class="line"><span class="number">4</span>.只能按照文件名来搜索</span><br><span class="line"></span><br><span class="line">👉命令搜索命令</span><br><span class="line"><span class="comment">//whereis和which</span></span><br><span class="line">whereis 命令名（搜索命令所在了路径以及帮助文档所在的位置）</span><br><span class="line">选项：</span><br><span class="line">-b 只查找可执行文件</span><br><span class="line">-m 只查找帮助文件</span><br><span class="line"></span><br><span class="line">which 文件名（搜索命令所在路径及别名）</span><br><span class="line"><span class="number">1</span>.如果没有别名的话就只会显示路径</span><br><span class="line"></span><br><span class="line"><span class="comment">//find 整个根目录遍历，耗费资源</span></span><br><span class="line">find [搜索范围] [搜索条件]</span><br><span class="line">#搜索文件</span><br><span class="line">例如:</span><br><span class="line">find / -name install.log</span><br><span class="line">#避免大范围搜索，会非常耗费资源（比如这里面在根目录下查找）</span><br><span class="line">#find是在系统当中搜索符合条件的文件名。如果需要匹配，使用通配符匹配，通配符是完全匹配</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">linux中的通配符</span></span><br><span class="line"><span class="comment">*  匹配任意内容</span></span><br><span class="line"><span class="comment">？ 匹配任意一个字符</span></span><br><span class="line"><span class="comment">[] 匹配任意一个中括号内的字符</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p>👉<strong>locate</strong>:</p>
+<ul>
+<li>在没更新数据库之前，新建的文件是不能被找到的，touch xxx-&gt;updatedb或重启-&gt;locate xxx才能找到</li>
+</ul>
+<p><img src="C:%5CUsers%5C12284%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1567641136853.png" alt="1567641136853"></p>
+<p>👉<strong>whereis和which</strong>：</p>
+<ul>
+<li>只能查系统文件</li>
+</ul>
+<p><img src="C:%5CUsers%5C12284%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1567642153041.png" alt="1567642153041"></p>
+<p>👉<strong>PATH环境变量</strong></p>
+<ul>
+<li>定义的是系统搜索命令的路径</li>
+</ul>
+<p>👉<strong>find</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">find /root -name <span class="string">"ab[cd]"</span></span><br><span class="line">---&gt;搜索以abc或abd命名的文件</span><br><span class="line"></span><br><span class="line">find /root -name <span class="string">"*[cd]"</span></span><br><span class="line">---&gt;搜索所有以b结尾或以d结尾的文件名</span><br><span class="line"></span><br><span class="line">find /root -iname install.log</span><br><span class="line">----&gt;不区分大小写</span><br><span class="line"></span><br><span class="line">find /root -user root</span><br><span class="line">-----&gt;按照所有者搜索</span><br><span class="line"></span><br><span class="line">find /root -nouser</span><br><span class="line">-----&gt;查找没有所有者的文件</span><br><span class="line"></span><br><span class="line">find /<span class="keyword">var</span>/log/ -mtime +<span class="number">10</span></span><br><span class="line">-----&gt;查找<span class="number">10</span>天前修改的文件</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">-10 10天内修改文件</span></span><br><span class="line"><span class="comment">10  10天当天修改的文件</span></span><br><span class="line"><span class="comment">+10 10天前修改的文件</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">atime 文件访问时间</span></span><br><span class="line"><span class="comment">ctime 改变文件属性</span></span><br><span class="line"><span class="comment">mtime 修改文件内容</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line">find . -size <span class="number">25</span>k</span><br><span class="line">---&gt;查找当前目录下大小为<span class="number">25</span>k的文件（k小写，M大写）</span><br><span class="line"></span><br><span class="line">find . -inum <span class="number">262422</span></span><br><span class="line">---&gt;查找当前目录下i结点是<span class="number">262422</span>的文件</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">find /etc -size +<span class="number">20</span>k -a -size -<span class="number">50</span>k</span><br><span class="line">----&gt;查找/etc目录下，大于<span class="number">20</span>KB且小于<span class="number">50</span>KB的文件</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">-a and 且</span></span><br><span class="line"><span class="comment">-o or  或</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line">find /etc -size +<span class="number">20</span>k -a -size -<span class="number">50</span>k -exec ls -lh ()\;</span><br><span class="line">----&gt;查找/etc/目录下，大于<span class="number">20</span>KB且小于<span class="number">50</span>KB的文件，并显示详细信息</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">-exxec/-ok 命令&#123;&#125;\; 对搜索结果执行操作</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h1><p><strong>相对路径</strong>：参照当前所在目录进行查找</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">llllll6r<span class="meta">@llllll</span>6r:~/japan/tokyo$ cd ../hello</span><br><span class="line"></span><br><span class="line"><span class="comment">//  “../”表示上一级目录，这条命令会进入japan的hello目录</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>相对路径</strong>：从根目录开始指定，一级一级递归查找，在任何目录下，都能进入指定位置。</p>
+<h4 id="清屏"><a href="#清屏" class="headerlink" title="清屏"></a>清屏</h4><p>==crtl+l==</p>
+
+        
+    </section>
+</article>
+
+
     <article class="article" itemscope itemprop="blogPost">
     
     <header class="article-header">

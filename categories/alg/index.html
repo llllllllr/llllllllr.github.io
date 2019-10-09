@@ -7,7 +7,7 @@
 
     
 
-    <title>Archives | Hexo</title>
+    <title>Category: alg | Hexo</title>
     <meta name="author" content="John Doe">
     <meta name="version" content="1.0.0">
     <meta name="keywords" content>
@@ -53,7 +53,7 @@
                 <span class="nav-text">java基础</span>
             </a>
         
-            <a class="nav-item" href="/categories/alg">
+            <a class="nav-item active" href="/categories/alg">
                 <span class="nav-text">每日一道算法</span>
             </a>
         
@@ -61,7 +61,7 @@
                 <span class="nav-text">标签</span>
             </a>
         
-            <a class="nav-item active" href="/archives">
+            <a class="nav-item" href="/archives">
                 <span class="nav-text">归档</span>
             </a>
         
@@ -138,210 +138,40 @@
 </header>
 
         <div id="content" class="content">
-
-
+    <article class="article" itemscope itemprop="blogPost">
     
-    
-    
-    
-    
-    <section class="archives-wrap">
-    <div class="archive-year-wrap">
-    <a href="/archives/2019" class="page-hd">
-        2019
-    </a>
-    </div>
-    <ol class="archives">
-    
-
-    <li class="archive-section-item">
+    <header class="article-header">
         
-<article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        <header class="archive-article-header">
-            <a class="archive-article-link" href="/2019/10/09/空格替换/">空格替换</a>
-            <span class="archive-article-date">
-                (<a class="article-date" href="/archives/2019/10">
-    
-    <time datetime="2019-10-09T03:08:39.000Z" itemprop="datePublished">10/9</time>
-</a>
-)
-            </span>
-        </header>
-    </div>
-</article>
-    </li>
-
-    
-    
-
-    <li class="archive-section-item">
+        <h1 itemprop="name">
+            <a href="/2019/10/09/空格替换/">空格替换</a>
+        </h1>
         
-<article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        <header class="archive-article-header">
-            <a class="archive-article-link" href="/2019/10/03/springboot注解/">springboot注解</a>
-            <span class="archive-article-date">
-                (<a class="article-date" href="/archives/2019/10">
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/categories/alg/index.html">
     
-    <time datetime="2019-10-03T02:01:45.000Z" itemprop="datePublished">10/3</time>
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-10-09T03:08:39.000Z" itemprop="datePublished">2019-10-09</time>
 </a>
-)
-            </span>
-        </header>
-    </div>
-</article>
-    </li>
 
-    
-    
+            
 
-    <li class="archive-section-item">
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
         
-<article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        <header class="archive-article-header">
-            <a class="archive-article-link" href="/2019/10/03/springboot-mybatis复盘/">springboot-mybatis复盘</a>
-            <span class="archive-article-date">
-                (<a class="article-date" href="/archives/2019/10">
-    
-    <time datetime="2019-10-03T01:44:01.000Z" itemprop="datePublished">10/3</time>
-</a>
-)
-            </span>
-        </header>
-    </div>
-</article>
-    </li>
+        <blockquote>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。</p>
+</blockquote>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">replaceSpace</span><span class="params">(StringBuffer str)</span> </span>&#123;</span><br><span class="line">	        <span class="keyword">if</span>(str ==<span class="keyword">null</span>)</span><br><span class="line">	        	<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">	        <span class="keyword">if</span>(str.length() == <span class="number">0</span> || str.indexOf(<span class="string">" "</span>)==-<span class="number">1</span>)</span><br><span class="line">	        	<span class="keyword">return</span> str.toString();</span><br><span class="line">	        </span><br><span class="line">	        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;str.length();i++) &#123;</span><br><span class="line">	        	<span class="keyword">if</span>(str.charAt(i) == <span class="string">' '</span>) &#123;</span><br><span class="line">	        		str.replace(i,i+<span class="number">1</span>,<span class="string">"%20"</span>);</span><br><span class="line">	        	&#125;</span><br><span class="line">	        &#125;</span><br><span class="line">	        <span class="keyword">return</span> str.toString();</span><br><span class="line">	    &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-    
-    
 
-    <li class="archive-section-item">
         
-<article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        <header class="archive-article-header">
-            <a class="archive-article-link" href="/2019/09/11/0911随笔/">0911随笔</a>
-            <span class="archive-article-date">
-                (<a class="article-date" href="/archives/2019/09">
-    
-    <time datetime="2019-09-11T14:35:39.000Z" itemprop="datePublished">9/11</time>
-</a>
-)
-            </span>
-        </header>
-    </div>
+    </section>
 </article>
-    </li>
-
-    
-    
-
-    <li class="archive-section-item">
-        
-<article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        <header class="archive-article-header">
-            <a class="archive-article-link" href="/2019/09/11/常用命令2/">常用命令2</a>
-            <span class="archive-article-date">
-                (<a class="article-date" href="/archives/2019/09">
-    
-    <time datetime="2019-09-10T23:50:42.000Z" itemprop="datePublished">9/11</time>
-</a>
-)
-            </span>
-        </header>
-    </div>
-</article>
-    </li>
-
-    
-    
-
-    <li class="archive-section-item">
-        
-<article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        <header class="archive-article-header">
-            <a class="archive-article-link" href="/2019/09/10/操作系统笔记/">操作系统笔记</a>
-            <span class="archive-article-date">
-                (<a class="article-date" href="/archives/2019/09">
-    
-    <time datetime="2019-09-10T13:50:58.000Z" itemprop="datePublished">9/10</time>
-</a>
-)
-            </span>
-        </header>
-    </div>
-</article>
-    </li>
-
-    
-    
-
-    <li class="archive-section-item">
-        
-<article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        <header class="archive-article-header">
-            <a class="archive-article-link" href="/2019/09/10/Linux/">Linux</a>
-            <span class="archive-article-date">
-                (<a class="article-date" href="/archives/2019/09">
-    
-    <time datetime="2019-09-09T23:57:59.000Z" itemprop="datePublished">9/10</time>
-</a>
-)
-            </span>
-        </header>
-    </div>
-</article>
-    </li>
-
-    
-    
-
-    <li class="archive-section-item">
-        
-<article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        <header class="archive-article-header">
-            <a class="archive-article-link" href="/2019/09/09/自己动手实现IOC/">自己动手实现IOC</a>
-            <span class="archive-article-date">
-                (<a class="article-date" href="/archives/2019/09">
-    
-    <time datetime="2019-09-09T11:39:24.000Z" itemprop="datePublished">9/9</time>
-</a>
-)
-            </span>
-        </header>
-    </div>
-</article>
-    </li>
-
-    
-    
-
-    <li class="archive-section-item">
-        
-<article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        <header class="archive-article-header">
-            <a class="archive-article-link" href="/2019/09/09/hello-world/">Hello World</a>
-            <span class="archive-article-date">
-                (<a class="article-date" href="/archives/2019/09">
-    
-    <time datetime="2019-09-09T06:41:30.952Z" itemprop="datePublished">9/9</time>
-</a>
-)
-            </span>
-        </header>
-    </div>
-</article>
-    </li>
 
 
-</ol></section>
 
 
 
