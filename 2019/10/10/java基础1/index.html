@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+
+    
+
+    
+
+    <title>java基础1 | Hexo</title>
+    <meta name="author" content="John Doe">
+    <meta name="version" content="1.0.0">
+    <meta name="keywords" content>
+    <meta name="description" content="在电脑里安装jdk1.用记事本写一个Java程序12345public class Hw&amp;#123;	public static void main(String[] args) &amp;#123;		System.out.println(&#34;Hello world&#34;);	&amp;#125;&amp;#125;编译1javac Hw.java接着能看到文件夹里面生成了一个Hw.class，==是把java文件编译成字节码为文件== 运行1java Hw注意，在这一步不需要写Hw.java的后缀名...">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+
+    
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/images/notebook.ico">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <main class="app">
+        <header class="header clearfix">
+    <div id="nav" class="nav">
+    <div class="nav-mobile">
+        <button id="open-panel" class="open-panel nav-mobile-item"><i class="icon-documents"></i></button>
+        <h1 class="nav-mobile-title nav-mobile-item">Hexo</h1>
+        <button id="open-menus" class="open-panel nav-mobile-item"><i class="icon-library"></i></button>
+    </div>
+
+    <nav id="nav-inner" class="nav-inner">
+        
+            <a class="nav-item" href="/">
+                <span class="nav-text">首页</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/front-end">
+                <span class="nav-text">Spring</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/linux">
+                <span class="nav-text">Linux</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/java-basic">
+                <span class="nav-text">java基础</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/alg">
+                <span class="nav-text">每日一道算法</span>
+            </a>
+        
+            <a class="nav-item" href="/tags">
+                <span class="nav-text">标签</span>
+            </a>
+        
+            <a class="nav-item" href="/archives">
+                <span class="nav-text">归档</span>
+            </a>
+        
+            <a class="nav-item" href="/atom.xml">
+                <span class="nav-text">订阅</span>
+            </a>
+        
+            <a class="nav-item" href="/about">
+                <span class="nav-text">关于</span>
+            </a>
+        
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-用记事本写一个Java程序"><span class="toc-number">1.</span> <span class="toc-text">1.用记事本写一个Java程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#编译"><span class="toc-number">2.</span> <span class="toc-text">编译</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#运行"><span class="toc-number">3.</span> <span class="toc-text">运行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-读输入"><span class="toc-number">4.</span> <span class="toc-text">2.读输入</span></a></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content"><article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            java基础1
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/2019/10/10/java基础1/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-10-10T08:54:55.000Z" itemprop="datePublished">2019-10-10</time>
+</a>
+
+            
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <p>在电脑里安装jdk</p>
+<h4 id="1-用记事本写一个Java程序"><a href="#1-用记事本写一个Java程序" class="headerlink" title="1.用记事本写一个Java程序"></a>1.用记事本写一个Java程序</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hw</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"Hello world"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javac Hw.java</span><br></pre></td></tr></table></figure>
+
+<p>接着能看到文件夹里面生成了一个Hw.class，==是把java文件编译成字节码为文件== </p>
+<h4 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java Hw</span><br></pre></td></tr></table></figure>
+
+<p>注意，在这一步不需要写Hw.java的后缀名，直接运行，能看到控制台输出Hello world</p>
+<h4 id="2-读输入"><a href="#2-读输入" class="headerlink" title="2.读输入"></a>2.读输入</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"><span class="keyword">int</span> res = in.nextInt();</span><br></pre></td></tr></table></figure>
+
+<p>注意区分一下两行代码的区别</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">res = in.nextInt();</span><br><span class="line">System.out.println(<span class="string">"result :5+"</span>+in.nextInt()+<span class="string">"="</span>+(in.nextInt()+<span class="number">5</span>));</span><br><span class="line">System.out.println(<span class="string">"result: 5+"</span>+res+<span class="string">"="</span>+(res+<span class="number">5</span>));</span><br></pre></td></tr></table></figure>
+
+<p>每次执行一次in.nextInt()，都读入一次输入的整数</p>
+
+        
+    </section>
+</article>
+
+
+
+<div class="comments">
+    <div id="comments"></div>
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+    new Gitalk({
+        clientID: "7fbe80427f54741e289f",
+        clientSecret: "f34ed5fd92e54c9000bd37ba951948cb939deff5",
+        repo: "sanonz.github.io",
+        owner: "sanonz",
+        admin: ["sanonz"],
+        id: "2019/10/10/java基础1",
+        distractionFreeMode: true,
+        title: "java基础1",
+        body: "http://yoursite.com/2019/10/10/java基础1/",
+        labels: []
+    }).render('comments');
+    </script>
+</div>
+
+</div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e4027971a230b210f4671f485b33846a";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+</footer>
+
+    </main>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var nodes = {
+            nav: $('#nav'),
+            aside: $('#aside'),
+            asideInner: $('#aside-inner'),
+            navInner: $('#nav-inner')
+        };
+
+        var doing = false;
+        nodes.asideInner.on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
+            if (nodes.aside.hasClass('mobile-open')) {
+                nodes.aside.removeClass('mobile-open');
+            } else {
+                nodes.aside.removeClass('mobile-close panel-show');
+            }
+            doing = false;
+        });
+        $('#open-panel, #aside-mask').on('click', function() {
+            if (doing) {
+                return;
+            }
+            
+            if (nodes.aside.hasClass('panel-show')) {
+                nodes.aside.addClass('mobile-close');
+            } else {
+                nodes.aside.addClass('mobile-open panel-show');
+            }
+        });
+        $('#open-menus').on('click', function() {
+            nodes.navInner.slideToggle();
+        });
+
+        if (window.innerWidth <= 960) {
+            setTimeout(function() {
+                nodes.navInner.slideUp();
+            }, 3000);
+        }
+    });
+    </script>
+    
+        <script type="text/javascript" src="/js/scrollspy.min.js"></script>
+        <script type="text/javascript">
+        $(document.body).scrollspy({target: '#aside-inner'});
+        </script>
+    
+
+</body>
+</html>
