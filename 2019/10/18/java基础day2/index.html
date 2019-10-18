@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+
+    
+
+    
+
+    <title>java基础day2 | Hexo</title>
+    <meta name="author" content="John Doe">
+    <meta name="version" content="1.0.0">
+    <meta name="keywords" content>
+    <meta name="description" content="异常异常就是程序在==运行的过程==中出现的不正常的情况（不可治愈）对于严重的问题：用ERROR来处理。（可治愈）对于不严重的问题:用Exception来处理。👇封装一个除法：123456class demo&amp;#123;		public int div(int a,int b) &amp;#123;		return a/b;	&amp;#125;&amp;#125;👇调用它12345    public static void main(String[] args) &amp;#123;	 demo d...">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+
+    
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/images/notebook.ico">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <main class="app">
+        <header class="header clearfix">
+    <div id="nav" class="nav">
+    <div class="nav-mobile">
+        <button id="open-panel" class="open-panel nav-mobile-item"><i class="icon-documents"></i></button>
+        <h1 class="nav-mobile-title nav-mobile-item">Hexo</h1>
+        <button id="open-menus" class="open-panel nav-mobile-item"><i class="icon-library"></i></button>
+    </div>
+
+    <nav id="nav-inner" class="nav-inner">
+        
+            <a class="nav-item" href="/">
+                <span class="nav-text">首页</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/front-end">
+                <span class="nav-text">Spring</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/linux">
+                <span class="nav-text">Linux</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/java-basic">
+                <span class="nav-text">java基础</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/alg">
+                <span class="nav-text">每日一道算法</span>
+            </a>
+        
+            <a class="nav-item" href="/tags">
+                <span class="nav-text">标签</span>
+            </a>
+        
+            <a class="nav-item" href="/archives">
+                <span class="nav-text">归档</span>
+            </a>
+        
+            <a class="nav-item" href="/atom.xml">
+                <span class="nav-text">订阅</span>
+            </a>
+        
+            <a class="nav-item" href="/about">
+                <span class="nav-text">关于</span>
+            </a>
+        
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#异常"><span class="toc-number">1.</span> <span class="toc-text">异常</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#异常的处理"><span class="toc-number">2.</span> <span class="toc-text">异常的处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#对多异常的处理"><span class="toc-number">3.</span> <span class="toc-text">对多异常的处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#自定义异常"><span class="toc-number">4.</span> <span class="toc-text">自定义异常</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RuntimeException"><span class="toc-number">5.</span> <span class="toc-text">RuntimeException</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#异常练习"><span class="toc-number">6.</span> <span class="toc-text">异常练习</span></a></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content"><article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            java基础day2
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/2019/10/18/java基础day2/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-10-18T00:08:39.000Z" itemprop="datePublished">2019-10-18</time>
+</a>
+
+            
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><blockquote>
+<p>异常就是程序在==运行的过程==中出现的不正常的情况</p>
+</blockquote>
+<p>（不可治愈）对于严重的问题：用ERROR来处理。</p>
+<p>（可治愈）对于不严重的问题:用Exception来处理。</p>
+<p>👇封装一个除法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">demo</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">div</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> a/b;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>👇调用它</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	 demo d = <span class="keyword">new</span> demo();</span><br><span class="line">	System.out.println(d.div(<span class="number">4</span>, <span class="number">0</span>)); </span><br><span class="line">	System.out.println(<span class="string">"over..."</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<blockquote>
+<p>Exception in thread “main” java.lang.ArithmeticException: / by zero</p>
+</blockquote>
+<p>==注意：在这里over并没有输出==</p>
+<h1 id="异常的处理"><a href="#异常的处理" class="headerlink" title="异常的处理"></a>异常的处理</h1><blockquote>
+<p>语法：</p>
+<p>try{</p>
+<p>}catch{</p>
+<p>}finally{</p>
+<p>}</p>
+</blockquote>
+<p>程序修改如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		 demo d = <span class="keyword">new</span> demo();</span><br><span class="line">		 <span class="keyword">try</span> &#123;</span><br><span class="line">			 System.out.println(d.div(<span class="number">4</span>, <span class="number">0</span>));</span><br><span class="line">             <span class="comment">/* Exception e = new ArithmecicException();*/</span>多态</span><br><span class="line">		 &#125;<span class="keyword">catch</span>(Exception e) &#123;</span><br><span class="line">			 System.out.println(e.getMessage());</span><br><span class="line">		 &#125;</span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">"over..."</span>);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<p>👇输出</p>
+<blockquote>
+<p>/ by zero<br>over…</p>
+</blockquote>
+<p>==这时over正常是输出了==</p>
+<p>因为如果没有捕获异常的话，虚拟机不知道怎么处理，它就中断了处理</p>
+<p>Exception的一些方法👇：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	 demo d = <span class="keyword">new</span> demo();</span><br><span class="line">	 <span class="keyword">try</span> &#123;</span><br><span class="line">		 System.out.println(d.div(<span class="number">4</span>, <span class="number">0</span>)); </span><br><span class="line">	 &#125;<span class="keyword">catch</span>(Exception e) &#123;</span><br><span class="line">		 System.out.println(e.getMessage());<span class="comment">//异常信息</span></span><br><span class="line">		 System.out.println(e.toString());<span class="comment">//异常名称：异常信息，异常出现的位置</span></span><br><span class="line">		 e.printStackTrace();<span class="comment">//异常名称，信息，出现的位置（jvm默认处理异常的机制）</span></span><br><span class="line">	 &#125;</span><br><span class="line">	</span><br><span class="line">	System.out.println(<span class="string">"over..."</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>👇：</p>
+<p><img src="http://pzaqt7zjy.bkt.clouddn.com/20191018111511.png" alt="image"></p>
+<blockquote>
+<p>当一个方法有出现异常的可能，应该在方法后面加入 ==throws Exception==</p>
+</blockquote>
+<p>如果方法后面声明了==throws Exception==，就一定要捕获异常，用try..catch…方法，或者再次抛出，否则就会出错。一般来说还是要捕获异常才行。</p>
+<h1 id="对多异常的处理"><a href="#对多异常的处理" class="headerlink" title="对多异常的处理"></a>对多异常的处理</h1><ul>
+<li>声明异常时，建议声明更加具体的异常，这样可以处理得更加具体。</li>
+<li>对方声明几个异常，就应该有多少个catch块<ul>
+<li>如果catch块的异常中出现继承关系，父类异常catch块放在最下面。</li>
+<li>catch处理中定义具体处理方式</li>
+</ul>
+</li>
+</ul>
+<p>当程序如下👇:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">demo</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">div</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span> <span class="keyword">throws</span> ArithmeticException,ArrayIndexOutOfBoundsException </span>&#123;</span><br><span class="line">		<span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[a];</span><br><span class="line">		System.out.println(arr[<span class="number">4</span>]);</span><br><span class="line">		<span class="keyword">return</span> a/b;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">day1</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	 <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		 demo d = <span class="keyword">new</span> demo();</span><br><span class="line">		 <span class="keyword">try</span> &#123;</span><br><span class="line">			 System.out.println(d.div(<span class="number">3</span>, <span class="number">0</span>)); </span><br><span class="line">		 &#125;<span class="keyword">catch</span>(ArithmeticException e1) &#123;</span><br><span class="line">			 System.out.println(e1.toString());</span><br><span class="line">		 &#125;<span class="keyword">catch</span>(ArrayIndexOutOfBoundsException e2) &#123;</span><br><span class="line">			 System.out.println(e2.toString());</span><br><span class="line">		 &#125;</span><br><span class="line">		System.out.println(<span class="string">"over..."</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<blockquote>
+<p>java.lang.ArrayIndexOutOfBoundsException: 4<br>over…</p>
+</blockquote>
+<p>实际上a/b这一步根本还没有被执行到。==在方法中有异常发生，异常就直接结束了。==</p>
+<h1 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h1><blockquote>
+<p>项目中会出现一些特有的问题，而这些问题并没有被java所描述和封装对象，对这些问题按照java对问题封装的思想，将特有的问题进行自定义的异常封装。</p>
+<p>必须继承自Exception</p>
+</blockquote>
+<p>👇实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NegativeNumException</span> <span class="keyword">extends</span> <span class="title">Exception</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> String errMsg;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">NegativeNumException</span><span class="params">(String msg)</span></span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.errMsg=msg;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span>  String <span class="title">getMessage</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	  <span class="keyword">return</span> errMsg;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">demo</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">div</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span> <span class="keyword">throws</span> NegativeNumException </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (b&lt;<span class="number">0</span>)</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> NegativeNumException(<span class="string">"不能除以负数"</span>);<span class="comment">//手动通过throw new抛出自定义异常</span></span><br><span class="line">		<span class="keyword">return</span> a/b;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>==但是==，实际上Exception继承自父类Throwable,getMessage方法封装在Throwable中，因此==只要通过super语句把异常信息传递给父类，那么就可以通过getMessage方法获得异常信息==，修改如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NegativeNumException</span> <span class="keyword">extends</span> <span class="title">Exception</span></span>&#123;</span><br><span class="line">    NegativeNumException(String msg)&#123;</span><br><span class="line">		<span class="keyword">super</span>(msg);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="RuntimeException"><a href="#RuntimeException" class="headerlink" title="RuntimeException"></a>RuntimeException</h1><blockquote>
+<p>RuntimeException(运行时异常)是一个特殊的ExcePtion子类</p>
+<p>这个异常和这个异常的子类在函数内抛出的话在函数上不用声明，编译一样能通过。</p>
+<p>如果在函数上声明了该异常，调用者可以不用进行处理。</p>
+<p>当该异常发生，希望程序停止，因为会发生无法继续运算的情况，希望由程序员改动代码。</p>
+</blockquote>
+<p>以上特殊的原因如下:</p>
+<p>如果传入除数为0的话，得到的值int x根本没意义，下面的运行也没有意义，所以希望能够不处理这个异常，直接停止这个函数然后令用户修改自己的错误（比如在上述程序中就是传参的问题）。</p>
+<p><strong>自定义异常时，如果发生该异常那么这个程序无法继续进行运算，就让该异常继承自RuntimeException。</strong></p>
+<h1 id="异常练习"><a href="#异常练习" class="headerlink" title="异常练习"></a>异常练习</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Computer1Exception</span> <span class="keyword">extends</span> <span class="title">Exception</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	Computer1Exception(String msg)&#123;</span><br><span class="line">		<span class="keyword">super</span>(msg);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Computer2Exception</span> <span class="keyword">extends</span> <span class="title">Exception</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	Computer2Exception(String msg)&#123;</span><br><span class="line">		<span class="keyword">super</span>(msg);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassException</span> <span class="keyword">extends</span> <span class="title">Exception</span></span>&#123;</span><br><span class="line">	ClassException(String msg)&#123;</span><br><span class="line">		<span class="keyword">super</span>(msg);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>电脑类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Computer</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> state ;</span><br><span class="line">	<span class="comment">//电脑状态</span></span><br><span class="line">		</span><br><span class="line">	</span><br><span class="line">	Computer(<span class="keyword">int</span> state)&#123;</span><br><span class="line">		<span class="keyword">this</span>.setState(state);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> <span class="keyword">throws</span> Computer1Exception,Computer2Exception </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(state ==<span class="number">1</span> )</span><br><span class="line">		System.out.println(<span class="string">"电脑正常运行..."</span>);</span><br><span class="line">		<span class="keyword">if</span>(state == <span class="number">2</span>)</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> Computer1Exception(<span class="string">"蓝屏"</span>);</span><br><span class="line">		<span class="keyword">if</span>(state == <span class="number">3</span>)</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> Computer2Exception(<span class="string">"冒烟"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">reset</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"电脑重启..."</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getState</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> state;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setState</span><span class="params">(<span class="keyword">int</span> state)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.state = state;</span><br><span class="line">	&#125;	</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>老师类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Teacher</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span></span><br><span class="line">		Computer computer;</span><br><span class="line">	    String name;</span><br><span class="line">  </span><br><span class="line">	    Teacher(String name)&#123;</span><br><span class="line">	    	<span class="keyword">this</span>.name = name;</span><br><span class="line">	    	computer = <span class="keyword">new</span> Computer(<span class="number">3</span>);</span><br><span class="line">	    &#125;</span><br><span class="line">    </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">AttendingClass</span><span class="params">()</span> <span class="keyword">throws</span> ClassException </span>&#123;</span><br><span class="line">		   </span><br><span class="line">		<span class="comment">/**</span></span><br><span class="line"><span class="comment">		 * 蓝屏还是可以重启处理的异常，如果冒烟无法处理，那么就转化成下一层可以处理的异常</span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		     <span class="keyword">try</span> &#123;</span><br><span class="line">		    	  computer.run();</span><br><span class="line">		     &#125;<span class="keyword">catch</span>(Computer1Exception e) &#123;</span><br><span class="line">		    	 computer.reset();</span><br><span class="line">		     &#125;<span class="keyword">catch</span>(Computer2Exception e) &#123;</span><br><span class="line">		    	 <span class="keyword">throw</span> <span class="keyword">new</span> ClassException(<span class="string">"课时无法完成"</span>);</span><br><span class="line">		     &#125;</span><br><span class="line">			</span><br><span class="line">			  System.out.println(<span class="string">"上课"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>主函数：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">day1</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	 <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">     </span><br><span class="line">		  Teacher t = <span class="keyword">new</span> Teacher(<span class="string">"老毕"</span>);</span><br><span class="line">		  <span class="keyword">try</span> &#123;</span><br><span class="line">			  t.AttendingClass();</span><br><span class="line">		  &#125;<span class="keyword">catch</span>(ClassException e) &#123;</span><br><span class="line">			  System.out.println(<span class="string">"换课室"</span>);</span><br><span class="line">		  &#125;</span><br><span class="line">		  </span><br><span class="line">		 </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        
+    </section>
+</article>
+
+
+
+<div class="comments">
+    <div id="comments"></div>
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+    new Gitalk({
+        clientID: "7fbe80427f54741e289f",
+        clientSecret: "f34ed5fd92e54c9000bd37ba951948cb939deff5",
+        repo: "sanonz.github.io",
+        owner: "sanonz",
+        admin: ["sanonz"],
+        id: "2019/10/18/java基础day2",
+        distractionFreeMode: true,
+        title: "java基础day2",
+        body: "http://yoursite.com/2019/10/18/java基础day2/",
+        labels: []
+    }).render('comments');
+    </script>
+</div>
+
+</div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e4027971a230b210f4671f485b33846a";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+</footer>
+
+    </main>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var nodes = {
+            nav: $('#nav'),
+            aside: $('#aside'),
+            asideInner: $('#aside-inner'),
+            navInner: $('#nav-inner')
+        };
+
+        var doing = false;
+        nodes.asideInner.on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
+            if (nodes.aside.hasClass('mobile-open')) {
+                nodes.aside.removeClass('mobile-open');
+            } else {
+                nodes.aside.removeClass('mobile-close panel-show');
+            }
+            doing = false;
+        });
+        $('#open-panel, #aside-mask').on('click', function() {
+            if (doing) {
+                return;
+            }
+            
+            if (nodes.aside.hasClass('panel-show')) {
+                nodes.aside.addClass('mobile-close');
+            } else {
+                nodes.aside.addClass('mobile-open panel-show');
+            }
+        });
+        $('#open-menus').on('click', function() {
+            nodes.navInner.slideToggle();
+        });
+
+        if (window.innerWidth <= 960) {
+            setTimeout(function() {
+                nodes.navInner.slideUp();
+            }, 3000);
+        }
+    });
+    </script>
+    
+        <script type="text/javascript" src="/js/scrollspy.min.js"></script>
+        <script type="text/javascript">
+        $(document.body).scrollspy({target: '#aside-inner'});
+        </script>
+    
+
+</body>
+</html>
