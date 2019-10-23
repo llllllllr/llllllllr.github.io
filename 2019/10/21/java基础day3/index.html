@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+
+    
+
+    
+
+    <title>java基础day3 | Hexo</title>
+    <meta name="author" content="John Doe">
+    <meta name="version" content="1.0.0">
+    <meta name="keywords" content>
+    <meta name="description" content="异常中的finally语句finally代码块：一定会执行的代码，通常用来关闭资源有一个类👇：123456789class Demo&amp;#123;		int div(int a,int b) throws NegativeNumException&amp;#123;		  		if(b&amp;lt;0)		    throw new NegativeNumException(&#34;除数为负数&#34;);		return a/b;	&amp;#125;&amp;#125;调用👇：1234567891011121314p...">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+
+    
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/images/notebook.ico">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <main class="app">
+        <header class="header clearfix">
+    <div id="nav" class="nav">
+    <div class="nav-mobile">
+        <button id="open-panel" class="open-panel nav-mobile-item"><i class="icon-documents"></i></button>
+        <h1 class="nav-mobile-title nav-mobile-item">Hexo</h1>
+        <button id="open-menus" class="open-panel nav-mobile-item"><i class="icon-library"></i></button>
+    </div>
+
+    <nav id="nav-inner" class="nav-inner">
+        
+            <a class="nav-item" href="/">
+                <span class="nav-text">首页</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/front-end">
+                <span class="nav-text">Spring</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/linux">
+                <span class="nav-text">Linux</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/java-basic">
+                <span class="nav-text">java基础</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/alg">
+                <span class="nav-text">每日一道算法</span>
+            </a>
+        
+            <a class="nav-item" href="/tags">
+                <span class="nav-text">标签</span>
+            </a>
+        
+            <a class="nav-item" href="/archives">
+                <span class="nav-text">归档</span>
+            </a>
+        
+            <a class="nav-item" href="/atom.xml">
+                <span class="nav-text">订阅</span>
+            </a>
+        
+            <a class="nav-item" href="/about">
+                <span class="nav-text">关于</span>
+            </a>
+        
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#异常中的finally语句"><span class="toc-number">1.</span> <span class="toc-text">异常中的finally语句</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#异常在子类覆盖中的体现"><span class="toc-number">2.</span> <span class="toc-text">异常在子类覆盖中的体现</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#异常练习"><span class="toc-number">3.</span> <span class="toc-text">异常练习</span></a></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content"><article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            java基础day3
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/2019/10/21/java基础day3/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-10-21T00:01:40.000Z" itemprop="datePublished">2019-10-21</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/java-basic/">java-basic</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h1 id="异常中的finally语句"><a href="#异常中的finally语句" class="headerlink" title="异常中的finally语句"></a>异常中的finally语句</h1><blockquote>
+<p>finally代码块：一定会执行的代码，通常用来关闭资源</p>
+</blockquote>
+<p>有一个类👇：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">div</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span> <span class="keyword">throws</span> NegativeNumException</span>&#123;</span><br><span class="line">		  </span><br><span class="line">		<span class="keyword">if</span>(b&lt;<span class="number">0</span>)</span><br><span class="line">		    <span class="keyword">throw</span> <span class="keyword">new</span> NegativeNumException(<span class="string">"除数为负数"</span>);</span><br><span class="line">		<span class="keyword">return</span> a/b;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>调用👇：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">       </span><br><span class="line">		     Demo d = <span class="keyword">new</span> Demo();</span><br><span class="line">		     <span class="comment">//看到上一个函数会抛出异常，应该自动使用try..catch</span></span><br><span class="line">		     <span class="keyword">try</span> &#123;</span><br><span class="line">		    	 d.div(<span class="number">4</span>,-<span class="number">1</span>);</span><br><span class="line">		     &#125;<span class="keyword">catch</span>(NegativeNumException e)&#123;</span><br><span class="line">		    	 System.out.println(e.toString());</span><br><span class="line">		     &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">		    	 System.out.println(<span class="string">"finally.."</span>);</span><br><span class="line">                 <span class="comment">//return </span></span><br><span class="line">		     &#125;</span><br><span class="line">		  System.out.println(<span class="string">"over..."</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出👇：</p>
+<blockquote>
+<p>learning.NegativeNumException: 除数为负数<br>finally..<br>over…</p>
+</blockquote>
+<p>看似finally和输出over的句子都执行了。但是如果在catch子句里面加入 return</p>
+<p>那么就只有finally会输出（资源关闭）</p>
+<h1 id="异常在子类覆盖中的体现"><a href="#异常在子类覆盖中的体现" class="headerlink" title="异常在子类覆盖中的体现"></a>异常在子类覆盖中的体现</h1><ul>
+<li>子类在覆盖父类方法时，如果父类的方法抛出异常，那么子类的覆盖方法，只能抛出父类的异常或者该异常的子类</li>
+<li>如果父类的方法抛出多个异常，那么子类在覆盖方法时，只能抛出父类异常的子集</li>
+<li>如果父类或者接口的方法中没有异常抛出，那么子类在覆盖方法时，也不可以抛出异常。所以如果==子类方法发生了异常，就必须要用try处理，不能抛出==</li>
+</ul>
+<h1 id="异常练习"><a href="#异常练习" class="headerlink" title="异常练习"></a>异常练习</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NovalueException</span> <span class="keyword">extends</span> <span class="title">RuntimeException</span></span>&#123;</span><br><span class="line">	NovalueException(String msg)&#123;</span><br><span class="line">		<span class="keyword">super</span>(msg);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Shape</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">getArea</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Rec</span> <span class="keyword">implements</span> <span class="title">Shape</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> height,width;</span><br><span class="line">	Rec(<span class="keyword">int</span> h,<span class="keyword">int</span> w)&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(h &lt; <span class="number">0</span> || w &lt;<span class="number">0</span>)</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> NovalueException(<span class="string">"非法参数"</span>);</span><br><span class="line">		<span class="keyword">this</span>.height=h;</span><br><span class="line">		<span class="keyword">this</span>.width=w;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getArea</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(height*width);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>调用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">          </span><br><span class="line">	 Rec  r = <span class="keyword">new</span> Rec(-<span class="number">3</span>,<span class="number">4</span>);</span><br><span class="line">	 r.getArea();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>==正常逻辑代码和处理代码分开来==</p>
+
+        
+    </section>
+</article>
+
+
+
+<div class="comments">
+    <div id="comments"></div>
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+    new Gitalk({
+        clientID: "7fbe80427f54741e289f",
+        clientSecret: "f34ed5fd92e54c9000bd37ba951948cb939deff5",
+        repo: "sanonz.github.io",
+        owner: "sanonz",
+        admin: ["sanonz"],
+        id: "2019/10/21/java基础day3",
+        distractionFreeMode: true,
+        title: "java基础day3",
+        body: "http://yoursite.com/2019/10/21/java基础day3/",
+        labels: ["java-basic"]
+    }).render('comments');
+    </script>
+</div>
+
+</div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e4027971a230b210f4671f485b33846a";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+</footer>
+
+    </main>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var nodes = {
+            nav: $('#nav'),
+            aside: $('#aside'),
+            asideInner: $('#aside-inner'),
+            navInner: $('#nav-inner')
+        };
+
+        var doing = false;
+        nodes.asideInner.on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
+            if (nodes.aside.hasClass('mobile-open')) {
+                nodes.aside.removeClass('mobile-open');
+            } else {
+                nodes.aside.removeClass('mobile-close panel-show');
+            }
+            doing = false;
+        });
+        $('#open-panel, #aside-mask').on('click', function() {
+            if (doing) {
+                return;
+            }
+            
+            if (nodes.aside.hasClass('panel-show')) {
+                nodes.aside.addClass('mobile-close');
+            } else {
+                nodes.aside.addClass('mobile-open panel-show');
+            }
+        });
+        $('#open-menus').on('click', function() {
+            nodes.navInner.slideToggle();
+        });
+
+        if (window.innerWidth <= 960) {
+            setTimeout(function() {
+                nodes.navInner.slideUp();
+            }, 3000);
+        }
+    });
+    </script>
+    
+        <script type="text/javascript" src="/js/scrollspy.min.js"></script>
+        <script type="text/javascript">
+        $(document.body).scrollspy({target: '#aside-inner'});
+        </script>
+    
+
+</body>
+</html>
