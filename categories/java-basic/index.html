@@ -140,6 +140,102 @@
         <div id="content" class="content">
     <article class="article" itemscope itemprop="blogPost">
     
+    <section class="article-body markdown-body">
+        
+        <h3 id="用户模块"><a href="#用户模块" class="headerlink" title="用户模块"></a>用户模块</h3><h4 id="1-注册"><a href="#1-注册" class="headerlink" title="1.注册"></a>1.注册</h4><blockquote>
+<p>request </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username(用户名）,creditID(身份证号码）,age（年龄）,job（职业）,pregnantType（孕/产期）,  gestationalWeek（孕期发送：孕周）,confinementDate（产期-&gt;分娩日期）, confinementWeek（产期-&gt;分娩周）,confinementType（产期-&gt;分娩方式）</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>response</p>
+</blockquote>
+<p>success</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"msg"</span>: <span class="string">"注册成功"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>fail</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">"msg"</span>: <span class="string">"用户已存在"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>#### </p>
+<h3 id="问卷"><a href="#问卷" class="headerlink" title="问卷"></a>问卷</h3><h4 id="增加问卷答案"><a href="#增加问卷答案" class="headerlink" title="增加问卷答案"></a>增加问卷答案</h4><blockquote>
+<p>request</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">questionnaireName(问卷名称),creditID(身份证号码),answers(答案数组)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>response</p>
+</blockquote>
+<p>success</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"msg"</span>: <span class="string">"增加成功"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>fail</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">"msg"</span>: <span class="string">"参数错误"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看用户指定问卷"><a href="#查看用户指定问卷" class="headerlink" title="查看用户指定问卷"></a>查看用户指定问卷</h4><blockquote>
+<p>request</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">questionnaireName(问卷名称),creditID(身份证号码)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>response</p>
+</blockquote>
+<p>success</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"data"</span>: &#123;</span><br><span class="line">        <span class="attr">"questionnaireName"</span>: <span class="string">"xxx效能表"</span>,</span><br><span class="line">        <span class="attr">"answers"</span>: [A,B,C..],</span><br><span class="line">        <span class="attr">"createTime"</span>: <span class="number">1479048325000</span>,</span><br><span class="line">        <span class="attr">"updateTime"</span>: <span class="number">1479048325000</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>fail</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">"msg"</span>: <span class="string">"该用户还未填写问卷"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看用户全部问卷"><a href="#查看用户全部问卷" class="headerlink" title="查看用户全部问卷"></a>查看用户全部问卷</h4><blockquote>
+<p>request</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">creditID(身份证号码)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>response</p>
+</blockquote>
+<p>success</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"data"</span>: &#123;</span><br><span class="line">        [</span><br><span class="line">        "questionnaireName": "xxx效能表",</span><br><span class="line">        "answers": [A,B,C..],</span><br><span class="line">        "createTime": 1479048325000,</span><br><span class="line">        "updateTime": 1479048325000</span><br><span class="line">        ],</span><br><span class="line">        [</span><br><span class="line">        <span class="string">"questionnaireName"</span>: <span class="string">"xxx效能表"</span>,</span><br><span class="line">        <span class="string">"answers"</span>: [A,B,C..],</span><br><span class="line">        <span class="string">"createTime"</span>: <span class="number">1479048325000</span>,</span><br><span class="line">        <span class="string">"updateTime"</span>: <span class="number">1479048325000</span></span><br><span class="line">        ]       </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>fail</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">"msg"</span>: <span class="string">"该用户还未填写问卷"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="删除用户指定问卷"><a href="#删除用户指定问卷" class="headerlink" title="删除用户指定问卷"></a>删除用户指定问卷</h4><blockquote>
+<p>request</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">questionnaireName(问卷名称),creditID(身份证号码)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>response</p>
+</blockquote>
+<p>success</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"msg"</span>: <span class="string">"删除成功"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>fail</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">"msg"</span>: <span class="string">"未知错误"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>#### </p>
+<h3 id="文章"><a href="#文章" class="headerlink" title="文章"></a>文章</h3><h4 id="后台-增加文章"><a href="#后台-增加文章" class="headerlink" title="后台_增加文章"></a>后台_增加文章</h4><blockquote>
+<p>request</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title</span><br><span class="line">description</span><br><span class="line">content</span><br><span class="line">coverUrl</span><br><span class="line">imageUrl</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>response</p>
+</blockquote>
+<p>success</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"msg"</span>: <span class="string">"增加成功"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>fail</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">"msg"</span>: <span class="string">"未知错误"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h4>
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
     <header class="article-header">
         
         <h1 itemprop="name">
