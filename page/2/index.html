@@ -143,6 +143,35 @@
     <header class="article-header">
         
         <h1 itemprop="name">
+            <a href="/2019/10/15/登录/">登录</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/page/2/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-10-15T05:57:21.000Z" itemprop="datePublished">2019-10-15</time>
+</a>
+
+            
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
             <a href="/2019/10/13/通用数据端响应对象/">通用数据端响应对象</a>
         </h1>
         
@@ -529,151 +558,6 @@
     <section class="article-body markdown-body">
         
         <h1 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h1><h2 id="进程概念"><a href="#进程概念" class="headerlink" title="进程概念"></a>进程概念</h2>
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/09/10/Linux/">Linux</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/page/2/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-09-09T23:57:59.000Z" itemprop="datePublished">2019-09-10</time>
-</a>
-
-            
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/linux/">linux</a>
-</div>
-
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <h1 id="命令格式"><a href="#命令格式" class="headerlink" title="命令格式"></a>命令格式</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令 [选项] [参数]</span><br></pre></td></tr></table></figure>
-
-<h1 id="查询目录中的内容"><a href="#查询目录中的内容" class="headerlink" title="查询目录中的内容"></a>查询目录中的内容</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ls [选项] [文件或目录]</span><br><span class="line"></span><br><span class="line">选项：</span><br><span class="line">-a 显示所有文件，包括隐藏文件（.开头的，系统文件，以免误操作，其实是可以查看的）</span><br><span class="line">-l 显示详细信息</span><br><span class="line">-d 查看目录属性</span><br><span class="line">-h 人性化显示文件大小</span><br><span class="line">-i 显示inode</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls -l的结果（可以简写为ll)</span><br><span class="line"></span><br><span class="line">-rw-r--r-- 1 llllll6r llllll6r     8980  2月 16  2019 examples.desktop</span><br></pre></td></tr></table></figure>
-
-<h4 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h4><p>-(第一个)： 文件类型（- 文件 d 目录 | 软链接文件）</p>
-<p>rw-  （u所有者）</p>
-<p>r–      (g所属组)</p>
-<p>r–      (o其他人)</p>
-<p>（用户和文件的关系）</p>
-<p>用户组：相同身份相同权限的人</p>
-<p>r 读</p>
-<p>w 写</p>
-<p>x 执行</p>
-<h4 id="引用计数"><a href="#引用计数" class="headerlink" title="引用计数"></a>引用计数</h4><p>1</p>
-<h4 id="所有者"><a href="#所有者" class="headerlink" title="所有者"></a>所有者</h4><p>llllll6r</p>
-<h4 id="所属组"><a href="#所属组" class="headerlink" title="所属组"></a>所属组</h4><p>llllll6r</p>
-<h4 id="文件大小"><a href="#文件大小" class="headerlink" title="文件大小"></a>文件大小</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls -lh之后 ⭐文件大小以8.8k显示（本来显示8980）</span><br><span class="line"></span><br><span class="line">-rw-r--r-- 1 llllll6r llllll6r 8.8K  2月 16  2019 examples.desktop</span><br></pre></td></tr></table></figure>
-
-<h4 id="文件的最后一次修改时间"><a href="#文件的最后一次修改时间" class="headerlink" title="文件的最后一次修改时间"></a>文件的最后一次修改时间</h4><h1 id="目录-文件处理命令"><a href="#目录-文件处理命令" class="headerlink" title="目录/文件处理命令"></a>目录/文件处理命令</h1><p>🏃‍目录：普通文件用来保存数据，目录用来保存文件（类似windows中的文件夹）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建目录（make directories)</span></span><br><span class="line">mkdir -p [目录名]</span><br><span class="line"></span><br><span class="line">-p 递归创建</span><br><span class="line"></span><br><span class="line"><span class="comment">//切换所在目录(change directory)</span></span><br><span class="line">cd [目录]</span><br><span class="line">cd ~  进入当前用户的家目录</span><br><span class="line">cd -  进入上次目录</span><br><span class="line">cd .. 进入上一及目录</span><br><span class="line">cd .  进入当前目录</span><br><span class="line"></span><br><span class="line"><span class="comment">//查询所在目录位置(print working directory)</span></span><br><span class="line">pwd</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除空目录（remove empty directories)</span></span><br><span class="line">rmdir [目录名]</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除文件或目录（remove)</span></span><br><span class="line">rm -rf [文件或目录]</span><br><span class="line"></span><br><span class="line">选项</span><br><span class="line">-r 删除目录</span><br><span class="line">-f 强制</span><br><span class="line"></span><br><span class="line">⭐ 别执行 rm -rf /(别把根目录直接删掉)</span><br><span class="line">    </span><br><span class="line"><span class="comment">//复制命令（copy)</span></span><br><span class="line">cp [选项] [源文件或目录] [目标目录]</span><br><span class="line"></span><br><span class="line">选项</span><br><span class="line">-r 复制目录</span><br><span class="line">-p 连带文件属性复制</span><br><span class="line">-d 若源文件是链接文件，则复制链接属性</span><br><span class="line">-a 相当于 -pdr(完全一样，包括创建时间等等)</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="comment">//剪切或改名命令（move)</span></span><br><span class="line">mv [源文件或目录] [目标目录]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">如果源文件和目标文件在统一目录下，那就是改名命令，否则是剪切</span><br></pre></td></tr></table></figure>
-
-<h1 id="常用目录的作用"><a href="#常用目录的作用" class="headerlink" title="常用目录的作用"></a>常用目录的作用</h1><ul>
-<li>/根目录</li>
-<li>/bin命令保存目录（普通用户就可以读取的命令）</li>
-<li>/boot启动目录，启动相关文件</li>
-<li>/dev设备文件保存目录</li>
-<li>/etc配置文件保存目录</li>
-<li>/home普通用户的家目录</li>
-<li>/lib系统库保存目录</li>
-<li>/mnt系统挂载目录</li>
-<li>/media挂载目录</li>
-<li>/root超级用户的家目录</li>
-<li>/tmp临时目录</li>
-<li>/sbin命令保存目录</li>
-<li>/proc直接写入内存的</li>
-<li>/sys同上</li>
-<li>/usr系统软件资源目录<ul>
-<li>/usr/bin/系统命令（普通用户）</li>
-<li>/usr/sbin/系统命令（超级用户）</li>
-</ul>
-</li>
-<li>/var系统相关文档内容</li>
-</ul>
-<p>⭐可以在家目录root或home，以及tmp目录下随便放内容</p>
-<p>⭐只把必要的数据放在根目录，其它放在别的盘</p>
-<h1 id="链接命令"><a href="#链接命令" class="headerlink" title="链接命令"></a>链接命令</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//生成链接文件 ln(link)</span></span><br><span class="line"></span><br><span class="line">ln -s [源文件] [目标文件]</span><br><span class="line">选项：</span><br><span class="line">-s 创建软连接</span><br><span class="line"></span><br><span class="line">👉例子</span><br><span class="line">输入： ln shadow.sh ttmp/ana.har</span><br><span class="line">结果：</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">   进入ana.har发现和shaow.sh的内容是一样的</span></span><br><span class="line"><span class="comment">   且如下图1所示，他们两个的i结点也是一样的</span></span><br><span class="line"><span class="comment">   如图2，ana.har引用计数为2</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="C:%5CUsers%5C12284%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1567468833982.png" alt="1567468833982"></p>
-<p><img src="C:%5CUsers%5C12284%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1567468928510.png" alt="1567468928510"></p>
-<blockquote>
-<p>硬链接特征：</p>
-<ol>
-<li>拥有相同的i结点和block存储快，可以看作是同一个文件</li>
-<li>可以通过I结点识别</li>
-<li>不能跨分区</li>
-<li>不能针对目录使用</li>
-</ol>
-<p>软连接特征：</p>
-<ol>
-<li>类似windows快捷方式</li>
-<li>软连接拥有自己的I结点和block块，但是数据块中只保存源文件的文件名和I结点好，并没有实际的文件数据</li>
-<li>lrwxrwxrwx l软连接（L）且软连接文件权限都为 rwxrwxrwx（软链接里面存储的是源文件的i结点和存储位置，访问软链接的内容只是找到i结点和存储位置，当根据这些信息找到源文件时，如果源文件不是777，那也是看不了的）</li>
-<li>修改任一文件，另一个都会改变</li>
-<li>删除源文件，软链接不能使用</li>
-</ol>
-</blockquote>
-<p>👉首先给shadow.sh创建一个软连接和一个硬链接</p>
-<p><img src="C:%5CUsers%5C12284%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1567554289130.png" alt="1567554289130"></p>
-<p>👉查看I结点</p>
-<p><img src="C:%5CUsers%5C12284%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1567554469692.png" alt="1567554469692"></p>
-<p>⭐</p>
-<ul>
-<li>可以看到硬链接的i结点和源文件一模一样，而软链接的不一样</li>
-<li>而且软连接的开头是l(L)，说明它是一个软链接</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">👉简略</span><br><span class="line"><span class="comment">//修改文件</span></span><br><span class="line">echo [内容] &gt;&gt; 文件</span><br><span class="line"></span><br><span class="line"><span class="comment">//查看内容</span></span><br><span class="line">cat 文件名</span><br></pre></td></tr></table></figure>
-
-<p><img src="C:%5CUsers%5C12284%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1567555307415.png" alt="1567555307415"></p>
-<p>⭐有一个很奇怪的点，软链接修改了之后和原文件是不一样的，和老师演示的结果不同</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s [原文件] [目标文件]</span><br></pre></td></tr></table></figure>
-
-<p>软链接：</p>
-<p>==如果源文件不写绝对路径，源文件和软链接只有在同一个目录下才能找到!!!!!==</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch xxx</span><br></pre></td></tr></table></figure>
-
-<h1 id="搜索命令"><a href="#搜索命令" class="headerlink" title="搜索命令"></a>搜索命令</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">👉文件搜索命令</span><br><span class="line"><span class="comment">//locate 速度块</span></span><br><span class="line">locate 文件名</span><br><span class="line"><span class="number">1</span>.在后台数据库中按文件搜索</span><br><span class="line"><span class="number">2</span>./<span class="keyword">var</span>/lib/molocate---&gt;locate命令搜索的后台数据库</span><br><span class="line"><span class="number">3</span>.updatedb---&gt;更新数据库</span><br><span class="line"><span class="number">4</span>.只能按照文件名来搜索</span><br><span class="line"></span><br><span class="line">👉命令搜索命令</span><br><span class="line"><span class="comment">//whereis和which</span></span><br><span class="line">whereis 命令名（搜索命令所在了路径以及帮助文档所在的位置）</span><br><span class="line">选项：</span><br><span class="line">-b 只查找可执行文件</span><br><span class="line">-m 只查找帮助文件</span><br><span class="line"></span><br><span class="line">which 文件名（搜索命令所在路径及别名）</span><br><span class="line"><span class="number">1</span>.如果没有别名的话就只会显示路径</span><br><span class="line"></span><br><span class="line"><span class="comment">//find 整个根目录遍历，耗费资源</span></span><br><span class="line">find [搜索范围] [搜索条件]</span><br><span class="line">#搜索文件</span><br><span class="line">例如:</span><br><span class="line">find / -name install.log</span><br><span class="line">#避免大范围搜索，会非常耗费资源（比如这里面在根目录下查找）</span><br><span class="line">#find是在系统当中搜索符合条件的文件名。如果需要匹配，使用通配符匹配，通配符是完全匹配</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">linux中的通配符</span></span><br><span class="line"><span class="comment">*  匹配任意内容</span></span><br><span class="line"><span class="comment">？ 匹配任意一个字符</span></span><br><span class="line"><span class="comment">[] 匹配任意一个中括号内的字符</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-<p>👉<strong>locate</strong>:</p>
-<ul>
-<li>在没更新数据库之前，新建的文件是不能被找到的，touch xxx-&gt;updatedb或重启-&gt;locate xxx才能找到</li>
-</ul>
-<p><img src="C:%5CUsers%5C12284%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1567641136853.png" alt="1567641136853"></p>
-<p>👉<strong>whereis和which</strong>：</p>
-<ul>
-<li>只能查系统文件</li>
-</ul>
-<p><img src="C:%5CUsers%5C12284%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1567642153041.png" alt="1567642153041"></p>
-<p>👉<strong>PATH环境变量</strong></p>
-<ul>
-<li>定义的是系统搜索命令的路径</li>
-</ul>
-<p>👉<strong>find</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">find /root -name <span class="string">"ab[cd]"</span></span><br><span class="line">---&gt;搜索以abc或abd命名的文件</span><br><span class="line"></span><br><span class="line">find /root -name <span class="string">"*[cd]"</span></span><br><span class="line">---&gt;搜索所有以b结尾或以d结尾的文件名</span><br><span class="line"></span><br><span class="line">find /root -iname install.log</span><br><span class="line">----&gt;不区分大小写</span><br><span class="line"></span><br><span class="line">find /root -user root</span><br><span class="line">-----&gt;按照所有者搜索</span><br><span class="line"></span><br><span class="line">find /root -nouser</span><br><span class="line">-----&gt;查找没有所有者的文件</span><br><span class="line"></span><br><span class="line">find /<span class="keyword">var</span>/log/ -mtime +<span class="number">10</span></span><br><span class="line">-----&gt;查找<span class="number">10</span>天前修改的文件</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">-10 10天内修改文件</span></span><br><span class="line"><span class="comment">10  10天当天修改的文件</span></span><br><span class="line"><span class="comment">+10 10天前修改的文件</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">atime 文件访问时间</span></span><br><span class="line"><span class="comment">ctime 改变文件属性</span></span><br><span class="line"><span class="comment">mtime 修改文件内容</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line">find . -size <span class="number">25</span>k</span><br><span class="line">---&gt;查找当前目录下大小为<span class="number">25</span>k的文件（k小写，M大写）</span><br><span class="line"></span><br><span class="line">find . -inum <span class="number">262422</span></span><br><span class="line">---&gt;查找当前目录下i结点是<span class="number">262422</span>的文件</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">find /etc -size +<span class="number">20</span>k -a -size -<span class="number">50</span>k</span><br><span class="line">----&gt;查找/etc目录下，大于<span class="number">20</span>KB且小于<span class="number">50</span>KB的文件</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">-a and 且</span></span><br><span class="line"><span class="comment">-o or  或</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line">find /etc -size +<span class="number">20</span>k -a -size -<span class="number">50</span>k -exec ls -lh ()\;</span><br><span class="line">----&gt;查找/etc/目录下，大于<span class="number">20</span>KB且小于<span class="number">50</span>KB的文件，并显示详细信息</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">-exxec/-ok 命令&#123;&#125;\; 对搜索结果执行操作</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h1><p><strong>相对路径</strong>：参照当前所在目录进行查找</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">llllll6r<span class="meta">@llllll</span>6r:~/japan/tokyo$ cd ../hello</span><br><span class="line"></span><br><span class="line"><span class="comment">//  “../”表示上一级目录，这条命令会进入japan的hello目录</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>相对路径</strong>：从根目录开始指定，一级一级递归查找，在任何目录下，都能进入指定位置。</p>
-<h4 id="清屏"><a href="#清屏" class="headerlink" title="清屏"></a>清屏</h4><p>==crtl+l==</p>
-
         
     </section>
 </article>

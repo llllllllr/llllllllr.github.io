@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+
+    
+
+    
+
+    <title>Hexo</title>
+    <meta name="author" content="John Doe">
+    <meta name="version" content="1.0.0">
+    <meta name="keywords" content>
+    <meta name="description" content="sqluser12345678910111213CREATE TABLE `user` (`user_id`  int NOT NULL COMMENT &#39;用户id&#39; ,`credit_id`  varchar(255) NOT NULL COMMENT &#39;身份证号码&#39; ,`age`  int NULL COMMENT &#39;年龄&#39; ,`job`  varchar(255) NULL COMMENT &#39;职业&#39; ,`pregnant_type`  varchar(255) NULL COMME...">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+
+    
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/images/notebook.ico">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <main class="app">
+        <header class="header clearfix">
+    <div id="nav" class="nav">
+    <div class="nav-mobile">
+        <button id="open-panel" class="open-panel nav-mobile-item"><i class="icon-documents"></i></button>
+        <h1 class="nav-mobile-title nav-mobile-item">Hexo</h1>
+        <button id="open-menus" class="open-panel nav-mobile-item"><i class="icon-library"></i></button>
+    </div>
+
+    <nav id="nav-inner" class="nav-inner">
+        
+            <a class="nav-item" href="/">
+                <span class="nav-text">首页</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/front-end">
+                <span class="nav-text">Spring</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/linux">
+                <span class="nav-text">Linux</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/java-basic">
+                <span class="nav-text">java基础</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/alg">
+                <span class="nav-text">每日一道算法</span>
+            </a>
+        
+            <a class="nav-item" href="/tags">
+                <span class="nav-text">标签</span>
+            </a>
+        
+            <a class="nav-item" href="/archives">
+                <span class="nav-text">归档</span>
+            </a>
+        
+            <a class="nav-item" href="/atom.xml">
+                <span class="nav-text">订阅</span>
+            </a>
+        
+            <a class="nav-item" href="/about">
+                <span class="nav-text">关于</span>
+            </a>
+        
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#sql"><span class="toc-number">1.</span> <span class="toc-text">sql</span></a></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content"><article class="article" itemscope itemprop="blogPost">
+    
+    <section class="article-body markdown-body">
+        
+        <h3 id="sql"><a href="#sql" class="headerlink" title="sql"></a>sql</h3><p>user</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`user`</span> (</span><br><span class="line"><span class="string">`user_id`</span>  <span class="built_in">int</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'用户id'</span> ,</span><br><span class="line"><span class="string">`credit_id`</span>  <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'身份证号码'</span> ,</span><br><span class="line"><span class="string">`age`</span>  <span class="built_in">int</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'年龄'</span> ,</span><br><span class="line"><span class="string">`job`</span>  <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'职业'</span> ,</span><br><span class="line"><span class="string">`pregnant_type`</span>  <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'0 产期 1 孕期'</span> ,</span><br><span class="line"><span class="string">`pregnant_week`</span>  <span class="built_in">int</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'孕周'</span> ,</span><br><span class="line"><span class="string">`confinement_date`</span>  <span class="built_in">date</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'分娩日期'</span> ,</span><br><span class="line"><span class="string">`confinement_week`</span>  <span class="built_in">int</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'分娩周'</span> ,</span><br><span class="line"><span class="string">`confinement_type`</span>  <span class="built_in">int</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'分娩方式 0顺产1剖腹产'</span> ,</span><br><span class="line">PRIMARY <span class="keyword">KEY</span> (<span class="string">`user_id`</span>)</span><br><span class="line">)</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+
+<p>qusetionnaire </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`qusetionnaire`</span> (</span><br><span class="line"><span class="string">`qn_id`</span>  <span class="built_in">int</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'问卷id'</span> ,</span><br><span class="line"><span class="string">`qn_name`</span>  <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'问卷名称'</span> ,</span><br><span class="line"><span class="string">`user_id`</span>  <span class="built_in">int</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> ,</span><br><span class="line"><span class="string">`qn_answer`</span>  <span class="built_in">varchar</span>(<span class="number">2047</span>) <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'A|B|CD'</span> ,</span><br><span class="line">PRIMARY <span class="keyword">KEY</span> (<span class="string">`qn_id`</span>),</span><br><span class="line"><span class="keyword">CONSTRAINT</span> <span class="string">`f_uid`</span> <span class="keyword">FOREIGN</span> <span class="keyword">KEY</span> (<span class="string">`user_id`</span>) <span class="keyword">REFERENCES</span> <span class="string">`user`</span> (<span class="string">`user_id`</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>异步调用请求，局部刷新页面</p>
+<p>consult</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`consult`</span> (</span><br><span class="line"><span class="string">`sonsult_id`</span>  <span class="built_in">int</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'咨询id'</span> ,</span><br><span class="line"><span class="string">`user_id`</span>  <span class="built_in">int</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> ,</span><br><span class="line"><span class="string">`consult_title`</span>  <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> ,</span><br><span class="line"><span class="string">`consult_content`</span>  <span class="built_in">text</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> ,</span><br><span class="line"><span class="string">`create_time`</span>  datetime <span class="literal">NULL</span> ,</span><br><span class="line">PRIMARY <span class="keyword">KEY</span> (<span class="string">`sonsult_id`</span>),</span><br><span class="line"><span class="keyword">CONSTRAINT</span> <span class="string">`cf_uid`</span> <span class="keyword">FOREIGN</span> <span class="keyword">KEY</span> (<span class="string">`user_id`</span>) <span class="keyword">REFERENCES</span> <span class="string">`user`</span> (<span class="string">`user_id`</span>)</span><br><span class="line">)</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+
+<p>comment</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`NewTable`</span> (</span><br><span class="line"><span class="string">`id`</span>  <span class="built_in">int</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'咨询id'</span> ,</span><br><span class="line"><span class="string">`user_id`</span>  <span class="built_in">int</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'用户id'</span> ,</span><br><span class="line"><span class="string">`content`</span>  <span class="built_in">text</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'回复正文'</span> ,</span><br><span class="line"><span class="string">`commentator_id`</span>  <span class="built_in">int</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'回复人id'</span> ,</span><br><span class="line"><span class="string">`comment_time`</span>  datetime <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'回复时间'</span> ,</span><br><span class="line"><span class="string">`consult_id`</span>  <span class="built_in">int</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'问题id'</span> ,</span><br><span class="line">PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>)</span><br><span class="line">)</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+
+
+        
+    </section>
+</article>
+
+
+
+<div class="comments">
+    <div id="comments"></div>
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+    new Gitalk({
+        clientID: "7fbe80427f54741e289f",
+        clientSecret: "f34ed5fd92e54c9000bd37ba951948cb939deff5",
+        repo: "sanonz.github.io",
+        owner: "sanonz",
+        admin: ["sanonz"],
+        id: "2019/10/29/sql",
+        distractionFreeMode: true,
+        title: "",
+        body: "http://yoursite.com/2019/10/29/sql/",
+        labels: []
+    }).render('comments');
+    </script>
+</div>
+
+</div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e4027971a230b210f4671f485b33846a";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+</footer>
+
+    </main>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var nodes = {
+            nav: $('#nav'),
+            aside: $('#aside'),
+            asideInner: $('#aside-inner'),
+            navInner: $('#nav-inner')
+        };
+
+        var doing = false;
+        nodes.asideInner.on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
+            if (nodes.aside.hasClass('mobile-open')) {
+                nodes.aside.removeClass('mobile-open');
+            } else {
+                nodes.aside.removeClass('mobile-close panel-show');
+            }
+            doing = false;
+        });
+        $('#open-panel, #aside-mask').on('click', function() {
+            if (doing) {
+                return;
+            }
+            
+            if (nodes.aside.hasClass('panel-show')) {
+                nodes.aside.addClass('mobile-close');
+            } else {
+                nodes.aside.addClass('mobile-open panel-show');
+            }
+        });
+        $('#open-menus').on('click', function() {
+            nodes.navInner.slideToggle();
+        });
+
+        if (window.innerWidth <= 960) {
+            setTimeout(function() {
+                nodes.navInner.slideUp();
+            }, 3000);
+        }
+    });
+    </script>
+    
+        <script type="text/javascript" src="/js/scrollspy.min.js"></script>
+        <script type="text/javascript">
+        $(document.body).scrollspy({target: '#aside-inner'});
+        </script>
+    
+
+</body>
+</html>
