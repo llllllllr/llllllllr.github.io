@@ -143,6 +143,101 @@
     <header class="article-header">
         
         <h1 itemprop="name">
+            <a href="/2020/02/13/范式/">范式</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/categories/java-basic/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2020-02-13T11:52:27.000Z" itemprop="datePublished">2020-02-13</time>
+</a>
+
+            
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h2 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h2><p><img src="http://llllllllr.top/20200213200547.png" alt></p>
+<blockquote>
+<ul>
+<li>范式就是一种数据表设计标准的级别，就好像四六级一样</li>
+<li>数据库范式分为1NF,2NF，3NFB,BCNF…符合高一级的范式必定符合低一级的范式，满足第二范式的数据报表肯定满足第一范式，满足第三范式的数据表一定满足第二范式，以此类推</li>
+</ul>
+</blockquote>
+<h3 id="INF"><a href="#INF" class="headerlink" title="INF"></a>INF</h3><ul>
+<li><p><strong>原子性</strong>：一列一列一列（下图不满足原子性）</p>
+<p><img src="http://llllllllr.top/20200213201132.png" alt></p>
+</li>
+<li><p><strong>不重复</strong>： 不存在属性名相等的两列 ：如果上图有两列都是“年级”，那么这个表不满足INF</p>
+</li>
+</ul>
+<p><img src="http://llllllllr.top/20200213201355.png" alt></p>
+<h3 id="1NF问题："><a href="#1NF问题：" class="headerlink" title="1NF问题："></a>1NF问题：</h3><ul>
+<li>数据冗余，比如前三列，前面三行小花的“id,姓名，系名，系主任”都是一样的</li>
+<li>插入异常：有一个新的系，但是还没有学生，那么没办法插入到这个数据表里面</li>
+<li>删除异常：如果某个系下面的学生信息全部清空，那么这个系也不存在了</li>
+<li>修改异常：如果要把学生的系更换，比如小花的，那么前三行数据都要更改</li>
+</ul>
+<h2 id="2NF"><a href="#2NF" class="headerlink" title="2NF"></a>2NF</h2><h4 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h4><p><img src="http://llllllllr.top/20200213201821.png" alt></p>
+<p><img src="http://llllllllr.top/20200213201355.png" alt></p>
+<ul>
+<li><p><strong>码（可能不止一个）</strong>：知道了码，就能确定别的属性</p>
+<blockquote>
+<p>知道了学号，就能确定一个人的姓名，班名，班主任</p>
+<p>同时知道学号和课名，就能知道你的分数</p>
+</blockquote>
+</li>
+</ul>
+<p>写成：（学号，课名）——-&gt;姓名，班名，班主任，分数</p>
+<ul>
+<li><strong>（学号，课名）一个集合</strong>—&gt;码/候选码</li>
+<li><strong>学号，课名</strong>—-&gt;主属性</li>
+<li><strong>姓名，班名，班主任，分数</strong>—-&gt;非主属性</li>
+</ul>
+<h4 id="函数依赖"><a href="#函数依赖" class="headerlink" title="函数依赖"></a>函数依赖</h4><p><img src="http://llllllllr.top/20200213202520.png" alt></p>
+<p><img src="http://llllllllr.top/20200213202559.png" alt></p>
+<p><img src="http://llllllllr.top/20200213202728.png" alt></p>
+<h4 id="判断是否符合2NF"><a href="#判断是否符合2NF" class="headerlink" title="判断是否符合2NF"></a>判断是否符合2NF</h4><p><img src="http://llllllllr.top/20200213202826.png" alt></p>
+<p><img src="http://llllllllr.top/20200213201355.png" alt></p>
+<p><strong>（学号，课名）—-&gt;姓名，只要知道学号就知道姓名，存在部分函数依赖，不符合2NF要求</strong></p>
+<p>拆分如下（符合2NF）：</p>
+<p><img src="http://llllllllr.top/20200213203102.png" alt></p>
+<p>问题：</p>
+<ul>
+<li>插入：如果只有系，没有学生，无法插入</li>
+<li>删除：删除某个系的全部学生，这个系也不存在了</li>
+</ul>
+<p>优点：</p>
+<ul>
+<li>数据冗余解决</li>
+<li>修改学生的系只要修改一条数据</li>
+</ul>
+<h3 id="3NF"><a href="#3NF" class="headerlink" title="3NF"></a>3NF</h3><p><img src="http://llllllllr.top/20200213203410.png" alt></p>
+<h3 id="传递函数依赖"><a href="#传递函数依赖" class="headerlink" title="传递函数依赖"></a>传递函数依赖</h3><blockquote>
+<p>班主任依赖于班名，班名依赖于学号，那么班主任依赖于学号</p>
+<p>班主任和学生本来不挂钩，班主任只和班名有关，但是知道学号就知道班名，知道班名就知道班主任，所以存在传递关系（好像更复杂了…</p>
+</blockquote>
+<p>所以把上面的表再拆分：</p>
+<p><img src="http://llllllllr.top/20200213203658.png" alt></p>
+<ul>
+<li>新建一个系，没有学生也OK</li>
+<li>删除一个系下所有学生，这个系还是存在</li>
+</ul>
+
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
             <a href="/2019/11/19/java基础之集合框架/">java基础之集合框架</a>
         </h1>
         
@@ -1270,137 +1365,6 @@
 
 <p>主函数：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">day1</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	 <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">     </span><br><span class="line">		  Teacher t = <span class="keyword">new</span> Teacher(<span class="string">"老毕"</span>);</span><br><span class="line">		  <span class="keyword">try</span> &#123;</span><br><span class="line">			  t.AttendingClass();</span><br><span class="line">		  &#125;<span class="keyword">catch</span>(ClassException e) &#123;</span><br><span class="line">			  System.out.println(<span class="string">"换课室"</span>);</span><br><span class="line">		  &#125;</span><br><span class="line">		  </span><br><span class="line">		 </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/10/17/java基础day1/">java基础day1</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/categories/java-basic/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-10-17T00:11:59.000Z" itemprop="datePublished">2019-10-17</time>
-</a>
-
-            
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <h1 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h1><p>⭐内部类的访问规则</p>
-<ul>
-<li><p>内部类可以直接访问外部类的成员，包括私有成员。</p>
-</li>
-<li><p>内部类之所以可以直接访问外部类成员，因为它持有了内部类的对象 格式 Outer.this</p>
-</li>
-<li><p>外部类要访问内部类，必须建立内部类对象。</p>
-</li>
-</ul>
-<p>⭐在外部类里面新建一个内部类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer</span></span>&#123;;</span><br><span class="line">	<span class="keyword">int</span> x;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"method"</span>);</span><br><span class="line">        Inner in = <span class="keyword">new</span> Inner();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Inner</span></span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">innner</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			System.out.println(<span class="string">"inner"</span>+x);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>⭐调用内部类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">       <span class="comment">/*注意不能用这种方式调用！！</span></span><br><span class="line"><span class="comment">	Inner in = new Inner();</span></span><br><span class="line"><span class="comment">	in.innner();</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">    </span><br><span class="line">      <span class="number">1</span>.上面这一串应该放在外部类中，然后直接调用外部类的方法。</span><br><span class="line">      <span class="number">2</span>.因为可能有另外一个外部类中也有Ineer <span class="class"><span class="keyword">class</span>，所以应该注明外部类 </span></span><br><span class="line"><span class="class">          </span></span><br><span class="line"><span class="class">       👇通过外部类调用	</span></span><br><span class="line"><span class="class">       <span class="title">Outer</span> <span class="title">outer</span> </span>= <span class="keyword">new</span> Outer();</span><br><span class="line">	outer.method();</span><br><span class="line">    </span><br><span class="line">      👇直接调用<span class="comment">//非私有才行---------&gt;实际上当内部类在成员位置上，就可以被成员修饰符所修饰可以是private，public...其中static修饰的就是静态内部类</span></span><br><span class="line">      Outer.Inner in = <span class="keyword">new</span> Outer().new Inner();</span><br><span class="line">   in.innner();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="静态内部类"><a href="#静态内部类" class="headerlink" title="静态内部类"></a>静态内部类</h2><h4 id="静态内部类只能引用外部类的-静态成员"><a href="#静态内部类只能引用外部类的-静态成员" class="headerlink" title="静态内部类只能引用外部类的==静态成员=="></a>静态内部类只能引用外部类的==静态成员==</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//外部类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> x = <span class="number">2</span>;</span><br><span class="line">	<span class="comment">//内部类</span></span><br><span class="line">	 <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Inner</span></span>&#123;</span><br><span class="line">		 <span class="function"><span class="keyword">void</span> <span class="title">innner</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			System.out.println(<span class="string">"inner"</span>+x);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="外部类中引用静态内部类"><a href="#外部类中引用静态内部类" class="headerlink" title="外部类中引用静态内部类"></a>外部类中引用静态内部类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">new</span> Outer.Inner().innner();</span><br><span class="line">     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>👇报错</p>
-<p>Cannot make a static reference to the non-static field x</p>
-<p>所以给x添加static修饰符</p>
-<h4 id="外部类中的静态方法访问内部类"><a href="#外部类中的静态方法访问内部类" class="headerlink" title="外部类中的静态方法访问内部类"></a>外部类中的静态方法访问内部类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//外部类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> x = <span class="number">2</span>;</span><br><span class="line">	<span class="comment">//内部类</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Inner</span></span>&#123;</span><br><span class="line">		 <span class="function"><span class="keyword">void</span> <span class="title">innner</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			System.out.println(<span class="string">"inner"</span>+x);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	 <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">outerStaticFun</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		 <span class="keyword">new</span>  Inner().innner();</span><br><span class="line">	 &#125;</span><br></pre></td></tr></table></figure>
-
-<p>这样访问是会报错的，因为外部类Outer的静态方法访问内部类时，==内部类也必须是静态的==。所以应该在class Inner()前面加上static</p>
-<h1 id="局部内部类"><a href="#局部内部类" class="headerlink" title="局部内部类"></a>局部内部类</h1><p>在外部类的方法中定义一个类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> x=<span class="number">3</span>;</span><br><span class="line">	<span class="comment">//外部类的方法</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">//在方法里面定义类</span></span><br><span class="line">		<span class="class"><span class="keyword">class</span> <span class="title">Inner</span></span>&#123;</span><br><span class="line">			<span class="function"><span class="keyword">void</span> <span class="title">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">				System.out.println(Outer.<span class="keyword">this</span>.x);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>但是在这里面function==不能被修饰为静态的==。因为拥有静态的方法的内部类必然是静态内部类，但是==在方法里面的内部类==无法被修饰为静态的（==因为不是成员==）。</p>
-<ul>
-<li>非静态，没对象，不运行</li>
-</ul>
-<p>即使调用外部类的方法method，Inner class里面的函数还是不会被运行。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		 Outer o  = <span class="keyword">new</span> Outer();</span><br><span class="line">        <span class="comment">//不会输出任何东西</span></span><br><span class="line">		 o.method();</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-<p>👇那么在方法里面创建对象</p>
-<p>在method()方法里面调用 new Inner().function();</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Inner().function();</span><br></pre></td></tr></table></figure>
-
-<p><strong>局部内部类里面有变量Y</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> x=<span class="number">3</span>;</span><br><span class="line">	<span class="comment">//外部类的方法</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">//在方法里面定义类</span></span><br><span class="line">		<span class="class"><span class="keyword">class</span> <span class="title">Inner</span></span>&#123;</span><br><span class="line">		    ⭐<span class="keyword">int</span> y = <span class="number">2</span>;</span><br><span class="line">			<span class="function"><span class="keyword">void</span> <span class="title">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">				System.out.println(⭐y);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">new</span> Inner().function();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Y虽然能打印出来，但是其实它是final的常量。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">int</span> x=<span class="number">3</span>;</span><br><span class="line">	<span class="comment">//外部类的方法</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">method</span><span class="params">(<span class="keyword">int</span> a )</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> y =<span class="number">2</span>;</span><br><span class="line">		👉a++;</span><br><span class="line">		<span class="comment">//在方法里面定义类</span></span><br><span class="line">		<span class="class"><span class="keyword">class</span> <span class="title">Inner</span></span>&#123;</span><br><span class="line">			<span class="function"><span class="keyword">void</span> <span class="title">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">				System.out.println(a);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">new</span> Inner().function();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>a++是不行的。如果在Main函数里面执行👇</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Outer o  = <span class="keyword">new</span> Outer();</span><br><span class="line">	 o.method(<span class="number">4</span>);</span><br><span class="line">	 o.method(<span class="number">8</span>);</span><br></pre></td></tr></table></figure>
-
-<p>那么会报错👇</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Local variable a defined in an enclosing scope must be final or effectively final</span><br></pre></td></tr></table></figure>
-
-<p>所以int a虽然没有显式声明，但是其实它是final的常量。</p>
-<h1 id="匿名内部类-都是子类对象"><a href="#匿名内部类-都是子类对象" class="headerlink" title="匿名内部类(都是子类对象)"></a>匿名内部类(都是子类对象)</h1><ul>
-<li><p>匿名内部类其实就是内部类的简写</p>
-</li>
-<li><p>定义匿名内部类的前提</p>
-<ul>
-<li>内部类必须是继承一个类或实现接口</li>
-</ul>
-</li>
-<li><p>匿名内部类的格式： new 父类或接口():{</p>
-<p>​     方法实现</p>
-<p>}</p>
-</li>
-<li><p>如果类里面的方法太多，（非常）不推荐匿名内部类，一般只有一两个。</p>
-</li>
-</ul>
-<p>假如定义个==抽象类==</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">demo</span></span>&#123;</span><br><span class="line">	 </span><br><span class="line">	<span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>那么如果要创建这样一个类的对象:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">		</span><br><span class="line">        👉<span class="keyword">new</span> demo() &#123;</span><br><span class="line">			<span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">				System.out.println(<span class="string">"asdasdas"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">            <span class="function"><span class="keyword">void</span> <span class="title">show2</span><span class="params">()</span></span>&#123;</span><br><span class="line">                ...</span><br><span class="line">            &#125;</span><br><span class="line">		&#125;.show();👈</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-<p>👉这里面就是一个对象👈</p>
-<p>还可以这样写👇</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		demo d = <span class="keyword">new</span> demo() &#123;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">//可以在匿名内部类里面新建对象</span></span><br><span class="line">			<span class="keyword">int</span> x =<span class="number">4</span>;</span><br><span class="line">			<span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">				System.out.println(x)</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="function"><span class="keyword">void</span> <span class="title">show2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">				System.out.println(<span class="string">"show2.."</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;.show();</span><br><span class="line">        d.show2();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>匿名内部类的意义：</p>
-<ul>
-<li>简化书写</li>
-</ul>
-<p>测试：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Inner</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//通过匿名内部类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">day1</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	 <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		 Test.function().method();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>答案</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">static</span>  Inner  <span class="title">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	 </span><br><span class="line">   	 <span class="keyword">return</span>   <span class="keyword">new</span> Inner()&#123;</span><br><span class="line">   		   <span class="meta">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			System.out.println(<span class="string">"hello world"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="内部类使用场景"><a href="#内部类使用场景" class="headerlink" title="内部类使用场景"></a>内部类使用场景</h1><ul>
-<li>当描述事物时，如果事物的内部还有事物，该事物要用内部类来描述，因为内部事物在使用外部事物的内容。</li>
-</ul>
-<p>人体里面的器官。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">body</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">heart</span></span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>内部类尽量设置为private封装起来，提供方法给外部访问。一般来说内部类是不会被修饰为公有的。</li>
-</ul>
-<h1 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">InnerTest</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		Object  o = <span class="keyword">new</span> Object()&#123;</span><br><span class="line">			<span class="function"><span class="keyword">void</span> <span class="title">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">				System.out.println(<span class="string">"innerTest"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="function"><span class="keyword">void</span> <span class="title">function2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;;</span><br><span class="line">		o.function();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>!不可行！因为父类中没有function()这个方法，不能使用o.function();</p>
-<p>但假如没有父类或接口，那么要知道任何类都是Object的子类。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">InnerTest</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">	  <span class="keyword">new</span> Object()&#123;</span><br><span class="line">			<span class="function"><span class="keyword">void</span> <span class="title">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">				System.out.println(<span class="string">"innerTest"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;.function();</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
         

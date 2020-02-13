@@ -143,6 +143,101 @@
     <header class="article-header">
         
         <h1 itemprop="name">
+            <a href="/2020/02/13/范式/">范式</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2020-02-13T11:52:27.000Z" itemprop="datePublished">2020-02-13</time>
+</a>
+
+            
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h2 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h2><p><img src="http://llllllllr.top/20200213200547.png" alt></p>
+<blockquote>
+<ul>
+<li>范式就是一种数据表设计标准的级别，就好像四六级一样</li>
+<li>数据库范式分为1NF,2NF，3NFB,BCNF…符合高一级的范式必定符合低一级的范式，满足第二范式的数据报表肯定满足第一范式，满足第三范式的数据表一定满足第二范式，以此类推</li>
+</ul>
+</blockquote>
+<h3 id="INF"><a href="#INF" class="headerlink" title="INF"></a>INF</h3><ul>
+<li><p><strong>原子性</strong>：一列一列一列（下图不满足原子性）</p>
+<p><img src="http://llllllllr.top/20200213201132.png" alt></p>
+</li>
+<li><p><strong>不重复</strong>： 不存在属性名相等的两列 ：如果上图有两列都是“年级”，那么这个表不满足INF</p>
+</li>
+</ul>
+<p><img src="http://llllllllr.top/20200213201355.png" alt></p>
+<h3 id="1NF问题："><a href="#1NF问题：" class="headerlink" title="1NF问题："></a>1NF问题：</h3><ul>
+<li>数据冗余，比如前三列，前面三行小花的“id,姓名，系名，系主任”都是一样的</li>
+<li>插入异常：有一个新的系，但是还没有学生，那么没办法插入到这个数据表里面</li>
+<li>删除异常：如果某个系下面的学生信息全部清空，那么这个系也不存在了</li>
+<li>修改异常：如果要把学生的系更换，比如小花的，那么前三行数据都要更改</li>
+</ul>
+<h2 id="2NF"><a href="#2NF" class="headerlink" title="2NF"></a>2NF</h2><h4 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h4><p><img src="http://llllllllr.top/20200213201821.png" alt></p>
+<p><img src="http://llllllllr.top/20200213201355.png" alt></p>
+<ul>
+<li><p><strong>码（可能不止一个）</strong>：知道了码，就能确定别的属性</p>
+<blockquote>
+<p>知道了学号，就能确定一个人的姓名，班名，班主任</p>
+<p>同时知道学号和课名，就能知道你的分数</p>
+</blockquote>
+</li>
+</ul>
+<p>写成：（学号，课名）——-&gt;姓名，班名，班主任，分数</p>
+<ul>
+<li><strong>（学号，课名）一个集合</strong>—&gt;码/候选码</li>
+<li><strong>学号，课名</strong>—-&gt;主属性</li>
+<li><strong>姓名，班名，班主任，分数</strong>—-&gt;非主属性</li>
+</ul>
+<h4 id="函数依赖"><a href="#函数依赖" class="headerlink" title="函数依赖"></a>函数依赖</h4><p><img src="http://llllllllr.top/20200213202520.png" alt></p>
+<p><img src="http://llllllllr.top/20200213202559.png" alt></p>
+<p><img src="http://llllllllr.top/20200213202728.png" alt></p>
+<h4 id="判断是否符合2NF"><a href="#判断是否符合2NF" class="headerlink" title="判断是否符合2NF"></a>判断是否符合2NF</h4><p><img src="http://llllllllr.top/20200213202826.png" alt></p>
+<p><img src="http://llllllllr.top/20200213201355.png" alt></p>
+<p><strong>（学号，课名）—-&gt;姓名，只要知道学号就知道姓名，存在部分函数依赖，不符合2NF要求</strong></p>
+<p>拆分如下（符合2NF）：</p>
+<p><img src="http://llllllllr.top/20200213203102.png" alt></p>
+<p>问题：</p>
+<ul>
+<li>插入：如果只有系，没有学生，无法插入</li>
+<li>删除：删除某个系的全部学生，这个系也不存在了</li>
+</ul>
+<p>优点：</p>
+<ul>
+<li>数据冗余解决</li>
+<li>修改学生的系只要修改一条数据</li>
+</ul>
+<h3 id="3NF"><a href="#3NF" class="headerlink" title="3NF"></a>3NF</h3><p><img src="http://llllllllr.top/20200213203410.png" alt></p>
+<h3 id="传递函数依赖"><a href="#传递函数依赖" class="headerlink" title="传递函数依赖"></a>传递函数依赖</h3><blockquote>
+<p>班主任依赖于班名，班名依赖于学号，那么班主任依赖于学号</p>
+<p>班主任和学生本来不挂钩，班主任只和班名有关，但是知道学号就知道班名，知道班名就知道班主任，所以存在传递关系（好像更复杂了…</p>
+</blockquote>
+<p>所以把上面的表再拆分：</p>
+<p><img src="http://llllllllr.top/20200213203658.png" alt></p>
+<ul>
+<li>新建一个系，没有学生也OK</li>
+<li>删除一个系下所有学生，这个系还是存在</li>
+</ul>
+
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
             <a href="/2020/01/23/logback/">logback</a>
         </h1>
         
@@ -971,73 +1066,6 @@
             </a>
         </p>
         
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/10/26/java基础day6/">java基础day6</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-10-26T03:54:22.000Z" itemprop="datePublished">2019-10-26</time>
-</a>
-
-            
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <h1 id="生产-消费者问题"><a href="#生产-消费者问题" class="headerlink" title="生产-消费者问题"></a>生产-消费者问题</h1><p>全部代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Resource</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> count=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;<span class="comment">//资源是否未消费</span></span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		   <span class="keyword">if</span>(flag)<span class="comment">//如果还没有消费，那么生产者等待消费者消费</span></span><br><span class="line">			   <span class="keyword">try</span> &#123;wait();&#125;<span class="keyword">catch</span>(Exception e) &#123;&#125;</span><br><span class="line">		<span class="keyword">this</span>.name=name+<span class="string">"---"</span>+count++;</span><br><span class="line">		System.out.println(Thread.currentThread().getName()+<span class="string">"...生产者..."</span>+<span class="keyword">this</span>.name);</span><br><span class="line">		flag=<span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">this</span>.notify();<span class="comment">//唤醒消费者进程</span></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">out</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(!flag)<span class="comment">//如果之前已经消费，那么消费者应该等待</span></span><br><span class="line">			<span class="keyword">try</span> &#123;wait();&#125;<span class="keyword">catch</span>(Exception e) &#123;&#125;</span><br><span class="line">		System.out.println(Thread.currentThread().getName()+<span class="string">"...消费者..."</span>+<span class="keyword">this</span>.name);</span><br><span class="line">		flag=<span class="keyword">false</span>;</span><br><span class="line">		<span class="keyword">this</span>.notify();<span class="comment">//唤醒生产者进程</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">producer</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">	Resource res;</span><br><span class="line">	</span><br><span class="line">	producer(Resource res)&#123;</span><br><span class="line">		<span class="keyword">this</span>.res=res;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">while</span>(<span class="keyword">true</span>)</span><br><span class="line">		  res.set(<span class="string">"商品"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">customer</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">	Resource res;</span><br><span class="line">	</span><br><span class="line">	customer(Resource res)&#123;</span><br><span class="line">		<span class="keyword">this</span>.res=res;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">			res.out();</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">day1</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	 <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">		 Resource res = <span class="keyword">new</span> Resource();</span><br><span class="line">		 producer p = <span class="keyword">new</span> producer(res);</span><br><span class="line">		 customer c = <span class="keyword">new</span> customer(res);</span><br><span class="line">		 Thread t1 = <span class="keyword">new</span> Thread(p);</span><br><span class="line">		 Thread t2 = <span class="keyword">new</span> Thread(c);</span><br><span class="line">		 t1.start();</span><br><span class="line">		 t2.start();</span><br><span class="line">		   </span><br><span class="line">	 &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>输出👇</p>
-<blockquote>
-<p>Thread-1…消费者…商品—26800<br>Thread-0…生产者…商品—26801<br>Thread-1…消费者…商品—26801<br>Thread-0…生产者…商品—26802<br>Thread-1…消费者…商品—26802<br>Thread-0…生产者…商品—26803<br>Thread-1…消费者…商品—26803<br>Thread-0…生产者…商品—26804<br>Thread-1…消费者…商品—26804<br>Thread-0…生产者…商品—26805<br>Thread-1…消费者…商品—26805<br>Thread-0…生产者…商品—26806<br>Thread-1…消费者…商品—26806<br>Thread-0…生产者…商品—26807<br>Thread-1…消费者…商品—26807<br>Thread-0…生产者…商品—26808<br>Thread-1…消费者…商品—26808<br>Thread-0…生产者…商品—26809<br>Thread-1…消费者…商品—26809</p>
-</blockquote>
-<p>每生产一个就消费一个。</p>
-<h2 id="多生产者多消费者"><a href="#多生产者多消费者" class="headerlink" title="多生产者多消费者"></a>多生产者多消费者</h2><p>那么当同时拥有多个生产者和多个消费者的时候</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">       </span><br><span class="line">	 Resource res = <span class="keyword">new</span> Resource();</span><br><span class="line">	 producer p = <span class="keyword">new</span> producer(res);</span><br><span class="line">	 customer c = <span class="keyword">new</span> customer(res);</span><br><span class="line">	 Thread t1 = <span class="keyword">new</span> Thread(p);</span><br><span class="line">	 Thread t2 = <span class="keyword">new</span> Thread(p);</span><br><span class="line">	 Thread t3 = <span class="keyword">new</span> Thread(c);</span><br><span class="line">	 Thread t4 = <span class="keyword">new</span> Thread(c);</span><br><span class="line">	 t1.start();</span><br><span class="line">	 t2.start();</span><br><span class="line">	 t3.start();</span><br><span class="line">	 t4.start();</span><br><span class="line">	   </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-<p>输出结果👇：</p>
-<p><img src="http://pzaqt7zjy.bkt.clouddn.com/20191026123601.png" alt></p>
-<p>产生原因：</p>
-<p>t1 和 t2 负责:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		   <span class="keyword">if</span>(flag)<span class="comment">//如果还没有消费，那么生产者等待消费者消费</span></span><br><span class="line">			   <span class="keyword">try</span> &#123;wait();&#125;<span class="keyword">catch</span>(Exception e) &#123;&#125;</span><br><span class="line">		<span class="keyword">this</span>.name=name+<span class="string">"---"</span>+count++;</span><br><span class="line">		System.out.println(Thread.currentThread().getName()+<span class="string">"...生产者..."</span>+<span class="keyword">this</span>.name);</span><br><span class="line">		flag=<span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">this</span>.notify();<span class="comment">//唤醒消费者进程</span></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-<p>t3 和 t4 负责：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">out</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(!flag)<span class="comment">//如果之前已经消费，那么消费者应该等待</span></span><br><span class="line">			<span class="keyword">try</span> &#123;wait();&#125;<span class="keyword">catch</span>(Exception e) &#123;&#125;</span><br><span class="line">		System.out.println(Thread.currentThread().getName()+<span class="string">"消费者"</span>+<span class="keyword">this</span>.name);</span><br><span class="line">		flag=<span class="keyword">false</span>;</span><br><span class="line">		<span class="keyword">this</span>.notify();<span class="comment">//唤醒生产者进程</span></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>首先是t1获得资格，生产了商品，置flag=true.然后t1唤醒了t2进程（<strong>注意，只会唤醒t2线程，即只会唤醒本方法线程</strong>）。此时，t1因为已经占有资源，它继续判断，因为flag=true，它搁置，放弃资格，t2进入，搁置，放弃资格</li>
-<li>t3获得资格，进入，消费，唤醒t4，同理，因为t3已经占有资源，所以它再判断，flag=flase,t4进入，flag=false,无法消费，此时唤醒t1</li>
-<li>t1生产，唤醒t2.<strong>注意，此时t2已经判断过flag标志，它搁置在wait()这个地方，所以它并不会再继续判断flag而是直接生产了！</strong></li>
-<li>同理，消费者也是一样，因此会出现上面的问题。</li>
-</ul>
-<p>==修改：把if(flag)改成while(flag)==因为这样在wait()之后就会继续判断flag。</p>
-<p>输出结果如下:</p>
-<blockquote>
-<p>Thread-1…生产者…商品—1<br>Thread-3消费者商品—1<br>Thread-0…生产者…商品—2<br>Thread-3消费者商品—2<br>Thread-1…生产者…商品—3</p>
-</blockquote>
-<p><strong>直接冻结，所有进程都进入等待状态，与死锁有区别</strong></p>
-<p>==修改：改成notifyAll()==</p>
-<p>输出结果如下:</p>
-<blockquote>
-<p>Thread-2消费者商品—44271<br>Thread-1…生产者…商品—44272<br>Thread-3消费者商品—44272</p>
-</blockquote>
-<p><strong>正常的生产一个消费一个</strong>。</p>
-
         
     </section>
 </article>

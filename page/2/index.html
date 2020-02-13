@@ -143,6 +143,73 @@
     <header class="article-header">
         
         <h1 itemprop="name">
+            <a href="/2019/10/26/java基础day6/">java基础day6</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/page/2/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-10-26T03:54:22.000Z" itemprop="datePublished">2019-10-26</time>
+</a>
+
+            
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h1 id="生产-消费者问题"><a href="#生产-消费者问题" class="headerlink" title="生产-消费者问题"></a>生产-消费者问题</h1><p>全部代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Resource</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> count=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;<span class="comment">//资源是否未消费</span></span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		   <span class="keyword">if</span>(flag)<span class="comment">//如果还没有消费，那么生产者等待消费者消费</span></span><br><span class="line">			   <span class="keyword">try</span> &#123;wait();&#125;<span class="keyword">catch</span>(Exception e) &#123;&#125;</span><br><span class="line">		<span class="keyword">this</span>.name=name+<span class="string">"---"</span>+count++;</span><br><span class="line">		System.out.println(Thread.currentThread().getName()+<span class="string">"...生产者..."</span>+<span class="keyword">this</span>.name);</span><br><span class="line">		flag=<span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">this</span>.notify();<span class="comment">//唤醒消费者进程</span></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">out</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(!flag)<span class="comment">//如果之前已经消费，那么消费者应该等待</span></span><br><span class="line">			<span class="keyword">try</span> &#123;wait();&#125;<span class="keyword">catch</span>(Exception e) &#123;&#125;</span><br><span class="line">		System.out.println(Thread.currentThread().getName()+<span class="string">"...消费者..."</span>+<span class="keyword">this</span>.name);</span><br><span class="line">		flag=<span class="keyword">false</span>;</span><br><span class="line">		<span class="keyword">this</span>.notify();<span class="comment">//唤醒生产者进程</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">producer</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">	Resource res;</span><br><span class="line">	</span><br><span class="line">	producer(Resource res)&#123;</span><br><span class="line">		<span class="keyword">this</span>.res=res;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">while</span>(<span class="keyword">true</span>)</span><br><span class="line">		  res.set(<span class="string">"商品"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">customer</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">	Resource res;</span><br><span class="line">	</span><br><span class="line">	customer(Resource res)&#123;</span><br><span class="line">		<span class="keyword">this</span>.res=res;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">			res.out();</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">day1</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	 <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">		 Resource res = <span class="keyword">new</span> Resource();</span><br><span class="line">		 producer p = <span class="keyword">new</span> producer(res);</span><br><span class="line">		 customer c = <span class="keyword">new</span> customer(res);</span><br><span class="line">		 Thread t1 = <span class="keyword">new</span> Thread(p);</span><br><span class="line">		 Thread t2 = <span class="keyword">new</span> Thread(c);</span><br><span class="line">		 t1.start();</span><br><span class="line">		 t2.start();</span><br><span class="line">		   </span><br><span class="line">	 &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出👇</p>
+<blockquote>
+<p>Thread-1…消费者…商品—26800<br>Thread-0…生产者…商品—26801<br>Thread-1…消费者…商品—26801<br>Thread-0…生产者…商品—26802<br>Thread-1…消费者…商品—26802<br>Thread-0…生产者…商品—26803<br>Thread-1…消费者…商品—26803<br>Thread-0…生产者…商品—26804<br>Thread-1…消费者…商品—26804<br>Thread-0…生产者…商品—26805<br>Thread-1…消费者…商品—26805<br>Thread-0…生产者…商品—26806<br>Thread-1…消费者…商品—26806<br>Thread-0…生产者…商品—26807<br>Thread-1…消费者…商品—26807<br>Thread-0…生产者…商品—26808<br>Thread-1…消费者…商品—26808<br>Thread-0…生产者…商品—26809<br>Thread-1…消费者…商品—26809</p>
+</blockquote>
+<p>每生产一个就消费一个。</p>
+<h2 id="多生产者多消费者"><a href="#多生产者多消费者" class="headerlink" title="多生产者多消费者"></a>多生产者多消费者</h2><p>那么当同时拥有多个生产者和多个消费者的时候</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">       </span><br><span class="line">	 Resource res = <span class="keyword">new</span> Resource();</span><br><span class="line">	 producer p = <span class="keyword">new</span> producer(res);</span><br><span class="line">	 customer c = <span class="keyword">new</span> customer(res);</span><br><span class="line">	 Thread t1 = <span class="keyword">new</span> Thread(p);</span><br><span class="line">	 Thread t2 = <span class="keyword">new</span> Thread(p);</span><br><span class="line">	 Thread t3 = <span class="keyword">new</span> Thread(c);</span><br><span class="line">	 Thread t4 = <span class="keyword">new</span> Thread(c);</span><br><span class="line">	 t1.start();</span><br><span class="line">	 t2.start();</span><br><span class="line">	 t3.start();</span><br><span class="line">	 t4.start();</span><br><span class="line">	   </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果👇：</p>
+<p><img src="http://pzaqt7zjy.bkt.clouddn.com/20191026123601.png" alt></p>
+<p>产生原因：</p>
+<p>t1 和 t2 负责:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		   <span class="keyword">if</span>(flag)<span class="comment">//如果还没有消费，那么生产者等待消费者消费</span></span><br><span class="line">			   <span class="keyword">try</span> &#123;wait();&#125;<span class="keyword">catch</span>(Exception e) &#123;&#125;</span><br><span class="line">		<span class="keyword">this</span>.name=name+<span class="string">"---"</span>+count++;</span><br><span class="line">		System.out.println(Thread.currentThread().getName()+<span class="string">"...生产者..."</span>+<span class="keyword">this</span>.name);</span><br><span class="line">		flag=<span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">this</span>.notify();<span class="comment">//唤醒消费者进程</span></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<p>t3 和 t4 负责：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">out</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(!flag)<span class="comment">//如果之前已经消费，那么消费者应该等待</span></span><br><span class="line">			<span class="keyword">try</span> &#123;wait();&#125;<span class="keyword">catch</span>(Exception e) &#123;&#125;</span><br><span class="line">		System.out.println(Thread.currentThread().getName()+<span class="string">"消费者"</span>+<span class="keyword">this</span>.name);</span><br><span class="line">		flag=<span class="keyword">false</span>;</span><br><span class="line">		<span class="keyword">this</span>.notify();<span class="comment">//唤醒生产者进程</span></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>首先是t1获得资格，生产了商品，置flag=true.然后t1唤醒了t2进程（<strong>注意，只会唤醒t2线程，即只会唤醒本方法线程</strong>）。此时，t1因为已经占有资源，它继续判断，因为flag=true，它搁置，放弃资格，t2进入，搁置，放弃资格</li>
+<li>t3获得资格，进入，消费，唤醒t4，同理，因为t3已经占有资源，所以它再判断，flag=flase,t4进入，flag=false,无法消费，此时唤醒t1</li>
+<li>t1生产，唤醒t2.<strong>注意，此时t2已经判断过flag标志，它搁置在wait()这个地方，所以它并不会再继续判断flag而是直接生产了！</strong></li>
+<li>同理，消费者也是一样，因此会出现上面的问题。</li>
+</ul>
+<p>==修改：把if(flag)改成while(flag)==因为这样在wait()之后就会继续判断flag。</p>
+<p>输出结果如下:</p>
+<blockquote>
+<p>Thread-1…生产者…商品—1<br>Thread-3消费者商品—1<br>Thread-0…生产者…商品—2<br>Thread-3消费者商品—2<br>Thread-1…生产者…商品—3</p>
+</blockquote>
+<p><strong>直接冻结，所有进程都进入等待状态，与死锁有区别</strong></p>
+<p>==修改：改成notifyAll()==</p>
+<p>输出结果如下:</p>
+<blockquote>
+<p>Thread-2消费者商品—44271<br>Thread-1…生产者…商品—44272<br>Thread-3消费者商品—44272</p>
+</blockquote>
+<p><strong>正常的生产一个消费一个</strong>。</p>
+
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
             <a href="/2019/10/23/java基础day5/">java基础day5</a>
         </h1>
         
@@ -875,50 +942,6 @@
         
         <p><a href="https://docs.spring.io/spring-boot/docs/2.2.0.RC1/reference/htmlsingle/" target="_blank" rel="noopener">springboot官方文档</a></p>
 <p><a href="https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#setting-attribute-values" target="_blank" rel="noopener">thymeleaf</a></p>
-
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/10/10/java基础1/">java基础1</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/page/2/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-10-10T08:54:55.000Z" itemprop="datePublished">2019-10-10</time>
-</a>
-
-            
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <p>在电脑里安装jdk</p>
-<h4 id="1-用记事本写一个Java程序"><a href="#1-用记事本写一个Java程序" class="headerlink" title="1.用记事本写一个Java程序"></a>1.用记事本写一个Java程序</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hw</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"Hello world"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javac Hw.java</span><br></pre></td></tr></table></figure>
-
-<p>接着能看到文件夹里面生成了一个Hw.class，==是把java文件编译成字节码为文件== </p>
-<h4 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java Hw</span><br></pre></td></tr></table></figure>
-
-<p>注意，在这一步不需要写Hw.java的后缀名，直接运行，能看到控制台输出Hello world</p>
-<h4 id="2-读输入"><a href="#2-读输入" class="headerlink" title="2.读输入"></a>2.读输入</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"><span class="keyword">int</span> res = in.nextInt();</span><br></pre></td></tr></table></figure>
-
-<p>注意区分一下两行代码的区别</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">res = in.nextInt();</span><br><span class="line">System.out.println(<span class="string">"result :5+"</span>+in.nextInt()+<span class="string">"="</span>+(in.nextInt()+<span class="number">5</span>));</span><br><span class="line">System.out.println(<span class="string">"result: 5+"</span>+res+<span class="string">"="</span>+(res+<span class="number">5</span>));</span><br></pre></td></tr></table></figure>
-
-<p>每次执行一次in.nextInt()，都读入一次输入的整数</p>
 
         
     </section>
