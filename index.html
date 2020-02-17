@@ -143,6 +143,151 @@
     <header class="article-header">
         
         <h1 itemprop="name">
+            <a href="/2020/02/17/JAVA面试题个人总结一/">JAVA面试题个人总结一</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2020-02-17T01:48:21.000Z" itemprop="datePublished">2020-02-17</time>
+</a>
+
+            
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h3 id="JDK和JRE区别"><a href="#JDK和JRE区别" class="headerlink" title="JDK和JRE区别"></a>JDK和JRE区别</h3><ul>
+<li>JDK:java development kit，Java开发工具包，提供运行环境和开发环境</li>
+<li>JRE：java runtime environment java运行工具包，提供java运行环境</li>
+<li>只是运行java程序的话就用JRE，需要开发JAVA，用JDK</li>
+</ul>
+<h3 id="和equals的区别"><a href="#和equals的区别" class="headerlink" title="==和equals的区别"></a>==和equals的区别</h3><ul>
+<li>基本类型，都是比较值</li>
+<li>引用类型，==比较物理地址，<strong>equals重写了之后会比较值</strong></li>
+</ul>
+<p>👇java常量会放在同一块地址</p>
+   <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">      String str1 = <span class="string">"aa"</span>;</span><br><span class="line">String str2 = <span class="string">"aa"</span>;</span><br><span class="line">System.out.println(str1.equals(str2));<span class="comment">//true</span></span><br><span class="line">System.out.println(str1 == str2);<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<p>👇String类重写了equals方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">   String str1 = <span class="keyword">new</span> String(<span class="string">"bbb"</span>);</span><br><span class="line">String str2 = <span class="string">"bbb"</span>;</span><br><span class="line">System.out.println(str1 == str2);<span class="comment">//false</span></span><br><span class="line">System.out.println(str1.equals(str2));<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<p>👇自定义类不会重写equals方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">	<span class="keyword">public</span> String name;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">int</span> age;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String n,<span class="keyword">int</span> a)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name = n;</span><br><span class="line">		<span class="keyword">this</span>.age = a;</span><br><span class="line">	&#125;	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">		</span>&#123;</span><br><span class="line">			Student stu1 = <span class="keyword">new</span> Student(<span class="string">"aa"</span>,<span class="number">12</span>);</span><br><span class="line">			Student stu2 = <span class="keyword">new</span> Student(<span class="string">"aa"</span>,<span class="number">12</span>);</span><br><span class="line">			System.out.println(stu1.equals(stu2));</span><br><span class="line">		&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>只用重写了equals方法才能比较是否相等</p>
+<h3 id="两个对象的hashCode-相等，那么equals方法一定返回true，对吗"><a href="#两个对象的hashCode-相等，那么equals方法一定返回true，对吗" class="headerlink" title="两个对象的hashCode()相等，那么equals方法一定返回true，对吗"></a>两个对象的hashCode()相等，那么equals方法一定返回true，对吗</h3><p>不对</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">		</span>&#123;</span><br><span class="line">			String a =<span class="string">"通话"</span>;</span><br><span class="line">			String b =<span class="string">"重地"</span>;</span><br><span class="line">			System.out.println(String.format(<span class="string">"a: %d, b: %d"</span>,                                     a.hashCode(),b.hashCode()));</span><br><span class="line">			<span class="comment">//a: 1179395, b: 1179395</span></span><br><span class="line">			System.out.println(a.equals(b));</span><br><span class="line">			<span class="comment">//false</span></span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Equal-and-HashCode"><a href="#Equal-and-HashCode" class="headerlink" title="Equal() and HashCode()"></a>Equal() and HashCode()</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Money</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ammount;</span><br><span class="line">    String currencyCode;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>To override the euqals() method so that it dosen’t consider only Object identity ,but also the values of the two relevant properties.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">     <span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>( o == <span class="keyword">this</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">	<span class="keyword">if</span>(!(o <span class="keyword">instanceof</span> Money))</span><br><span class="line">	    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	Money other = (Money) o;</span><br><span class="line">          <span class="comment">//比较currencyCode是否相等</span></span><br><span class="line">	<span class="keyword">boolean</span> currencyCodeEquals = (<span class="keyword">this</span>.currencyCode == <span class="keyword">null</span> &amp;&amp;                           other.currencyCode == <span class="keyword">null</span>) ||</span><br><span class="line">	(<span class="keyword">this</span>.currencyCode != <span class="keyword">null</span> &amp;&amp;                                                         <span class="keyword">this</span>.currencyCode.equals(other.currencyCode));</span><br><span class="line">          <span class="comment">//比较ammount是否相等</span></span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.amount == other.amount &amp;&amp; currencyCodeEquals;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Be-aware-of-the-extend-classes-that-have-overriden-the-equals-and-hashCode"><a href="#Be-aware-of-the-extend-classes-that-have-overriden-the-equals-and-hashCode" class="headerlink" title="Be aware of the extend classes that have overriden the equals() and hashCode()"></a>Be aware of the extend classes that have overriden the equals() and hashCode()</h4><p>if we extends the class that has overriden equals</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">WrongVoucher</span> <span class="keyword">extends</span> <span class="title">Money</span></span></span><br><span class="line"><span class="class">	    </span>&#123;</span><br><span class="line">	    	<span class="keyword">private</span> String store;</span><br><span class="line">	    	</span><br><span class="line">	    	</span><br><span class="line">	    	<span class="meta">@Override</span></span><br><span class="line">	    	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span></span></span><br><span class="line"><span class="function">	    	</span>&#123;</span><br><span class="line">	    		<span class="keyword">if</span>(o == <span class="keyword">this</span>)</span><br><span class="line">	    			<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">	    		<span class="keyword">if</span>(!(o <span class="keyword">instanceof</span> WrongVoucher))</span><br><span class="line">	    			<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	    		WrongVoucher wv = (WrongVoucher)o;</span><br><span class="line">                <span class="comment">//CurrencyCode</span></span><br><span class="line">	    		<span class="keyword">boolean</span> CurrencyCodeEqual = (<span class="keyword">this</span>.currencyCode == <span class="keyword">null</span> &amp;&amp; 							wv.currencyCode == <span class="keyword">null</span>) ||</span><br><span class="line">	    				(<span class="keyword">this</span>.currencyCode != <span class="keyword">null</span> &amp;&amp; 							 	    			 <span class="keyword">this</span>.currencyCode.equals(wv.currencyCode));</span><br><span class="line">                <span class="comment">//store</span></span><br><span class="line">	    		<span class="keyword">boolean</span> storeEqual =  (<span class="keyword">this</span>.store == <span class="keyword">null</span> &amp;&amp; wv.store == <span class="keyword">null</span>) ||</span><br><span class="line">	    				 (<span class="keyword">this</span>.store != <span class="keyword">null</span> &amp;&amp; <span class="keyword">this</span>.store.equals(wv.store));</span><br><span class="line">                <span class="comment">//amount</span></span><br><span class="line">	    		<span class="keyword">return</span> <span class="keyword">this</span>.amount == wv.amount &amp;&amp; CurrencyCodeEqual&amp;&amp; storeEqual;</span><br><span class="line">	    				</span><br><span class="line">	    	&#125;</span><br><span class="line">	    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>At first glance, the equals() method seem to be correct. It seems behave correctly.</p>
+<p>But if we compare this two Objects:👇</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Money money = <span class="keyword">new</span> Money(<span class="number">12</span>,<span class="string">"USD"</span>);</span><br><span class="line">WrongVoucher wv = <span class="keyword">new</span> WrongVoucher(<span class="number">12</span>,<span class="string">"USD"</span>,<span class="string">"amazon"</span>);</span><br><span class="line">System.out.println(money.equals(wv));<span class="comment">//true that's wrong</span></span><br><span class="line">System.out.println(wv.equals(money));<span class="comment">//false As expected</span></span><br></pre></td></tr></table></figure>
+
+<p>that violates the symmertry ctiterial of the equals() contract.</p>
+<h3 id="To-avoid-this-pitfall-we-should-favor-composition-over-inheritance"><a href="#To-avoid-this-pitfall-we-should-favor-composition-over-inheritance" class="headerlink" title="To avoid this pitfall, we should favor composition over inheritance"></a>To avoid this pitfall, we should favor composition over inheritance</h3><p> Instead of subclassing <em>Money</em>, let’s create a <em>Voucher</em> class with a <em>Money</em> property: </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Voucher</span> </span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">      <span class="comment">//Money property</span></span><br><span class="line">	<span class="keyword">private</span> Money money;</span><br><span class="line">	<span class="keyword">private</span> String store;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Voucher</span><span class="params">(<span class="keyword">int</span> a,String c,String s)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.money  = <span class="keyword">new</span> Money(a,c);</span><br><span class="line">		<span class="keyword">this</span>.store = s;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(o == <span class="keyword">this</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">if</span>(!(o <span class="keyword">instanceof</span> Voucher))</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">		Voucher wv = (Voucher)o;</span><br><span class="line">           <span class="comment">//user moneyEqual</span></span><br><span class="line">		<span class="keyword">boolean</span> moneyEqual = (<span class="keyword">this</span>.money == <span class="keyword">null</span> &amp;&amp; wv.money == <span class="keyword">null</span>) ||</span><br><span class="line">				(<span class="keyword">this</span>.money != <span class="keyword">null</span> &amp;&amp; <span class="keyword">this</span>.money.equals(wv.money));</span><br><span class="line">		<span class="keyword">boolean</span> storeEqual =  (<span class="keyword">this</span>.store == <span class="keyword">null</span> &amp;&amp; wv.store == <span class="keyword">null</span>) ||</span><br><span class="line">				 (<span class="keyword">this</span>.store != <span class="keyword">null</span> &amp;&amp; <span class="keyword">this</span>.store.equals(wv.store));</span><br><span class="line">		<span class="keyword">return</span> moneyEqual &amp;&amp; storeEqual;</span><br><span class="line">				</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>👇</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">	Money money = <span class="keyword">new</span> Money(<span class="number">12</span>,<span class="string">"USD"</span>);</span><br><span class="line">Voucher wv = <span class="keyword">new</span> Voucher(<span class="number">12</span>,<span class="string">"USD"</span>,<span class="string">"amazon"</span>);</span><br><span class="line">System.out.println(money.equals(wv));<span class="comment">//false As expected</span></span><br><span class="line">System.out.println(wv.equals(money));<span class="comment">//false As expected</span></span><br></pre></td></tr></table></figure>
+
+<p> And now, <em>equals</em> will work symmetrically as the contract requires </p>
+<h3 id="Override-equals-and-hashCode-for-value-objects"><a href="#Override-equals-and-hashCode-for-value-objects" class="headerlink" title="Override equals() and hashCode() for value objects"></a>Override <em>equals()</em> and <em>hashCode()</em> for value objects</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Team</span> </span>&#123;</span><br><span class="line">		 </span><br><span class="line">	    String city;</span><br><span class="line">	    String department;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">		</span>&#123;</span><br><span class="line">			Map&lt;Team,String&gt; leaders = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">			Team k1 = <span class="keyword">new</span> Team(<span class="string">"New York"</span>, <span class="string">"development"</span>);</span><br><span class="line">			Team k2 = <span class="keyword">new</span> Team(<span class="string">"Boston"</span>, <span class="string">"development"</span>);</span><br><span class="line">			Team k3 = <span class="keyword">new</span> Team(<span class="string">"Boston"</span>, <span class="string">"marketing"</span>);</span><br><span class="line">			Team myTeam = <span class="keyword">new</span> Team(<span class="string">"New York"</span>, <span class="string">"development"</span>);</span><br><span class="line">			leaders.put(k1, <span class="string">"Anne"</span>);</span><br><span class="line">			leaders.put(k2, <span class="string">"Brian"</span>);</span><br><span class="line">			leaders.put(k3, <span class="string">"Charlie"</span>);</span><br><span class="line">			String myTeamLeader = leaders.get(myTeam);</span><br><span class="line">			System.out.println(myTeamLeader);<span class="comment">//null</span></span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p> 当在hashMap里面存入KEY时，先用hashCode()方法计算出hash值， 然后把相应的对象放入相应的内存，而默认的hashCode()方法返回的是对象地址。那么，在上述代码中</p>
+<ul>
+<li>Team k1 = new Team(“New York”, “development”);</li>
+<li>Team myTeam = new Team(“New York”, “development”);</li>
+</ul>
+<p>地址不同，如果根据这个找到相应内存地址，必然什么都没有，所以输出null</p>
+<p>这就是只有hashCode()没有equals()的后果</p>
+</blockquote>
+<p>ashMap解决Hash值冲突使用<strong>链地址法</strong>：</p>
+<blockquote>
+<ul>
+<li><p>hashCode()找到的是一个桶，桶里面装着hashCode()值相同的对象</p>
+</li>
+<li><p>equals()用于在桶里找到确定的对象</p>
+</li>
+<li><p>综上，hashCode()相等不一定对象相等，反之，equals()返回true，hashCode()返回值必然相等</p>
+</li>
+</ul>
+</blockquote>
+<p>所以重写equals()同时重写hashCode()，因为</p>
+<ul>
+<li>在用HashMap的时候，键（Key）部分，放过自定义对象 的话，要重写hashCode()方法</li>
+<li>令equals()返回true的时候，hashCode()必然相等</li>
+</ul>
+
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2020/02/14/微信小程序笔记/">微信小程序笔记</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2020-02-14T06:09:01.000Z" itemprop="datePublished">2020-02-14</time>
+</a>
+
+            
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h3 id="data中数组赋值"><a href="#data中数组赋值" class="headerlink" title="data中数组赋值"></a>data中数组赋值</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">     selected:[],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果只改变selected数组中随便一个值</p>
+<ul>
+<li>先把平时习惯的 ‘selected[i]=1’ 前面拼接成字符串   var str = “selected[“+idx+”]”</li>
+<li>再用setData赋值  </li>
+</ul>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">change:<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(event)</span><br><span class="line">    <span class="keyword">var</span> idx = event.currentTarget.dataset.index;</span><br><span class="line">    <span class="keyword">var</span> str = <span class="string">"selected["</span>+idx+<span class="string">"]"</span></span><br><span class="line">    <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">      [str]:<span class="number">1</span></span><br><span class="line">    &#125;)</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="图片宽度自适应"><a href="#图片宽度自适应" class="headerlink" title="图片宽度自适应"></a>图片宽度自适应</h3><p>在image组件里加上mode=”widthFix”</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;item==-1?'/images/icon/dg.png':'/images/icon/dg2.png'&#125;&#125;"</span> </span></span><br><span class="line"><span class="tag">       <span class="attr">mode</span>=<span class="string">"widthFix"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
             <a href="/2020/02/13/范式/">范式</a>
         </h1>
         
@@ -882,199 +1027,10 @@
 </article>
 
 
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <section class="article-body markdown-body">
-        
-        <h3 id="用户模块"><a href="#用户模块" class="headerlink" title="用户模块"></a>用户模块</h3><h4 id="1-注册"><a href="#1-注册" class="headerlink" title="1.注册"></a>1.注册</h4><blockquote>
-<p>request </p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username(用户名）,creditID(身份证号码）,age（年龄）,job（职业）,pregnantType（孕/产期）,  gestationalWeek（孕期发送：孕周）,confinementDate（产期-&gt;分娩日期）, confinementWeek（产期-&gt;分娩周）,confinementType（产期-&gt;分娩方式）</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>response</p>
-</blockquote>
-<p>success</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"msg"</span>: <span class="string">"注册成功"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>fail</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">"msg"</span>: <span class="string">"用户已存在"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>#### </p>
-<h3 id="问卷"><a href="#问卷" class="headerlink" title="问卷"></a>问卷</h3><h4 id="增加问卷答案"><a href="#增加问卷答案" class="headerlink" title="增加问卷答案"></a>增加问卷答案</h4><blockquote>
-<p>request</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">questionnaireName(问卷名称),creditID(身份证号码),answers(答案数组)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>response</p>
-</blockquote>
-<p>success</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"msg"</span>: <span class="string">"增加成功"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>fail</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">"msg"</span>: <span class="string">"参数错误"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="查看用户指定问卷"><a href="#查看用户指定问卷" class="headerlink" title="查看用户指定问卷"></a>查看用户指定问卷</h4><blockquote>
-<p>request</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">questionnaireName(问卷名称),creditID(身份证号码)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>response</p>
-</blockquote>
-<p>success</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"data"</span>: &#123;</span><br><span class="line">        <span class="attr">"questionnaireName"</span>: <span class="string">"xxx效能表"</span>,</span><br><span class="line">        <span class="attr">"answers"</span>: [A,B,C..],</span><br><span class="line">        <span class="attr">"createTime"</span>: <span class="number">1479048325000</span>,</span><br><span class="line">        <span class="attr">"updateTime"</span>: <span class="number">1479048325000</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>fail</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">"msg"</span>: <span class="string">"该用户还未填写问卷"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="查看用户全部问卷"><a href="#查看用户全部问卷" class="headerlink" title="查看用户全部问卷"></a>查看用户全部问卷</h4><blockquote>
-<p>request</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">creditID(身份证号码)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>response</p>
-</blockquote>
-<p>success</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"data"</span>: &#123;</span><br><span class="line">        [</span><br><span class="line">        "questionnaireName": "xxx效能表",</span><br><span class="line">        "answers": [A,B,C..],</span><br><span class="line">        "createTime": 1479048325000,</span><br><span class="line">        "updateTime": 1479048325000</span><br><span class="line">        ],</span><br><span class="line">        [</span><br><span class="line">        <span class="string">"questionnaireName"</span>: <span class="string">"xxx效能表"</span>,</span><br><span class="line">        <span class="string">"answers"</span>: [A,B,C..],</span><br><span class="line">        <span class="string">"createTime"</span>: <span class="number">1479048325000</span>,</span><br><span class="line">        <span class="string">"updateTime"</span>: <span class="number">1479048325000</span></span><br><span class="line">        ]       </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>fail</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">"msg"</span>: <span class="string">"该用户还未填写问卷"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="删除用户指定问卷"><a href="#删除用户指定问卷" class="headerlink" title="删除用户指定问卷"></a>删除用户指定问卷</h4><blockquote>
-<p>request</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">questionnaireName(问卷名称),creditID(身份证号码)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>response</p>
-</blockquote>
-<p>success</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"msg"</span>: <span class="string">"删除成功"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>fail</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">"msg"</span>: <span class="string">"未知错误"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="文章"><a href="#文章" class="headerlink" title="文章"></a>文章</h3><h4 id="后台-增加文章"><a href="#后台-增加文章" class="headerlink" title="后台_增加文章"></a>后台_增加文章</h4><blockquote>
-<p>request</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title</span><br><span class="line">description</span><br><span class="line">content</span><br><span class="line">coverUrl</span><br><span class="line">imageUrl</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>response</p>
-</blockquote>
-<p>success</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"msg"</span>: <span class="string">"增加成功"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>fail</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">"msg"</span>: <span class="string">"未知错误"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="后台-修改文章"><a href="#后台-修改文章" class="headerlink" title="后台_修改文章"></a>后台_修改文章</h4><blockquote>
-<p>request</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">title</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>response</p>
-</blockquote>
-<p>success</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"data"</span>: &#123;</span><br><span class="line">        [</span><br><span class="line">        "title":xxxx</span><br><span class="line">        "description":xx</span><br><span class="line">        "content":xx</span><br><span class="line">        "coverUrl":xxx</span><br><span class="line">        "imageUrl": xx       </span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>fail</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">"msg"</span>: <span class="string">"未知错误"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="后台-删除文章"><a href="#后台-删除文章" class="headerlink" title="后台_删除文章"></a>后台_删除文章</h4><blockquote>
-<p>request</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">title</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>response</p>
-</blockquote>
-<p>success</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"msg"</span>: <span class="string">"删除成功"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>fail</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">"msg"</span>: <span class="string">"未知错误"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h3><h4 id="后台-增加视频"><a href="#后台-增加视频" class="headerlink" title="后台_增加视频"></a>后台_增加视频</h4><blockquote>
-<p>request</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title</span><br><span class="line">description</span><br><span class="line">content</span><br><span class="line">vedioUrl</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>response</p>
-</blockquote>
-<p>success</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"msg"</span>: <span class="string">"增加成功"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>fail</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">"msg"</span>: <span class="string">"未知错误"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><blockquote>
-<p>request</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">table</span><br><span class="line">category</span><br><span class="line">title</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>response</p>
-</blockquote>
-<p>success</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"data"</span>: &#123;</span><br><span class="line">        [</span><br><span class="line">        "title":xxxx</span><br><span class="line">        "description":xx</span><br><span class="line">        "content":xx</span><br><span class="line">        "coverUrl":xxx</span><br><span class="line">        "imageUrl": xx       </span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>fail</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"status"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">"msg"</span>: <span class="string">"未知错误"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>s</p>
-
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/10/28/java基础day7/">java基础day7</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-10-27T23:54:21.000Z" itemprop="datePublished">2019-10-28</time>
-</a>
-
-            
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <h1 id="生产-消费者问题（续）"><a href="#生产-消费者问题（续）" class="headerlink" title="生产-消费者问题（续）"></a>生产-消费者问题（续）</h1>
-        
-        <p class="article-more-link">
-            <a href="/2019/10/28/java基础day7/#more">
-                <span class="vm">阅读更多</span>
-                <i class="icon-arrow-double-right vm"></i>    
-            </a>
-        </p>
-        
-        
-    </section>
-</article>
-
-
 
 
 <nav class="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
 </nav>
 
 
