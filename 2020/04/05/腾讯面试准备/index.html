@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="计网相关三次握手首先很多人会先讲下握手的过程： 1、第一次握手：客户端给服务器发送一个 SYN 报文。  2、第二次握手：服务器收到 SYN 报文之后，会应答一个 SYN+ACK 报文。  3、第三次握手：客户端收到 SYN+ACK 报文之后，会回应一个 ACK 报文。  4、服务器收到 ACK 报文之后，三次握手建立完成。  作用是为了确认双方的接收与发送能力是否正常。   第一次握手：客户端发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="腾讯面试准备">
+<meta property="og:url" content="http://yoursite.com/2020/04/05/腾讯面试准备/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="计网相关三次握手首先很多人会先讲下握手的过程： 1、第一次握手：客户端给服务器发送一个 SYN 报文。  2、第二次握手：服务器收到 SYN 报文之后，会应答一个 SYN+ACK 报文。  3、第三次握手：客户端收到 SYN+ACK 报文之后，会回应一个 ACK 报文。  4、服务器收到 ACK 报文之后，三次握手建立完成。  作用是为了确认双方的接收与发送能力是否正常。   第一次握手：客户端发">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-04-06T03:58:35.385Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="腾讯面试准备">
+<meta name="twitter:description" content="计网相关三次握手首先很多人会先讲下握手的过程： 1、第一次握手：客户端给服务器发送一个 SYN 报文。  2、第二次握手：服务器收到 SYN 报文之后，会应答一个 SYN+ACK 报文。  3、第三次握手：客户端收到 SYN+ACK 报文之后，会回应一个 ACK 报文。  4、服务器收到 ACK 报文之后，三次握手建立完成。  作用是为了确认双方的接收与发送能力是否正常。   第一次握手：客户端发">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/04/05/腾讯面试准备/">
+
+
+
+
+
+  <title>腾讯面试准备 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/05/腾讯面试准备/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">腾讯面试准备</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-05T15:46:39+08:00">
+                2020-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="计网相关"><a href="#计网相关" class="headerlink" title="计网相关"></a>计网相关</h2><h4 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h4><p>首先很多人会先讲下握手的过程：</p>
+<pre><code>1、第一次握手：客户端给服务器发送一个 SYN 报文。
+
+2、第二次握手：服务器收到 SYN 报文之后，会应答一个 SYN+ACK 报文。
+
+3、第三次握手：客户端收到 SYN+ACK 报文之后，会回应一个 ACK 报文。
+
+4、服务器收到 ACK 报文之后，三次握手建立完成。
+
+作用是为了确认双方的接收与发送能力是否正常。</code></pre><p>   第一次握手：客户端发送网络包，服务端收到了。这样服务端就能得出结论：客户端的发送能力、服务端的接收能力是正常的。<br>      第二次握手：服务端发包，客户端收到了。这样客户端就能得出结论：服务端的接收、发送能力，客户端的接收、发送能力是正常的。不过此时服务器并不能确认客户端的接收能力是否正常。<br>      第三次握手：客户端发包，服务端收到了。这样服务端就能得出结论：客户端的接收、发送能力正常，服务器自己的发送、接收能力也正常<br> <a href="https://blog.csdn.net/qq_38950316/article/details/81087809?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1&amp;utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1" target="_blank" rel="noopener">https://blog.csdn.net/qq_38950316/article/details/81087809?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1&amp;utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1</a> </p>
+<p> 第三次握手失败时的处理操作，<strong>可以看出当失败时服务器并不会重传ack报文，而是直接发送RST报文段，进入CLOSED状态。这样做的目的是为了防止SYN洪泛攻击。</strong> </p>
+<p> <a href="https://www.cnblogs.com/jokerbj/p/11278067.html" target="_blank" rel="noopener">https://www.cnblogs.com/jokerbj/p/11278067.html</a> </p>
+<p>javaGuide  <a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/network/计算机网络.md" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide/blob/master/docs/network/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.md</a> </p>
+<h2 id="TCP-UDP-协议的区别"><a href="#TCP-UDP-协议的区别" class="headerlink" title="TCP,UDP 协议的区别"></a>TCP,UDP 协议的区别</h2><p>请求报文：请求行 请求头  空白行 请求数据</p>
+<p>响应报文：响应行 响应头 空白行 响应数据</p>
+<p>状态码</p>
+<p> <a href="https://blog.csdn.net/beyond150/article/details/102128827" target="_blank" rel="noopener">https://blog.csdn.net/beyond150/article/details/102128827</a> </p>
+<p>301 302区别</p>
+<p> <a href="https://www.cnblogs.com/zhuzhenwei918/p/7582620.html" target="_blank" rel="noopener">https://www.cnblogs.com/zhuzhenwei918/p/7582620.html</a> </p>
+<p> 前端的攻击有哪些 </p>
+<p><a href="https://www.jianshu.com/p/a5ff8a23b423" target="_blank" rel="noopener">https://www.jianshu.com/p/a5ff8a23b423</a></p>
+<p> 如何防止中间人攻击 </p>
+<p>四层、七层模型</p>
+<p> <a href="https://blog.csdn.net/waynelu92/article/details/70155922" target="_blank" rel="noopener">https://blog.csdn.net/waynelu92/article/details/70155922</a> </p>
+<h2 id="算法题"><a href="#算法题" class="headerlink" title="算法题"></a>算法题</h2><h3 id="判断链表是否有环，环的入口"><a href="#判断链表是否有环，环的入口" class="headerlink" title="判断链表是否有环，环的入口"></a>判断链表是否有环，环的入口</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">struct ListNode &#123;</span></span><br><span class="line"><span class="comment">    int val;</span></span><br><span class="line"><span class="comment">    struct ListNode *next;</span></span><br><span class="line"><span class="comment">    ListNode(int x) :</span></span><br><span class="line"><span class="comment">        val(x), next(NULL) &#123;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">&#125;;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">EntryNodeOfLoop</span><span class="params">(ListNode* pHead)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        ListNode* low = pHead;</span><br><span class="line">        ListNode* fast = pHead;</span><br><span class="line">        <span class="keyword">while</span>(fast &amp;&amp; fast-&gt;next)&#123;</span><br><span class="line">            fast = fast -&gt;next -&gt; next;</span><br><span class="line">            low = low -&gt; next;</span><br><span class="line">            <span class="keyword">if</span>(low == fast)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(!fast || !fast-&gt;next) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        low = pHead;</span><br><span class="line">        <span class="keyword">while</span>(low != fast)</span><br><span class="line">        &#123;</span><br><span class="line">            low = low -&gt; next;</span><br><span class="line">            fast = fast -&gt; next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> low;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="判断完全二叉树"><a href="#判断完全二叉树" class="headerlink" title="判断完全二叉树"></a>判断完全二叉树</h3><h3 id="最长不重复子串"><a href="#最长不重复子串" class="headerlink" title="最长不重复子串"></a>最长不重复子串</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = s.length();</span><br><span class="line">        Set&lt;Character&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>, i = <span class="number">0</span>, j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; n &amp;&amp; j &lt; n) &#123;</span><br><span class="line">            <span class="comment">// try to extend the range [i, j]</span></span><br><span class="line">            <span class="keyword">if</span> (!set.contains(s.charAt(j)))&#123;</span><br><span class="line">                set.add(s.charAt(j++));</span><br><span class="line">                ans = Math.max(ans, j - i);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                set.remove(s.charAt(i++));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串排序"><a href="#字符串排序" class="headerlink" title="字符串排序"></a>字符串排序</h3><p>数字&gt;小写字母&gt;大写字母，同类字符的相对顺序不能变，要求额外空间复杂度 O(1)。 </p>
+<h3 id="二叉搜索树找第-K-大的节点"><a href="#二叉搜索树找第-K-大的节点" class="headerlink" title="二叉搜索树找第 K 大的节点"></a>二叉搜索树找第 K 大的节点</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">链接：https:<span class="comment">//www.nowcoder.com/questionTerminal/ef068f602dde4d28aab2b210e859150a?f=discussion</span></span><br><span class="line">来源：牛客网</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">//中序遍历的结果就是有序序列，第K个元素就是vec[K-1]存储的节点指针；</span></span><br><span class="line">    <span class="function">TreeNode* <span class="title">KthNode</span><span class="params">(TreeNode* pRoot, <span class="keyword">unsigned</span> <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(pRoot==<span class="literal">NULL</span>||k&lt;=<span class="number">0</span>) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;TreeNode*&gt; vec;</span><br><span class="line">        Inorder(pRoot,vec);</span><br><span class="line">        <span class="keyword">if</span>(k&gt;vec.size())</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">return</span> vec[k<span class="number">-1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//中序遍历，将节点依次压入vector中</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Inorder</span><span class="params">(TreeNode* pRoot,<span class="built_in">vector</span>&lt;TreeNode*&gt;&amp; vec)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(pRoot==<span class="literal">NULL</span>) <span class="keyword">return</span>;</span><br><span class="line">        Inorder(pRoot-&gt;left,vec);</span><br><span class="line">        vec.push_back(pRoot);</span><br><span class="line">        Inorder(pRoot-&gt;right,vec);</span><br><span class="line">    &#125; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="一个数组怎么找中位数"><a href="#一个数组怎么找中位数" class="headerlink" title="一个数组怎么找中位数"></a>一个数组怎么找中位数</h3><h3 id="哈夫曼编码"><a href="#哈夫曼编码" class="headerlink" title="哈夫曼编码"></a>哈夫曼编码</h3><h3 id="广度遍历"><a href="#广度遍历" class="headerlink" title="广度遍历"></a>广度遍历</h3><h3 id="队列的实现-两个栈实现一个队列，队列长度不限"><a href="#队列的实现-两个栈实现一个队列，队列长度不限" class="headerlink" title="队列的实现 ( 两个栈实现一个队列，队列长度不限 )"></a>队列的实现 ( 两个栈实现一个队列，队列长度不限 )</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">solution</span>&#123;</span></span><br><span class="line">    Stack&lt;T&gt; stackOne = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">    Stack&lt;T&gt; stackTwo = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="function">boolean <span class="title">push</span><span class="params">()</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="满二叉树、完全二叉树、平衡二叉树的概念"><a href="#满二叉树、完全二叉树、平衡二叉树的概念" class="headerlink" title="满二叉树、完全二叉树、平衡二叉树的概念"></a>满二叉树、完全二叉树、平衡二叉树的概念</h3><p>满二叉树： 除了叶结点外每一个结点都有左右子叶且叶子结点都处在最底层的二叉树。 </p>
+<p>完全二叉树： <em>完全二叉树：</em>对于一个树高为h的二叉树，如果其第0层至第h-1层的节点都满。如果最下面一层节点不满，则所有的节点在左边的连续排列，空位都在右边。这样的二叉树就是一棵完全二叉树。 </p>
+<p>平衡二叉树：平衡二叉树的提出就是为了保证树不至于太倾斜，尽量保证两边平衡。因此它的定义如下：</p>
+<ol>
+<li>平衡二叉树要么是一棵空树</li>
+<li>要么保证左右子树的高度之差不大于 1</li>
+<li>子树也必须是一颗平衡二叉树</li>
+</ol>
+<h3 id="DP"><a href="#DP" class="headerlink" title="DP"></a>DP</h3><h3 id="所有排序"><a href="#所有排序" class="headerlink" title="所有排序"></a>所有排序</h3><h4 id="快排"><a href="#快排" class="headerlink" title="快排"></a>快排</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span> data[], <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (left &gt;= right)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">int</span> i = left, j = right;</span><br><span class="line">	<span class="keyword">int</span> key = data[left];</span><br><span class="line">	<span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">		<span class="keyword">while</span> (data[j] &lt; data[i])</span><br><span class="line">			j--;</span><br><span class="line">		<span class="keyword">if</span> (i &lt; j) data[i] = data[j--];</span><br><span class="line">		<span class="keyword">while</span> (data[i] &lt; data[j])</span><br><span class="line">			i++;</span><br><span class="line">		<span class="keyword">if</span> (i &lt; j) data[j] = data[i--];</span><br><span class="line">	&#125;</span><br><span class="line">	data[i] = key;</span><br><span class="line">	quickSort(data, left, i - <span class="number">1</span>);</span><br><span class="line">	quickSort(data, i + <span class="number">1</span>, right);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="冒泡"><a href="#冒泡" class="headerlink" title="冒泡"></a>冒泡</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="comment">//整数或浮点数皆可使用,若要使用类(class)或结构体(struct)时必须重载大于(&gt;)运算符</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bubble_sort</span><span class="params">(T arr[], <span class="keyword">int</span> len)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i, j;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++)</span><br><span class="line">                <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; len - <span class="number">1</span> - i; j++)</span><br><span class="line">                        <span class="keyword">if</span> (arr[j] &gt; arr[j + <span class="number">1</span>])</span><br><span class="line">                                swap(arr[j], arr[j + <span class="number">1</span>]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> arr[] = &#123; <span class="number">61</span>, <span class="number">17</span>, <span class="number">29</span>, <span class="number">22</span>, <span class="number">34</span>, <span class="number">60</span>, <span class="number">72</span>, <span class="number">21</span>, <span class="number">50</span>, <span class="number">1</span>, <span class="number">62</span> &#125;;</span><br><span class="line">        <span class="keyword">int</span> len = (<span class="keyword">int</span>) <span class="keyword">sizeof</span>(arr) / <span class="keyword">sizeof</span>(*arr);</span><br><span class="line">        bubble_sort(arr, len);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; arr[i] &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">float</span> arrf[] = &#123; <span class="number">17.5</span>, <span class="number">19.1</span>, <span class="number">0.6</span>, <span class="number">1.9</span>, <span class="number">10.5</span>, <span class="number">12.4</span>, <span class="number">3.8</span>, <span class="number">19.7</span>, <span class="number">1.5</span>, <span class="number">25.4</span>, <span class="number">28.6</span>, <span class="number">4.4</span>, <span class="number">23.8</span>, <span class="number">5.4</span> &#125;;</span><br><span class="line">        len = (<span class="keyword">float</span>) <span class="keyword">sizeof</span>(arrf) / <span class="keyword">sizeof</span>(*arrf);</span><br><span class="line">        bubble_sort(arrf, len);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; arrf[i] &lt;&lt; <span class="string">' '</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>* a, <span class="keyword">int</span> n, <span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> low, high, mid;</span><br><span class="line">	low = <span class="number">1</span>;</span><br><span class="line">	high = n;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (low &lt; high) &#123;</span><br><span class="line">		mid = (low + high) / <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span> (key &lt; a[mid])</span><br><span class="line">			high = mid - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span> (key &gt; a[mid])</span><br><span class="line">			low = mid + <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> mid;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="java"><a href="#java" class="headerlink" title="java"></a>java</h2><h4 id="jvm"><a href="#jvm" class="headerlink" title="jvm"></a>jvm</h4><p> JVM内存模型？你说的都是1.7的，1.8有什么改变？</p>
+<p> <a href="https://www.cnblogs.com/dingyingsi/p/3760447.html" target="_blank" rel="noopener">https://www.cnblogs.com/dingyingsi/p/3760447.html</a> </p>
+<p>垃圾回收的哪几种算法？怎么快速填满新生代？</p>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><h2 id="数据库索引"><a href="#数据库索引" class="headerlink" title="数据库索引"></a>数据库索引</h2><p> <a href="https://zhuanlan.zhihu.com/p/57359459" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/57359459</a> </p>
+<h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><p> <a href="https://zhuanlan.zhihu.com/p/57473266" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/57473266</a> </p>
+<p>jianshu.com/p/36a646cef11a</p>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><p>哈希冲突</p>
+<p> <a href="https://blog.csdn.net/zeb_perfect/article/details/52574915" target="_blank" rel="noopener">https://blog.csdn.net/zeb_perfect/article/details/52574915</a> </p>
+<p>面经地址：</p>
+<p> <a href="https://www.nowcoder.com/discuss/388680" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/388680</a> </p>
+<p> <a href="https://www.nowcoder.com/discuss/392442" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/392442</a> </p>
+<p> <a href="https://www.nowcoder.com/discuss/393890" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/393890</a> </p>
+<p> <a href="https://www.nowcoder.com/discuss/395958" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/395958</a> </p>
+<p> <a href="https://www.nowcoder.com/discuss/401022" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/401022</a> </p>
+<p> <a href="https://www.nowcoder.com/discuss/400851" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/400851</a> </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/04/05/链表专题/" rel="next" title="链表专题">
+                <i class="fa fa-chevron-left"></i> 链表专题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/04/28/面试总结/" rel="prev" title>
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#计网相关"><span class="nav-number">1.</span> <span class="nav-text">计网相关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#三次握手"><span class="nav-number">1.0.1.</span> <span class="nav-text">三次握手</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-UDP-协议的区别"><span class="nav-number">2.</span> <span class="nav-text">TCP,UDP 协议的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法题"><span class="nav-number">3.</span> <span class="nav-text">算法题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#判断链表是否有环，环的入口"><span class="nav-number">3.1.</span> <span class="nav-text">判断链表是否有环，环的入口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断完全二叉树"><span class="nav-number">3.2.</span> <span class="nav-text">判断完全二叉树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最长不重复子串"><span class="nav-number">3.3.</span> <span class="nav-text">最长不重复子串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串排序"><span class="nav-number">3.4.</span> <span class="nav-text">字符串排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二叉搜索树找第-K-大的节点"><span class="nav-number">3.5.</span> <span class="nav-text">二叉搜索树找第 K 大的节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一个数组怎么找中位数"><span class="nav-number">3.6.</span> <span class="nav-text">一个数组怎么找中位数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#哈夫曼编码"><span class="nav-number">3.7.</span> <span class="nav-text">哈夫曼编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#广度遍历"><span class="nav-number">3.8.</span> <span class="nav-text">广度遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#队列的实现-两个栈实现一个队列，队列长度不限"><span class="nav-number">3.9.</span> <span class="nav-text">队列的实现 ( 两个栈实现一个队列，队列长度不限 )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#满二叉树、完全二叉树、平衡二叉树的概念"><span class="nav-number">3.10.</span> <span class="nav-text">满二叉树、完全二叉树、平衡二叉树的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DP"><span class="nav-number">3.11.</span> <span class="nav-text">DP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#所有排序"><span class="nav-number">3.12.</span> <span class="nav-text">所有排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#快排"><span class="nav-number">3.12.1.</span> <span class="nav-text">快排</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#冒泡"><span class="nav-number">3.12.2.</span> <span class="nav-text">冒泡</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二分查找"><span class="nav-number">3.13.</span> <span class="nav-text">二分查找</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java"><span class="nav-number">4.</span> <span class="nav-text">java</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#jvm"><span class="nav-number">4.0.1.</span> <span class="nav-text">jvm</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux"><span class="nav-number">5.</span> <span class="nav-text">Linux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库索引"><span class="nav-number">6.</span> <span class="nav-text">数据库索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis"><span class="nav-number">7.</span> <span class="nav-text">Redis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其它"><span class="nav-number">8.</span> <span class="nav-text">其它</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
