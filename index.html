@@ -1,167 +1,819 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
 <head><meta name="generator" content="Hexo 3.9.0">
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
 
-    
 
-    
 
-    <title>Hexo</title>
-    <meta name="author" content="John Doe">
-    <meta name="version" content="1.0.0">
-    <meta name="keywords" content>
-    <meta name="description" content>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 
-    
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-    
-    
-    <link rel="icon" href="/images/notebook.ico">
-    
 
-    <link rel="stylesheet" href="/css/style.css">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/">
+
+
+
+
+
+  <title>Hexo</title>
+  
+
+
+
+
+
+
+
+
 </head>
-<body>
 
-    <main class="app">
-        <header class="header clearfix">
-    <div id="nav" class="nav">
-    <div class="nav-mobile">
-        <button id="open-panel" class="open-panel nav-mobile-item"><i class="icon-documents"></i></button>
-        <h1 class="nav-mobile-title nav-mobile-item">Hexo</h1>
-        <button id="open-menus" class="open-panel nav-mobile-item"><i class="icon-library"></i></button>
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
 
-    <nav id="nav-inner" class="nav-inner">
-        
-            <a class="nav-item active" href="/">
-                <span class="nav-text">首页</span>
-            </a>
-        
-            <a class="nav-item" href="/categories/front-end">
-                <span class="nav-text">Spring</span>
-            </a>
-        
-            <a class="nav-item" href="/categories/linux">
-                <span class="nav-text">Linux</span>
-            </a>
-        
-            <a class="nav-item" href="/categories/java-basic">
-                <span class="nav-text">java基础</span>
-            </a>
-        
-            <a class="nav-item" href="/categories/alg">
-                <span class="nav-text">每日一道算法</span>
-            </a>
-        
-            <a class="nav-item" href="/tags">
-                <span class="nav-text">标签</span>
-            </a>
-        
-            <a class="nav-item" href="/archives">
-                <span class="nav-text">归档</span>
-            </a>
-        
-            <a class="nav-item" href="/atom.xml">
-                <span class="nav-text">订阅</span>
-            </a>
-        
-            <a class="nav-item" href="/about">
-                <span class="nav-text">关于</span>
-            </a>
-        
-    </nav>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
-    <aside id="aside" class="aside">
-    <div id="aside-mask" class="aside-mask"></div>
-    <div id="aside-inner" class="aside-inner">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+<nav class="site-nav">
+  
 
+  
+    <ul id="menu" class="menu">
+      
         
-        
-
-        
-        <div class="author-meta">
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
             
-            <div class="author-avatar">
-                <a href="/">
-                    <img src="/images/tx.png" title="llllllllr">
-                </a>
-            </div>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
-            <div class="author-name">llllllllr</div>
-            <div class="author-work">java &amp; Designer</div>
-            <div class="author-location">
-                <i class="icon-location vm"></i>
-                <span class="vm">Guangzhou, China</span>
-            </div>
-            
-            <div class="author-thread-wrap">
-                <div class="author-threads clearfix">
-                    
-                        <a class="thread-item" href="https://github.com/sanonz" target="_blank" rel="noopener">
-                            <!-- Generated by IcoMoon.io -->
-<svg viewbox="0 0 1024 1024" width="38" height="38" fill="currentColor">
-<path d="M512 32.12c-265.004 0-479.88 220.23-479.88 492.090 0 217.446 137.536 401.684 328.202 466.81 23.994 4.498 32.778-10.712 32.778-23.78 0-11.782-0.428-42.632-0.642-83.764-133.466 29.778-161.744-65.984-161.744-65.984-21.852-56.772-53.344-71.982-53.344-71.982-43.49-30.636 3.214-29.992 3.214-29.992 48.202 3.428 73.482 50.772 73.482 50.772 42.846 75.196 112.258 53.558 139.68 40.918 4.284-31.706 16.71-53.558 30.42-65.77-106.474-12.426-218.516-54.63-218.516-243.152 0-53.772 18.638-97.69 49.274-131.966-4.928-12.426-21.424-62.556 4.714-130.252 0 0 40.276-13.282 131.966 50.344 38.348-10.926 79.266-16.282 120.184-16.496 40.704 0.214 81.836 5.57 120.184 16.496 91.692-63.626 131.752-50.344 131.752-50.344 26.136 67.698 9.64 117.828 4.714 130.252 30.636 34.492 49.274 78.408 49.274 131.966 0 188.952-112.258 230.514-219.16 242.724 17.138 15.21 32.564 45.202 32.564 91.048 0 65.77-0.642 118.898-0.642 134.966 0 13.068 8.57 28.492 32.992 23.566 191.094-64.912 328.418-249.152 328.418-466.382 0-271.86-214.874-492.090-479.88-492.090z"/>
-</svg>
-
-                        </a>
-                    
-                        <a class="thread-item" href="http://weibo.com/sanonz" target="_blank" rel="noopener">
-                            <!-- Generated by IcoMoon.io -->
-<svg viewbox="0 0 1024 1024" width="38" height="38" fill="currentColor">
-<path d="M21.332 512c0-270.988 219.68-490.666 490.668-490.666s490.666 219.68 490.666 490.666c0 270.988-219.678 490.666-490.666 490.666s-490.666-219.678-490.666-490.666zM960 512c0-247.424-200.576-448-448-448s-448 200.576-448 448c0 247.424 200.576 448 448 448s448-200.576 448-448zM768 597.332c47.128 0 85.332-38.206 85.332-85.332s-38.206-85.332-85.332-85.332c-47.128 0-85.332 38.204-85.332 85.332s38.206 85.332 85.332 85.332zM512 597.332c47.128 0 85.332-38.206 85.332-85.332s-38.206-85.332-85.332-85.332c-47.128 0-85.332 38.204-85.332 85.332s38.204 85.332 85.332 85.332zM255.998 597.332c47.128 0 85.332-38.206 85.332-85.332s-38.204-85.332-85.332-85.332c-47.128 0-85.332 38.204-85.332 85.332s38.204 85.332 85.332 85.332z"/>
-</svg>
-
-                        </a>
-                    
-                        <a class="thread-item" href="https://twitter.com/sanonze" target="_blank" rel="noopener">
-                            <!-- Generated by IcoMoon.io -->
-<svg viewbox="0 0 1024 1024" width="38" height="38" fill="currentColor">
-<path d="M512.029 31.011c-263.32 0-476.784 213.502-476.784 476.784 0 263.32 213.464 476.743 476.784 476.743s476.743-213.424 476.743-476.743c0-263.282-213.444-476.784-476.743-476.784zM752.193 411.663c0.251 5.151 0.349 10.319 0.349 15.548 0 158.786-120.856 341.85-341.85 341.85-67.844 0-131.021-19.884-184.188-53.961 9.41 1.104 18.955 1.665 28.656 1.665 56.305 0 108.115-19.208 149.221-51.425-52.567-0.987-96.925-35.741-112.22-83.468 7.32 1.433 14.85 2.149 22.595 2.149 10.959 0 21.569-1.433 31.656-4.201-54.987-11.035-96.402-59.634-96.402-117.796 0-0.524 0-1.025 0.020-1.549 16.186 9.003 34.716 14.404 54.427 15.044-32.258-21.587-53.458-58.317-53.458-100.023 0-22.015 5.925-42.673 16.264-60.408 59.266 72.683 147.807 120.527 247.676 125.521-2.053-8.77-3.118-17.968-3.118-27.378 0-66.333 53.787-120.14 120.158-120.14 34.561 0 65.771 14.599 87.69 37.93 27.378-5.363 53.091-15.393 76.305-29.16-9.003 28.074-28.036 51.618-52.858 66.47 24.338-2.903 47.495-9.37 69.024-18.917-16.070 24.144-36.459 45.306-59.945 62.248z"/>
-</svg>
-
-                        </a>
-                    
-                </div>
-            </div>
-            
-        </div>
+            Home
+          </a>
+        </li>
+      
         
-    </div>
-</aside>
-
-</header>
-
-        <div id="content" class="content">
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2020/03/04/服务器部署springboot项目/">服务器部署springboot项目</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2020-03-04T11:32:23.000Z" itemprop="datePublished">2020-03-04</time>
-</a>
-
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
             
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
 
-        </div>
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
     </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
     
-    <section class="article-body markdown-body">
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/28/面试总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
         
-        <h3 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h3><blockquote>
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/28/面试总结/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-28T17:24:01+08:00">
+                2020-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="一些面试总结"><a href="#一些面试总结" class="headerlink" title="一些面试总结"></a>一些面试总结</h4><p>2020.04.28</p>
+<p>今天又去了一家公司面试，在之前的面试里，事实上还是拿到了一些offer，而且之前的一些面试也给了自己一些自信心，觉得自己沟通还不错，项目也真的是自己写的，于是生出了一些盲目的自信。实际上这次的面试并没有怎么准备，之前长时间的紧张的准备好像已经透支了我的精力。最后面试的时候果然失败了，果然态度还是决定一切。</p>
+<p>但今天面试官还是给了一些建议的，比如说看设计模式之禅，我好像还是太缺乏实践了。上次面试的时候说到mysql的json格式，我说回来会看看，但是到底我还是没看。我想我的失败说到底还是可以追溯到源头的吧。</p>
+<p>回来的路上看到了微博，有一个小姐姐真的太优秀了，优秀又善良。摘抄一些她的话，希望自己也能创造自己的价值。</p>
+<ul>
+<li>认识自己的能力和局限是永不完结的新闻联播，因为很多事情没发生之前，你永远不会知道自己的天花板和地下室在哪里。你会在某一瞬间发现自己比想象中更强大，也会在很多时候觉得自己的差劲简直打破人类的下限。正常的，都是正常的。不要从偶尔的成功中过度膨胀，也不要从几次的挫败中自暴自弃，怕的东西太多，脚步都不敢迈了。</li>
+<li>相信我，“意难平” 的绝不是不尽人意的结果，而是被你生生浪费掉的时间，和可能性低就不去争取的机会。</li>
+<li>坐着，躺着，瘫着，胡思乱想，杞人忧天，妄自菲薄，永远都解决不了实际问题，希望从来不是时代，环境和老板给你的，而是自己创造的。</li>
+<li>这次的疫情，我不知道多少人已经颓废了，把夜熬穿了，但有时间的话，静下心想一想，未来要干什么，能干成什么，你明明可以活成自己喜欢的样子的。</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/05/腾讯面试准备/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/05/腾讯面试准备/" itemprop="url">腾讯面试准备</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-05T15:46:39+08:00">
+                2020-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="计网相关"><a href="#计网相关" class="headerlink" title="计网相关"></a>计网相关</h2><h4 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h4><p>首先很多人会先讲下握手的过程：</p>
+<pre><code>1、第一次握手：客户端给服务器发送一个 SYN 报文。
+
+2、第二次握手：服务器收到 SYN 报文之后，会应答一个 SYN+ACK 报文。
+
+3、第三次握手：客户端收到 SYN+ACK 报文之后，会回应一个 ACK 报文。
+
+4、服务器收到 ACK 报文之后，三次握手建立完成。
+
+作用是为了确认双方的接收与发送能力是否正常。</code></pre><p>   第一次握手：客户端发送网络包，服务端收到了。这样服务端就能得出结论：客户端的发送能力、服务端的接收能力是正常的。<br>      第二次握手：服务端发包，客户端收到了。这样客户端就能得出结论：服务端的接收、发送能力，客户端的接收、发送能力是正常的。不过此时服务器并不能确认客户端的接收能力是否正常。<br>      第三次握手：客户端发包，服务端收到了。这样服务端就能得出结论：客户端的接收、发送能力正常，服务器自己的发送、接收能力也正常<br> <a href="https://blog.csdn.net/qq_38950316/article/details/81087809?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1&amp;utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1" target="_blank" rel="noopener">https://blog.csdn.net/qq_38950316/article/details/81087809?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1&amp;utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1</a> </p>
+<p> 第三次握手失败时的处理操作，<strong>可以看出当失败时服务器并不会重传ack报文，而是直接发送RST报文段，进入CLOSED状态。这样做的目的是为了防止SYN洪泛攻击。</strong> </p>
+<p> <a href="https://www.cnblogs.com/jokerbj/p/11278067.html" target="_blank" rel="noopener">https://www.cnblogs.com/jokerbj/p/11278067.html</a> </p>
+<p>javaGuide  <a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/network/计算机网络.md" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide/blob/master/docs/network/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.md</a> </p>
+<h2 id="TCP-UDP-协议的区别"><a href="#TCP-UDP-协议的区别" class="headerlink" title="TCP,UDP 协议的区别"></a>TCP,UDP 协议的区别</h2><p>请求报文：请求行 请求头  空白行 请求数据</p>
+<p>响应报文：响应行 响应头 空白行 响应数据</p>
+<p>状态码</p>
+<p> <a href="https://blog.csdn.net/beyond150/article/details/102128827" target="_blank" rel="noopener">https://blog.csdn.net/beyond150/article/details/102128827</a> </p>
+<p>301 302区别</p>
+<p> <a href="https://www.cnblogs.com/zhuzhenwei918/p/7582620.html" target="_blank" rel="noopener">https://www.cnblogs.com/zhuzhenwei918/p/7582620.html</a> </p>
+<p> 前端的攻击有哪些 </p>
+<p><a href="https://www.jianshu.com/p/a5ff8a23b423" target="_blank" rel="noopener">https://www.jianshu.com/p/a5ff8a23b423</a></p>
+<p> 如何防止中间人攻击 </p>
+<p>四层、七层模型</p>
+<p> <a href="https://blog.csdn.net/waynelu92/article/details/70155922" target="_blank" rel="noopener">https://blog.csdn.net/waynelu92/article/details/70155922</a> </p>
+<h2 id="算法题"><a href="#算法题" class="headerlink" title="算法题"></a>算法题</h2><h3 id="判断链表是否有环，环的入口"><a href="#判断链表是否有环，环的入口" class="headerlink" title="判断链表是否有环，环的入口"></a>判断链表是否有环，环的入口</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">struct ListNode &#123;</span></span><br><span class="line"><span class="comment">    int val;</span></span><br><span class="line"><span class="comment">    struct ListNode *next;</span></span><br><span class="line"><span class="comment">    ListNode(int x) :</span></span><br><span class="line"><span class="comment">        val(x), next(NULL) &#123;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">&#125;;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">EntryNodeOfLoop</span><span class="params">(ListNode* pHead)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        ListNode* low = pHead;</span><br><span class="line">        ListNode* fast = pHead;</span><br><span class="line">        <span class="keyword">while</span>(fast &amp;&amp; fast-&gt;next)&#123;</span><br><span class="line">            fast = fast -&gt;next -&gt; next;</span><br><span class="line">            low = low -&gt; next;</span><br><span class="line">            <span class="keyword">if</span>(low == fast)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(!fast || !fast-&gt;next) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        low = pHead;</span><br><span class="line">        <span class="keyword">while</span>(low != fast)</span><br><span class="line">        &#123;</span><br><span class="line">            low = low -&gt; next;</span><br><span class="line">            fast = fast -&gt; next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> low;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="判断完全二叉树"><a href="#判断完全二叉树" class="headerlink" title="判断完全二叉树"></a>判断完全二叉树</h3><h3 id="最长不重复子串"><a href="#最长不重复子串" class="headerlink" title="最长不重复子串"></a>最长不重复子串</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = s.length();</span><br><span class="line">        Set&lt;Character&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>, i = <span class="number">0</span>, j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; n &amp;&amp; j &lt; n) &#123;</span><br><span class="line">            <span class="comment">// try to extend the range [i, j]</span></span><br><span class="line">            <span class="keyword">if</span> (!set.contains(s.charAt(j)))&#123;</span><br><span class="line">                set.add(s.charAt(j++));</span><br><span class="line">                ans = Math.max(ans, j - i);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                set.remove(s.charAt(i++));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串排序"><a href="#字符串排序" class="headerlink" title="字符串排序"></a>字符串排序</h3><p>数字&gt;小写字母&gt;大写字母，同类字符的相对顺序不能变，要求额外空间复杂度 O(1)。 </p>
+<h3 id="二叉搜索树找第-K-大的节点"><a href="#二叉搜索树找第-K-大的节点" class="headerlink" title="二叉搜索树找第 K 大的节点"></a>二叉搜索树找第 K 大的节点</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">链接：https:<span class="comment">//www.nowcoder.com/questionTerminal/ef068f602dde4d28aab2b210e859150a?f=discussion</span></span><br><span class="line">来源：牛客网</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">//中序遍历的结果就是有序序列，第K个元素就是vec[K-1]存储的节点指针；</span></span><br><span class="line">    <span class="function">TreeNode* <span class="title">KthNode</span><span class="params">(TreeNode* pRoot, <span class="keyword">unsigned</span> <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(pRoot==<span class="literal">NULL</span>||k&lt;=<span class="number">0</span>) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;TreeNode*&gt; vec;</span><br><span class="line">        Inorder(pRoot,vec);</span><br><span class="line">        <span class="keyword">if</span>(k&gt;vec.size())</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">return</span> vec[k<span class="number">-1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//中序遍历，将节点依次压入vector中</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Inorder</span><span class="params">(TreeNode* pRoot,<span class="built_in">vector</span>&lt;TreeNode*&gt;&amp; vec)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(pRoot==<span class="literal">NULL</span>) <span class="keyword">return</span>;</span><br><span class="line">        Inorder(pRoot-&gt;left,vec);</span><br><span class="line">        vec.push_back(pRoot);</span><br><span class="line">        Inorder(pRoot-&gt;right,vec);</span><br><span class="line">    &#125; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="一个数组怎么找中位数"><a href="#一个数组怎么找中位数" class="headerlink" title="一个数组怎么找中位数"></a>一个数组怎么找中位数</h3><h3 id="哈夫曼编码"><a href="#哈夫曼编码" class="headerlink" title="哈夫曼编码"></a>哈夫曼编码</h3><h3 id="广度遍历"><a href="#广度遍历" class="headerlink" title="广度遍历"></a>广度遍历</h3><h3 id="队列的实现-两个栈实现一个队列，队列长度不限"><a href="#队列的实现-两个栈实现一个队列，队列长度不限" class="headerlink" title="队列的实现 ( 两个栈实现一个队列，队列长度不限 )"></a>队列的实现 ( 两个栈实现一个队列，队列长度不限 )</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">solution</span>&#123;</span></span><br><span class="line">    Stack&lt;T&gt; stackOne = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">    Stack&lt;T&gt; stackTwo = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="function">boolean <span class="title">push</span><span class="params">()</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="满二叉树、完全二叉树、平衡二叉树的概念"><a href="#满二叉树、完全二叉树、平衡二叉树的概念" class="headerlink" title="满二叉树、完全二叉树、平衡二叉树的概念"></a>满二叉树、完全二叉树、平衡二叉树的概念</h3><p>满二叉树： 除了叶结点外每一个结点都有左右子叶且叶子结点都处在最底层的二叉树。 </p>
+<p>完全二叉树： <em>完全二叉树：</em>对于一个树高为h的二叉树，如果其第0层至第h-1层的节点都满。如果最下面一层节点不满，则所有的节点在左边的连续排列，空位都在右边。这样的二叉树就是一棵完全二叉树。 </p>
+<p>平衡二叉树：平衡二叉树的提出就是为了保证树不至于太倾斜，尽量保证两边平衡。因此它的定义如下：</p>
+<ol>
+<li>平衡二叉树要么是一棵空树</li>
+<li>要么保证左右子树的高度之差不大于 1</li>
+<li>子树也必须是一颗平衡二叉树</li>
+</ol>
+<h3 id="DP"><a href="#DP" class="headerlink" title="DP"></a>DP</h3><h3 id="所有排序"><a href="#所有排序" class="headerlink" title="所有排序"></a>所有排序</h3><h4 id="快排"><a href="#快排" class="headerlink" title="快排"></a>快排</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span> data[], <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (left &gt;= right)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">int</span> i = left, j = right;</span><br><span class="line">	<span class="keyword">int</span> key = data[left];</span><br><span class="line">	<span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">		<span class="keyword">while</span> (data[j] &lt; data[i])</span><br><span class="line">			j--;</span><br><span class="line">		<span class="keyword">if</span> (i &lt; j) data[i] = data[j--];</span><br><span class="line">		<span class="keyword">while</span> (data[i] &lt; data[j])</span><br><span class="line">			i++;</span><br><span class="line">		<span class="keyword">if</span> (i &lt; j) data[j] = data[i--];</span><br><span class="line">	&#125;</span><br><span class="line">	data[i] = key;</span><br><span class="line">	quickSort(data, left, i - <span class="number">1</span>);</span><br><span class="line">	quickSort(data, i + <span class="number">1</span>, right);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="冒泡"><a href="#冒泡" class="headerlink" title="冒泡"></a>冒泡</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="comment">//整数或浮点数皆可使用,若要使用类(class)或结构体(struct)时必须重载大于(&gt;)运算符</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bubble_sort</span><span class="params">(T arr[], <span class="keyword">int</span> len)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i, j;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++)</span><br><span class="line">                <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; len - <span class="number">1</span> - i; j++)</span><br><span class="line">                        <span class="keyword">if</span> (arr[j] &gt; arr[j + <span class="number">1</span>])</span><br><span class="line">                                swap(arr[j], arr[j + <span class="number">1</span>]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> arr[] = &#123; <span class="number">61</span>, <span class="number">17</span>, <span class="number">29</span>, <span class="number">22</span>, <span class="number">34</span>, <span class="number">60</span>, <span class="number">72</span>, <span class="number">21</span>, <span class="number">50</span>, <span class="number">1</span>, <span class="number">62</span> &#125;;</span><br><span class="line">        <span class="keyword">int</span> len = (<span class="keyword">int</span>) <span class="keyword">sizeof</span>(arr) / <span class="keyword">sizeof</span>(*arr);</span><br><span class="line">        bubble_sort(arr, len);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; arr[i] &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">float</span> arrf[] = &#123; <span class="number">17.5</span>, <span class="number">19.1</span>, <span class="number">0.6</span>, <span class="number">1.9</span>, <span class="number">10.5</span>, <span class="number">12.4</span>, <span class="number">3.8</span>, <span class="number">19.7</span>, <span class="number">1.5</span>, <span class="number">25.4</span>, <span class="number">28.6</span>, <span class="number">4.4</span>, <span class="number">23.8</span>, <span class="number">5.4</span> &#125;;</span><br><span class="line">        len = (<span class="keyword">float</span>) <span class="keyword">sizeof</span>(arrf) / <span class="keyword">sizeof</span>(*arrf);</span><br><span class="line">        bubble_sort(arrf, len);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; arrf[i] &lt;&lt; <span class="string">' '</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>* a, <span class="keyword">int</span> n, <span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> low, high, mid;</span><br><span class="line">	low = <span class="number">1</span>;</span><br><span class="line">	high = n;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (low &lt; high) &#123;</span><br><span class="line">		mid = (low + high) / <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span> (key &lt; a[mid])</span><br><span class="line">			high = mid - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span> (key &gt; a[mid])</span><br><span class="line">			low = mid + <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> mid;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="java"><a href="#java" class="headerlink" title="java"></a>java</h2><h4 id="jvm"><a href="#jvm" class="headerlink" title="jvm"></a>jvm</h4><p> JVM内存模型？你说的都是1.7的，1.8有什么改变？</p>
+<p> <a href="https://www.cnblogs.com/dingyingsi/p/3760447.html" target="_blank" rel="noopener">https://www.cnblogs.com/dingyingsi/p/3760447.html</a> </p>
+<p>垃圾回收的哪几种算法？怎么快速填满新生代？</p>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><h2 id="数据库索引"><a href="#数据库索引" class="headerlink" title="数据库索引"></a>数据库索引</h2><p> <a href="https://zhuanlan.zhihu.com/p/57359459" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/57359459</a> </p>
+<h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><p> <a href="https://zhuanlan.zhihu.com/p/57473266" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/57473266</a> </p>
+<p>jianshu.com/p/36a646cef11a</p>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><p>哈希冲突</p>
+<p> <a href="https://blog.csdn.net/zeb_perfect/article/details/52574915" target="_blank" rel="noopener">https://blog.csdn.net/zeb_perfect/article/details/52574915</a> </p>
+<p>面经地址：</p>
+<p> <a href="https://www.nowcoder.com/discuss/388680" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/388680</a> </p>
+<p> <a href="https://www.nowcoder.com/discuss/392442" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/392442</a> </p>
+<p> <a href="https://www.nowcoder.com/discuss/393890" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/393890</a> </p>
+<p> <a href="https://www.nowcoder.com/discuss/395958" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/395958</a> </p>
+<p> <a href="https://www.nowcoder.com/discuss/401022" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/401022</a> </p>
+<p> <a href="https://www.nowcoder.com/discuss/400851" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/400851</a> </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/05/链表专题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/05/链表专题/" itemprop="url">链表专题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-05T12:18:47+08:00">
+                2020-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/alg/" itemprop="url" rel="index">
+                    <span itemprop="name">alg</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="一"><a href="#一" class="headerlink" title="一"></a>一</h2><p> <a href="https://www.nowcoder.com/practice/0cff324157a24a7a8de3da7934458e34" target="_blank" rel="noopener">https://www.nowcoder.com/practice/0cff324157a24a7a8de3da7934458e34</a> </p>
+<p> 找出单向链表中的一个节点，该节点到尾指针的距离为K </p>
+<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>找出单向链表中的一个节点，该节点到尾指针的距离为K。链表的倒数第0个结点为链表的尾指针。要求时间复杂度为O(n)。<br>链表结点定义如下：<br>struct ListNode<br>{<br>   int m_nKey;<br>   ListNode* m_pNext;<br>}<br>链表节点的值初始化为1，2，3，4，5，6，7。</p>
+<h4 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">该节点到尾指针的距离K</span><br></pre></td></tr></table></figure>
+
+<h4 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">返回该单向链表的倒数第K个节点，输出节点的值</span><br></pre></td></tr></table></figure>
+
+<p>示例1</p>
+<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6</span><br></pre></td></tr></table></figure>
+
+<h4 id="备注"><a href="#备注" class="headerlink" title="备注:"></a>备注:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">请自觉实现一个链表，将1到7依次加入链表，然后再寻找倒数第K个节点。要求加节点与找节点的操作复杂度均为O(n)。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> m_nKey;</span><br><span class="line">    ListNode* m_pNext;</span><br><span class="line">    ListNode(<span class="keyword">int</span> x):m_nKey(x),m_pNext(<span class="literal">NULL</span>)&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ListNode* root = <span class="keyword">new</span> ListNode(<span class="number">1</span>);</span><br><span class="line">    ListNode* p = root;</span><br><span class="line">    ListNode* q = root;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">7</span>;i++)&#123;</span><br><span class="line">        ListNode* tmp = <span class="keyword">new</span> ListNode(i);</span><br><span class="line">        p-&gt; m_pNext = tmp;</span><br><span class="line">        p = tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> k ;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;k;</span><br><span class="line">    p=root;</span><br><span class="line">    <span class="keyword">while</span>(k--)&#123;</span><br><span class="line">        p=p-&gt;m_pNext;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (p)&#123;</span><br><span class="line">        p=p-&gt;m_pNext;</span><br><span class="line">        q=q-&gt;m_pNext;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt; q-&gt;m_nKey &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="二"><a href="#二" class="headerlink" title="二"></a>二</h2><p> 输入一个链表，按链表从尾到头的顺序返回一个ArrayList。 </p>
+<p>nowcoder.com/practice/d0267f7f55b3412ba93bd35cfa8e8035?tpId=13&amp;tqId=11156&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*  struct ListNode &#123;</span></span><br><span class="line"><span class="comment">*        int val;</span></span><br><span class="line"><span class="comment">*        struct ListNode *next;</span></span><br><span class="line"><span class="comment">*        ListNode(int x) :</span></span><br><span class="line"><span class="comment">*              val(x), next(NULL) &#123;</span></span><br><span class="line"><span class="comment">*        &#125;</span></span><br><span class="line"><span class="comment">*  &#125;;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; printListFromTailToHead(ListNode* head) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">        <span class="keyword">while</span>(head)&#123;</span><br><span class="line">            res.insert(res.begin(),head-&gt;val);</span><br><span class="line">            head = head-&gt;next;    </span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="三"><a href="#三" class="headerlink" title="三"></a>三</h2><p> 实现单链表的逆转函数，输入一个链表，反转链表后，返回翻转之后的链表。 </p>
+<p>nowcoder.com/practice/33e343e6d5df40bc9b3a26b01c82a718</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">只需要完成逆置链表函数</span></span><br><span class="line"><span class="comment">struct ListNode &#123;</span></span><br><span class="line"><span class="comment">	int val;</span></span><br><span class="line"><span class="comment">	struct ListNode *next;</span></span><br><span class="line"><span class="comment">	ListNode(int x) :</span></span><br><span class="line"><span class="comment">			val(x), next(NULL) &#123;</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment">&#125;;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">ReverseList</span><span class="params">(ListNode* pHead)</span> </span>&#123;</span><br><span class="line">            ListNode* pre = <span class="literal">NULL</span>;</span><br><span class="line">            ListNode* next = <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">while</span>(pHead)&#123;</span><br><span class="line">            next = pHead-&gt;next;</span><br><span class="line">            pHead-&gt;next = pre;</span><br><span class="line">            pre = pHead;</span><br><span class="line">            pHead = next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pre;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="四"><a href="#四" class="headerlink" title="四"></a>四</h2><p> <a href="https://www.nowcoder.com/practice/a632ec91a4524773b8af8694a51109e7" target="_blank" rel="noopener">https://www.nowcoder.com/practice/a632ec91a4524773b8af8694a51109e7</a> </p>
+<blockquote>
+<h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>给出一个链表，每 k 个节点一组进行翻转，并返回翻转后的链表。k 是一个正整数，它的值小于或等于链表的长度。如果节点总数不是 k 的整数倍，那么将最后剩余节点保持原有顺序。</p>
+<p>说明：</p>
+<p>\1. 你需要自行定义链表结构，将输入的数据保存到你的链表中；</p>
+<p>\2. 你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换；</p>
+<p>\3. 你的算法只能使用常数的额外空间。</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    ListNode* next;</span><br><span class="line">    ListNode(<span class="keyword">int</span> x):val(x),next(<span class="literal">NULL</span>)&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">ListNode* <span class="title">createList</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; data)</span> </span>&#123;</span><br><span class="line">     ListNode* root = <span class="keyword">new</span> ListNode(data[<span class="number">0</span>]);</span><br><span class="line">     ListNode* p = root;</span><br><span class="line">     ListNode* tmp;</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;data.size()<span class="number">-1</span>;i++)&#123;</span><br><span class="line">         tmp = <span class="keyword">new</span> ListNode(data[i]);</span><br><span class="line">         p-&gt;next = tmp;</span><br><span class="line">         p=p-&gt;next;</span><br><span class="line">     &#125;</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ListNode* <span class="title">reverseList</span><span class="params">(ListNode* root,<span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    ListNode* left = root;</span><br><span class="line">    ListNode* right = root;</span><br><span class="line">    ListNode* prev = root;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;k;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(right!=<span class="literal">NULL</span>)</span><br><span class="line">            right = right-&gt;next;</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">            <span class="keyword">return</span> left;</span><br><span class="line">    &#125;</span><br><span class="line">    ListNode* head = left;</span><br><span class="line">    <span class="keyword">while</span>(left != right) &#123;</span><br><span class="line">        ListNode* next = left-&gt;next;</span><br><span class="line">        left -&gt; next = prev;</span><br><span class="line">        prev = left;</span><br><span class="line">        left = next;</span><br><span class="line">    &#125;</span><br><span class="line">    head -&gt;next =reverseList(right,k);</span><br><span class="line">    <span class="keyword">return</span> prev;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; data;</span><br><span class="line">    <span class="keyword">int</span> k,tmp =<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;tmp)&#123;</span><br><span class="line">        data.push_back(tmp);</span><br><span class="line">    &#125;</span><br><span class="line">    k = data[data.size()<span class="number">-1</span>];</span><br><span class="line">    ListNode* root = createList(data);</span><br><span class="line">    ListNode* res = reverseList(root,k);</span><br><span class="line">    <span class="keyword">while</span>(res != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;res-&gt;val&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">        res =res-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="五"><a href="#五" class="headerlink" title="五"></a>五</h2><blockquote>
+<h2 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h2><p>在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留，返回链表头指针。 例如，链表1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5 处理后为 1-&gt;2-&gt;5</p>
+</blockquote>
+<p> <a href="https://www.nowcoder.com/practice/fc533c45b73a41b0b44ccba763f866ef?tpId=13&amp;tqId=11209&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" target="_blank" rel="noopener">https://www.nowcoder.com/practice/fc533c45b73a41b0b44ccba763f866ef?tpId=13&amp;tqId=11209&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking</a> </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">链接：https:<span class="comment">//www.nowcoder.com/questionTerminal/fc533c45b73a41b0b44ccba763f866ef?f=discussion</span></span><br><span class="line">来源：牛客网</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (pHead==null || pHead.next==null)&#123;<span class="keyword">return</span> pHead;&#125;</span><br><span class="line">ListNode Head = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">Head.next = pHead;</span><br><span class="line">ListNode pre  = Head;</span><br><span class="line">ListNode last = Head.next;</span><br><span class="line"><span class="keyword">while</span> (last!=null)&#123;</span><br><span class="line">    <span class="keyword">if</span>(last.next!=null &amp;&amp; last.val == last.next.val)&#123;</span><br><span class="line">        <span class="comment">// 找到最后的一个相同节点</span></span><br><span class="line">        <span class="keyword">while</span> (last.next!=null &amp;&amp; last.val == last.next.val)&#123;</span><br><span class="line">            last = last.next;</span><br><span class="line">        &#125;</span><br><span class="line">        pre.next = last.next;</span><br><span class="line">        last = last.next;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        pre = pre.next;</span><br><span class="line">        last = last.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> Head.next;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/04/服务器部署springboot项目/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/04/服务器部署springboot项目/" itemprop="url">服务器部署springboot项目</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-04T19:32:23+08:00">
+                2020-03-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java-basic/" itemprop="url" rel="index">
+                    <span itemprop="name">java-basic</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h3><blockquote>
 <p>主机： CentOS 7.6 64位  </p>
 </blockquote>
 <p>1.先下载jdk</p>
@@ -255,35 +907,125 @@
 <li>重新打包</li>
 </ol>
 
+          
         
-    </section>
-</article>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-    <article class="article" itemscope itemprop="blogPost">
     
-    <header class="article-header">
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/18/Redis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
         
-        <h1 itemprop="name">
-            <a href="/2020/02/18/Redis/">Redis</a>
-        </h1>
         
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2020-02-18T10:13:55.000Z" itemprop="datePublished">2020-02-18</time>
-</a>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/02/18/Redis/" itemprop="url">Redis</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-18T18:13:55+08:00">
+                2020-02-18
+              </time>
+            
 
             
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-    </header>
+      </header>
     
-    <section class="article-body markdown-body">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
-        <h3 id="Linux部署Redis"><a href="#Linux部署Redis" class="headerlink" title="Linux部署Redis"></a>Linux部署Redis</h3><ul>
+          
+            <h3 id="Linux部署Redis"><a href="#Linux部署Redis" class="headerlink" title="Linux部署Redis"></a>Linux部署Redis</h3><ul>
 <li>下载压缩文件夹</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://download.redis.io/releases/redis-4.0.1.tar.gz</span><br></pre></td></tr></table></figure>
@@ -336,35 +1078,147 @@
 <h3 id="集成Jedis"><a href="#集成Jedis" class="headerlink" title="集成Jedis"></a>集成Jedis</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">   <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>redis.clients<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jedis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>fastjson<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.38<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 
+          
         
-    </section>
-</article>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-    <article class="article" itemscope itemprop="blogPost">
     
-    <header class="article-header">
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/18/reverse String/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
         
-        <h1 itemprop="name">
-            <a href="/2020/02/18/reverse String/">Reverse String II</a>
-        </h1>
         
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2020-02-18T03:50:10.000Z" itemprop="datePublished">2020-02-18</time>
-</a>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/02/18/reverse String/" itemprop="url">Reverse String II</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-18T11:50:10+08:00">
+                2020-02-18
+              </time>
+            
 
             
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/alg/" itemprop="url" rel="index">
+                    <span itemprop="name">alg</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-    </header>
+      </header>
     
-    <section class="article-body markdown-body">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
-        <h3 id="Reverse-String-II"><a href="#Reverse-String-II" class="headerlink" title="Reverse String II"></a>Reverse String II</h3><blockquote>
+          
+            <h3 id="Reverse-String-II"><a href="#Reverse-String-II" class="headerlink" title="Reverse String II"></a>Reverse String II</h3><blockquote>
 <p> Given a string and an integer k, you need to reverse the first k characters for every 2k characters counting from the start of the string. If there are less than k characters left, reverse all of them. If there are less than 2k but greater than or equal to k characters, then reverse the first k characters and left the other as original. </p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: s = &quot;abcdefg&quot;, k = 2</span><br><span class="line">Output: &quot;bacdfeg</span><br></pre></td></tr></table></figure>
@@ -381,35 +1235,147 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">reverseStr</span><span class="params">(String s, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span>[] arr = s.toCharArray();</span><br><span class="line">        <span class="keyword">int</span> n = arr.length;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &lt; n) &#123;</span><br><span class="line">            <span class="keyword">int</span> j = Math.min(i + k - <span class="number">1</span>, n - <span class="number">1</span>);</span><br><span class="line">            swap(arr, i, j);</span><br><span class="line">            i += <span class="number">2</span> * k;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> String.valueOf(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">char</span>[] arr, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (l &lt; r) &#123;</span><br><span class="line">            <span class="keyword">char</span> temp = arr[l];</span><br><span class="line">            arr[l++] = arr[r];</span><br><span class="line">            arr[r--] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
+          
         
-    </section>
-</article>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-    <article class="article" itemscope itemprop="blogPost">
     
-    <header class="article-header">
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/17/JAVA面试题个人总结一/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
         
-        <h1 itemprop="name">
-            <a href="/2020/02/17/JAVA面试题个人总结一/">JAVA面试题个人总结一</a>
-        </h1>
         
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2020-02-17T01:48:21.000Z" itemprop="datePublished">2020-02-17</time>
-</a>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/02/17/JAVA面试题个人总结一/" itemprop="url">JAVA面试题个人总结一</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-17T09:48:21+08:00">
+                2020-02-17
+              </time>
+            
 
             
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java-basic/" itemprop="url" rel="index">
+                    <span itemprop="name">java-basic</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-    </header>
+      </header>
     
-    <section class="article-body markdown-body">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
-        <h3 id="JDK和JRE区别"><a href="#JDK和JRE区别" class="headerlink" title="JDK和JRE区别"></a>JDK和JRE区别</h3><ul>
+          
+            <h3 id="JDK和JRE区别"><a href="#JDK和JRE区别" class="headerlink" title="JDK和JRE区别"></a>JDK和JRE区别</h3><ul>
 <li>JDK:java development kit，Java开发工具包，提供运行环境和开发环境</li>
 <li>JRE：java runtime environment java运行工具包，提供java运行环境</li>
 <li>只是运行java程序的话就用JRE，需要开发JAVA，用JDK</li>
@@ -546,35 +1512,147 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	</span><br><span class="line">    String str = <span class="string">"abcdefg"</span>;</span><br><span class="line">    <span class="keyword">char</span>[] words = str.toCharArray();</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>,j=str.length()-<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">char</span> temp;</span><br><span class="line">    <span class="keyword">while</span> (i&lt;j)</span><br><span class="line">    &#123;</span><br><span class="line">    	temp = words[i];</span><br><span class="line">    	words[i] = words[j];</span><br><span class="line">    	words[j] = temp;</span><br><span class="line">    	i++;</span><br><span class="line">    	j--;</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(<span class="keyword">new</span> String(words));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
+          
         
-    </section>
-</article>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-    <article class="article" itemscope itemprop="blogPost">
     
-    <header class="article-header">
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/14/微信小程序笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
         
-        <h1 itemprop="name">
-            <a href="/2020/02/14/微信小程序笔记/">微信小程序笔记</a>
-        </h1>
         
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2020-02-14T06:09:01.000Z" itemprop="datePublished">2020-02-14</time>
-</a>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/02/14/微信小程序笔记/" itemprop="url">微信小程序笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-14T14:09:01+08:00">
+                2020-02-14
+              </time>
+            
 
             
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java-basic/" itemprop="url" rel="index">
+                    <span itemprop="name">java-basic</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-    </header>
+      </header>
     
-    <section class="article-body markdown-body">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
-        <h3 id="data中数组赋值"><a href="#data中数组赋值" class="headerlink" title="data中数组赋值"></a>data中数组赋值</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">     selected:[],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+            <h3 id="data中数组赋值"><a href="#data中数组赋值" class="headerlink" title="data中数组赋值"></a>data中数组赋值</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">     selected:[],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>如果只改变selected数组中随便一个值</p>
@@ -589,35 +1667,147 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;item==-1?'/images/icon/dg.png':'/images/icon/dg2.png'&#125;&#125;"</span> </span></span><br><span class="line"><span class="tag">       <span class="attr">mode</span>=<span class="string">"widthFix"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 
+          
         
-    </section>
-</article>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-    <article class="article" itemscope itemprop="blogPost">
     
-    <header class="article-header">
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/13/范式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
         
-        <h1 itemprop="name">
-            <a href="/2020/02/13/范式/">范式</a>
-        </h1>
         
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2020-02-13T11:52:27.000Z" itemprop="datePublished">2020-02-13</time>
-</a>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/02/13/范式/" itemprop="url">范式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-13T19:52:27+08:00">
+                2020-02-13
+              </time>
+            
 
             
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java-basic/" itemprop="url" rel="index">
+                    <span itemprop="name">java-basic</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-    </header>
+      </header>
     
-    <section class="article-body markdown-body">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
-        <h2 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h2><p><img src="http://llllllllr.top/20200213200547.png" alt></p>
+          
+            <h2 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h2><p><img src="http://llllllllr.top/20200213200547.png" alt></p>
 <blockquote>
 <ul>
 <li>范式就是一种数据表设计标准的级别，就好像四六级一样</li>
@@ -684,459 +1874,476 @@
 <li>删除一个系下所有学生，这个系还是存在</li>
 </ul>
 
+          
         
-    </section>
-</article>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-    <article class="article" itemscope itemprop="blogPost">
     
-    <header class="article-header">
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/23/logback/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
         
-        <h1 itemprop="name">
-            <a href="/2020/01/23/logback/">logback</a>
-        </h1>
         
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2020-01-23T15:14:13.000Z" itemprop="datePublished">2020-01-23</time>
-</a>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/23/logback/" itemprop="url">logback</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-23T23:14:13+08:00">
+                2020-01-23
+              </time>
+            
 
             
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/front-end/" itemprop="url" rel="index">
+                    <span itemprop="name">front-end</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-    </header>
+      </header>
     
-    <section class="article-body markdown-body">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
-        <h1 id="logback复盘"><a href="#logback复盘" class="headerlink" title="logback复盘"></a>logback复盘</h1><h3 id="pom-xml"><a href="#pom-xml" class="headerlink" title="pom.xml"></a>pom.xml</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>slf4j-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.7.5<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>ch.qos.logback<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>logback-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.11<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>ch.qos.logback<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>logback-classic<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.11<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+          
+            <h1 id="logback复盘"><a href="#logback复盘" class="headerlink" title="logback复盘"></a>logback复盘</h1><h3 id="pom-xml"><a href="#pom-xml" class="headerlink" title="pom.xml"></a>pom.xml</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>slf4j-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.7.5<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>ch.qos.logback<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>logback-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.11<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>ch.qos.logback<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>logback-classic<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.11<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="resources下的logback-xml"><a href="#resources下的logback-xml" class="headerlink" title="resources下的logback.xml"></a>resources下的logback.xml</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">"STDOUT"</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.ConsoleAppender"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- encoders are assigned the type</span></span><br><span class="line"><span class="comment">             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">encoder</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">pattern</span>&gt;</span>%d - %msg%n<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">encoder</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">root</span> <span class="attr">level</span>=<span class="string">"info"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">"STDOUT"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="loggerTest"><a href="#loggerTest" class="headerlink" title="loggerTest"></a>loggerTest</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">package</span> lllr.breastfeed;</span><br><span class="line">        <span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line">        <span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line">        <span class="keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">loggerTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger logger = LoggerFactory.getLogger(loggerTest.class);</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String name = <span class="string">"root"</span>;</span><br><span class="line">        String password = <span class="string">"12364"</span>;</span><br><span class="line">        logger.info(<span class="string">"Hello world, name : &#123;&#125;, password: &#123;&#125;"</span>,name,password);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
+          
         
-    </section>
-</article>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-    <article class="article" itemscope itemprop="blogPost">
     
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/11/21/云主机搭建mysql/">云主机搭建mysql</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-11-21T07:27:41.000Z" itemprop="datePublished">2019-11-21</time>
-</a>
+  </section>
 
-            
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
 
         </div>
-    </header>
-    
-    <section class="article-body markdown-body">
         
-        <ul>
-<li>配置安装MySQL    </li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm -Uvh https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm</span><br></pre></td></tr></table></figure>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum --enablerepo=mysql80-community install mysql-community-server</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>启动mysql服务</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service mysqld start</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>查看Mysql状态</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysqld status</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>配置安全策略</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql_secure_installation</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>授权给远程用户</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">GRANT ALL ON *.* TO &apos;[用户名]&apos;@&apos;%&apos;</span><br><span class="line"></span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;密码&apos; WITH GRANT OPTION;</span><br><span class="line"></span><br><span class="line">flush privileges</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>命令解释:<br>*.*       第一个<em>表示库，第二个</em>表示表; <em>.</em>对全部数据库的全部表授权，so.ok 表示只对so这个库中的ok表授权<br>root    表示要给哪个用户授权，这个用户可以是存在的用户，也可以是不存在的<br>‘%’      表示允许远程连接的IP地址，%代表允许所有IP连接<br>flush privileges;  代表立即刷新权限表，使添加的用户生效</p>
-</blockquote>
-<ul>
-<li>Navicat连接Mysql报1251错误 </li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER &apos;root&apos;@&apos;%&apos; IDENTIFIED WITH mysql_native_password BY &apos;密码&apos;;//更新规则</span><br><span class="line"></span><br><span class="line">ALTER USER &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;密码&apos; PASSWORD EXPIRE NEVER;//更新密码</span><br></pre></td></tr></table></figure>
-
-
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
+  <aside id="sidebar" class="sidebar">
     
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/11/19/java基础之集合框架/">java基础之集合框架</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-11-19T00:07:48.000Z" itemprop="datePublished">2019-11-19</time>
-</a>
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
 
             
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <h1 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h1><ul>
-<li>List<ul>
-<li>ArrayList</li>
-<li>LinkedList</li>
-<li>Vector</li>
-</ul>
-</li>
-<li>Set<ul>
-<li>HashSet</li>
-<li>TreeSet</li>
-</ul>
-</li>
-</ul>
-<h3 id="集合的基本方法"><a href="#集合的基本方法" class="headerlink" title="集合的基本方法"></a>集合的基本方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">add()</span><br><span class="line">remove()</span><br><span class="line">clear()</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>迭代</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Iterator it = ar.iterator();</span><br><span class="line"><span class="keyword">while</span>(it.hasNext())</span><br><span class="line">    System.out.println(it.next());</span><br></pre></td></tr></table></figure>
-
-<h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><ul>
-<li>元素是有序的，可以重复（因为集合中的元素有索引）</li>
-<li>但set相反，set的元素的无序的，不能重复，没有索引</li>
-</ul>
-<p>⭐list特有的方法（可以操作索引index</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">add(index,element)</span><br><span class="line">addAll(index,Collection)</span><br><span class="line">remove(index)</span><br><span class="line">set(index,element)</span><br><span class="line">get(index)</span><br><span class="line">subList(from,to)</span><br><span class="line">ListIterator()</span><br><span class="line">indexOf(element)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>上述方法自己一一尝试</li>
-<li>看下面代码⭐</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">	 </span><br><span class="line">	 	 </span><br><span class="line">	 	ArrayList&lt;Integer&gt; ar1  = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">	 	</span><br><span class="line">	 	ar1.add(<span class="number">3</span>);</span><br><span class="line">	 	ar1.add(<span class="number">4</span>);</span><br><span class="line">	 	ar1.add(<span class="number">5</span>);</span><br><span class="line">          </span><br><span class="line">	 	Iterator it = ar1.iterator();</span><br><span class="line">	 	<span class="keyword">while</span>(it.hasNext())</span><br><span class="line">	 	&#123;</span><br><span class="line">	 		Object obj =it.next();</span><br><span class="line">	 		     <span class="keyword">if</span>(obj.equals(<span class="number">4</span>))</span><br><span class="line">	 		    	 ar1.add(<span class="number">8</span>);</span><br><span class="line">	 		     </span><br><span class="line">	 		 System.out.println(obj);</span><br><span class="line">	 	&#125;</span><br><span class="line">	 	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>抛出异常</p>
-<p>Exception in thread “main” java.util.ConcurrentModificationException<br>    at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:909)<br>    at java.util.ArrayList$Itr.next(ArrayList.java:859)<br>    at learning.day1.main(day1.java:21)</p>
-</blockquote>
-<p>因为iterator it只知道有三个元素在ar1中，此时突然又增加一个元素，那么it.hasNext()判断会出错。</p>
-<p>但观察下面这个</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">		 </span><br><span class="line">		 	 </span><br><span class="line">		 	ArrayList&lt;Integer&gt; ar1  = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">		 	</span><br><span class="line">		 	ar1.add(<span class="number">3</span>);</span><br><span class="line">		 	ar1.add(<span class="number">4</span>);</span><br><span class="line">		 	ar1.add(<span class="number">5</span>);</span><br><span class="line">           </span><br><span class="line">		 	Iterator it = ar1.iterator();</span><br><span class="line">		 	<span class="keyword">while</span>(it.hasNext())</span><br><span class="line">		 	&#123;</span><br><span class="line">		 		Object obj =it.next();</span><br><span class="line">		 		     <span class="keyword">if</span>(obj.equals(<span class="number">4</span>))</span><br><span class="line">		 		    	⭐it.remove();</span><br><span class="line">		 		     </span><br><span class="line">		 		 System.out.println(obj);</span><br><span class="line">		 	&#125;       </span><br><span class="line">  </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>3<br>4<br>5</p>
-</blockquote>
-<p>因为迭代器it已经被使用了，所以虽然它删除了，但是它已经用完了，这时候已经指向下一个迭代器。</p>
-<p>使用ListIterator(实现了在遍历过程中的增删改查)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">	 </span><br><span class="line">	 	 </span><br><span class="line">	 	ArrayList&lt;Integer&gt; ar1  = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">	 	</span><br><span class="line">	 	ar1.add(<span class="number">3</span>);</span><br><span class="line">	 	ar1.add(<span class="number">4</span>);</span><br><span class="line">	 	ar1.add(<span class="number">5</span>);</span><br><span class="line">          </span><br><span class="line">	 	ListIterator&lt;Integer&gt; lt  = ar1.listIterator();</span><br><span class="line">	 	</span><br><span class="line">	 	<span class="keyword">while</span>(lt.hasNext()) &#123;</span><br><span class="line">	 		Object obj = lt.next();</span><br><span class="line">	 		</span><br><span class="line">	 		<span class="keyword">if</span>(obj.equals(<span class="number">3</span>)) &#123;</span><br><span class="line">	 			Integer addi = <span class="keyword">new</span> Integer(<span class="number">9</span>);</span><br><span class="line">	 			<span class="comment">//lt.add(addi);</span></span><br><span class="line">	 			<span class="comment">//lt.set(7);</span></span><br><span class="line">	 			lt.remove();</span><br><span class="line">	 		&#125;</span><br><span class="line">	 		</span><br><span class="line">	 	&#125;</span><br><span class="line">	 	</span><br><span class="line">           System.out.println(ar1);</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="常见的list"><a href="#常见的list" class="headerlink" title="常见的list"></a>常见的list</h4><ul>
-<li>ArrayList（底层使用数组，查询和修改快，但是添加和删除慢，线程不同步）</li>
-<li>LinkedList(底层使用链表，查询和修改慢，增删快)<ul>
-<li>addFirst(T element)</li>
-<li>offerFirst(T element)有返回布尔值</li>
-<li>getFirst()</li>
-<li>peekFirst(),如果空，返回null</li>
-<li>getLast()</li>
-<li>peekLast(),如果空，返回null</li>
-<li>removeFirst()</li>
-<li>pollFirst(),如果空，返回null</li>
-<li>removeLast()</li>
-<li>pollLast(),如果空，返回null</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">	 	 </span><br><span class="line">		 LinkedList&lt;Integer&gt; lk = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">		 </span><br><span class="line">		 lk.addFirst(<span class="number">1</span>);</span><br><span class="line">		 lk.addFirst(<span class="number">2</span>);</span><br><span class="line">		 lk.addFirst(<span class="number">3</span>);</span><br><span class="line">		 lk.addFirst(<span class="number">4</span>);	 </span><br><span class="line">		 Iterator&lt;Integer&gt; it = lk.iterator();</span><br><span class="line">		 <span class="keyword">while</span>(it.hasNext()) &#123;</span><br><span class="line">			 System.out.println(it.next());</span><br><span class="line">		 &#125; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-<p>输出 4321，因为是链表嘛</p>
-<ul>
-<li>Vector（底层用数组结构实现，线程同步（因为增删和查询都比较慢，被ArrayList替代了</li>
-</ul>
-<h4 id="常见的set"><a href="#常见的set" class="headerlink" title="常见的set"></a>常见的set</h4><blockquote>
-<p>set的元素是无序的，即存入和取出的顺序不一定一致，元素不可以重复</p>
-<p>set的功能和collection是一致的</p>
-</blockquote>
-<ul>
-<li>hashset 底层数据结构是哈希表</li>
-<li>Treeset</li>
-</ul>
-<p>set集合的功能和collection的功能是一样的</p>
-<p>class person</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	String name;</span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">	</span><br><span class="line">	Person(String n,<span class="keyword">int</span> a)&#123;</span><br><span class="line">		<span class="keyword">this</span>.name=n;</span><br><span class="line">		<span class="keyword">this</span>.age=a;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"name:"</span>+<span class="keyword">this</span>.name+<span class="string">"  age:"</span>+<span class="keyword">this</span>.age;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </span><br><span class="line">		HashSet&lt;Person&gt; hs = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">		hs.add(<span class="keyword">new</span> Person(<span class="string">"a1"</span>,<span class="number">5</span>));</span><br><span class="line">		hs.add(<span class="keyword">new</span> Person(<span class="string">"a2"</span>,<span class="number">6</span>));</span><br><span class="line">		hs.add(<span class="keyword">new</span> Person(<span class="string">"a3"</span>,<span class="number">7</span>));</span><br><span class="line">		hs.add(<span class="keyword">new</span> Person(<span class="string">"a4"</span>,<span class="number">8</span>));</span><br><span class="line">		Iterator&lt;Person&gt; it = hs.iterator();</span><br><span class="line">		<span class="keyword">while</span>(it.hasNext())</span><br><span class="line">			System.out.println(it.next());</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>name:a1  age:5<br>name:a4  age:8<br>name:a3  age:7<br>name:a2  age:6</p>
-</blockquote>
-<p>👆可以看到对象是无序的，因为在内部它是根据哈希值存储的</p>
-<p>在class person里面重载</p>
-<ul>
-<li>public int hashCode()</li>
-<li>public boolean equals(Object obj)</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">60</span>;</span><br><span class="line">&#125;	</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(!(obj <span class="keyword">instanceof</span> Person)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	Person p = (Person) obj;</span><br><span class="line">	System.out.println(<span class="keyword">this</span>.name+<span class="string">"..."</span>+p.name);</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.name.equals(p.name)&amp;&amp;<span class="keyword">this</span>.age==p.age;		</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>main 中修改：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">		hs.add(<span class="keyword">new</span> Person(<span class="string">"a1"</span>,<span class="number">5</span>));</span><br><span class="line">		hs.add(<span class="keyword">new</span> Person(<span class="string">"a2"</span>,<span class="number">6</span>));</span><br><span class="line">		hs.add(<span class="keyword">new</span> Person(<span class="string">"a3"</span>,<span class="number">7</span>));</span><br><span class="line">		hs.add(<span class="keyword">new</span> Person(<span class="string">"a1"</span>,<span class="number">5</span>));</span><br><span class="line">⭐添加两个相同的a1</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>a2…a1<br>a3…a1<br>a3…a2<br>a1…a1<br>name:a1  age:5<br>name:a2  age:6<br>name:a3  age:7</p>
-</blockquote>
-<p>可以看到，重复的a1被去掉了。</p>
-<ul>
-<li>首先a1进来，哈希值3C</li>
-<li>a2进来哈希值也是3C，这时调用equals方法，发现equals方法返回false，就让a2顺延下来</li>
-<li>a3进来分别和a1,a2比较，返回false也顺延</li>
-<li>a1进来和a1比，equals方法返回true,就不会继续存放了</li>
-</ul>
-<p>所以，<strong>HashSet是没有重复元素的集合</strong></p>
-<h5 id="HashSet的contains"><a href="#HashSet的contains" class="headerlink" title="HashSet的contains"></a>HashSet的contains</h5><ul>
-<li>先比较哈希值，相等</li>
-<li>进入equals方法，equals返回true，contains返回true</li>
-</ul>
-<p><strong>同样的，删除方法也是依赖hashCode()和equals()方法</strong></p>
-<h5 id="TreeSet（内部红黑树实现）"><a href="#TreeSet（内部红黑树实现）" class="headerlink" title="TreeSet（内部红黑树实现）"></a>TreeSet（内部红黑树实现）</h5><ul>
-<li>可以对set集合中的元素进行排序</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </span><br><span class="line">   TreeSet&lt;String&gt; ts = <span class="keyword">new</span> TreeSet&lt;&gt;();</span><br><span class="line">   ts.add(<span class="string">"dsad"</span>);</span><br><span class="line">   ts.add(<span class="string">"aaa"</span>);</span><br><span class="line">   ts.add(<span class="string">"csa"</span>);</span><br><span class="line">   ts.add(<span class="string">"avf"</span>);</span><br><span class="line">   Iterator&lt;String&gt; it = ts.iterator();</span><br><span class="line">   <span class="keyword">while</span>(it.hasNext())</span><br><span class="line">	   System.out.println(it.next());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>aaa<br>avf<br>csa<br>dsad</p>
-</blockquote>
-<p>可以看到，输出的结果按照首字母来排序</p>
-<p>也可以自定义排序方法：</p>
-<p>​    一.实现Comparable接口，重载compareTo方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">⭐<span class="class"><span class="keyword">class</span> <span class="title">Person</span> <span class="keyword">implements</span> <span class="title">Comparable</span>&lt;<span class="title">Person</span>&gt;</span>&#123;</span><br><span class="line">	</span><br><span class="line">	String name;</span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">	</span><br><span class="line">	Person(String n,<span class="keyword">int</span> a)&#123;</span><br><span class="line">		<span class="keyword">this</span>.name=n;</span><br><span class="line">		<span class="keyword">this</span>.age=a;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	⭐<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Person p)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(<span class="keyword">this</span>.age &gt; p.age)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span>(<span class="keyword">this</span>.age &lt; p.age)</span><br><span class="line">			<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span> </span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"name:"</span>+<span class="keyword">this</span>.name+<span class="string">"  age:"</span>+<span class="keyword">this</span>.age;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>TreeSet保证元素唯一性：compareTo方法返回0</p>
-<p>二.让集合在初始化时就有比较方式，构造新的TreeSet,让它根据比较器进行排序</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Mycompare</span> <span class="keyword">implements</span> <span class="title">Comparator</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Object o1,Object o2)</span> </span>&#123;</span><br><span class="line">		Person p1 = (Person)o1;</span><br><span class="line">		Person p2=(Person)o2;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> Integer(p1.getAge()).compareTo(p2.getAge());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TreeSet&lt;Person&gt; ts = <span class="keyword">new</span> TreeSet&lt;&gt;(<span class="keyword">new</span> Mycompare());</span><br></pre></td></tr></table></figure>
-
-<h4 id="泛型限定"><a href="#泛型限定" class="headerlink" title="泛型限定"></a>泛型限定</h4><ul>
-<li>占位符？</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span>  <span class="keyword">void</span> <span class="title">show</span><span class="params">(ArrayList&lt;?&gt; al)</span> </span>&#123;</span><br><span class="line">		Iterator&lt;?&gt; it = al.iterator();</span><br><span class="line">		<span class="keyword">while</span>(it.hasNext())</span><br><span class="line">			System.out.println(it.next());</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>T</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">(ArrayList&lt;T&gt; al)</span> </span>&#123;</span><br><span class="line">		Iterator&lt;T&gt; it = al.iterator();</span><br><span class="line">		<span class="keyword">while</span>(it.hasNext())</span><br><span class="line">			System.out.println(it.next());</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>？通配符</li>
-<li>？ extends E (接受E或E的子类型)</li>
-<li>？ super E(接受E或E的父类型)</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">(ArrayList&lt;? extends person&gt; al)</span> </span>&#123;</span><br><span class="line">		Iterator&lt;? extends person&gt; it = al.iterator();</span><br><span class="line">		<span class="keyword">while</span>(it.hasNext())</span><br><span class="line">			System.out.println(it.next());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </span><br><span class="line">	   ArrayList&lt;student&gt; stu = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">	   stu.add(<span class="keyword">new</span> student(<span class="string">"a"</span>,<span class="string">"b"</span>));</span><br><span class="line">	   ArrayList&lt;person&gt; per = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">	   per.add(<span class="keyword">new</span> person(<span class="string">"a"</span>));</span><br><span class="line">	   show(stu);</span><br><span class="line">	   show(per);</span><br><span class="line">	   &#125;</span><br></pre></td></tr></table></figure>
-
-<p>TreeSet实现comparator接口</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Comp</span> <span class="keyword">implements</span> <span class="title">Comparator</span>&lt;<span class="title">person</span>&gt;</span></span><br><span class="line"><span class="class"> </span>&#123;</span><br><span class="line">	 <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(person p1,person p2)</span> </span>&#123;</span><br><span class="line">		 <span class="keyword">return</span> p1.getName().compareTo(p2.getName());</span><br><span class="line">	 &#125;</span><br><span class="line">	 </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </span><br><span class="line">	   TreeSet&lt;student&gt; stu = <span class="keyword">new</span> TreeSet&lt;&gt;(<span class="keyword">new</span> Comp());</span><br><span class="line">	   stu.add(<span class="keyword">new</span> student(<span class="string">"a1"</span>,<span class="string">"a"</span>));</span><br><span class="line">	   stu.add(<span class="keyword">new</span> student(<span class="string">"a2"</span>,<span class="string">"a"</span>));</span><br><span class="line">	   stu.add(<span class="keyword">new</span> student(<span class="string">"a3"</span>,<span class="string">"a"</span>));</span><br><span class="line">	   show(stu);</span><br><span class="line">	 &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><blockquote>
-<p>Hashtable(底层是哈希表数据结构，不允许使用null键和null值，线程同步，效率低)</p>
-<p>HashMap(底层是哈希表数据结构，允许使用null键和null值，线程不同步，效率高)</p>
-<p>TreeMap（底层是二叉树数据结构，线程不同步，可以用于给map集合中的键进行排序）</p>
-</blockquote>
-<p>Map集合存储键值对，要保证键的唯一性</p>
-<p>Set集合底层其实就是map</p>
-<ul>
-<li>添加<ul>
-<li>put</li>
-<li>putAll</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </span><br><span class="line">	     </span><br><span class="line">		 HashMap&lt;Integer,String&gt; hs = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">		 HashMap&lt;Integer,String&gt; cp = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">		 cp.put(<span class="number">2</span>,<span class="string">"b"</span>);</span><br><span class="line">		 cp.put(<span class="number">3</span>,<span class="string">"c"</span>);</span><br><span class="line">		 cp.put(<span class="number">4</span>,<span class="string">"d"</span>);</span><br><span class="line">		 hs.put(<span class="number">1</span>,<span class="string">"A"</span>);</span><br><span class="line">		 hs.putAll(cp);</span><br><span class="line">		 </span><br><span class="line">	 &#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>删除<ul>
-<li>clear()</li>
-<li>remove(Object key)</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">      hs.remove(<span class="number">2</span>);</span><br><span class="line">hs.clear();</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>判断</p>
-<ul>
-<li>containsValue(Object value)</li>
-<li>containsKey(Object key)</li>
-<li>isEmpty()</li>
-</ul>
-</li>
-<li><p>获取</p>
-<ul>
-<li>get(Object key)</li>
-<li>size()</li>
-<li>values()</li>
-<li>entrySet()</li>
-<li>keySet()</li>
-</ul>
-</li>
-</ul>
-
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/11/13/java基础day9/">java基础day9</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-11-13T00:25:39.000Z" itemprop="datePublished">2019-11-13</time>
-</a>
-
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
         </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <h1 id="基本数据类型对象包装类"><a href="#基本数据类型对象包装类" class="headerlink" title="基本数据类型对象包装类"></a>基本数据类型对象包装类</h1><ul>
-<li>将基本数据类型转化为String类</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String str = Integer.toString(<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+      </section>
 
-<ul>
-<li>将字符串类型数据转化为基本数据类型</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x = Integer.parseInt(<span class="string">"sada"</span>);</span><br><span class="line"><span class="keyword">long</span> y = Long.parseLong(<span class="string">"dsa"</span>);</span><br></pre></td></tr></table></figure>
+      
 
-<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">		 </span><br><span class="line">		 	 Integer x =<span class="number">128</span>;</span><br><span class="line">		 	 Integer y = <span class="number">128</span>;</span><br><span class="line">		 	 sop(<span class="string">"x==y----"</span>+(x==y));</span><br><span class="line">		 	 </span><br><span class="line">		 	 Integer a = <span class="number">127</span>;</span><br><span class="line">		 	 Integer b = <span class="number">127</span>;</span><br><span class="line">		 	sop(<span class="string">"a==b----"</span>+(a==b));</span><br><span class="line">	</span><br><span class="line">		  &#125;</span><br></pre></td></tr></table></figure>
+      
 
-<blockquote>
-<p>x==y—-false<br>a==b—-true</p>
-</blockquote>
-<p>x,y不等是因为超出byte范围，会再开辟新的空间</p>
-<p>a和b指向同一个Integer对象</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">        Integer x = <span class="keyword">new</span> Integer(<span class="string">"123"</span>);</span><br><span class="line">Integer y = <span class="keyword">new</span> Integer(<span class="number">123</span>);</span><br><span class="line">System.out.printf(<span class="string">"x==y--&gt;%b\n"</span>,x==y);</span><br><span class="line">System.out.printf(<span class="string">"x.equals(y)--&gt;%b"</span>,x.equals(y));</span><br></pre></td></tr></table></figure>
+    </div>
+  </aside>
 
-<blockquote>
-<p>x==y–&gt;false<br>x.equals(y)–&gt;true</p>
-</blockquote>
 
         
-    </section>
-</article>
-
-
-
-
-<nav class="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-</nav>
-
-
-</div>
-        <footer class="footer">
-    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
-
-    
-    <script>
-        var _hmt = _hmt || [];
-        (function () {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?e4027971a230b210f4671f485b33846a";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
-    
-</footer>
-
+      </div>
     </main>
 
-    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
-    <script type="text/javascript">
-    $(function() {
-        var nodes = {
-            nav: $('#nav'),
-            aside: $('#aside'),
-            asideInner: $('#aside-inner'),
-            navInner: $('#nav-inner')
-        };
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
 
-        var doing = false;
-        nodes.asideInner.on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
-            if (nodes.aside.hasClass('mobile-open')) {
-                nodes.aside.removeClass('mobile-open');
-            } else {
-                nodes.aside.removeClass('mobile-close panel-show');
-            }
-            doing = false;
-        });
-        $('#open-panel, #aside-mask').on('click', function() {
-            if (doing) {
-                return;
-            }
-            
-            if (nodes.aside.hasClass('panel-show')) {
-                nodes.aside.addClass('mobile-close');
-            } else {
-                nodes.aside.addClass('mobile-open panel-show');
-            }
-        });
-        $('#open-menus').on('click', function() {
-            nodes.navInner.slideToggle();
-        });
+  
+</div>
 
-        if (window.innerWidth <= 960) {
-            setTimeout(function() {
-                nodes.navInner.slideUp();
-            }, 3000);
-        }
-    });
-    </script>
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
     
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
 
 </body>
 </html>
