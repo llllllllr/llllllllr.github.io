@@ -569,9 +569,43 @@
 <li><input checked disabled type="checkbox"> <p>模块</p>
 <p>可以使用函数和闭包来构造模块。模块是一个提供接口却隐藏状态与实现的函数或对象。</p>
 </li>
-<li><input disabled type="checkbox"> <p>撒旦</p>
+<li><input checked disabled type="checkbox"> <p>级联</p>
+<p>有一些方法没有返回值，如果让这些方法返回this而不是undefine,就可以启用级联。在一个级联中，我们可以单数一条语句中依次调用同一个对象的很多方法。</p>
+</li>
+<li><input checked disabled type="checkbox"> <p>套用</p>
+</li>
+<li><input checked disabled type="checkbox"> <p>记忆：函数可以用对象去记住之前操作的结果，从而避免无谓的运算。这种优化称为记忆。</p>
 </li>
 </ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">	user: <span class="string">"AA"</span>,</span><br><span class="line">	fn:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.user);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> b = a.fn;</span><br><span class="line">b();<span class="comment">// 'undefined'</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">	user: <span class="string">"AA"</span>,</span><br><span class="line">	fn:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.user);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">a.fn() <span class="comment">// 'AA'</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><input checked disabled type="checkbox"> <p>call</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">	user: <span class="string">"AA"</span>,</span><br><span class="line">	fn:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.user);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> b = a.fn;</span><br><span class="line">b.call(a)  <span class="comment">// 'AA'</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">	user: <span class="string">"AA"</span>,</span><br><span class="line">	fn:<span class="function"><span class="keyword">function</span>(<span class="params">e1,e2</span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.user);</span><br><span class="line">        <span class="built_in">console</span>.log(e1 + e2);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> b = a.fn;</span><br><span class="line">b.call(a,<span class="number">1</span>,<span class="number">2</span>)  <span class="comment">// 'AA' 3</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><input checked disabled type="checkbox"> <p>apply</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">	user: <span class="string">"AA"</span>,</span><br><span class="line">	fn:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.user);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> b = a.fn;</span><br><span class="line">b.apply(a) <span class="comment">// 'AA'</span></span><br></pre></td></tr></table></figure>
+
+<p>和call不一样的是，第二个参数必须是数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">	user: <span class="string">"AA"</span>,</span><br><span class="line">	fn:<span class="function"><span class="keyword">function</span>(<span class="params">e1,e2</span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.user);</span><br><span class="line">        <span class="built_in">console</span>.log(e1 + e2)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> b = a.fn;</span><br><span class="line">b.apply(a,[<span class="number">10</span>,<span class="number">1</span>]) <span class="comment">// 'AA' 11</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>如果call和apply的第一个参数为null，那么指向的是window对象</strong></p>
+</li>
+<li><input checked disabled type="checkbox"> <p>bind</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">	user: <span class="string">"AA"</span>,</span><br><span class="line">	fn:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.user);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> b = a.fn;</span><br><span class="line"><span class="keyword">var</span> c = b.bind(a)  <span class="comment">//c返回的是函数</span></span><br><span class="line">c(); <span class="comment">// 'AA'</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><strong>bind返回对应的函数，便于稍后调用，apply和call是立即调用</strong></p>
 
           
         
