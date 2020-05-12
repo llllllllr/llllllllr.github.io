@@ -336,7 +336,7 @@
 <ul>
 <li><input checked disabled type="checkbox"> 空白</li>
 <li><input checked disabled type="checkbox"> 标识符 字母开头，不包含关键字</li>
-<li><input checked disabled type="checkbox"> 数字 64位浮点数，相当于java的double</li>
+<li><input checked disabled type="checkbox"> 数字 64位浮点数，相当于 Java 的double</li>
 <li><input checked disabled type="checkbox"> 字符串</li>
 <li><input checked disabled type="checkbox"> 语句 <code>switch,while,for,do</code> </li>
 <li><input checked disabled type="checkbox"> 表达式</li>
@@ -425,7 +425,7 @@
 <ul>
 <li><input checked disabled type="checkbox"> delete用来删除对象的属性。</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">another_stooge.nickname = <span class="string">"Andy"</span>;</span><br><span class="line"><span class="comment">//删除another_stooge.nickname属性，暴露原型的nickname属性</span></span><br><span class="line"><span class="keyword">delete</span> another_stooge.nickname;</span><br><span class="line"><span class="built_in">console</span>.log(another_stooge.nickname)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">another_stooge.nickname = <span class="string">"Andy"</span>;</span><br><span class="line"><span class="comment">//删除another_stooge.nickname属性，暴露原型的nickname属性，因为检索的时候会调用原型链</span></span><br><span class="line"><span class="keyword">delete</span> another_stooge.nickname;</span><br><span class="line"><span class="built_in">console</span>.log(another_stooge.nickname)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>减少全局变量污染</p>
 </li>

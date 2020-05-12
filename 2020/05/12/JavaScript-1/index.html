@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="语法   空白  标识符 字母开头，不包含关键字  数字 64位浮点数，相当于java的double  字符串  语句 switch,while,for,do   表达式  字面量 方便指定新对象的表示法，属性名可以是标识符或者字符串  函数  对象 数字，字符串，布尔值，null, undefined其它所有值都是对象    对象字面量： 包含在一对花括号里面的零或多个“名/值” 1234567">
+<meta name="description" content="语法   空白  标识符 字母开头，不包含关键字  数字 64位浮点数，相当于 Java 的double  字符串  语句 switch,while,for,do   表达式  字面量 方便指定新对象的表示法，属性名可以是标识符或者字符串  函数  对象 数字，字符串，布尔值，null, undefined其它所有值都是对象    对象字面量： 包含在一对花括号里面的零或多个“名/值” 12345">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript-1">
 <meta property="og:url" content="http://yoursite.com/2020/05/12/JavaScript-1/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="语法   空白  标识符 字母开头，不包含关键字  数字 64位浮点数，相当于java的double  字符串  语句 switch,while,for,do   表达式  字面量 方便指定新对象的表示法，属性名可以是标识符或者字符串  函数  对象 数字，字符串，布尔值，null, undefined其它所有值都是对象    对象字面量： 包含在一对花括号里面的零或多个“名/值” 1234567">
+<meta property="og:description" content="语法   空白  标识符 字母开头，不包含关键字  数字 64位浮点数，相当于 Java 的double  字符串  语句 switch,while,for,do   表达式  字面量 方便指定新对象的表示法，属性名可以是标识符或者字符串  函数  对象 数字，字符串，布尔值，null, undefined其它所有值都是对象    对象字面量： 包含在一对花括号里面的零或多个“名/值” 12345">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://llllllllr.top/20200512135227.png">
 <meta property="og:image" content="http://llllllllr.top/20200512140358.png">
 <meta property="og:image" content="http://llllllllr.top/20200512145242.png">
-<meta property="og:updated_time" content="2020-05-12T10:05:14.672Z">
+<meta property="og:updated_time" content="2020-05-12T10:31:16.179Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript-1">
-<meta name="twitter:description" content="语法   空白  标识符 字母开头，不包含关键字  数字 64位浮点数，相当于java的double  字符串  语句 switch,while,for,do   表达式  字面量 方便指定新对象的表示法，属性名可以是标识符或者字符串  函数  对象 数字，字符串，布尔值，null, undefined其它所有值都是对象    对象字面量： 包含在一对花括号里面的零或多个“名/值” 1234567">
+<meta name="twitter:description" content="语法   空白  标识符 字母开头，不包含关键字  数字 64位浮点数，相当于 Java 的double  字符串  语句 switch,while,for,do   表达式  字面量 方便指定新对象的表示法，属性名可以是标识符或者字符串  函数  对象 数字，字符串，布尔值，null, undefined其它所有值都是对象    对象字面量： 包含在一对花括号里面的零或多个“名/值” 12345">
 <meta name="twitter:image" content="http://llllllllr.top/20200512135227.png">
 
 
@@ -339,7 +339,7 @@
 <ul>
 <li><input checked disabled type="checkbox"> 空白</li>
 <li><input checked disabled type="checkbox"> 标识符 字母开头，不包含关键字</li>
-<li><input checked disabled type="checkbox"> 数字 64位浮点数，相当于java的double</li>
+<li><input checked disabled type="checkbox"> 数字 64位浮点数，相当于 Java 的double</li>
 <li><input checked disabled type="checkbox"> 字符串</li>
 <li><input checked disabled type="checkbox"> 语句 <code>switch,while,for,do</code> </li>
 <li><input checked disabled type="checkbox"> 表达式</li>
@@ -428,7 +428,7 @@
 <ul>
 <li><input checked disabled type="checkbox"> delete用来删除对象的属性。</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">another_stooge.nickname = <span class="string">"Andy"</span>;</span><br><span class="line"><span class="comment">//删除another_stooge.nickname属性，暴露原型的nickname属性</span></span><br><span class="line"><span class="keyword">delete</span> another_stooge.nickname;</span><br><span class="line"><span class="built_in">console</span>.log(another_stooge.nickname)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">another_stooge.nickname = <span class="string">"Andy"</span>;</span><br><span class="line"><span class="comment">//删除another_stooge.nickname属性，暴露原型的nickname属性，因为检索的时候会调用原型链</span></span><br><span class="line"><span class="keyword">delete</span> another_stooge.nickname;</span><br><span class="line"><span class="built_in">console</span>.log(another_stooge.nickname)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>减少全局变量污染</p>
 </li>
