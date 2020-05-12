@@ -95,7 +95,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"Sidebar Position, available value":"left | right (only for Pisces | Gemini).","position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -187,6 +187,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -215,6 +225,604 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/12/JavaScript-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/12/JavaScript-1/" itemprop="url">JavaScript-1</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-12T15:53:53+08:00">
+                2020-05-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p><img src="http://llllllllr.top/20200512135227.png" alt></p>
+<ul>
+<li><input checked disabled type="checkbox"> 空白</li>
+<li><input checked disabled type="checkbox"> 标识符 字母开头，不包含关键字</li>
+<li><input checked disabled type="checkbox"> 数字 64位浮点数，相当于java的double</li>
+<li><input checked disabled type="checkbox"> 字符串</li>
+<li><input checked disabled type="checkbox"> 语句 <code>switch,while,for,do</code> </li>
+<li><input checked disabled type="checkbox"> 表达式</li>
+<li><input checked disabled type="checkbox"> 字面量 方便指定新对象的表示法，属性名可以是标识符或者字符串</li>
+<li><input checked disabled type="checkbox"> 函数</li>
+</ul>
+<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><blockquote>
+<p>数字，字符串，布尔值，null, undefined其它所有值都是对象</p>
+</blockquote>
+<p><img src="http://llllllllr.top/20200512140358.png" alt></p>
+<ul>
+<li><p>对象字面量： 包含在一对花括号里面的零或多个“名/值”</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> stooge = &#123;</span><br><span class="line">    <span class="string">"first-name"</span>: <span class="string">"JOE"</span>,</span><br><span class="line">    <span class="string">"last-name"</span>: <span class="string">"Howard"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> flight = &#123;</span><br><span class="line">    number: <span class="number">815</span></span><br><span class="line">    departure: &#123;</span><br><span class="line">        IATA: <span class="string">"SYD"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>检索：</p>
+<ul>
+<li>[]后缀中括住字符串表达式 <code>stooge[&quot;first name&quot;]</code></li>
+<li>字符串表达式是常数且为合法标识符 flight.departure.IATA</li>
+</ul>
+<p>检索不到返回<code>undefined</code>值</p>
+</li>
+<li><p>更新</p>
+<ul>
+<li>赋值语句 <code>stooge[&#39;first-name&#39;]=&#39;Jerome&#39;</code></li>
+<li>原本没有的话会扩充 <code>stooge[&#39;middle-name&#39;]=&#39;Lester;stooge.nickname=&#39;Judy&#39; &#39;</code></li>
+</ul>
+</li>
+<li><p>引用</p>
+<ul>
+<li><p>对象通过引用来传递，他们永远不会被拷贝</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = stooge;</span><br><span class="line">x[<span class="string">"middle-name"</span>] = <span class="string">"Curly"</span>;</span><br><span class="line"><span class="keyword">var</span> middle = stooge[<span class="string">"middle-name"</span>];<span class="comment">//得到“Curly”，因为是指向同一对象的引用</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>原型（prototype)</p>
+<blockquote>
+<p>每个对象都连接到一个原型对象，并且它可以从中继承属性。所有通过字面量创建的对象都连接到 Object.prototype 这个JavaScript中标准的对象。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">// beget方法创建一个使用元对象作为其原型的新对象</span></span><br><span class="line">	<span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">Object</span>.beget !== <span class="string">'function'</span>) &#123;</span><br><span class="line">        <span class="built_in">Object</span>.beget = <span class="function"><span class="keyword">function</span>(<span class="params">o</span>) </span>&#123;</span><br><span class="line">          <span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">          F.prototype = o</span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">new</span> F()</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"><span class="keyword">var</span> another_stooge = <span class="built_in">Object</span>.beget(stooge);</span><br></pre></td></tr></table></figure>
+
+<p><strong>原型连接在更新时不起作用的。当我们对某个对象做出改变时，不会触及到该对象的原型。</strong></p>
+<p><code>another_stooge[&#39;first-name&#39;] = &#39;Harry&#39;</code></p>
+<ul>
+<li><input checked disabled type="checkbox"> 委托</li>
+</ul>
+<p><strong>原型连接只有在检索值的时候才会被用到。如果我们尝试去获取对象的某个属性值，且该对象没有这个属性名，那么JavaScript会尝试从原型对象中获取。终点Object.prototype。 如果最后还是找不到，结果为undefined，这个过程称为委托。</strong></p>
+</li>
+<li><p>反射</p>
+<pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> flight = &#123;</span><br><span class="line">    number: <span class="number">815</span></span><br><span class="line">    departure: &#123;</span><br><span class="line">        IATA: <span class="string">"SYD"</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></code></pre></li>
+</ul>
+<ul>
+<li><p>typeof <code>typeof flight.number</code></p>
+<blockquote>
+<p>原型链中的任何属性也会产生一个值</p>
+<p><code>typeof flgiht.toString</code>  //‘function’</p>
+</blockquote>
+</li>
+<li><p>hasOwnProperty(不检查原型链)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flight.hasOwnProperty(<span class="string">'number'</span>) <span class="comment">//true</span></span><br><span class="line">flight.hasOwnProperty(<span class="string">'xxx'</span>) <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<ul>
+<li><p>枚举(<code>Enumeration</code>)</p>
+<ul>
+<li><input checked disabled type="checkbox"> for in 遍历对象中的属性名–包括函数和原型中的属性，所以有必要过滤掉不想要的值</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name;</span><br><span class="line"><span class="keyword">for</span>(name <span class="keyword">in</span> another_stooge) &#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">typeof</span> another_stooge[name] !== <span class="string">'function'</span>) &#123;</span><br><span class="line">		<span class="built_in">document</span>,writeln(name + <span class="string">':'</span> + another_stooge[name];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><input checked disabled type="checkbox"> 属性名出现的顺序不确定。最好的方法是完全避免使用for in语句</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i;</span><br><span class="line"><span class="keyword">var</span> properties = &#123;</span><br><span class="line">	<span class="string">'first-name'</span>,</span><br><span class="line">	<span class="string">'middle-name'</span>,</span><br><span class="line">	<span class="string">'last-name'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i &lt; properties.length; i+=<span class="number">1</span>) &#123;</span><br><span class="line">	<span class="built_in">document</span>.writeln(properties[i] + <span class="string">':'</span> + another_stooge[properties[i]];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除</p>
+<ul>
+<li><input checked disabled type="checkbox"> delete用来删除对象的属性。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">another_stooge.nickname = <span class="string">"Andy"</span>;</span><br><span class="line"><span class="comment">//删除another_stooge.nickname属性，暴露原型的nickname属性</span></span><br><span class="line"><span class="keyword">delete</span> another_stooge.nickname;</span><br><span class="line"><span class="built_in">console</span>.log(another_stooge.nickname)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>减少全局变量污染</p>
+</li>
+<li><input checked disabled type="checkbox"> <p>JavaScript可以很随意地定义那些可保存所有应用资源的全局变量。应使用<strong>闭包</strong>进行信息隐藏，这是一个有效减少全局污染的方法。</p>
+</li>
+</ul>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p><img src="http://llllllllr.top/20200512145242.png" alt></p>
+<ul>
+<li><input checked disabled type="checkbox"> 函数对象</li>
+</ul>
+<blockquote>
+<p>在JavaScript中函数就是对象。</p>
+</blockquote>
+<ul>
+<li><p>函数对象连接到Function.prototype（该原型对象本身连接到Object.prototype)</p>
+</li>
+<li><p>每个函数对象创建时附加的隐藏属性 1-函数上下文 2-实现函数行为的代码</p>
+</li>
+<li><p>每个函数对象创建时也随带一个prototype属性，它的值是一个拥有constructor属性且值即为该函数的对象。这和隐藏连接到 Function.prototype完全不同</p>
+</li>
+<li><p>函数是对象，所以可以存放在变量，对象和数组中 </p>
+</li>
+<li><input checked disabled type="checkbox"> <p>函数字面量</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> add = <span class="function"><span class="keyword">function</span> (<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>包括：</p>
+<ul>
+<li>保留字function。</li>
+<li>函数名，可以被省略。</li>
+<li>圆括号中的一组参数。</li>
+<li>花括号中的一组语句。</li>
+</ul>
+<p><strong>闭包</strong></p>
+<blockquote>
+<p>函数字面量可以出现在任何允许表达式出现的地方。函数也可以被定义在其它函数中。一个内部函数自然可以访问自己的参数和变量，同时它也能访问它被嵌套在其中的那个函数的参数与变量，通过函数字面量创建的函数对象包含一个连到外部上下文的连接。这被称为闭包。</p>
+</blockquote>
+<ul>
+<li><input checked disabled type="checkbox"> 调用</li>
+</ul>
+<p>JavaScript中的四种调用模式：</p>
+<ul>
+<li><p>方法调用模式</p>
+</li>
+<li><p>函数调用模式</p>
+</li>
+<li><p>构造器调用模式</p>
+</li>
+<li><p>apply调用模式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="keyword">var</span> sum = add.apply(<span class="literal">null</span>,array); <span class="comment">//sum的值为7</span></span><br><span class="line"><span class="comment">//构造一个包含status成员的对象</span></span><br><span class="line"><span class="keyword">var</span> statusObject = &#123;</span><br><span class="line">    status: <span class="string">'A-OK'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> Quo = <span class="function"><span class="keyword">function</span> (<span class="params">string</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.status = string;</span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">//给Quo所有的实例提供一个名为 get_status的公共方法</span></span><br><span class="line">Quo.prototype.get_status = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.status;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> status = Quo.prototype.get_status.apply(statusObject);</span><br></pre></td></tr></table></figure>
+
+<p>apply方法让我们构建一个参数数组并用其去调用函数。它也允许我们选择this的值。</p>
+</li>
+<li><input checked disabled type="checkbox"> <p>参数</p>
+</li>
+</ul>
+<p>当函数被调用时，会得到一个arguments数组，使得编写一个无需指定参数个数的函数称为可能。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sum = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> i,sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;<span class="built_in">arguments</span>.length;i++) &#123;</span><br><span class="line">        sum += <span class="built_in">arguments</span>[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>//todo ch6介绍更好的方法</p>
+<ul>
+<li><input checked disabled type="checkbox"> <p>返回</p>
+</li>
+<li><input checked disabled type="checkbox"> <p>异常</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> add = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> a !== <span class="string">'number'</span> || <span class="keyword">typeof</span> b !== <span class="string">'number'</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> &#123;</span><br><span class="line">            name: <span class="string">'TypeError'</span>,</span><br><span class="line">            message: <span class="string">'add needs numbers'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>throw 语句抛出一个exception对象，该对象包含可识别异常类型的name属性和一个描述性的message属性。</p>
+</li>
+<li><input checked disabled type="checkbox"> <p>给类型添加方法</p>
+<blockquote>
+<p>通过给Object.prototype添加方法使得该方法对所有对象可用。</p>
+</blockquote>
+<p>👇通过给Function.prototype增加一个method方法，我们就不必键入 prototype这个属性名。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.method = <span class="function"><span class="keyword">function</span> (<span class="params">name,func</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.prototype[name] = func;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>Number.prototype添加一个integer方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span>.method(<span class="string">'integer'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>[<span class="keyword">this</span> &lt; <span class="number">0</span> ? <span class="string">'ceiling'</span> : <span class="string">'floor'</span>](<span class="keyword">this</span>);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">document</span>.writeln((<span class="number">-10</span> / <span class="number">3</span>).integer()) <span class="comment">// -3</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>String.prototype添加一个trim方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>.method(<span class="string">'trim'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/^\s+|\s+$/g</span>,<span class="string">' '</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">document</span>.writeln(<span class="string">' " '</span> + <span class="string">"   neat    "</span> + <span class="string">' " '</span>)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>给基本类型添加方法，我们可以大大地提高语言的表现力。因为JavaScript原型继承的动态本质，新的方法立刻被赋予到所有的值（对象实例）上，哪怕值（对象实例）是在方法创建之前就被创建好了。</p>
+<ul>
+<li><p>有条件地增加一个方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.method = <span class="function"><span class="keyword">function</span>(<span class="params">name,func</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="keyword">this</span>.prototype[name]) &#123;</span><br><span class="line">        <span class="keyword">this</span>.prototye[name] = func;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><input checked disabled type="checkbox"> <p>递归</p>
+</li>
+<li><input checked disabled type="checkbox"> <p>作用域：作用域控制着变量与参数的可见性与声明周期。</p>
+</li>
+<li><input checked disabled type="checkbox"> <p>闭包（closure)</p>
+<ul>
+<li><p>变量的作用域（全局变量和局部变量）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n = <span class="number">999</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(n);</span><br><span class="line">&#125;</span><br><span class="line">f1(); <span class="comment">//999</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在函数外部无法读取函数内的局部变量</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> n = <span class="number">999</span>;</span><br><span class="line">&#125;</span><br><span class="line">alert(n); <span class="comment">//error</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>函数内部声明变量的时候，一定要使用var命令，否则实际上是声明了一个全局变量。</strong></p>
+</li>
+<li><p>从外部读取局部变量</p>
+<p><strong>链式作用域</strong>结构，子对象会一级一级地向上寻找所有父对象的变量。所以父对象的所有变量对子对象都是可见的，反之不成立。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> n = <span class="number">999</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(n); <span class="comment">//999</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>在上面的代码中的f2函数就是闭包，闭包就是能够读取其它函数内部变量的函数。只有在函数内部的子函数才能读取局部变量，本质上闭包就是将函数内部和函数外部连接起来的一座桥梁。</strong></p>
+</li>
+<li><p>闭包的作用</p>
+<ul>
+<li>读取函数内部的变量</li>
+<li>让这些变量的值始终保持在内存中</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> n = <span class="number">999</span>;</span><br><span class="line">    nAdd = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; n+=<span class="number">1</span>; &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(n);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> f2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result  = f1();</span><br><span class="line">result(); <span class="comment">//999</span></span><br><span class="line">nAdd();</span><br><span class="line">result(); <span class="comment">//1000</span></span><br></pre></td></tr></table></figure>
+
+<p>result()实际上就是闭包f2函数。它一共运行了两次，结果证明f1函数的局部变量n一直保存在内存中，并没有在f1调用后被自动清除。因为<strong>f1是f2的夫函数，f2被赋值给了一个全局变量，这导致f2始终在内存中，而f2的存在依赖与f1，因此f1也是种在内存中，不会在调用结束之后被垃圾回收机制回收。</strong></p>
+<ul>
+<li>nAdd没有使用var,因此是一个全局变量，nAdd的值是一个匿名函数</li>
+<li>这个匿名函数本身也是一个闭包，所以nAdd相当于一个setter</li>
+</ul>
+<p>使用闭包的注意点：</p>
+<ul>
+<li>滥用闭包-内存消耗大-网页性能问题 解决方法：退出函数之前将不适用的局部变量全部删除</li>
+<li>闭包会在父函数外部，改变父函数内部的值–父函数当作对象使用，把闭包当公共方法，把内部变量当作私有属性一定要小心，不要随便改变父函数内部变量的值。</li>
+</ul>
+<p>对比两段代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">    　　<span class="keyword">var</span> name = <span class="string">"The Window"</span>;</span><br><span class="line">    </span><br><span class="line">    　　<span class="keyword">var</span> object = &#123;</span><br><span class="line">    　　　　name : <span class="string">"My Object"</span>,</span><br><span class="line">    </span><br><span class="line">    　　　　getNameFunc : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    　　　　　　<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    　　　　　　　　<span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">    　　　　　　&#125;;</span><br><span class="line">    </span><br><span class="line">    　　　　&#125;</span><br><span class="line">    </span><br><span class="line">    　　&#125;;</span><br><span class="line">    </span><br><span class="line">    　　alert(object.getNameFunc()());<span class="comment">//""</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">    　　<span class="keyword">var</span> name = <span class="string">"The Window"</span>;</span><br><span class="line">    </span><br><span class="line">    　　<span class="keyword">var</span> object = &#123;</span><br><span class="line">    　　　　name : <span class="string">"My Object"</span>,</span><br><span class="line">    </span><br><span class="line">    　　　　getNameFunc : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    　　　　　　<span class="keyword">var</span> that = <span class="keyword">this</span>;</span><br><span class="line">    　　　　　　<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    　　　　　　　　<span class="keyword">return</span> that.name;</span><br><span class="line">    　　　　　　&#125;;</span><br><span class="line">    </span><br><span class="line">    　　　　&#125;</span><br><span class="line">    </span><br><span class="line">    　　&#125;;</span><br><span class="line">    </span><br><span class="line">    　　alert(object.getNameFunc()());<span class="comment">//"My Object"</span></span><br></pre></td></tr></table></figure>
+
+<p> this的指向是由它所在函数调用的上下文决定的，而不是由它所在函数定义的上下文决定的。 </p>
+</li>
+</ul>
+</li>
+<li><input checked disabled type="checkbox"> <p>回调：异步返回</p>
+</li>
+<li><input checked disabled type="checkbox"> <p>模块</p>
+<p>可以使用函数和闭包来构造模块。模块是一个提供接口却隐藏状态与实现的函数或对象。</p>
+</li>
+<li><input disabled type="checkbox"> <p>撒旦</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/01/css和文档/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/01/css和文档/" itemprop="url">css和文档</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-01T15:15:27+08:00">
+                2020-05-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="ch1-css和文档"><a href="#ch1-css和文档" class="headerlink" title="ch1 css和文档"></a>ch1 css和文档</h2><h3 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h3><pre><code>#### 元素分类</code></pre><ul>
+<li><p>替换元素</p>
+<p>除非指向一个外部元素，否则这个这个元素没有任何意义。</p>
+</li>
+<li><p>非替换元素</p>
+<p>其内容由用户代理在元素本身生成的框中显示。</p>
+</li>
+</ul>
+<h4 id="元素显示角色"><a href="#元素显示角色" class="headerlink" title="元素显示角色"></a>元素显示角色</h4><ul>
+<li><p>块级元素</p>
+<p>块级元素生成一个元素框，（默认地）它会填充父元素的内容区。</p>
+</li>
+<li><p>行内元素</p>
+<p>在一个文本行内生成元素框，而且不会打断这行文本。</p>
+</li>
+</ul>
+<blockquote>
+<p>display默认值是inline</p>
+</blockquote>
+<h2 id="结合css和xhtml"><a href="#结合css和xhtml" class="headerlink" title="结合css和xhtml"></a>结合css和xhtml</h2><ul>
+<li>link标记</li>
+<li>sytle元素</li>
+<li>@import指令</li>
+<li>内联样式</li>
+</ul>
+<h2 id="元素选择器"><a href="#元素选择器" class="headerlink" title="元素选择器"></a>元素选择器</h2><h3 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h3><h4 id="多类选择器"><a href="#多类选择器" class="headerlink" title="多类选择器"></a>多类选择器</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"urgent warning"</span>&gt;</span></span><br><span class="line">	when handling plutonium,care must be taken to avoid the formation of a critical mess.</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">	With plutonium, <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"warning"</span>&gt;</span>the posibility of implosion is very real,</span><br><span class="line">	and must be avoidedat all cost<span class="tag">&lt;/<span class="name">span</span>&gt;</span>this can be accomplished by keeping the various</span><br><span class="line">	messes separate.</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.warning</span>&#123;</span><br><span class="line">	<span class="attribute">font-weight</span>:bold;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.urgent</span>&#123;</span><br><span class="line">	<span class="attribute">font-style</span>:italic;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.warning</span><span class="selector-class">.urgent</span>&#123;</span><br><span class="line">	<span class="attribute">background</span>:silver;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>⭐class中<strong>同时</strong>包含urgent和warning的元素有银色背景。(类名顺序不限)</p>
+<h3 id="ID选择器"><a href="#ID选择器" class="headerlink" title="ID选择器"></a>ID选择器</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"first-p"</span>&gt;</span></span><br><span class="line">	when handling plutonium,care must be taken to avoid the formation of a critical mess.</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#first-p&#123;</span><br><span class="line">    font-weight:bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ol>
+<li>id唯一</li>
+<li>下一章补充</li>
+</ol>
+<h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><h4 id="简单属性选择器"><a href="#简单属性选择器" class="headerlink" title="简单属性选择器"></a>简单属性选择器</h4><ul>
+<li>选择有class属性的所有h1元素使其文本为银色</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span><span class="selector-attr">[class]</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>:silver;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"A"</span>&gt;</span></span><br><span class="line">  A</span><br><span class="line"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"B"</span>&gt;</span></span><br><span class="line">  B</span><br><span class="line"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"C"</span>&gt;</span></span><br><span class="line">  C</span><br><span class="line"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>包含class属性的所有元素都显示银色</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*<span class="selector-attr">[class]</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>:silver;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>同时有href属性和title属性的超文本链接设置为粗体</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[href]</span><span class="selector-attr">[title]</span> &#123;</span><br><span class="line">    <span class="attribute">font-weight</span>:bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"www.baidu.com"</span> <span class="attr">title</span>=<span class="string">"t"</span>&gt;</span></span><br><span class="line">  jintian</span><br><span class="line"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="根据具体属性值选择"><a href="#根据具体属性值选择" class="headerlink" title="根据具体属性值选择"></a>根据具体属性值选择</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[href="www.baidu.com"]</span><span class="selector-attr">[title="t"]</span> &#123;</span><br><span class="line">    <span class="attribute">font-weight</span>:bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"www.baidu.com"</span> <span class="attr">title</span>=<span class="string">"t"</span>&gt;</span></span><br><span class="line">  jintian</span><br><span class="line"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="根据部分属性值选择"><a href="#根据部分属性值选择" class="headerlink" title="根据部分属性值选择"></a>根据部分属性值选择</h4><ul>
+<li>class属性中有urgent的p元素都会变成粗体</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-attr">[class~="urgent"]</span>&#123;</span><br><span class="line">  <span class="attribute">font-weight</span>:bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="后代选择器"><a href="#后代选择器" class="headerlink" title="后代选择器"></a>后代选择器</h3><p>em和h1是父子关系，em两个字母将变成银色</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">  h1</span><br><span class="line">  <span class="tag">&lt;<span class="name">em</span>&gt;</span>em<span class="tag">&lt;/<span class="name">em</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> <span class="selector-tag">em</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>:silver;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>后代选择器两个元素之间的层次间隔可以是无限的，例如 ul em，这种语法就会选择从ul继承3</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>list item 1</span><br><span class="line">    <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>list item 1-1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>list item 1-2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>list item 1-3</span><br><span class="line">        <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">li</span>&gt;</span>list item 1-3-1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">li</span>&gt;</span>list <span class="tag">&lt;<span class="name">em</span>&gt;</span>item 1-3-2<span class="tag">&lt;/<span class="name">em</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">li</span>&gt;</span>list item 1-3-3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ol</span>&gt;</span>  </span><br><span class="line">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">li</span>&gt;</span>list item 1-4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> <span class="selector-tag">em</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>:silver</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1665,373 +2273,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/14/微信小程序笔记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/14/微信小程序笔记/" itemprop="url">微信小程序笔记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-14T14:09:01+08:00">
-                2020-02-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java-basic/" itemprop="url" rel="index">
-                    <span itemprop="name">java-basic</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="data中数组赋值"><a href="#data中数组赋值" class="headerlink" title="data中数组赋值"></a>data中数组赋值</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">     selected:[],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>如果只改变selected数组中随便一个值</p>
-<ul>
-<li>先把平时习惯的 ‘selected[i]=1’ 前面拼接成字符串   var str = “selected[“+idx+”]”</li>
-<li>再用setData赋值  </li>
-</ul>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">change:<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(event)</span><br><span class="line">    <span class="keyword">var</span> idx = event.currentTarget.dataset.index;</span><br><span class="line">    <span class="keyword">var</span> str = <span class="string">"selected["</span>+idx+<span class="string">"]"</span></span><br><span class="line">    <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">      [str]:<span class="number">1</span></span><br><span class="line">    &#125;)</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="图片宽度自适应"><a href="#图片宽度自适应" class="headerlink" title="图片宽度自适应"></a>图片宽度自适应</h3><p>在image组件里加上mode=”widthFix”</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;item==-1?'/images/icon/dg.png':'/images/icon/dg2.png'&#125;&#125;"</span> </span></span><br><span class="line"><span class="tag">       <span class="attr">mode</span>=<span class="string">"widthFix"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/13/范式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/13/范式/" itemprop="url">范式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-13T19:52:27+08:00">
-                2020-02-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java-basic/" itemprop="url" rel="index">
-                    <span itemprop="name">java-basic</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h2><p><img src="http://llllllllr.top/20200213200547.png" alt></p>
-<blockquote>
-<ul>
-<li>范式就是一种数据表设计标准的级别，就好像四六级一样</li>
-<li>数据库范式分为1NF,2NF，3NFB,BCNF…符合高一级的范式必定符合低一级的范式，满足第二范式的数据报表肯定满足第一范式，满足第三范式的数据表一定满足第二范式，以此类推</li>
-</ul>
-</blockquote>
-<h3 id="INF"><a href="#INF" class="headerlink" title="INF"></a>INF</h3><ul>
-<li><p><strong>原子性</strong>：一列一列一列（下图不满足原子性）</p>
-<p><img src="http://llllllllr.top/20200213201132.png" alt></p>
-</li>
-<li><p><strong>不重复</strong>： 不存在属性名相等的两列 ：如果上图有两列都是“年级”，那么这个表不满足INF</p>
-</li>
-</ul>
-<p><img src="http://llllllllr.top/20200213201355.png" alt></p>
-<h3 id="1NF问题："><a href="#1NF问题：" class="headerlink" title="1NF问题："></a>1NF问题：</h3><ul>
-<li>数据冗余，比如前三列，前面三行小花的“id,姓名，系名，系主任”都是一样的</li>
-<li>插入异常：有一个新的系，但是还没有学生，那么没办法插入到这个数据表里面</li>
-<li>删除异常：如果某个系下面的学生信息全部清空，那么这个系也不存在了</li>
-<li>修改异常：如果要把学生的系更换，比如小花的，那么前三行数据都要更改</li>
-</ul>
-<h2 id="2NF"><a href="#2NF" class="headerlink" title="2NF"></a>2NF</h2><h4 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h4><p><img src="http://llllllllr.top/20200213201821.png" alt></p>
-<p><img src="http://llllllllr.top/20200213201355.png" alt></p>
-<ul>
-<li><p><strong>码（可能不止一个）</strong>：知道了码，就能确定别的属性</p>
-<blockquote>
-<p>知道了学号，就能确定一个人的姓名，班名，班主任</p>
-<p>同时知道学号和课名，就能知道你的分数</p>
-</blockquote>
-</li>
-</ul>
-<p>写成：（学号，课名）——-&gt;姓名，班名，班主任，分数</p>
-<ul>
-<li><strong>（学号，课名）一个集合</strong>—&gt;码/候选码</li>
-<li><strong>学号，课名</strong>—-&gt;主属性</li>
-<li><strong>姓名，班名，班主任，分数</strong>—-&gt;非主属性</li>
-</ul>
-<h4 id="函数依赖"><a href="#函数依赖" class="headerlink" title="函数依赖"></a>函数依赖</h4><p><img src="http://llllllllr.top/20200213202520.png" alt></p>
-<p><img src="http://llllllllr.top/20200213202559.png" alt></p>
-<p><img src="http://llllllllr.top/20200213202728.png" alt></p>
-<h4 id="判断是否符合2NF"><a href="#判断是否符合2NF" class="headerlink" title="判断是否符合2NF"></a>判断是否符合2NF</h4><p><img src="http://llllllllr.top/20200213202826.png" alt></p>
-<p><img src="http://llllllllr.top/20200213201355.png" alt></p>
-<p><strong>（学号，课名）—-&gt;姓名，只要知道学号就知道姓名，存在部分函数依赖，不符合2NF要求</strong></p>
-<p>拆分如下（符合2NF）：</p>
-<p><img src="http://llllllllr.top/20200213203102.png" alt></p>
-<p>问题：</p>
-<ul>
-<li>插入：如果只有系，没有学生，无法插入</li>
-<li>删除：删除某个系的全部学生，这个系也不存在了</li>
-</ul>
-<p>优点：</p>
-<ul>
-<li>数据冗余解决</li>
-<li>修改学生的系只要修改一条数据</li>
-</ul>
-<h3 id="3NF"><a href="#3NF" class="headerlink" title="3NF"></a>3NF</h3><p><img src="http://llllllllr.top/20200213203410.png" alt></p>
-<h3 id="传递函数依赖"><a href="#传递函数依赖" class="headerlink" title="传递函数依赖"></a>传递函数依赖</h3><blockquote>
-<p>班主任依赖于班名，班名依赖于学号，那么班主任依赖于学号</p>
-<p>班主任和学生本来不挂钩，班主任只和班名有关，但是知道学号就知道班名，知道班名就知道班主任，所以存在传递关系（好像更复杂了…</p>
-</blockquote>
-<p>所以把上面的表再拆分：</p>
-<p><img src="http://llllllllr.top/20200213203658.png" alt></p>
-<ul>
-<li>新建一个系，没有学生也OK</li>
-<li>删除一个系下所有学生，这个系还是存在</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2077,7 +2323,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">41</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2087,10 +2333,10 @@
               
               
               <div class="site-state-item site-state-categories">
-                
-                  <span class="site-state-item-count">4</span>
+                <a href="/categories/index-1.html">
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
-                
+                </a>
               </div>
             
 
