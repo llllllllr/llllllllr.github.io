@@ -842,7 +842,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql_secure_installation</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>授权给远程用户</li>
+<li>授权给远程用户‘</li>
+<li>update user set password=”Tanglaoshi123()”  where user=”root” </li>
+<li>update user set authentication_string=password(‘Tanglaoshi123()’) where user=’root’; </li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">GRANT ALL ON *.* TO &apos;[用户名]&apos;@&apos;%&apos;</span><br><span class="line"></span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;密码&apos; WITH GRANT OPTION;</span><br><span class="line"></span><br><span class="line">flush privileges</span><br></pre></td></tr></table></figure>
 
