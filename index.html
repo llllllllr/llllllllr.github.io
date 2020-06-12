@@ -399,13 +399,131 @@
 </li>
 <li><p>原型模式</p>
 <ul>
-<li>我们创建的每个原型都有一个prototype(原型属性)。这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法。</li>
-<li>prototype:<strong>通过调用构造函数二创建的那个对象实例的原型对象</strong></li>
-<li>让所有对象实例共享它包含的属性和方法。</li>
+<li><p>我们创建的每个原型都有一个prototype(原型属性)。这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法。</p>
+</li>
+<li><p>prototype:<strong>通过调用构造函数二创建的那个对象实例的原型对象</strong></p>
+</li>
+<li><p>让所有对象实例共享它包含的属性和方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">Person.prototype.name = <span class="string">"A"</span>;</span><br><span class="line">Person.prototype.age = <span class="number">18</span>;</span><br><span class="line">Person.prototype.job = <span class="string">"teacher"</span>;</span><br><span class="line">Person.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</span><br><span class="line">person1.sayName(); <span class="comment">// A</span></span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person();</span><br><span class="line">person2.sayName();</span><br><span class="line">alert(person1.sayName === person2.sayName); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
 </ul>
 </li>
 </ul>
+<ul>
+<li><p>新对象还是会具有相同的属性和方法。但是和构造函数模式不同，新对象的这些属性和方法是由所有实例共享的。</p>
+</li>
+<li><p>理解原型对象</p>
+<ul>
+<li><p>无论什么时候，只要创建了一个新的函数，就会根据一组特定的规则为该函数创建一个prototype属性，这个属性指向原型对象。</p>
+</li>
+<li><p>而默认情况下，所有原型对象都会自动获得一个constructor属性。</p>
+</li>
+<li><p>constructor这个属性包含一个指向prototype属性所在函数的指针。</p>
+</li>
+<li><p>比如，Person.prototype.construcor指向Person,通过这个构造函数，我们还可以继续为原型对象添加其它属性和方法。</p>
+</li>
+<li><p><strong>这个连接存在于实例和构造函数的原型对象之间，而不是实例和构造函数之间。</strong></p>
+</li>
+<li><p><img src="http://llllllllr.top/20200612154634.png" alt></p>
+</li>
+<li><p>虽然可以通过实例对象访问保存在原型中的值，但是却不能通过对象实例重写原型中的值。如果我们在实例中添加了一个属性，而该属性与实例原型中的一个属性同名，那么我们就在该实例中创建该属性，<strong>该属性会屏蔽原型中的那个属性</strong>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">Person.prototype.name = <span class="string">"A"</span>;</span><br><span class="line">Person.prototype.age = <span class="number">18</span>;</span><br><span class="line">Person.prototype.job = <span class="string">"teacher"</span>;</span><br><span class="line">Person.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person();</span><br><span class="line">person1.name = <span class="string">"BBB"</span>;</span><br><span class="line">alert(Person1.name); <span class="comment">// BBB</span></span><br><span class="line">alert(Person2.name); <span class="comment">// A</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用<code>delete person1.name</code>会删除实例创建的name，恢复原型对象与实例之间的连接。</p>
+</li>
+<li><p><code>hasOwnProperty()</code>方法可以检测一个属性是存在实例中还是存在原型中。存在实例中返回true.</p>
+</li>
+<li><p><code>hasPrototypeProperty(实例，属性名)</code>也可，存在原型中返回true.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alert(person1.hasOwnProperty(<span class="string">"name"</span>)); <span class="comment">// false</span></span><br><span class="line">alert(hasPrototypeProperty(person1,<span class="string">"name"</span>));   <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>原型与in操作符</p>
+<p><code>alert(&quot;name&quot; in person1)</code>不管是在原型上还是在实例上访问到，都返回true</p>
+</li>
+<li><p>更简单的原型语法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">Person.prototype = &#123;</span><br><span class="line">    name: <span class="string">"A"</span>,</span><br><span class="line">    age: <span class="number">18</span>,</span><br><span class="line">    job: <span class="string">"doctor"</span>,</span><br><span class="line">    sayName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li><strong>construcor属性不再指向Person了</strong><ul>
+<li>每创建一个函数，就会创建它的prototype对象，这个对象自动获得constructor属性。</li>
+<li>这里使用的语法，本质上完全重写了默认的prototype对象。constructor属性也变成了新对象的constructor属性，不再指向Person（指向Object构造函数）函数。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>原型对象的动态性</p>
+<ul>
+<li><p>我们对原型对象所作的任何修改都能够立刻从实例上反映出来。</p>
+</li>
+<li><p>如果重写整个原型对象，那么情况就会变得不一样。因为</p>
+<ol>
+<li><p>调用构造函数时会为实例添加一个指向最初原型的prototype指针</p>
+<p><img src="http://llllllllr.top/20200612164552.png" alt></p>
+</li>
+<li><p>原型修改为另一个对象就等于切断了构造函数与最初原型之间的联系</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> friend = <span class="keyword">new</span> Person();</span><br><span class="line">Person.prototype = &#123;</span><br><span class="line">    name: <span class="string">"A"</span>,</span><br><span class="line">    age: <span class="number">18</span>,</span><br><span class="line">    job: <span class="string">"doctor"</span>,</span><br><span class="line">    sayName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">friend.sayName(); <span class="comment">// error</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="http://llllllllr.top/20200612164858.png" alt></p>
+<ul>
+<li>从上图可以看出，重写原型对象切断了现有原型与任何之前已经存在的对象实例中的联系，它们引用的仍然是最初的原型。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>原生对象的原型</p>
+<ul>
+<li><p>所有原生的引用类型，都是采用这种方式创建的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="keyword">typeof</span> <span class="built_in">Array</span>.prototype.sort); <span class="comment">// "function"</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>原型对象的问题</p>
+<ul>
+<li><p>省略了为构造函数传递初始化参数这一环节，结果所有实例在默认情况下都将取得相同的属性值。<strong>对包含引用类型值的属性来说，问题比较突出。</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">Person.prototype = &#123;</span><br><span class="line">    name: <span class="string">"A"</span>,</span><br><span class="line">    age: <span class="number">18</span>,</span><br><span class="line">    job: <span class="string">"doctor"</span>,</span><br><span class="line">    friends:[<span class="string">"C"</span>,<span class="string">"D"</span>],</span><br><span class="line">    sayName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person();</span><br><span class="line">person1.friends.push(<span class="string">"E"</span>);</span><br><span class="line">alert(person1.friends); <span class="comment">// C D E</span></span><br><span class="line">alert(person2.friends); <span class="comment">// C D E</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实例一般都是要有属于自己的全部属性的，这个问题正是我们很少看到有人单独使用原型模式的原因所在。</p>
+</li>
+</ul>
+</li>
+<li><p>组合使用构造函数模式和原型模式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.job = job;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.friend = [<span class="string">"C"</span>,<span class="string">"D"</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype  = &#123;</span><br><span class="line">    <span class="keyword">constructor</span>:Person,</span><br><span class="line">    sayName:function()&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">"A"</span>,<span class="number">11</span>,<span class="string">"Doctor"</span>);</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person(<span class="string">"B"</span>,<span class="number">11</span>,<span class="string">"Teacher"</span>);</span><br><span class="line">alert(person1.sayName === person2.sayName); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>动态原型模式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//属性</span></span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.job = job;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="comment">//方法</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="keyword">this</span>.sayName != <span class="string">"function"</span>) &#123;</span><br><span class="line">        Person.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            alert(<span class="keyword">this</span>.name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>只有在sayName()方法不存在的情况下，才会把它添加到原型中。</p>
+</li>
+<li><p>寄生构造函数模式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">    o.name = name;</span><br><span class="line">    o.job = job;</span><br><span class="line">    o.age = age;</span><br><span class="line">    o.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            alert(<span class="keyword">this</span>.name);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> o;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>这个模式可以在特殊情况下用来为对象创建构造函数。假设我们想创建一个具有额外方法的特殊数组，但不能直接修改Array的构造函数，因此可以使用这个模式。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SpecialArray</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> values = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">    values.push.apply(values,<span class="built_in">arguments</span>);</span><br><span class="line">    values.toPepedString = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.join(<span class="string">"|"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> values;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> colors = <span class="keyword">new</span> SpecialArray(<span class="string">"red"</span>,<span class="string">"blue"</span>,<span class="string">"green"</span>);</span><br><span class="line">alert(colors.toPipedString()); <span class="comment">//"red|blue|green"</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>### 继承</code></pre>
           
         
       
