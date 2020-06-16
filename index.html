@@ -239,6 +239,220 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/16/Vuex-demo-初探/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/16/Vuex-demo-初探/" itemprop="url">Vuex demo  初探</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-16T14:35:20+08:00">
+                2020-06-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/font-end/" itemprop="url" rel="index">
+                    <span itemprop="name">font-end</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>vuex作用：</p>
+<ol>
+<li><p>用来存放控件间状态，就是我在非子父孙关系的组件间传值。</p>
+</li>
+<li><p>用来存一些当前要使用请求远程或本地的数据集。</p>
+</li>
+<li><p>可以把他当成一个内存数据库用 ，它有点像H5的Cookie、localStorage之类的，但它刷新（F5）后会自己销毁，而H5的那些本地存储还在浏览器中。</p>
+</li>
+</ol>
+<p>基本用法：</p>
+<ol>
+<li><p>state：包含了<code>store</code>中存储的各个状态。</p>
+</li>
+<li><p>getter:  类似于 Vue 中的计算属性，根据其他 getter 或 state 计算返回值。</p>
+</li>
+<li><p>mutation: 一组方法，是改变<code>store</code>中状态的执行者。</p>
+</li>
+<li><p>action: 一组方法，其中可以含有异步操作。</p>
+</li>
+</ol>
+<p>demo实例：</p>
+<p>项目的目录结构如下：</p>
+<p><img src="http://llllllllr.top/20200616145256.png" alt></p>
+<p>在store/index.js中注册模块</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"><span class="keyword">import</span> cart <span class="keyword">from</span> <span class="string">'./modules/cart'</span></span><br><span class="line"><span class="keyword">import</span> products <span class="keyword">from</span> <span class="string">'./modules/product'</span></span><br><span class="line"></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  modules: &#123;</span><br><span class="line">    cart,</span><br><span class="line">    products</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store</span><br></pre></td></tr></table></figure>
+
+<p>在项目的main.js中引用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">'./store'</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  router,</span><br><span class="line">  store,</span><br><span class="line">  components: &#123; App &#125;,</span><br><span class="line">  template: <span class="string">'&lt;App/&gt;'</span>,</span><br><span class="line">  render: <span class="function"><span class="params">h</span> =&gt;</span> h(App)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>api/shop.js代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> _product = [</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">title</span>: <span class="string">'iPad 4 Mini'</span>, <span class="attr">price</span>: <span class="number">500.01</span>, <span class="attr">inventory</span>: <span class="number">2</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">title</span>: <span class="string">'H&amp;M T-Shirt White'</span>, <span class="attr">price</span>: <span class="number">10.99</span>, <span class="attr">inventory</span>: <span class="number">10</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">title</span>: <span class="string">'Charli XCX - Sucker CD'</span>, <span class="attr">price</span>: <span class="number">19.99</span>, <span class="attr">inventory</span>: <span class="number">5</span> &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  getProducts (cb) &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> cb(_product), <span class="number">1000</span>)</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  buyProducts (products, cb, errorCb) &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">Math</span>.random() &gt; <span class="number">0.5</span> || navigator.webdriver ? cb() : errorCb()</span><br><span class="line">    &#125;, <span class="number">1000</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接下来看项目目录：</p>
+<p><img src="http://llllllllr.top/20200616145453.png" alt></p>
+<p>在ProductList.vue中，代码如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"product in products"</span> <span class="attr">:key</span>=<span class="string">"product.id"</span>&gt;</span></span><br><span class="line">      &#123;&#123; product.title &#125;&#125; - &#123;&#123; product.price | currency &#125;&#125;<span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">:disabled</span>=<span class="string">"!product.inventory"</span>                                  @<span class="attr">click</span>=<span class="string">"addProductToCart(product)"</span>&gt;</span></span><br><span class="line">        Add to Cart</span><br><span class="line">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">import</span> &#123; mapState, mapActions &#125; <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  computed: mapState(&#123;</span><br><span class="line">    products: <span class="function"><span class="params">state</span> =&gt;</span> state.products.all</span><br><span class="line">  &#125;),</span><br><span class="line">  methods: mapActions(<span class="string">'cart'</span>, [<span class="string">'addProductToCart'</span>]),</span><br><span class="line">  created () &#123;</span><br><span class="line">    <span class="keyword">this</span>.$store.dispatch(<span class="string">'products/getAllProducts'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>上述代码得到的效果如下：</p>
+<p><img src="http://llllllllr.top/20200616144809.png" alt></p>
+<p>首先从页面开始加载的时候看起：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">created () &#123;</span><br><span class="line">  <span class="keyword">this</span>.$store.dispatch(<span class="string">'products/getAllProducts'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>在组件中使用 <code>this.$store.dispatch(&#39;xxx&#39;)</code> 分发 action</p>
+</li>
+<li><p>也就是调用getAllProducts()这个方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> shop <span class="keyword">from</span> <span class="string">'../../api/shop'</span></span><br><span class="line"><span class="comment">// inital state</span></span><br><span class="line"><span class="keyword">const</span> state = <span class="function"><span class="params">()</span> =&gt;</span> (&#123;</span><br><span class="line">  all: []</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// getters</span></span><br><span class="line"><span class="keyword">const</span> getters = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// actions</span></span><br><span class="line"><span class="keyword">const</span> actions = &#123;</span><br><span class="line">  getAllProducts (&#123; commit &#125;) &#123;</span><br><span class="line">    shop.getProducts(<span class="function"><span class="params">products</span> =&gt;</span> &#123;</span><br><span class="line">      commit(<span class="string">'setProducts'</span>, products)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">shop.getProducts:</span></span><br><span class="line"><span class="comment">  getProducts (cb) &#123;</span></span><br><span class="line"><span class="comment">    setTimeout(() =&gt; cb(_product), 1000)</span></span><br><span class="line"><span class="comment">  &#125;,</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">// mutations</span></span><br><span class="line"><span class="keyword">const</span> mutations = &#123;</span><br><span class="line">  setProducts (state, products) &#123;</span><br><span class="line">    state.all = products</span><br><span class="line">  &#125;,</span><br><span class="line">  decrementProductInventory (state, &#123; id &#125;) &#123;</span><br><span class="line">    <span class="keyword">const</span> product = state.all.find(<span class="function"><span class="params">product</span> =&gt;</span> product.id === id)</span><br><span class="line">    product.inventory--</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  namespaced: <span class="literal">true</span>,</span><br><span class="line">  state,</span><br><span class="line">  getters,</span><br><span class="line">  actions,</span><br><span class="line">  mutations</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>从上述代码可以看出，getAllProducts()给shop.getProducts()传了一个callback函数，等待一秒钟之后加载products</p>
+<p>从上述代码中，可以看出来Action的特点：</p>
+<ul>
+<li>Action 提交的是 mutation，而不是直接变更状态。</li>
+<li>Action 可以包含任意异步操作。</li>
+</ul>
+</li>
+<li><p>除了上述dispatch，actions的其它分发方法：</p>
+<p><code>mapActions</code> 辅助函数将组件的 methods 映射为 <code>store.dispatch</code> 调用</p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">methods: mapActions(&apos;cart&apos;, [&apos;addProductToCart&apos;])</span><br></pre></td></tr></table></figure>
+
+<p>购物车页面：shoppingCart.vue</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cart"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>Your Cart<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-show</span>=<span class="string">"!products.length"</span>&gt;</span><span class="tag">&lt;<span class="name">i</span>&gt;</span>Please add some Products to cart.<span class="tag">&lt;/<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"product in products"</span> <span class="attr">:key</span>=<span class="string">"product.id"</span>&gt;</span></span><br><span class="line">        &#123;&#123;product.title&#125;&#125; - &#123;&#123;product.price | currency&#125;&#125; x &#123;&#123; product.quantity&#125;&#125;</span><br><span class="line">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Total: &#123;&#123;total | currency&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> <span class="attr">:disabled</span>=<span class="string">"!products.length"</span> @<span class="attr">click</span>=<span class="string">"checkout(products)"</span>&gt;</span>checkout<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-show</span>=<span class="string">"checkoutStatus"</span>&gt;</span>checkout &#123;&#123;checkoutStatus&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">import</span> &#123; mapGetters, mapState &#125; <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  computed: &#123;</span><br><span class="line">    ...mapState(&#123;</span><br><span class="line">      checkoutStatus: <span class="function"><span class="params">state</span> =&gt;</span> state.cart.checkoutStatus</span><br><span class="line">    &#125;),</span><br><span class="line">    ...mapGetters(<span class="string">'cart'</span>, &#123;</span><br><span class="line">      products: <span class="string">'cartProducts'</span>,</span><br><span class="line">      total: <span class="string">'cartTotalPrice'</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    checkout (products) &#123;</span><br><span class="line">      <span class="keyword">this</span>.$store.dispatch(<span class="string">'cart/checkout'</span>, products)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>store/modules/cart.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// import shop from "../../api/shop"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> shop <span class="keyword">from</span> <span class="string">'../../api/shop'</span></span><br><span class="line"><span class="keyword">const</span> state = <span class="function"><span class="params">()</span> =&gt;</span> (&#123;</span><br><span class="line">  items: [],</span><br><span class="line">  checkoutStatus: <span class="literal">null</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// getters</span></span><br><span class="line"><span class="keyword">const</span> getters = &#123;</span><br><span class="line">  cartProducts: <span class="function">(<span class="params">state, getters, rootState</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> state.items.map(<span class="function">(<span class="params">&#123;id, quantity&#125;</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> product = rootState.products.all.find(<span class="function"><span class="params">product</span> =&gt;</span> product.id === id)</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        title: product.title,</span><br><span class="line">        price: product.price,</span><br><span class="line">        quantity</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  cartTotalPrice: <span class="function">(<span class="params">state, getters</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> getters.cartProducts.reduce(<span class="function">(<span class="params">total, product</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> total + product.price * product.quantity</span><br><span class="line">    &#125;, <span class="number">0</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> actions = &#123;</span><br><span class="line">  checkout (&#123; commit, state &#125;, products) &#123;</span><br><span class="line">    <span class="keyword">const</span> saveCartItems = [...state.items]</span><br><span class="line">    commit(<span class="string">'setCheckoutStatus'</span>, <span class="literal">null</span>)</span><br><span class="line">    <span class="comment">// empty cart</span></span><br><span class="line">    commit(<span class="string">'setCartItems'</span>, &#123;<span class="attr">items</span>: []&#125;)</span><br><span class="line">    shop.buyProducts(</span><br><span class="line">      products,</span><br><span class="line">      () =&gt; commit(<span class="string">'setCheckoutStatus'</span>, <span class="string">'successful'</span>),</span><br><span class="line">      () =&gt; &#123;</span><br><span class="line">        commit(<span class="string">'setCheckoutStatus'</span>, <span class="string">'failed'</span>)</span><br><span class="line">        commit(<span class="string">'setCartItems'</span>, &#123; <span class="attr">items</span>: saveCartItems &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    )</span><br><span class="line">  &#125;,</span><br><span class="line">  addProductToCart (&#123; state, commit &#125;, product) &#123;</span><br><span class="line">    commit(<span class="string">'setCheckoutStatus'</span>, <span class="literal">null</span>)</span><br><span class="line">    <span class="keyword">if</span> (product.inventory &gt; <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> cartItem = state.items.find(<span class="function"><span class="params">item</span> =&gt;</span> item.id === product.id)</span><br><span class="line">      <span class="keyword">if</span> (!cartItem) &#123;</span><br><span class="line">        commit(<span class="string">'pushProductToCart'</span>, &#123;<span class="attr">id</span>: product.id&#125;)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        commit(<span class="string">'incrementItemQuantity'</span>, cartItem)</span><br><span class="line">      &#125;</span><br><span class="line">      commit(<span class="string">'products/decrementProductInventory'</span>, &#123;<span class="attr">id</span>: product.id&#125;, &#123;<span class="attr">root</span>: <span class="literal">true</span>&#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mutations = &#123;</span><br><span class="line">  pushProductToCart (state, &#123;id&#125;) &#123;</span><br><span class="line">    state.items.push(&#123;</span><br><span class="line">      id,</span><br><span class="line">      quantity: <span class="number">1</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  incrementItemQuantity (state, &#123;id&#125;) &#123;</span><br><span class="line">    <span class="keyword">const</span> cartItem = state.items.find(<span class="function"><span class="params">item</span> =&gt;</span> item.id === id)</span><br><span class="line">    cartItem.quantity++</span><br><span class="line">  &#125;,</span><br><span class="line">  setCartItems (state, &#123;items&#125;) &#123;</span><br><span class="line">    state.items = items</span><br><span class="line">  &#125;,</span><br><span class="line">  setCheckoutStatus (state, status) &#123;</span><br><span class="line">    state.checkoutStatus = status</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  namespaced: <span class="literal">true</span>,</span><br><span class="line">  state,</span><br><span class="line">  getters,</span><br><span class="line">  actions,</span><br><span class="line">  mutations</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://llllllllr.top/20200616151637.png" alt></p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/12/JS-面向对象设计/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2205,163 +2419,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/18/reverse String/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/18/reverse String/" itemprop="url">Reverse String II</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-18T11:50:10+08:00">
-                2020-02-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/alg/" itemprop="url" rel="index">
-                    <span itemprop="name">alg</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="Reverse-String-II"><a href="#Reverse-String-II" class="headerlink" title="Reverse String II"></a>Reverse String II</h3><blockquote>
-<p> Given a string and an integer k, you need to reverse the first k characters for every 2k characters counting from the start of the string. If there are less than k characters left, reverse all of them. If there are less than 2k but greater than or equal to k characters, then reverse the first k characters and left the other as original. </p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: s = &quot;abcdefg&quot;, k = 2</span><br><span class="line">Output: &quot;bacdfeg</span><br></pre></td></tr></table></figure>
-
-<p>👇 自己做</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">reverseStr</span><span class="params">(String s, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = s.length();</span><br><span class="line">		    <span class="keyword">int</span> tk = <span class="number">2</span>*k;</span><br><span class="line">		    <span class="keyword">int</span> temp = tk;<span class="comment">//4</span></span><br><span class="line">		    <span class="keyword">int</span> startIndex = <span class="number">0</span>;</span><br><span class="line">		    <span class="keyword">while</span> (len &gt;= tk )</span><br><span class="line">		    &#123;</span><br><span class="line">		    	s = reverse(startIndex,k,s);</span><br><span class="line">		    	startIndex += tk;<span class="comment">//4</span></span><br><span class="line">		    	len -= tk;<span class="comment">//3</span></span><br><span class="line">		    &#125;</span><br><span class="line">		    </span><br><span class="line">           <span class="keyword">if</span>(len == <span class="number">0</span>)</span><br><span class="line">               <span class="keyword">return</span> s;</span><br><span class="line">		   <span class="keyword">if</span>(len &lt; k) 	</span><br><span class="line">		   &#123;</span><br><span class="line">			   s = reverse(startIndex,s.length(),s);</span><br><span class="line">		   &#125;</span><br><span class="line">		   <span class="keyword">if</span>(len - temp &lt; tk)</span><br><span class="line">		   &#123;</span><br><span class="line">			   s = reverse(startIndex,k,s);</span><br><span class="line">		   &#125;</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> start, <span class="keyword">int</span> k,String s)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">         <span class="keyword">int</span> i = start;</span><br><span class="line">		 <span class="keyword">int</span> j = start + k - <span class="number">1</span>;</span><br><span class="line">		 <span class="keyword">char</span>[] words = s.toCharArray();</span><br><span class="line">		 <span class="keyword">char</span> temp;</span><br><span class="line">		 <span class="keyword">while</span>(i &lt; j )</span><br><span class="line">		 &#123;</span><br><span class="line">			 temp=words[i];</span><br><span class="line">			 words[i] = words[j];</span><br><span class="line">			 words[j] = temp;</span><br><span class="line">			 i++;</span><br><span class="line">			 j--;</span><br><span class="line">			 </span><br><span class="line">		 &#125;</span><br><span class="line">		 <span class="keyword">return</span> <span class="keyword">new</span> String(words);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>abcd 2</p>
-<p>a 1</p>
-<p>错误，待定</p>
-</blockquote>
-<p>👇 答案</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">reverseStr</span><span class="params">(String s, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span>[] arr = s.toCharArray();</span><br><span class="line">        <span class="keyword">int</span> n = arr.length;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &lt; n) &#123;</span><br><span class="line">            <span class="keyword">int</span> j = Math.min(i + k - <span class="number">1</span>, n - <span class="number">1</span>);</span><br><span class="line">            swap(arr, i, j);</span><br><span class="line">            i += <span class="number">2</span> * k;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> String.valueOf(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">char</span>[] arr, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (l &lt; r) &#123;</span><br><span class="line">            <span class="keyword">char</span> temp = arr[l];</span><br><span class="line">            arr[l++] = arr[r];</span><br><span class="line">            arr[r--] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2412,7 +2469,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2423,7 +2480,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
