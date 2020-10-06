@@ -239,6 +239,504 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/21/云主机搭建mysql/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/21/云主机搭建mysql/" itemprop="url">云主机搭建mysql</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-21T15:27:41+08:00">
+                2019-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>配置安装MySQL    </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm -Uvh https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum --enablerepo=mysql80-community install mysql-community-server</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>启动mysql服务</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service mysqld start</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看Mysql状态</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysqld status</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>配置安全策略</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql_secure_installation</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>授权给远程用户‘</li>
+<li>update user set password=”Tanglaoshi123()”  where user=”root” </li>
+<li>update user set authentication_string=password(‘Tanglaoshi123()’) where user=’root’; </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">GRANT ALL ON *.* TO &apos;[用户名]&apos;@&apos;%&apos;</span><br><span class="line"></span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;密码&apos; WITH GRANT OPTION;</span><br><span class="line"></span><br><span class="line">flush privileges</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>命令解释:<br>*.*       第一个<em>表示库，第二个</em>表示表; <em>.</em>对全部数据库的全部表授权，so.ok 表示只对so这个库中的ok表授权<br>root    表示要给哪个用户授权，这个用户可以是存在的用户，也可以是不存在的<br>‘%’      表示允许远程连接的IP地址，%代表允许所有IP连接<br>flush privileges;  代表立即刷新权限表，使添加的用户生效</p>
+</blockquote>
+<ul>
+<li>Navicat连接Mysql报1251错误 </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER &apos;root&apos;@&apos;%&apos; IDENTIFIED WITH mysql_native_password BY &apos;密码&apos;;//更新规则</span><br><span class="line"></span><br><span class="line">ALTER USER &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;密码&apos; PASSWORD EXPIRE NEVER;//更新密码</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/19/java基础之集合框架/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/19/java基础之集合框架/" itemprop="url">java基础之集合框架</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-19T08:07:48+08:00">
+                2019-11-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java-basic/" itemprop="url" rel="index">
+                    <span itemprop="name">java-basic</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h1><ul>
+<li>List<ul>
+<li>ArrayList</li>
+<li>LinkedList</li>
+<li>Vector</li>
+</ul>
+</li>
+<li>Set<ul>
+<li>HashSet</li>
+<li>TreeSet</li>
+</ul>
+</li>
+</ul>
+<h3 id="集合的基本方法"><a href="#集合的基本方法" class="headerlink" title="集合的基本方法"></a>集合的基本方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">add()</span><br><span class="line">remove()</span><br><span class="line">clear()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>迭代</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Iterator it = ar.iterator();</span><br><span class="line"><span class="keyword">while</span>(it.hasNext())</span><br><span class="line">    System.out.println(it.next());</span><br></pre></td></tr></table></figure>
+
+<h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><ul>
+<li>元素是有序的，可以重复（因为集合中的元素有索引）</li>
+<li>但set相反，set的元素的无序的，不能重复，没有索引</li>
+</ul>
+<p>⭐list特有的方法（可以操作索引index</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">add(index,element)</span><br><span class="line">addAll(index,Collection)</span><br><span class="line">remove(index)</span><br><span class="line">set(index,element)</span><br><span class="line">get(index)</span><br><span class="line">subList(from,to)</span><br><span class="line">ListIterator()</span><br><span class="line">indexOf(element)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>上述方法自己一一尝试</li>
+<li>看下面代码⭐</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">	 </span><br><span class="line">	 	 </span><br><span class="line">	 	ArrayList&lt;Integer&gt; ar1  = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">	 	</span><br><span class="line">	 	ar1.add(<span class="number">3</span>);</span><br><span class="line">	 	ar1.add(<span class="number">4</span>);</span><br><span class="line">	 	ar1.add(<span class="number">5</span>);</span><br><span class="line">          </span><br><span class="line">	 	Iterator it = ar1.iterator();</span><br><span class="line">	 	<span class="keyword">while</span>(it.hasNext())</span><br><span class="line">	 	&#123;</span><br><span class="line">	 		Object obj =it.next();</span><br><span class="line">	 		     <span class="keyword">if</span>(obj.equals(<span class="number">4</span>))</span><br><span class="line">	 		    	 ar1.add(<span class="number">8</span>);</span><br><span class="line">	 		     </span><br><span class="line">	 		 System.out.println(obj);</span><br><span class="line">	 	&#125;</span><br><span class="line">	 	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>抛出异常</p>
+<p>Exception in thread “main” java.util.ConcurrentModificationException<br>    at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:909)<br>    at java.util.ArrayList$Itr.next(ArrayList.java:859)<br>    at learning.day1.main(day1.java:21)</p>
+</blockquote>
+<p>因为iterator it只知道有三个元素在ar1中，此时突然又增加一个元素，那么it.hasNext()判断会出错。</p>
+<p>但观察下面这个</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">		 </span><br><span class="line">		 	 </span><br><span class="line">		 	ArrayList&lt;Integer&gt; ar1  = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">		 	</span><br><span class="line">		 	ar1.add(<span class="number">3</span>);</span><br><span class="line">		 	ar1.add(<span class="number">4</span>);</span><br><span class="line">		 	ar1.add(<span class="number">5</span>);</span><br><span class="line">           </span><br><span class="line">		 	Iterator it = ar1.iterator();</span><br><span class="line">		 	<span class="keyword">while</span>(it.hasNext())</span><br><span class="line">		 	&#123;</span><br><span class="line">		 		Object obj =it.next();</span><br><span class="line">		 		     <span class="keyword">if</span>(obj.equals(<span class="number">4</span>))</span><br><span class="line">		 		    	⭐it.remove();</span><br><span class="line">		 		     </span><br><span class="line">		 		 System.out.println(obj);</span><br><span class="line">		 	&#125;       </span><br><span class="line">  </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>3<br>4<br>5</p>
+</blockquote>
+<p>因为迭代器it已经被使用了，所以虽然它删除了，但是它已经用完了，这时候已经指向下一个迭代器。</p>
+<p>使用ListIterator(实现了在遍历过程中的增删改查)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">	 </span><br><span class="line">	 	 </span><br><span class="line">	 	ArrayList&lt;Integer&gt; ar1  = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">	 	</span><br><span class="line">	 	ar1.add(<span class="number">3</span>);</span><br><span class="line">	 	ar1.add(<span class="number">4</span>);</span><br><span class="line">	 	ar1.add(<span class="number">5</span>);</span><br><span class="line">          </span><br><span class="line">	 	ListIterator&lt;Integer&gt; lt  = ar1.listIterator();</span><br><span class="line">	 	</span><br><span class="line">	 	<span class="keyword">while</span>(lt.hasNext()) &#123;</span><br><span class="line">	 		Object obj = lt.next();</span><br><span class="line">	 		</span><br><span class="line">	 		<span class="keyword">if</span>(obj.equals(<span class="number">3</span>)) &#123;</span><br><span class="line">	 			Integer addi = <span class="keyword">new</span> Integer(<span class="number">9</span>);</span><br><span class="line">	 			<span class="comment">//lt.add(addi);</span></span><br><span class="line">	 			<span class="comment">//lt.set(7);</span></span><br><span class="line">	 			lt.remove();</span><br><span class="line">	 		&#125;</span><br><span class="line">	 		</span><br><span class="line">	 	&#125;</span><br><span class="line">	 	</span><br><span class="line">           System.out.println(ar1);</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="常见的list"><a href="#常见的list" class="headerlink" title="常见的list"></a>常见的list</h4><ul>
+<li>ArrayList（底层使用数组，查询和修改快，但是添加和删除慢，线程不同步）</li>
+<li>LinkedList(底层使用链表，查询和修改慢，增删快)<ul>
+<li>addFirst(T element)</li>
+<li>offerFirst(T element)有返回布尔值</li>
+<li>getFirst()</li>
+<li>peekFirst(),如果空，返回null</li>
+<li>getLast()</li>
+<li>peekLast(),如果空，返回null</li>
+<li>removeFirst()</li>
+<li>pollFirst(),如果空，返回null</li>
+<li>removeLast()</li>
+<li>pollLast(),如果空，返回null</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">	 	 </span><br><span class="line">		 LinkedList&lt;Integer&gt; lk = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">		 </span><br><span class="line">		 lk.addFirst(<span class="number">1</span>);</span><br><span class="line">		 lk.addFirst(<span class="number">2</span>);</span><br><span class="line">		 lk.addFirst(<span class="number">3</span>);</span><br><span class="line">		 lk.addFirst(<span class="number">4</span>);	 </span><br><span class="line">		 Iterator&lt;Integer&gt; it = lk.iterator();</span><br><span class="line">		 <span class="keyword">while</span>(it.hasNext()) &#123;</span><br><span class="line">			 System.out.println(it.next());</span><br><span class="line">		 &#125; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出 4321，因为是链表嘛</p>
+<ul>
+<li>Vector（底层用数组结构实现，线程同步（因为增删和查询都比较慢，被ArrayList替代了</li>
+</ul>
+<h4 id="常见的set"><a href="#常见的set" class="headerlink" title="常见的set"></a>常见的set</h4><blockquote>
+<p>set的元素是无序的，即存入和取出的顺序不一定一致，元素不可以重复</p>
+<p>set的功能和collection是一致的</p>
+</blockquote>
+<ul>
+<li>hashset 底层数据结构是哈希表</li>
+<li>Treeset</li>
+</ul>
+<p>set集合的功能和collection的功能是一样的</p>
+<p>class person</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	String name;</span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">	</span><br><span class="line">	Person(String n,<span class="keyword">int</span> a)&#123;</span><br><span class="line">		<span class="keyword">this</span>.name=n;</span><br><span class="line">		<span class="keyword">this</span>.age=a;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"name:"</span>+<span class="keyword">this</span>.name+<span class="string">"  age:"</span>+<span class="keyword">this</span>.age;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </span><br><span class="line">		HashSet&lt;Person&gt; hs = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">		hs.add(<span class="keyword">new</span> Person(<span class="string">"a1"</span>,<span class="number">5</span>));</span><br><span class="line">		hs.add(<span class="keyword">new</span> Person(<span class="string">"a2"</span>,<span class="number">6</span>));</span><br><span class="line">		hs.add(<span class="keyword">new</span> Person(<span class="string">"a3"</span>,<span class="number">7</span>));</span><br><span class="line">		hs.add(<span class="keyword">new</span> Person(<span class="string">"a4"</span>,<span class="number">8</span>));</span><br><span class="line">		Iterator&lt;Person&gt; it = hs.iterator();</span><br><span class="line">		<span class="keyword">while</span>(it.hasNext())</span><br><span class="line">			System.out.println(it.next());</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>name:a1  age:5<br>name:a4  age:8<br>name:a3  age:7<br>name:a2  age:6</p>
+</blockquote>
+<p>👆可以看到对象是无序的，因为在内部它是根据哈希值存储的</p>
+<p>在class person里面重载</p>
+<ul>
+<li>public int hashCode()</li>
+<li>public boolean equals(Object obj)</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">60</span>;</span><br><span class="line">&#125;	</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(!(obj <span class="keyword">instanceof</span> Person)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	Person p = (Person) obj;</span><br><span class="line">	System.out.println(<span class="keyword">this</span>.name+<span class="string">"..."</span>+p.name);</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.name.equals(p.name)&amp;&amp;<span class="keyword">this</span>.age==p.age;		</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>main 中修改：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">		hs.add(<span class="keyword">new</span> Person(<span class="string">"a1"</span>,<span class="number">5</span>));</span><br><span class="line">		hs.add(<span class="keyword">new</span> Person(<span class="string">"a2"</span>,<span class="number">6</span>));</span><br><span class="line">		hs.add(<span class="keyword">new</span> Person(<span class="string">"a3"</span>,<span class="number">7</span>));</span><br><span class="line">		hs.add(<span class="keyword">new</span> Person(<span class="string">"a1"</span>,<span class="number">5</span>));</span><br><span class="line">⭐添加两个相同的a1</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>a2…a1<br>a3…a1<br>a3…a2<br>a1…a1<br>name:a1  age:5<br>name:a2  age:6<br>name:a3  age:7</p>
+</blockquote>
+<p>可以看到，重复的a1被去掉了。</p>
+<ul>
+<li>首先a1进来，哈希值3C</li>
+<li>a2进来哈希值也是3C，这时调用equals方法，发现equals方法返回false，就让a2顺延下来</li>
+<li>a3进来分别和a1,a2比较，返回false也顺延</li>
+<li>a1进来和a1比，equals方法返回true,就不会继续存放了</li>
+</ul>
+<p>所以，<strong>HashSet是没有重复元素的集合</strong></p>
+<h5 id="HashSet的contains"><a href="#HashSet的contains" class="headerlink" title="HashSet的contains"></a>HashSet的contains</h5><ul>
+<li>先比较哈希值，相等</li>
+<li>进入equals方法，equals返回true，contains返回true</li>
+</ul>
+<p><strong>同样的，删除方法也是依赖hashCode()和equals()方法</strong></p>
+<h5 id="TreeSet（内部红黑树实现）"><a href="#TreeSet（内部红黑树实现）" class="headerlink" title="TreeSet（内部红黑树实现）"></a>TreeSet（内部红黑树实现）</h5><ul>
+<li>可以对set集合中的元素进行排序</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </span><br><span class="line">   TreeSet&lt;String&gt; ts = <span class="keyword">new</span> TreeSet&lt;&gt;();</span><br><span class="line">   ts.add(<span class="string">"dsad"</span>);</span><br><span class="line">   ts.add(<span class="string">"aaa"</span>);</span><br><span class="line">   ts.add(<span class="string">"csa"</span>);</span><br><span class="line">   ts.add(<span class="string">"avf"</span>);</span><br><span class="line">   Iterator&lt;String&gt; it = ts.iterator();</span><br><span class="line">   <span class="keyword">while</span>(it.hasNext())</span><br><span class="line">	   System.out.println(it.next());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>aaa<br>avf<br>csa<br>dsad</p>
+</blockquote>
+<p>可以看到，输出的结果按照首字母来排序</p>
+<p>也可以自定义排序方法：</p>
+<p>​    一.实现Comparable接口，重载compareTo方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">⭐<span class="class"><span class="keyword">class</span> <span class="title">Person</span> <span class="keyword">implements</span> <span class="title">Comparable</span>&lt;<span class="title">Person</span>&gt;</span>&#123;</span><br><span class="line">	</span><br><span class="line">	String name;</span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">	</span><br><span class="line">	Person(String n,<span class="keyword">int</span> a)&#123;</span><br><span class="line">		<span class="keyword">this</span>.name=n;</span><br><span class="line">		<span class="keyword">this</span>.age=a;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	⭐<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Person p)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(<span class="keyword">this</span>.age &gt; p.age)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span>(<span class="keyword">this</span>.age &lt; p.age)</span><br><span class="line">			<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span> </span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"name:"</span>+<span class="keyword">this</span>.name+<span class="string">"  age:"</span>+<span class="keyword">this</span>.age;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>TreeSet保证元素唯一性：compareTo方法返回0</p>
+<p>二.让集合在初始化时就有比较方式，构造新的TreeSet,让它根据比较器进行排序</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Mycompare</span> <span class="keyword">implements</span> <span class="title">Comparator</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Object o1,Object o2)</span> </span>&#123;</span><br><span class="line">		Person p1 = (Person)o1;</span><br><span class="line">		Person p2=(Person)o2;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> Integer(p1.getAge()).compareTo(p2.getAge());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TreeSet&lt;Person&gt; ts = <span class="keyword">new</span> TreeSet&lt;&gt;(<span class="keyword">new</span> Mycompare());</span><br></pre></td></tr></table></figure>
+
+<h4 id="泛型限定"><a href="#泛型限定" class="headerlink" title="泛型限定"></a>泛型限定</h4><ul>
+<li>占位符？</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span>  <span class="keyword">void</span> <span class="title">show</span><span class="params">(ArrayList&lt;?&gt; al)</span> </span>&#123;</span><br><span class="line">		Iterator&lt;?&gt; it = al.iterator();</span><br><span class="line">		<span class="keyword">while</span>(it.hasNext())</span><br><span class="line">			System.out.println(it.next());</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>T</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">(ArrayList&lt;T&gt; al)</span> </span>&#123;</span><br><span class="line">		Iterator&lt;T&gt; it = al.iterator();</span><br><span class="line">		<span class="keyword">while</span>(it.hasNext())</span><br><span class="line">			System.out.println(it.next());</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>？通配符</li>
+<li>？ extends E (接受E或E的子类型)</li>
+<li>？ super E(接受E或E的父类型)</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">(ArrayList&lt;? extends person&gt; al)</span> </span>&#123;</span><br><span class="line">		Iterator&lt;? extends person&gt; it = al.iterator();</span><br><span class="line">		<span class="keyword">while</span>(it.hasNext())</span><br><span class="line">			System.out.println(it.next());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </span><br><span class="line">	   ArrayList&lt;student&gt; stu = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">	   stu.add(<span class="keyword">new</span> student(<span class="string">"a"</span>,<span class="string">"b"</span>));</span><br><span class="line">	   ArrayList&lt;person&gt; per = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">	   per.add(<span class="keyword">new</span> person(<span class="string">"a"</span>));</span><br><span class="line">	   show(stu);</span><br><span class="line">	   show(per);</span><br><span class="line">	   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>TreeSet实现comparator接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Comp</span> <span class="keyword">implements</span> <span class="title">Comparator</span>&lt;<span class="title">person</span>&gt;</span></span><br><span class="line"><span class="class"> </span>&#123;</span><br><span class="line">	 <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(person p1,person p2)</span> </span>&#123;</span><br><span class="line">		 <span class="keyword">return</span> p1.getName().compareTo(p2.getName());</span><br><span class="line">	 &#125;</span><br><span class="line">	 </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </span><br><span class="line">	   TreeSet&lt;student&gt; stu = <span class="keyword">new</span> TreeSet&lt;&gt;(<span class="keyword">new</span> Comp());</span><br><span class="line">	   stu.add(<span class="keyword">new</span> student(<span class="string">"a1"</span>,<span class="string">"a"</span>));</span><br><span class="line">	   stu.add(<span class="keyword">new</span> student(<span class="string">"a2"</span>,<span class="string">"a"</span>));</span><br><span class="line">	   stu.add(<span class="keyword">new</span> student(<span class="string">"a3"</span>,<span class="string">"a"</span>));</span><br><span class="line">	   show(stu);</span><br><span class="line">	 &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><blockquote>
+<p>Hashtable(底层是哈希表数据结构，不允许使用null键和null值，线程同步，效率低)</p>
+<p>HashMap(底层是哈希表数据结构，允许使用null键和null值，线程不同步，效率高)</p>
+<p>TreeMap（底层是二叉树数据结构，线程不同步，可以用于给map集合中的键进行排序）</p>
+</blockquote>
+<p>Map集合存储键值对，要保证键的唯一性</p>
+<p>Set集合底层其实就是map</p>
+<ul>
+<li>添加<ul>
+<li>put</li>
+<li>putAll</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </span><br><span class="line">	     </span><br><span class="line">		 HashMap&lt;Integer,String&gt; hs = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">		 HashMap&lt;Integer,String&gt; cp = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">		 cp.put(<span class="number">2</span>,<span class="string">"b"</span>);</span><br><span class="line">		 cp.put(<span class="number">3</span>,<span class="string">"c"</span>);</span><br><span class="line">		 cp.put(<span class="number">4</span>,<span class="string">"d"</span>);</span><br><span class="line">		 hs.put(<span class="number">1</span>,<span class="string">"A"</span>);</span><br><span class="line">		 hs.putAll(cp);</span><br><span class="line">		 </span><br><span class="line">	 &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除<ul>
+<li>clear()</li>
+<li>remove(Object key)</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">      hs.remove(<span class="number">2</span>);</span><br><span class="line">hs.clear();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>判断</p>
+<ul>
+<li>containsValue(Object value)</li>
+<li>containsKey(Object key)</li>
+<li>isEmpty()</li>
+</ul>
+</li>
+<li><p>获取</p>
+<ul>
+<li>get(Object key)</li>
+<li>size()</li>
+<li>values()</li>
+<li>entrySet()</li>
+<li>keySet()</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/13/java基础day9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1759,466 +2257,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/22/java基础day4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/22/java基础day4/" itemprop="url">java基础day4</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-22T07:58:16+08:00">
-                2019-10-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java-basic/" itemprop="url" rel="index">
-                    <span itemprop="name">java-basic</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h1><blockquote>
-<p>java vm 启动的时候会有一个进程java.exe，该进程中至少一个线程负责java程序的执行，而且这个线程运行的代码存在于main方法中，该线程称为主线程。</p>
-<p>其实更深入说Jvm，里面至少还有一个负责垃圾回收的进程。</p>
-</blockquote>
-<h2 id="创建线程"><a href="#创建线程" class="headerlink" title="创建线程"></a>创建线程</h2><ul>
-<li>将类声明为Thread的子类，该子类重写Thread类的run方法。<ul>
-<li>定义类继承Thread</li>
-<li>复写Thread类中的run方法</li>
-<li>调用线程的start方法（1.启动线程 2.调用run方法）</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"demo..."</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">调用👇</span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">           </span><br><span class="line">	  Demo d = <span class="keyword">new</span> Demo();</span><br><span class="line">	  ⭐d.start();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">		   System.out.println(<span class="string">"demo..."</span>+i);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">day1</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	 <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">           </span><br><span class="line">	  Demo d = <span class="keyword">new</span> Demo();</span><br><span class="line">	  d.start();</span><br><span class="line">	  </span><br><span class="line">	  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">		  System.out.println(<span class="string">"hello word"</span>+i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>hello word0<br>hello word1<br>hello word2<br>hello word3<br>demo…0<br>hello word4<br>hello word5<br>hello word6<br>demo…1<br>hello word7<br>demo…2<br>hello word8<br>hello word9<br>demo…3<br>demo…4<br>demo…5<br>demo…6<br>demo…7<br>demo…8<br>demo…9</p>
-</blockquote>
-<p>两个线程在争抢CPU时间。每一次运行的结果都不同，因为多个线程都获取CPU的执行权，谁占用了CPU谁就执行，CPU做快速切换，以达到看上去是同时运行的效果。</p>
-<p>==如果使用d.run()，仅仅是调用对象的方法，线程创建了但其实并没有运行。==</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">T</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">T</span><span class="params">(String n)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name=n;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)</span><br><span class="line">			System.out.println(name+<span class="string">"run.."</span>+i);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">	 <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">           T t1 = <span class="keyword">new</span> T(<span class="string">"one"</span>);</span><br><span class="line">           T t2 = <span class="keyword">new</span> T(<span class="string">"two"</span>);</span><br><span class="line">           t1.start();</span><br><span class="line">           t2.start();</span><br><span class="line"><span class="comment">//           t1.run();</span></span><br><span class="line"><span class="comment">//           t2.run();</span></span><br><span class="line">       	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)</span><br><span class="line">			System.out.println(<span class="string">"main.."</span>+i);</span><br><span class="line">	 &#125;</span><br></pre></td></tr></table></figure>
-
-<p>start()结果</p>
-<blockquote>
-<p>main..0<br>main..1<br>tworun..0<br>onerun..0<br>onerun..1<br>onerun..2<br>onerun..3<br>onerun..4<br>tworun..1<br>tworun..2<br>tworun..3<br>tworun..4<br>main..2<br>main..3<br>main..4</p>
-</blockquote>
-<p>run()结果</p>
-<blockquote>
-<p>onerun..0<br>onerun..1<br>onerun..2<br>onerun..3<br>onerun..4<br>tworun..0<br>tworun..1<br>tworun..2<br>tworun..3<br>tworun..4<br>main..0<br>main..1<br>main..2<br>main..3<br>main..4</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//返回当前线程的引用</span></span><br><span class="line">currentThread();</span><br><span class="line"><span class="comment">//获取线程的名称</span></span><br><span class="line">getName();</span><br><span class="line"><span class="comment">//设置线程名称</span></span><br><span class="line">setName(xx);</span><br><span class="line"><span class="keyword">super</span>(XX);</span><br></pre></td></tr></table></figure>
-
-<p>==局部的变量在每个线程都会创建==</p>
-<h1 id="卖票"><a href="#卖票" class="headerlink" title="卖票"></a>卖票</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ticket</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> tickets = <span class="number">5</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">		<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span>(tickets  &gt; <span class="number">0</span>)</span><br><span class="line">				System.out.println(Thread.currentThread().getName()+<span class="string">"sale..."</span>+tickets-- );</span><br><span class="line">		&#125;</span><br><span class="line">      </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>同时有两个窗口在卖票</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">		 ticket t1= <span class="keyword">new</span> ticket();</span><br><span class="line">		 ticket t2= <span class="keyword">new</span> ticket();</span><br><span class="line">		 t1.start();</span><br><span class="line">		 t2.start();</span><br><span class="line">	 &#125;</span><br></pre></td></tr></table></figure>
-
-<p>结果👇</p>
-<blockquote>
-<p>Thread-1sale…5<br>Thread-0sale…5<br>Thread-1sale…4<br>Thread-0sale…4<br>Thread-1sale…3<br>Thread-0sale…3<br>Thread-1sale…2<br>Thread-0sale…2<br>Thread-1sale…1<br>Thread-0sale…1</p>
-</blockquote>
-<p>==实际上卖了10张票！而一共才5张==</p>
-<hr>
-<p><strong>把tickets声明为static</strong></p>
-<p>输出👇</p>
-<blockquote>
-<p>Thread-0sale…5<br>Thread-0sale…4<br>Thread-0sale…3<br>Thread-0sale…2<br>Thread-0sale…1</p>
-</blockquote>
-<hr>
-<p><strong>如果只有线程1在卖票</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  </span><br><span class="line"> ticket t1= <span class="keyword">new</span> ticket();</span><br><span class="line"><span class="comment">// ticket t2= new ticket();</span></span><br><span class="line"> t1.start();</span><br><span class="line"> t1.start();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>输出👇</p>
-<blockquote>
-<p>Exception in thread “main” java.lang.IllegalThreadStateException<br>    at java.lang.Thread.start(Thread.java:708)<br>    at learning.day1.main(day1.java:22)<br>Thread-0sale…5<br>Thread-0sale…4<br>Thread-0sale…3<br>Thread-0sale…2<br>Thread-0sale…1</p>
-</blockquote>
-<p>==状态异常==，因为实际上线程1已经启动了，没有必要再启动一遍。</p>
-<hr>
-<ul>
-<li>声明实现Runable接口的类。该类实现run方法，然后可以分配该类的实例，在创建Thread时作为一个参数来传递并启动。y<ul>
-<li>定义实现Runable接口</li>
-<li>覆盖run（）方法</li>
-<li>通过Thread类创建线程对象</li>
-<li>将Runable接口的子类对象作为实际参数传递给Thread类的构造函数</li>
-<li>调用Thread类的start()方法</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ticket</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> ticketNum =<span class="number">5</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span>(ticketNum &gt; <span class="number">0</span>) &#123;</span><br><span class="line">				System.out.println(</span><br><span class="line">                    Thread.currentThread().getName()+<span class="string">"sale..."</span>+ticketNum--);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>调用(同时有三个窗口在卖票）👇</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		 </span><br><span class="line">		  ticket t = <span class="keyword">new</span> ticket();</span><br><span class="line">		  Thread t1 = <span class="keyword">new</span> Thread(t);</span><br><span class="line">		  Thread t2 = <span class="keyword">new</span> Thread(t);</span><br><span class="line">		  Thread t3 = <span class="keyword">new</span> Thread(t);</span><br><span class="line">		  </span><br><span class="line">		  t1.start();</span><br><span class="line">		  t2.start();</span><br><span class="line">		  t3.start();</span><br><span class="line">		  </span><br><span class="line">	 &#125;</span><br></pre></td></tr></table></figure>
-
-<p>因为==ticket t = new ticket();==只创建了一个对象，所以并不会出现上述问题。</p>
-<h1 id="两种实现多线程方式的区别"><a href="#两种实现多线程方式的区别" class="headerlink" title="两种实现多线程方式的区别"></a>两种实现多线程方式的区别</h1><p><strong>实现Runnable接口的好处</strong>：</p>
-<ul>
-<li>避免了单继承的局限性</li>
-</ul>
-<p><strong>区别</strong>：</p>
-<ul>
-<li>继承Thread线程代码存放在Thread子类run方法中</li>
-<li>实现Runnable线程代码存在接口的子类的run()方法中</li>
-</ul>
-<h1 id="多线程的安全问题"><a href="#多线程的安全问题" class="headerlink" title="多线程的安全问题"></a>多线程的安全问题</h1><p>比如在卖票程序中👇：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span>(ticketNum &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                ⭐⭐⭐ ⭐⭐⭐</span><br><span class="line">				System.out.println(</span><br><span class="line">                    Thread.currentThread().getName()+<span class="string">"sale..."</span>+ticketNum--);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
-
-<p>==假如同时有四个线程在运行上面的方法，那么在运行到⭐⭐⭐ ⭐⭐⭐处，依次被挂起，再次激活的时候，不会 不会 不会 再判断 if(ticketNum &gt; 0) 了，直接输出然后 ticketNum-1。==</p>
-<p><strong>那么有可能会出现tickNum&lt;0的情况,多线程的运行出现了安全问题</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ticket</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> ticketNum =<span class="number">5</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span>(ticketNum &gt; <span class="number">0</span>) &#123;</span><br><span class="line">				<span class="keyword">try</span> &#123;</span><br><span class="line">					Thread.sleep(<span class="number">20</span>);</span><br><span class="line">					</span><br><span class="line">				&#125;<span class="keyword">catch</span>(Exception e) &#123;</span><br><span class="line">					</span><br><span class="line">				&#125;</span><br><span class="line">				System.out.println(Thread.currentThread().getName()+<span class="string">"sale..."</span>+ticketNum--);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>注意：这里面的异常只能在run()方法里面处理，==因为Runnable接口并没有抛出异常==</p>
-<p><strong>问题的原因</strong>：</p>
-<ul>
-<li>当多条语句在操作同一个线程共享数据时，一个线程对多条语句只执行了一部分，还没有执行完，另一个线程参与进来执行，导致共享数据的错误。</li>
-</ul>
-<p><strong>解决方法</strong>：</p>
-<ul>
-<li>对多条操作共享数据的语句，只能让一个线程都执行完，在执行过程中，其它线程不可以参与执行。</li>
-<li>Java提供==同步代码块==</li>
-</ul>
-<blockquote>
-<p>synchronized(对象){</p>
-<p>  需要被同步的代码</p>
-<p>}</p>
-</blockquote>
-<h1 id="多线程同步代码块"><a href="#多线程同步代码块" class="headerlink" title="多线程同步代码块"></a>多线程同步代码块</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ticket</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> ticketNum =<span class="number">5</span>;</span><br><span class="line">	👉Object obj = <span class="keyword">new</span> Object();</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">			👉<span class="keyword">synchronized</span>(obj) &#123;</span><br><span class="line">				<span class="keyword">if</span>(ticketNum &gt; <span class="number">0</span>) &#123;</span><br><span class="line">					<span class="keyword">try</span> &#123;Thread.sleep(<span class="number">20</span>);&#125;<span class="keyword">catch</span>(Exception e) &#123;&#125;</span><br><span class="line">					System.out.println(Thread.currentThread().getName()+<span class="string">"sale..."</span>+ticketNum--);</span><br><span class="line">			&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>==类似锁，PV操作。==同步，互斥操作。</p>
-<blockquote>
-<ul>
-<li>解决了多线程的安全问题</li>
-<li>每次执行前都要判断锁，较为消耗资源</li>
-</ul>
-</blockquote>
-<h1 id="同步函数"><a href="#同步函数" class="headerlink" title="同步函数"></a>同步函数</h1><p>练习:</p>
-<p><strong>下列问题是否有线程安全问题</strong>：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 两个储户分别有300员，一次存一百</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bank</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> sum;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">		sum+=n;</span><br><span class="line">		System.out.println(<span class="string">"sum = "</span>+sum);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cus</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> Bank b = <span class="keyword">new</span> Bank();</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">3</span>;i++) &#123;</span><br><span class="line">			b.add(<span class="number">100</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">day1</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	 <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		 </span><br><span class="line">		 Cus c  = <span class="keyword">new</span> Cus();</span><br><span class="line">		 Thread t1= <span class="keyword">new</span> Thread(c);</span><br><span class="line">		 Thread t2= <span class="keyword">new</span> Thread(c);</span><br><span class="line">	     </span><br><span class="line">		 t1.start();</span><br><span class="line">		 t2.start();</span><br><span class="line">		  </span><br><span class="line">	 &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>明确哪些代码是多线程代码</li>
-<li>明确共享数据</li>
-<li>明确多线程代码中哪些语句是操作共享数据的</li>
-</ul>
-<p>上面代码输出：</p>
-<blockquote>
-<p>sum = 200<br>sum = 200<br>sum = 300<br>sum = 400<br>sum = 500<br>sum = 600</p>
-</blockquote>
-<p>显然存在安全性问题</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bank</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> sum;</span><br><span class="line">   Object obj = <span class="keyword">new</span> Object();</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">		⭐<span class="keyword">synchronized</span>(obj) &#123;</span><br><span class="line">			sum+=n;</span><br><span class="line">			System.out.println(<span class="string">"sum = "</span>+sum);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>sum = 100<br>sum = 200<br>sum = 300<br>sum = 400<br>sum = 500<br>sum = 600</p>
-</blockquote>
-<p>或者改为<strong>同步函数</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bank</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> sum;</span><br><span class="line">	⭐<span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">		sum+=n;</span><br><span class="line">			System.out.println(<span class="string">"sum = "</span>+sum);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>假如在卖票程序run()函数加上synchronized，那么</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ticket</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> tickets = <span class="number">100</span>;</span><br><span class="line">	⭐<span class="function"><span class="keyword">public</span>   <span class="keyword">synchronized</span>  <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span>(tickets &gt; <span class="number">0</span>) &#123;</span><br><span class="line">				<span class="keyword">try</span>&#123;Thread.sleep(<span class="number">10</span>) ;&#125;<span class="keyword">catch</span>(Exception e) &#123;&#125;</span><br><span class="line">				System.out.println(</span><br><span class="line">                    Thread.currentThread().getName()+<span class="string">"...sale.."</span>+tickets--);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>==那么只有线程0在执行。==</p>
-<p>改为下面这样，封装<strong>同步函数</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ticket</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> tickets = <span class="number">100</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span>    <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">			show();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	⭐<span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(tickets &gt; <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">try</span>&#123;Thread.sleep(<span class="number">10</span>) ;&#125;<span class="keyword">catch</span>(Exception e) &#123;&#125;</span><br><span class="line">			System.out.println(Thread.currentThread().getName()+<span class="string">"...sale.."</span>+tickets--);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<blockquote>
-<p>同步函数需要被对象调用，那么函数都有一个所属对象引用，就是this.</p>
-<p>==所以同步函数使用的锁是this.==</p>
-</blockquote>
-<p><strong>相当于synchronized(this)</strong></p>
-<h3 id="静态同步函数的锁是class对象"><a href="#静态同步函数的锁是class对象" class="headerlink" title="静态同步函数的锁是class对象"></a>静态同步函数的锁是class对象</h3><blockquote>
-<p>静态进内存时，内存中没有本类对象，但是一定有该类对应的==字节码文件对象==</p>
-<p>类名.class 该对象的类型是Class</p>
-</blockquote>
-<h1 id="单例设计模式中的线程安全问题"><a href="#单例设计模式中的线程安全问题" class="headerlink" title="单例设计模式中的线程安全问题"></a>单例设计模式中的线程安全问题</h1><blockquote>
-<p>概念：<br>　　java中单例模式是一种常见的设计模式，单例模式的写法有好几种，这里主要介绍三种：懒汉式单例、饿汉式单例、登记式单例。<br>　　单例模式有以下特点：<br>　　1、单例类只能有一个实例。<br>　　2、单例类必须自己创建自己的唯一实例。<br>　　3、单例类必须给所有其他对象提供这一实例。<br>　　单例模式确保某个类只有一个实例，而且自行实例化并向整个系统提供这个实例。在计算机系统中，线程池、缓存、日志对象、对话框、打印机、显卡的驱动程序对象常被设计成单例。这些应用都或多或少具有资源管理器的功能。每台计算机可以有若干个打印机，但只能有一个Printer Spooler，以避免两个打印作业同时输出到打印机中。每台计算机可以有若干通信端口，系统应当集中管理这些通信端口，以避免一个通信端口同时被两个请求同时调用。总之，选择单例模式就是为了避免不一致状态。</p>
-</blockquote>
-<p>👉饿汉式</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Single</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Single s = <span class="keyword">new</span> Single();</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Single</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> Single <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>👉懒汉式（实例延迟加载，多线程访问时会出现线程安全问题）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Single</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Single s = <span class="keyword">null</span>;</span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">Single</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Single <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(s==<span class="keyword">null</span>)</span><br><span class="line">			s = <span class="keyword">new</span> Single();</span><br><span class="line">		<span class="keyword">return</span> s;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>==显而易见，懒汉式代码不具备线程安全性，因为当多个线程同时在判断 if(s==null)之后挂起，那么就会出现线程不安全的情况==</p>
-<p>修改如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Single</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Single s = <span class="keyword">null</span>;</span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">Single</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span>  Single <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(s == <span class="keyword">null</span>) &#123;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">synchronized</span>(Single.class) &#123;</span><br><span class="line">				<span class="keyword">if</span>(s==<span class="keyword">null</span>)</span><br><span class="line">					s = <span class="keyword">new</span> Single();</span><br><span class="line">		      &#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> s;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>因为 s 是静态变量，所以不管前面几个线程进来，只要任一s  =new Single()执行了，那么 s!=null，就可以减少判断锁的次数，减小计算机消耗。</p>
-<h1 id="多线程-死锁"><a href="#多线程-死锁" class="headerlink" title="多线程-死锁"></a>多线程-死锁</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">boolean</span> flag;</span><br><span class="line">	Test(<span class="keyword">boolean</span> f)&#123;</span><br><span class="line">		<span class="keyword">this</span>.flag=f;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(flag) &#123;</span><br><span class="line">			<span class="keyword">synchronized</span>(Mylock.lockA) &#123;</span><br><span class="line">				System.out.println(<span class="string">"if lock A..."</span>);</span><br><span class="line">				<span class="keyword">synchronized</span>(Mylock.lockB) &#123;</span><br><span class="line">					System.out.println(<span class="string">"if lock B..."</span>);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">synchronized</span>(Mylock.lockB) &#123;</span><br><span class="line">				System.out.println(<span class="string">"else lock B..."</span>);</span><br><span class="line">				<span class="keyword">synchronized</span>(Mylock.lockA) &#123;</span><br><span class="line">					System.out.println(<span class="string">"else lock A..."</span>);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Mylock</span></span>&#123;</span><br><span class="line">	<span class="keyword">static</span> Object lockA = <span class="keyword">new</span> Object();</span><br><span class="line">	<span class="keyword">static</span> Object lockB = <span class="keyword">new</span>  Object();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">day1</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	 <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">         Thread t1 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Test(<span class="keyword">true</span>));</span><br><span class="line">         Thread t2 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Test(<span class="keyword">false</span>));</span><br><span class="line">         </span><br><span class="line">         t1.start();</span><br><span class="line">         t2.start();</span><br><span class="line">	 &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>==t1得到了锁A，需要锁B，t2得到了锁B，需要锁A，这时发生序死锁了。==</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/21/java基础day3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/21/java基础day3/" itemprop="url">java基础day3</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-21T08:01:40+08:00">
-                2019-10-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="异常中的finally语句"><a href="#异常中的finally语句" class="headerlink" title="异常中的finally语句"></a>异常中的finally语句</h1><blockquote>
-<p>finally代码块：一定会执行的代码，通常用来关闭资源</p>
-</blockquote>
-<p>有一个类👇：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">div</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span> <span class="keyword">throws</span> NegativeNumException</span>&#123;</span><br><span class="line">		  </span><br><span class="line">		<span class="keyword">if</span>(b&lt;<span class="number">0</span>)</span><br><span class="line">		    <span class="keyword">throw</span> <span class="keyword">new</span> NegativeNumException(<span class="string">"除数为负数"</span>);</span><br><span class="line">		<span class="keyword">return</span> a/b;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>调用👇：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">       </span><br><span class="line">		     Demo d = <span class="keyword">new</span> Demo();</span><br><span class="line">		     <span class="comment">//看到上一个函数会抛出异常，应该自动使用try..catch</span></span><br><span class="line">		     <span class="keyword">try</span> &#123;</span><br><span class="line">		    	 d.div(<span class="number">4</span>,-<span class="number">1</span>);</span><br><span class="line">		     &#125;<span class="keyword">catch</span>(NegativeNumException e)&#123;</span><br><span class="line">		    	 System.out.println(e.toString());</span><br><span class="line">		     &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">		    	 System.out.println(<span class="string">"finally.."</span>);</span><br><span class="line">                 <span class="comment">//return </span></span><br><span class="line">		     &#125;</span><br><span class="line">		  System.out.println(<span class="string">"over..."</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>输出👇：</p>
-<blockquote>
-<p>learning.NegativeNumException: 除数为负数<br>finally..<br>over…</p>
-</blockquote>
-<p>看似finally和输出over的句子都执行了。但是如果在catch子句里面加入 return</p>
-<p>那么就只有finally会输出（资源关闭）</p>
-<h1 id="异常在子类覆盖中的体现"><a href="#异常在子类覆盖中的体现" class="headerlink" title="异常在子类覆盖中的体现"></a>异常在子类覆盖中的体现</h1><ul>
-<li>子类在覆盖父类方法时，如果父类的方法抛出异常，那么子类的覆盖方法，只能抛出父类的异常或者该异常的子类</li>
-<li>如果父类的方法抛出多个异常，那么子类在覆盖方法时，只能抛出父类异常的子集</li>
-<li>如果父类或者接口的方法中没有异常抛出，那么子类在覆盖方法时，也不可以抛出异常。所以如果==子类方法发生了异常，就必须要用try处理，不能抛出==</li>
-</ul>
-<h1 id="异常练习"><a href="#异常练习" class="headerlink" title="异常练习"></a>异常练习</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NovalueException</span> <span class="keyword">extends</span> <span class="title">RuntimeException</span></span>&#123;</span><br><span class="line">	NovalueException(String msg)&#123;</span><br><span class="line">		<span class="keyword">super</span>(msg);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Shape</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">getArea</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Rec</span> <span class="keyword">implements</span> <span class="title">Shape</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> height,width;</span><br><span class="line">	Rec(<span class="keyword">int</span> h,<span class="keyword">int</span> w)&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(h &lt; <span class="number">0</span> || w &lt;<span class="number">0</span>)</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> NovalueException(<span class="string">"非法参数"</span>);</span><br><span class="line">		<span class="keyword">this</span>.height=h;</span><br><span class="line">		<span class="keyword">this</span>.width=w;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getArea</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(height*width);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>调用</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">          </span><br><span class="line">	 Rec  r = <span class="keyword">new</span> Rec(-<span class="number">3</span>,<span class="number">4</span>);</span><br><span class="line">	 r.getArea();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<p>==正常逻辑代码和处理代码分开来==</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2269,7 +2307,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">48</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

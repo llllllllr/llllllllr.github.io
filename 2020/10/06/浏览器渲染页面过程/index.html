@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="浏览器内核 Trident内核，IE Gecko内核, FireFox Webkit内核， Safari 以前的chrome Pressto, Opera Blink, Chrome Chrome JS引擎，V8  工作流程 浏览器解析的文件 HTML CSS JavaScript   解析完成后，浏览器引擎通过DOM TREE和 CSS Rule Tree 来构造 Renderint Tree">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浏览器渲染页面过程">
+<meta property="og:url" content="http://yoursite.com/2020/10/06/浏览器渲染页面过程/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="浏览器内核 Trident内核，IE Gecko内核, FireFox Webkit内核， Safari 以前的chrome Pressto, Opera Blink, Chrome Chrome JS引擎，V8  工作流程 浏览器解析的文件 HTML CSS JavaScript   解析完成后，浏览器引擎通过DOM TREE和 CSS Rule Tree 来构造 Renderint Tree">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-10-06T13:20:54.573Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="浏览器渲染页面过程">
+<meta name="twitter:description" content="浏览器内核 Trident内核，IE Gecko内核, FireFox Webkit内核， Safari 以前的chrome Pressto, Opera Blink, Chrome Chrome JS引擎，V8  工作流程 浏览器解析的文件 HTML CSS JavaScript   解析完成后，浏览器引擎通过DOM TREE和 CSS Rule Tree 来构造 Renderint Tree">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"Sidebar Position, available value":"left | right (only for Pisces | Gemini).","position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/10/06/浏览器渲染页面过程/">
+
+
+
+
+
+  <title>浏览器渲染页面过程 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/06/浏览器渲染页面过程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">浏览器渲染页面过程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-10-06T21:20:26+08:00">
+                2020-10-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/front-end/" itemprop="url" rel="index">
+                    <span itemprop="name">front-end</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h3><h4 id="内核"><a href="#内核" class="headerlink" title="内核"></a>内核</h4><ul>
+<li>Trident内核，IE</li>
+<li>Gecko内核, FireFox</li>
+<li>Webkit内核， Safari 以前的chrome</li>
+<li>Pressto, Opera</li>
+<li>Blink, Chrome</li>
+<li>Chrome <strong>JS</strong>引擎，V8</li>
+</ul>
+<h4 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h4><ul>
+<li>浏览器解析的文件<ul>
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+</ul>
+</li>
+<li>解析完成后，浏览器引擎通过DOM TREE和 CSS Rule Tree 来构造 Renderint Tree</li>
+<li>最后通过调用操作系统的Native GUI 的 API绘制</li>
+</ul>
+<h5 id="构建DOM"><a href="#构建DOM" class="headerlink" title="构建DOM"></a>构建DOM</h5><blockquote>
+<p>字节数据 -&gt; 字符串 -&gt; Token -&gt; Node -&gt; DOM</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">简单来说，就是浏览器从磁盘或网络读取HTML原始字节，然后根据指定的文件编码将字节数据变成字符串</span><br><span class="line"></span><br><span class="line">将字符串转换成Token，Token可以表示出当前的标签是开始标签，结束标签还是文本，Token一边生成一边维护</span><br><span class="line"></span><br><span class="line">生成节点对象并构建DOM</span><br></pre></td></tr></table></figure>
+
+<h5 id="构建CSSOM"><a href="#构建CSSOM" class="headerlink" title="构建CSSOM"></a>构建CSSOM</h5><blockquote>
+<p>字节数据 -&gt; 字符串 -&gt; Token -&gt; Node -&gt; CSSOM</p>
+</blockquote>
+<ul>
+<li><p>css匹配HTML元素 <code>从右往左</code>解析</p>
+<p>如果正向解析，例如【div div p em】，我们首先就要检查当前元素到html的整条路经，找到嘴上的div，再往下找，如果遇到不匹配就必须回到最上层的那个div，往下再去匹配选择器中的第一个div，回溯若干次才能确定匹配与否。</p>
+</li>
+</ul>
+<h5 id="生成渲染树"><a href="#生成渲染树" class="headerlink" title="生成渲染树"></a>生成渲染树</h5><blockquote>
+<p>渲染树只会包括需要显示的节点和这些节点的样式信息，如果某个节点是 display:none， 那么就不会在渲染树中显示。</p>
+</blockquote>
+<h5 id="布局与绘制"><a href="#布局与绘制" class="headerlink" title="布局与绘制"></a>布局与绘制</h5><blockquote>
+<p>当浏览器生成渲染树以后，就会根据渲染树来进行布局（也可以叫做回流），这一阶段浏览器要做的事情就是定位元素的确切位置和大小，通常这一行为也被称为“自动重排”。</p>
+</blockquote>
+<h4 id="window-onload-和-DOMContentLoaded的区别"><a href="#window-onload-和-DOMContentLoaded的区别" class="headerlink" title="window.onload 和 DOMContentLoaded的区别"></a>window.onload 和 DOMContentLoaded的区别</h4><blockquote>
+<p>在Js中DOMContentLoaded方法时在HTML文档被完全的加载和解析之后才会触发的事件，他并不需要等到（样式表/图像/子框架）加载之后再进行。再看load事件（onload事件），用于检测一个加载完全的页面。 </p>
+</blockquote>
+<p>DOM完整的解析过程：</p>
+<ul>
+<li>解析HTML结构</li>
+<li>加载外部脚本和样式表文件</li>
+<li>解析并执行脚本代码 // js</li>
+<li>DOM树构建完成 // DOMContentLoaded</li>
+<li>加载图片等外部文件</li>
+<li>页面加载完成 // loaded</li>
+</ul>
+<blockquote>
+<p>当onload事件触发时，页面上所有的DOM,样式表，图片，flash都已经加载完成了</p>
+<p>当DOMContentloaded事件触发时，仅当DOM加载完成，不包括样式表，图片，flash</p>
+</blockquote>
+<h4 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h4><h4 id="渲染过程中遇到JS文件怎么处理"><a href="#渲染过程中遇到JS文件怎么处理" class="headerlink" title="渲染过程中遇到JS文件怎么处理"></a>渲染过程中遇到JS文件怎么处理</h4><blockquote>
+<p>JavaScript的加载，解析和执行会阻塞DOM的构建，也就是说，在构建DOM时，HTML解析器若遇到了JavaScript，那么它会暂停构建DOM，将控制权交给JavaScript引擎，等JavaScript引擎运行完毕，浏览器再从中断的地方恢复DOM构建。</p>
+</blockquote>
+<p>  这时候要提到<strong>async和defer</strong></p>
+<ul>
+<li>两者都会并行下载，不会影响页面的解析。</li>
+<li><code>defer</code>会按照顺序在DOMContentLoaded前按照页面出现的顺序依次执行。</li>
+<li><code>async</code>则是下载完立即执行。</li>
+</ul>
+<p>对于一个普通的script标签</p>
+<blockquote>
+<ol>
+<li>停止解析document</li>
+<li>请求a.js</li>
+<li>执行a.js中的脚本</li>
+<li>继续解析document</li>
+</ol>
+</blockquote>
+<p>defer</p>
+<blockquote>
+<ol>
+<li>不阻止解析document，并行下载js</li>
+<li>即使下载完js,仍继续解析document</li>
+<li>按照页面中出现的顺序，在其他同步脚本执行后，DOMContendLoaded事件前依次执行下载的js</li>
+</ol>
+</blockquote>
+<p>async</p>
+<blockquote>
+<ol>
+<li>不阻止解析document,并行下载js</li>
+<li>脚本下载完立即执行（两者的执行顺序不确定，执行阶段不确定，可能在DOMContentloaded之后，适用于无依赖脚本）</li>
+<li>即使可以在DOMContentLoaded之后执行，也一定会在onload事件触发之前执行。</li>
+</ol>
+</blockquote>
+<p>总结</p>
+<blockquote>
+<ol>
+<li>两者都不会阻止document的解析</li>
+<li>defer会在DOMContentLoaded前依次执行</li>
+<li>async则是下载完立即执行，不一定是在DOMContentLoaded前</li>
+<li>async因为顺序无关，所以很适合Google Analytics这种无依赖脚本。</li>
+</ol>
+<p>参考：<a href="https://github.com/xiaoyu2er/blog/issues/8" target="_blank" rel="noopener">https://github.com/xiaoyu2er/blog/issues/8</a></p>
+</blockquote>
+<p>Js文件不只是阻塞DOM的构建，而且还会导致CSSOM也阻塞DOM的构建。</p>
+<p>原本DOM和CSSOM的阻塞是互不影响的，井水不犯河水，但是一旦引入了JavaScript，CSSOM也开始阻塞DOM执行，等CSSOM执行完毕之后，DOM再恢复DOM构建。</p>
+<p>因为：</p>
+<ul>
+<li>JavaScript不只是可以改DOM，它还可以更改样式，也就是可以更改CSSOM</li>
+<li>不完整的CSSOM是无法使用的，但JavaScript中像访问CSSOM并更改它，那么在执行JavaScript时，必须要拿到完整CSSOM。所以弱国浏览器上文完成CSSOM的下载和构建，而我们却想在此时运行脚本，那么浏览器将延迟脚本执行和DOM构建，直到它完成CSSOM的下载和构建。也就是说，在这种情况下，<strong>浏览器会先下载和构建CSSOM，然后再执行JavaScript，最后再继续构建DOM</strong></li>
+</ul>
+<h4 id="回流和重绘"><a href="#回流和重绘" class="headerlink" title="回流和重绘"></a>回流和重绘</h4><ul>
+<li>重绘：当<code>Render Tree</code>中的一些元素需要更新属性，而这些属性只是影响元素的外观、风格，而不会影响布局的，例如<code>background-color</code></li>
+<li>回流：当<code>render tree</code>中的一部分因为元素的规模尺寸、布局、隐藏等改变而需要重新构建</li>
+</ul>
+<h5 id="常见的引起回流属性和方法"><a href="#常见的引起回流属性和方法" class="headerlink" title="常见的引起回流属性和方法"></a>常见的引起回流属性和方法</h5><blockquote>
+<p>重点是改变元素的位置，大小的操作，都会触发回流</p>
+</blockquote>
+<ul>
+<li>添加/删除可见的DOM元素</li>
+<li>元素尺寸改变，边距、填充、边框、宽度和高度</li>
+<li>内容变化，用户在input框里输入文字</li>
+<li>浏览器窗口尺寸改变—resize事件发生</li>
+<li>计算offsetWidth和offsetHeight属性</li>
+<li>设置style属性的值</li>
+</ul>
+<p>改善：</p>
+<ul>
+<li>使用<code>transform</code>替代<code>top</code></li>
+<li>使用<code>visibility</code>替换<code>display:none</code>，因为前者只会引起重绘，而后者引发回流，因为改变了布局</li>
+<li>不要把节点的属性放在一个循环里当成循环里面的变量</li>
+</ul>
+<blockquote>
+<p>参考：<a href="https://blog.fundebug.com/2019/01/03/understand-browser-rendering/" target="_blank" rel="noopener">https://blog.fundebug.com/2019/01/03/understand-browser-rendering/</a></p>
+</blockquote>
+<h4 id="浏览器中的进程和线程"><a href="#浏览器中的进程和线程" class="headerlink" title="浏览器中的进程和线程"></a>浏览器中的进程和线程</h4><h4 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h4><ol>
+<li>一个线程只能属于一个进程，一个进程可以有多个线程，但至少有一个线程</li>
+<li>资源分配给进程，同一个进程的所有线程共享该进程的所有资源</li>
+<li>CPU分配给线程，真正在CPU上运行的是线程</li>
+<li>线程是进程内的一个执行的执行单元，也是进程内的可调度实体</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1、进程是资源分配的最小单位，线程是程序执行的最小单位（资源调度的最小单位）</span><br><span class="line">2、进程有自己的独立地址空间，每启动一个进程，系统就会为它分配地址空间，建立数据表来维护代码段、堆栈段和数据段，这种操作非常昂贵。</span><br><span class="line">而线程是共享进程中的数据的，使用相同的地址空间，因此CPU切换一个线程的花费远比进程要小很多，同时创建一个线程的开销也比进程要小很多。</span><br><span class="line">3、线程之间的通信更方便，同一进程下的线程共享全局变量、静态变量等数据，而进程之间的通信需要以通信的方式（IPC)进行。不过如何处理好同步与互斥是编写多线程程序的难点。</span><br><span class="line">4、但是多进程程序更健壮，多线程程序只要有一个线程死掉，整个进程也死掉了，而一个进程死掉并不会对另外一个进程造成影响，因为进程有自己独立的地址空间。</span><br></pre></td></tr></table></figure>
+
+<h4 id="进程间通信"><a href="#进程间通信" class="headerlink" title="进程间通信"></a>进程间通信</h4><p>（1）管道（pipe）及有名管道（named pipe）：管道可用于具有亲缘关系的父子进程间的通信，有名管道除了具有管道所具有的功能外，它还允许无亲缘关系进程间的通信。</p>
+<p>（2）信号（signal）：信号是在软件层次上对中断机制的一种模拟，它是比较复杂的通信方式，用于通知进程有某事件发生，一个进程收到一个信号与处理器收到一个中断请求效果上可以说是一致的。</p>
+<p>（3）消息队列（message queue）：消息队列是消息的链接表，它克服了上两种通信方式中信号量有限的缺点，具有写权限得进程可以按照一定得规则向消息队列中添加新信息；对消息队列有读权限得进程则可以从消息队列中读取信息。</p>
+<p>（4）共享内存（shared memory）：可以说这是最有用的进程间通信方式。它使得多个进程可以访问同一块内存空间，不同进程可以及时看到对方进程中对共享内存中数据得更新。这种方式需要依靠某种同步操作，如互斥锁和信号量等。</p>
+<p>（5）信号量（semaphore）：主要作为进程之间及同一种进程的不同线程之间得同步和互斥手段。</p>
+<p>（6）套接字（socket）：这是一种更为一般得进程间通信机制，它可用于网络中不同机器之间的进程间通信，应用非常广泛。进程和线程</p>
+<ol>
+<li>一个线程只能属于一个进程，一个进程可以有多个线程，但至少有一个线程</li>
+<li>资源分配给进程，同一个进程的所有线程共享该进程的所有资源</li>
+<li>CPU分配给线程，真正在CPU上运行的是线程</li>
+<li>线程是进程内的一个执行的执行单元，也是进程内的可调度实体</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1、进程是资源分配的最小单位，线程是程序执行的最小单位（资源调度的最小单位）</span><br><span class="line">2、进程有自己的独立地址空间，每启动一个进程，系统就会为它分配地址空间，建立数据表来维护代码段、堆栈段和数据段，这种操作非常昂贵。</span><br><span class="line">而线程是共享进程中的数据的，使用相同的地址空间，因此CPU切换一个线程的花费远比进程要小很多，同时创建一个线程的开销也比进程要小很多。</span><br><span class="line">3、线程之间的通信更方便，同一进程下的线程共享全局变量、静态变量等数据，而进程之间的通信需要以通信的方式（IPC)进行。不过如何处理好同步与互斥是编写多线程程序的难点。</span><br><span class="line">4、但是多进程程序更健壮，多线程程序只要有一个线程死掉，整个进程也死掉了，而一个进程死掉并不会对另外一个进程造成影响，因为进程有自己独立的地址空间。</span><br></pre></td></tr></table></figure>
+
+<h4 id="进程间通信-1"><a href="#进程间通信-1" class="headerlink" title="进程间通信"></a>进程间通信</h4><p>（1）管道（pipe）及有名管道（named pipe）：管道可用于具有亲缘关系的父子进程间的通信，有名管道除了具有管道所具有的功能外，它还允许无亲缘关系进程间的通信。</p>
+<p>（2）信号（signal）：信号是在软件层次上对中断机制的一种模拟，它是比较复杂的通信方式，用于通知进程有某事件发生，一个进程收到一个信号与处理器收到一个中断请求效果上可以说是一致的。</p>
+<p>（3）消息队列（message queue）：消息队列是消息的链接表，它克服了上两种通信方式中信号量有限的缺点，具有写权限得进程可以按照一定得规则向消息队列中添加新信息；对消息队列有读权限得进程则可以从消息队列中读取信息。</p>
+<p>（4）共享内存（shared memory）：可以说这是最有用的进程间通信方式。它使得多个进程可以访问同一块内存空间，不同进程可以及时看到对方进程中对共享内存中数据得更新。这种方式需要依靠某种同步操作，如互斥锁和信号量等。</p>
+<p>（5）信号量（semaphore）：主要作为进程之间及同一种进程的不同线程之间得同步和互斥手段。</p>
+<p>（6）套接字（socket）：这是一种更为一般得进程间通信机制，它可用于网络中不同机器之间的进程间通信，应用非常广泛。</p>
+<blockquote>
+<p>在chrome浏览器中，打开一个网页相当于起了一个进程。</p>
+</blockquote>
+<ul>
+<li>进程之间不共享资源和地址空间，所以不会存在太多的安全问题，而由于多个线程共享这相同的地址空间和资源，所以会存在<strong>线程之间有可能会恶意修改或者非授权数据等复杂的安全问题</strong></li>
+</ul>
+<p><strong>浏览器内核的复杂问题</strong></p>
+<ul>
+<li><p>GUI渲染线程</p>
+<ul>
+<li>负责渲染浏览器界面HTML元素，当界面需要重绘或回流再执行。在Js脚本运行 期间，这个线程是挂起状态。</li>
+</ul>
+</li>
+<li><p>JavaScript引擎线程</p>
+<ul>
+<li>Js内核，主要负责JavaScript脚本程序，例如V8引擎。</li>
+</ul>
+<hr>
+<p>⭐注意：<strong>上面两个线程是互斥的</strong></p>
+</li>
+<li><p>定时触发器线程</p>
+<ul>
+<li>浏览器定时计数器不是由JavaScript引擎计数的，因为JavaScript引擎是单线程的，如果处于阻塞线程状态就会影响计时的准确性。</li>
+</ul>
+</li>
+<li><p>事件触发线程</p>
+<ul>
+<li>当一个事件被触发时该线程会把事件添加到待处理队列的对位，等待JS引擎的处理。</li>
+</ul>
+</li>
+<li><p>异步Http请求线程</p>
+<ul>
+<li>XMLHttpRequest在连接后是通过浏览器新开一个县城请求，将检测到状态变更时，如果设置有回调函数，异步线程就产生状态变更事件放到JavaScript引擎的处理队列中处理。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>参考： <a href="https://imweb.io/topic/58e3bfa845e5c13468f567d5" target="_blank" rel="noopener">https://imweb.io/topic/58e3bfa845e5c13468f567d5</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/10/06/从输入url到页面加载发生了什么/" rel="next" title="从输入url到页面加载发生了什么">
+                <i class="fa fa-chevron-left"></i> 从输入url到页面加载发生了什么
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">48</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器"><span class="nav-number">1.</span> <span class="nav-text">浏览器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#内核"><span class="nav-number">1.1.</span> <span class="nav-text">内核</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#工作流程"><span class="nav-number">1.2.</span> <span class="nav-text">工作流程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#构建DOM"><span class="nav-number">1.2.1.</span> <span class="nav-text">构建DOM</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#构建CSSOM"><span class="nav-number">1.2.2.</span> <span class="nav-text">构建CSSOM</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#生成渲染树"><span class="nav-number">1.2.3.</span> <span class="nav-text">生成渲染树</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#布局与绘制"><span class="nav-number">1.2.4.</span> <span class="nav-text">布局与绘制</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#window-onload-和-DOMContentLoaded的区别"><span class="nav-number">1.3.</span> <span class="nav-text">window.onload 和 DOMContentLoaded的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他问题"><span class="nav-number">1.4.</span> <span class="nav-text">其他问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#渲染过程中遇到JS文件怎么处理"><span class="nav-number">1.5.</span> <span class="nav-text">渲染过程中遇到JS文件怎么处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#回流和重绘"><span class="nav-number">1.6.</span> <span class="nav-text">回流和重绘</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#常见的引起回流属性和方法"><span class="nav-number">1.6.1.</span> <span class="nav-text">常见的引起回流属性和方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器中的进程和线程"><span class="nav-number">1.7.</span> <span class="nav-text">浏览器中的进程和线程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进程和线程"><span class="nav-number">1.8.</span> <span class="nav-text">进程和线程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进程间通信"><span class="nav-number">1.9.</span> <span class="nav-text">进程间通信</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进程间通信-1"><span class="nav-number">1.10.</span> <span class="nav-text">进程间通信</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

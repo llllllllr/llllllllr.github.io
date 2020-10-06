@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="从输入URL到页面加载发生了什么概述 DNS解析 TCP连接 发送HTTP请求 服务器处理请求并返回HTTP报文 浏览器解析渲染页面 连接结束  DNS解析 先在本地host文件查找域名对应的ip地址  如果host文件没有的话，会查找本地DNS解析器缓存，是否有这个网址映射关系，如果有，直接返回，完成域名解析  如果都没有，找TCP/IP参数中设置的首选DNS服务器，也就是本地DNS服务器，本地">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从输入url到页面加载发生了什么">
+<meta property="og:url" content="http://yoursite.com/2020/10/06/从输入url到页面加载发生了什么/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="从输入URL到页面加载发生了什么概述 DNS解析 TCP连接 发送HTTP请求 服务器处理请求并返回HTTP报文 浏览器解析渲染页面 连接结束  DNS解析 先在本地host文件查找域名对应的ip地址  如果host文件没有的话，会查找本地DNS解析器缓存，是否有这个网址映射关系，如果有，直接返回，完成域名解析  如果都没有，找TCP/IP参数中设置的首选DNS服务器，也就是本地DNS服务器，本地">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-10-06T13:21:14.146Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="从输入url到页面加载发生了什么">
+<meta name="twitter:description" content="从输入URL到页面加载发生了什么概述 DNS解析 TCP连接 发送HTTP请求 服务器处理请求并返回HTTP报文 浏览器解析渲染页面 连接结束  DNS解析 先在本地host文件查找域名对应的ip地址  如果host文件没有的话，会查找本地DNS解析器缓存，是否有这个网址映射关系，如果有，直接返回，完成域名解析  如果都没有，找TCP/IP参数中设置的首选DNS服务器，也就是本地DNS服务器，本地">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"Sidebar Position, available value":"left | right (only for Pisces | Gemini).","position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/10/06/从输入url到页面加载发生了什么/">
+
+
+
+
+
+  <title>从输入url到页面加载发生了什么 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/06/从输入url到页面加载发生了什么/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">从输入url到页面加载发生了什么</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-10-06T19:37:20+08:00">
+                2020-10-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/front-end/" itemprop="url" rel="index">
+                    <span itemprop="name">front-end</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="从输入URL到页面加载发生了什么"><a href="#从输入URL到页面加载发生了什么" class="headerlink" title="从输入URL到页面加载发生了什么"></a>从输入URL到页面加载发生了什么</h3><h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><ul>
+<li>DNS解析</li>
+<li>TCP连接</li>
+<li>发送HTTP请求</li>
+<li>服务器处理请求并返回HTTP报文</li>
+<li>浏览器解析渲染页面</li>
+<li>连接结束</li>
+</ul>
+<h5 id="DNS解析"><a href="#DNS解析" class="headerlink" title="DNS解析"></a>DNS解析</h5><ol>
+<li><p>先在本地host文件查找域名对应的ip地址</p>
+</li>
+<li><p>如果host文件没有的话，会查找本地DNS解析器缓存，是否有这个网址映射关系，如果有，直接返回，完成域名解析</p>
+</li>
+<li><p>如果都没有，找TCP/IP参数中设置的首选DNS服务器，也就是本地DNS服务器，本地域名服务器如果包含在本地配置区域资源中，就返回解析结果，完成域名解析</p>
+</li>
+<li><p>如果要查询的域名不是由本地域名服务器解析，但是服务器已经缓存了这个网址的映射关系，就调用这个IP地址映射，完成域名解析</p>
+</li>
+<li><p>如果本地域名服务器和缓存解析都失效，就根据本地DNS服务器的设置(是否设置转发器)进行查询，如果没有用转发模式，本地DNS就会把请求发到13台根域名服务器，根域名服务器所受到请求后会判断这个域名（.com）是谁来授权管理，并且会返回一个负责该顶级域名服务器的一个IP。</p>
+</li>
+<li><p>本地DNS服务器拿到这个IP信息之后会联系这台负责这个域的服务器，这台负责.com域的服务器收到请求之后，如果自己无法解析，就会找一个管理.com域的下一级DNS服务器地址（qq.com）给本地域名服务器，本地域名服务器拿到之后又会重复上面的动作，继续进行查询，知道找到<a href="http://www.qq.com的主机。" target="_blank" rel="noopener">www.qq.com的主机。</a></p>
+<blockquote>
+<p> 主机向本地域名服务器的查询一般采用递归查询(交给下一任)</p>
+<p>本地域名服务器向根域名服务器的查询属于迭代查询（下一任收到之后返回下一个域的ip地址）</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="TCP连接"><a href="#TCP连接" class="headerlink" title="TCP连接"></a>TCP连接</h4><p><strong>tcp是传输层协议，http是网络层协议</strong></p>
+<p><strong>三次握手</strong></p>
+<ol>
+<li>第一次握手<ul>
+<li>客户端发送一个SYN标记的包，初始序列号为x，发送完毕后客户端进入SYN_SEND状态</li>
+</ul>
+</li>
+<li>第二次握手<ul>
+<li>服务端发送ACK应答，ACK = x+1，表示收到了客户端发送的SYN包，并且带有自己的序列号seq = y，表示让客户端确认是否能收到</li>
+</ul>
+</li>
+<li>第三次握手<ul>
+<li>客户端再次发送确认包，表示确认收到服务器的包（服务器发送的seq值+1）</li>
+</ul>
+</li>
+</ol>
+<p><strong>四次挥手</strong></p>
+<ol>
+<li>第一次挥手<ul>
+<li>客户端发送一个FIN标记的包，告诉服务器要关闭连接，表示自己不用再发送数据了，但是还可以接受数据。发送完成后，客户端进入<code>FIN_WAIT_1</code>状态</li>
+</ul>
+</li>
+<li>第二次挥手<ul>
+<li>服务器发送一个ACK确认包，告诉客户端自己收到关闭的请求，但是还没准备好。发送完成后，客户端进入<code>CLOSE_WAIT</code>状态，客户端接收到这个包之后，进入<code>FIN_WAIT_2</code>，等待服务器关闭连接</li>
+</ul>
+</li>
+<li>第三次挥手<ul>
+<li>服务器准备好之后，发送FIN标记的包，发送完成后，服务端进入<code>LAST_ACK</code>状态，等待客户端进行确认</li>
+</ul>
+</li>
+<li>第四次挥手<ul>
+<li>客户端接收到服务端的关闭请求，再发送ACK标记的确认包，进入<code>TIME_WAIT</code>状态，等待服务端可能请求重传的ACK包。</li>
+<li>服务端接收到ACK包后，关闭连接</li>
+<li>客户端在等待两个最大段生命周期后，没有接收到确认的ACK包，认为服务器已经关闭连接，自己也关闭连接，进入<code>CLOSE</code>状态</li>
+</ul>
+</li>
+</ol>
+<p><strong>TCP可靠传输</strong>：</p>
+<ul>
+<li>TCP给发送的每一个包进行编号，接收方对数据包进行排序，把有序数据传送给应用层</li>
+<li>校验和</li>
+<li>流量控制：TCP的每一方都有固定大小的缓冲空间，TCP的接收端只允许发送端发送接收端缓冲区能接纳的数据，当接收方来不及处理发送方的书库，能提示发送方降低发送速率，防止包丢失。TCP使用的流量控制协议是可变大小的滑动窗口协议。</li>
+<li>拥塞控制：当网络拥塞时，减少数据的发送</li>
+<li>停止等待协议：每发送完一个分组就停止发送，等待对方确认（超时重传机制）</li>
+</ul>
+<h4 id="HTTP请求头"><a href="#HTTP请求头" class="headerlink" title="HTTP请求头"></a>HTTP请求头</h4><ol>
+<li>Accept<ul>
+<li>Accept: text/html 浏览器可以接收服务器回发的类型为text/html</li>
+<li>Accept: */* 浏览器可以处理所有类型</li>
+</ul>
+</li>
+<li>Accept-Encoding<ul>
+<li>gzip，浏览器申明自己接收的压缩方法（是否支持压缩，支持什么压缩方法）</li>
+</ul>
+</li>
+<li>Accept-Language<ul>
+<li>zh-CN 申明自己接收的语言</li>
+</ul>
+</li>
+<li>Connection<ul>
+<li>keep-alive: 当一个网页打开完成后，客户端和服务器之间用于传输HTTP数据的TCP连接不会关闭，如果客户端再次访问这个服务器上的网页，会继续使用这一条已经建立的连接</li>
+<li>close，表明一个Request完成后，客户端和服务器之间用于传输HTTP数据的TCP连接会关闭，当客户端再次发送请求，需要重新建立TCP连接</li>
+</ul>
+</li>
+<li>Host<ul>
+<li>请求资源的主机和端口号，通常从HTTP URL中提取出来</li>
+</ul>
+</li>
+<li>Referer<ul>
+<li>当浏览器向web服务器发送请求的时候，一般会带上Referer，告诉服务器我是从哪个页面链接过来的，服务器借此可以获得一些信息</li>
+</ul>
+</li>
+<li>User-Agent<ul>
+<li>告诉http服务器，客户端使用的操作系统和浏览器的版本和名称</li>
+</ul>
+</li>
+<li>Cache-Control</li>
+<li>Cookie</li>
+<li>Range<ul>
+<li>Range:<code>bytes=0-5</code>,指定第一个字节和最后一个字节的位置，用于告诉服务器自己想取对象的哪一部分</li>
+</ul>
+</li>
+</ol>
+<h5 id="http缓存"><a href="#http缓存" class="headerlink" title="http缓存"></a>http缓存</h5><p>⭐强缓存：浏览器不会向服务器发送任何请求，直接从本地缓存中读取文件并返回<code>Status Code: 200 ok</code></p>
+<p>⭐协商缓存：向服务器发送请求，服务器会根据这个请求的request header的一些参数来判断是否命中协商缓存，如果命中，则返回304状态码，并带上新的response header通知浏览器从缓存中读取资源</p>
+<p><strong>缓存header参数</strong></p>
+<p>🏃‍强缓存</p>
+<ul>
+<li><p>Expires（http1.0）： 过期时间</p>
+</li>
+<li><p>Cache-Control（http1.1）： 假如值为300，请求正确返回时间的300秒（5分钟）之内再次加载资源就会命中强缓存</p>
+<blockquote>
+<ol>
+<li>max-age</li>
+<li>s-maxage：和max-age一样，但针对代理服务器缓存</li>
+<li>public: 响应可被任何缓存区缓存</li>
+<li>private: 只能针对个人用户，不能被代理服务器缓存</li>
+<li>no-cache: 强制客户端直接向服务器发送请求，也就是说每次请求都必须向服务器发送，如果没有变更的话会返回304</li>
+<li>no-store: 禁止一切缓存</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+<p>🏃‍协商缓存</p>
+<ul>
+<li><p>Etag/If-None-Match(http1.1)</p>
+<blockquote>
+<p>Etag由服务器生成返回给前端，由文件的索引，大小，最后修改时间等进行hash得到的</p>
+<p>当资源过期时，浏览器发现响应头里有Etag,再次向服务器请求时会带上请求头If-None-Match，服务器收到请求进行对比</p>
+</blockquote>
+</li>
+<li><p>Last-Modifed/If-Modified-Since(http1.0)</p>
+<blockquote>
+<p>Last-Modified: 浏览器向服务器发送资源的最后修改时间</p>
+<p>当资源过期时，浏览器判断Cache-Control的max-age标识，发现响应头具有Last-Modified声明，则再次向服务器请求时带上if-modified-since,表示请求事件。服务器收到请求后发现if-modified-since则与被请求资源最后修改时间进行对比</p>
+</blockquote>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/09/27/questions/" rel="next" title="questions">
+                <i class="fa fa-chevron-left"></i> questions
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/10/06/浏览器渲染页面过程/" rel="prev" title="浏览器渲染页面过程">
+                浏览器渲染页面过程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">48</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#从输入URL到页面加载发生了什么"><span class="nav-number">1.</span> <span class="nav-text">从输入URL到页面加载发生了什么</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概述"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#DNS解析"><span class="nav-number">1.1.1.</span> <span class="nav-text">DNS解析</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP连接"><span class="nav-number">1.2.</span> <span class="nav-text">TCP连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP请求头"><span class="nav-number">1.3.</span> <span class="nav-text">HTTP请求头</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#http缓存"><span class="nav-number">1.3.1.</span> <span class="nav-text">http缓存</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
