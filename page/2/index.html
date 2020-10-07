@@ -239,6 +239,223 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/01/css和文档/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="llllllllr">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lllr的世界">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/01/css和文档/" itemprop="url">css和文档</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-01T15:15:27+08:00">
+                2020-05-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="ch1-css和文档"><a href="#ch1-css和文档" class="headerlink" title="ch1 css和文档"></a>ch1 css和文档</h2><h3 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h3><pre><code>#### 元素分类</code></pre><ul>
+<li><p>替换元素</p>
+<p>除非指向一个外部元素，否则这个这个元素没有任何意义。</p>
+</li>
+<li><p>非替换元素</p>
+<p>其内容由用户代理在元素本身生成的框中显示。</p>
+</li>
+</ul>
+<h4 id="元素显示角色"><a href="#元素显示角色" class="headerlink" title="元素显示角色"></a>元素显示角色</h4><ul>
+<li><p>块级元素</p>
+<p>块级元素生成一个元素框，（默认地）它会填充父元素的内容区。</p>
+</li>
+<li><p>行内元素</p>
+<p>在一个文本行内生成元素框，而且不会打断这行文本。</p>
+</li>
+</ul>
+<blockquote>
+<p>display默认值是inline</p>
+</blockquote>
+<h2 id="结合css和xhtml"><a href="#结合css和xhtml" class="headerlink" title="结合css和xhtml"></a>结合css和xhtml</h2><ul>
+<li>link标记</li>
+<li>sytle元素</li>
+<li>@import指令</li>
+<li>内联样式</li>
+</ul>
+<h2 id="元素选择器"><a href="#元素选择器" class="headerlink" title="元素选择器"></a>元素选择器</h2><h3 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h3><h4 id="多类选择器"><a href="#多类选择器" class="headerlink" title="多类选择器"></a>多类选择器</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"urgent warning"</span>&gt;</span></span><br><span class="line">	when handling plutonium,care must be taken to avoid the formation of a critical mess.</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">	With plutonium, <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"warning"</span>&gt;</span>the posibility of implosion is very real,</span><br><span class="line">	and must be avoidedat all cost<span class="tag">&lt;/<span class="name">span</span>&gt;</span>this can be accomplished by keeping the various</span><br><span class="line">	messes separate.</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.warning</span>&#123;</span><br><span class="line">	<span class="attribute">font-weight</span>:bold;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.urgent</span>&#123;</span><br><span class="line">	<span class="attribute">font-style</span>:italic;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.warning</span><span class="selector-class">.urgent</span>&#123;</span><br><span class="line">	<span class="attribute">background</span>:silver;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>⭐class中<strong>同时</strong>包含urgent和warning的元素有银色背景。(类名顺序不限)</p>
+<h3 id="ID选择器"><a href="#ID选择器" class="headerlink" title="ID选择器"></a>ID选择器</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"first-p"</span>&gt;</span></span><br><span class="line">	when handling plutonium,care must be taken to avoid the formation of a critical mess.</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#first-p&#123;</span><br><span class="line">    font-weight:bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ol>
+<li>id唯一</li>
+<li>下一章补充</li>
+</ol>
+<h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><h4 id="简单属性选择器"><a href="#简单属性选择器" class="headerlink" title="简单属性选择器"></a>简单属性选择器</h4><ul>
+<li>选择有class属性的所有h1元素使其文本为银色</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span><span class="selector-attr">[class]</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>:silver;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"A"</span>&gt;</span></span><br><span class="line">  A</span><br><span class="line"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"B"</span>&gt;</span></span><br><span class="line">  B</span><br><span class="line"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"C"</span>&gt;</span></span><br><span class="line">  C</span><br><span class="line"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>包含class属性的所有元素都显示银色</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*<span class="selector-attr">[class]</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>:silver;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>同时有href属性和title属性的超文本链接设置为粗体</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[href]</span><span class="selector-attr">[title]</span> &#123;</span><br><span class="line">    <span class="attribute">font-weight</span>:bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"www.baidu.com"</span> <span class="attr">title</span>=<span class="string">"t"</span>&gt;</span></span><br><span class="line">  jintian</span><br><span class="line"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="根据具体属性值选择"><a href="#根据具体属性值选择" class="headerlink" title="根据具体属性值选择"></a>根据具体属性值选择</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[href="www.baidu.com"]</span><span class="selector-attr">[title="t"]</span> &#123;</span><br><span class="line">    <span class="attribute">font-weight</span>:bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"www.baidu.com"</span> <span class="attr">title</span>=<span class="string">"t"</span>&gt;</span></span><br><span class="line">  jintian</span><br><span class="line"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="根据部分属性值选择"><a href="#根据部分属性值选择" class="headerlink" title="根据部分属性值选择"></a>根据部分属性值选择</h4><ul>
+<li>class属性中有urgent的p元素都会变成粗体</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-attr">[class~="urgent"]</span>&#123;</span><br><span class="line">  <span class="attribute">font-weight</span>:bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="后代选择器"><a href="#后代选择器" class="headerlink" title="后代选择器"></a>后代选择器</h3><p>em和h1是父子关系，em两个字母将变成银色</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">  h1</span><br><span class="line">  <span class="tag">&lt;<span class="name">em</span>&gt;</span>em<span class="tag">&lt;/<span class="name">em</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> <span class="selector-tag">em</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>:silver;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>后代选择器两个元素之间的层次间隔可以是无限的，例如 ul em，这种语法就会选择从ul继承3</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>list item 1</span><br><span class="line">    <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>list item 1-1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>list item 1-2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>list item 1-3</span><br><span class="line">        <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">li</span>&gt;</span>list item 1-3-1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">li</span>&gt;</span>list <span class="tag">&lt;<span class="name">em</span>&gt;</span>item 1-3-2<span class="tag">&lt;/<span class="name">em</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">li</span>&gt;</span>list item 1-3-3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ol</span>&gt;</span>  </span><br><span class="line">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">li</span>&gt;</span>list item 1-4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> <span class="selector-tag">em</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>:silver</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/30/hello/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1830,213 +2047,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/13/范式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="llllllllr">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lllr的世界">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/13/范式/" itemprop="url">范式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-13T19:52:27+08:00">
-                2020-02-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java-basic/" itemprop="url" rel="index">
-                    <span itemprop="name">java-basic</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h2><p><img src="http://llllllllr.top/20200213200547.png" alt></p>
-<blockquote>
-<ul>
-<li>范式就是一种数据表设计标准的级别，就好像四六级一样</li>
-<li>数据库范式分为1NF,2NF，3NFB,BCNF…符合高一级的范式必定符合低一级的范式，满足第二范式的数据报表肯定满足第一范式，满足第三范式的数据表一定满足第二范式，以此类推</li>
-</ul>
-</blockquote>
-<h3 id="INF"><a href="#INF" class="headerlink" title="INF"></a>INF</h3><ul>
-<li><p><strong>原子性</strong>：一列一列一列（下图不满足原子性）</p>
-<p><img src="http://llllllllr.top/20200213201132.png" alt></p>
-</li>
-<li><p><strong>不重复</strong>： 不存在属性名相等的两列 ：如果上图有两列都是“年级”，那么这个表不满足INF</p>
-</li>
-</ul>
-<p><img src="http://llllllllr.top/20200213201355.png" alt></p>
-<h3 id="1NF问题："><a href="#1NF问题：" class="headerlink" title="1NF问题："></a>1NF问题：</h3><ul>
-<li>数据冗余，比如前三列，前面三行小花的“id,姓名，系名，系主任”都是一样的</li>
-<li>插入异常：有一个新的系，但是还没有学生，那么没办法插入到这个数据表里面</li>
-<li>删除异常：如果某个系下面的学生信息全部清空，那么这个系也不存在了</li>
-<li>修改异常：如果要把学生的系更换，比如小花的，那么前三行数据都要更改</li>
-</ul>
-<h2 id="2NF"><a href="#2NF" class="headerlink" title="2NF"></a>2NF</h2><h4 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h4><p><img src="http://llllllllr.top/20200213201821.png" alt></p>
-<p><img src="http://llllllllr.top/20200213201355.png" alt></p>
-<ul>
-<li><p><strong>码（可能不止一个）</strong>：知道了码，就能确定别的属性</p>
-<blockquote>
-<p>知道了学号，就能确定一个人的姓名，班名，班主任</p>
-<p>同时知道学号和课名，就能知道你的分数</p>
-</blockquote>
-</li>
-</ul>
-<p>写成：（学号，课名）——-&gt;姓名，班名，班主任，分数</p>
-<ul>
-<li><strong>（学号，课名）一个集合</strong>—&gt;码/候选码</li>
-<li><strong>学号，课名</strong>—-&gt;主属性</li>
-<li><strong>姓名，班名，班主任，分数</strong>—-&gt;非主属性</li>
-</ul>
-<h4 id="函数依赖"><a href="#函数依赖" class="headerlink" title="函数依赖"></a>函数依赖</h4><p><img src="http://llllllllr.top/20200213202520.png" alt></p>
-<p><img src="http://llllllllr.top/20200213202559.png" alt></p>
-<p><img src="http://llllllllr.top/20200213202728.png" alt></p>
-<h4 id="判断是否符合2NF"><a href="#判断是否符合2NF" class="headerlink" title="判断是否符合2NF"></a>判断是否符合2NF</h4><p><img src="http://llllllllr.top/20200213202826.png" alt></p>
-<p><img src="http://llllllllr.top/20200213201355.png" alt></p>
-<p><strong>（学号，课名）—-&gt;姓名，只要知道学号就知道姓名，存在部分函数依赖，不符合2NF要求</strong></p>
-<p>拆分如下（符合2NF）：</p>
-<p><img src="http://llllllllr.top/20200213203102.png" alt></p>
-<p>问题：</p>
-<ul>
-<li>插入：如果只有系，没有学生，无法插入</li>
-<li>删除：删除某个系的全部学生，这个系也不存在了</li>
-</ul>
-<p>优点：</p>
-<ul>
-<li>数据冗余解决</li>
-<li>修改学生的系只要修改一条数据</li>
-</ul>
-<h3 id="3NF"><a href="#3NF" class="headerlink" title="3NF"></a>3NF</h3><p><img src="http://llllllllr.top/20200213203410.png" alt></p>
-<h3 id="传递函数依赖"><a href="#传递函数依赖" class="headerlink" title="传递函数依赖"></a>传递函数依赖</h3><blockquote>
-<p>班主任依赖于班名，班名依赖于学号，那么班主任依赖于学号</p>
-<p>班主任和学生本来不挂钩，班主任只和班名有关，但是知道学号就知道班名，知道班名就知道班主任，所以存在传递关系（好像更复杂了…</p>
-</blockquote>
-<p>所以把上面的表再拆分：</p>
-<p><img src="http://llllllllr.top/20200213203658.png" alt></p>
-<ul>
-<li>新建一个系，没有学生也OK</li>
-<li>删除一个系下所有学生，这个系还是存在</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2087,7 +2097,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
