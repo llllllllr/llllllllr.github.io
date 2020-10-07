@@ -239,6 +239,125 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/07/vue相关/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="llllllllr">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lllr的世界">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/10/07/vue相关/" itemprop="url">vue相关</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-10-07T19:15:09+08:00">
+                2020-10-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/07/JavaScript事件循环机制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -521,6 +640,9 @@
 
 <p>⭐<strong>顺序打印红绿灯</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">light</span>(<span class="params">delay, color</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      resolve(<span class="built_in">console</span>.log(color));</span><br><span class="line">    &#125;, delay);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">printLight</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">await</span> light(<span class="number">1000</span>, <span class="string">"red"</span>);</span><br><span class="line">  <span class="keyword">await</span> light(<span class="number">1000</span>, <span class="string">"green"</span>);</span><br><span class="line">  <span class="keyword">await</span> light(<span class="number">1000</span>, <span class="string">"yellow"</span>);</span><br><span class="line">&#125;</span><br><span class="line">printLight();</span><br></pre></td></tr></table></figure>
+
+<p>⭐<strong>图片预加载</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">preLoadImg</span>(<span class="params">source</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> pr = [];</span><br><span class="line">  source.forEach(<span class="function">(<span class="params">url</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> p = loadImage(url)</span><br><span class="line">      .then(<span class="function">(<span class="params">img</span>) =&gt;</span> <span class="keyword">this</span>.images.push(img))</span><br><span class="line">      .catch(<span class="function">(<span class="params">error</span>) =&gt;</span> <span class="built_in">console</span>.log(error));</span><br><span class="line">    pr.push(p);</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="built_in">Promise</span>.all(pr).then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadImage</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> img = <span class="keyword">new</span> Image();</span><br><span class="line">    img.onload = <span class="function"><span class="params">()</span> =&gt;</span> resolve(img);</span><br><span class="line">    img.onerror = reject;</span><br><span class="line">    img.src = url;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
           
@@ -2203,426 +2325,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/12/JavaScript-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="llllllllr">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lllr的世界">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/05/12/JavaScript-1/" itemprop="url">JavaScript-1</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-12T15:53:53+08:00">
-                2020-05-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p><img src="http://llllllllr.top/20200512135227.png" alt></p>
-<ul>
-<li><input checked disabled type="checkbox"> 空白</li>
-<li><input checked disabled type="checkbox"> 标识符 字母开头，不包含关键字</li>
-<li><input checked disabled type="checkbox"> 数字 64位浮点数，相当于 Java 的double</li>
-<li><input checked disabled type="checkbox"> 字符串</li>
-<li><input checked disabled type="checkbox"> 语句 <code>switch,while,for,do</code> </li>
-<li><input checked disabled type="checkbox"> 表达式</li>
-<li><input checked disabled type="checkbox"> 字面量 方便指定新对象的表示法，属性名可以是标识符或者字符串</li>
-<li><input checked disabled type="checkbox"> 函数</li>
-</ul>
-<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><blockquote>
-<p>数字，字符串，布尔值，null, undefined其它所有值都是对象</p>
-</blockquote>
-<p><img src="http://llllllllr.top/20200512140358.png" alt></p>
-<ul>
-<li><p>对象字面量： 包含在一对花括号里面的零或多个“名/值”</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> stooge = &#123;</span><br><span class="line">    <span class="string">"first-name"</span>: <span class="string">"JOE"</span>,</span><br><span class="line">    <span class="string">"last-name"</span>: <span class="string">"Howard"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> flight = &#123;</span><br><span class="line">    number: <span class="number">815</span></span><br><span class="line">    departure: &#123;</span><br><span class="line">        IATA: <span class="string">"SYD"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<ul>
-<li><p>检索：</p>
-<ul>
-<li>[]后缀中括住字符串表达式 <code>stooge[&quot;first name&quot;]</code></li>
-<li>字符串表达式是常数且为合法标识符 flight.departure.IATA</li>
-</ul>
-<p>检索不到返回<code>undefined</code>值</p>
-</li>
-<li><p>更新</p>
-<ul>
-<li>赋值语句 <code>stooge[&#39;first-name&#39;]=&#39;Jerome&#39;</code></li>
-<li>原本没有的话会扩充 <code>stooge[&#39;middle-name&#39;]=&#39;Lester;stooge.nickname=&#39;Judy&#39; &#39;</code></li>
-</ul>
-</li>
-<li><p>引用</p>
-<ul>
-<li><p>对象通过引用来传递，他们永远不会被拷贝</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = stooge;</span><br><span class="line">x[<span class="string">"middle-name"</span>] = <span class="string">"Curly"</span>;</span><br><span class="line"><span class="keyword">var</span> middle = stooge[<span class="string">"middle-name"</span>];<span class="comment">//得到“Curly”，因为是指向同一对象的引用</span></span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>原型（prototype)</p>
-<blockquote>
-<p>每个对象都连接到一个原型对象，并且它可以从中继承属性。所有通过字面量创建的对象都连接到 Object.prototype 这个JavaScript中标准的对象。</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">// beget方法创建一个使用元对象作为其原型的新对象</span></span><br><span class="line">	<span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">Object</span>.beget !== <span class="string">'function'</span>) &#123;</span><br><span class="line">        <span class="built_in">Object</span>.beget = <span class="function"><span class="keyword">function</span>(<span class="params">o</span>) </span>&#123;</span><br><span class="line">          <span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">          F.prototype = o</span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">new</span> F()</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"><span class="keyword">var</span> another_stooge = <span class="built_in">Object</span>.beget(stooge);</span><br></pre></td></tr></table></figure>
-
-<p><strong>原型连接在更新时不起作用的。当我们对某个对象做出改变时，不会触及到该对象的原型。</strong></p>
-<p><code>another_stooge[&#39;first-name&#39;] = &#39;Harry&#39;</code></p>
-<ul>
-<li><input checked disabled type="checkbox"> 委托</li>
-</ul>
-<p><strong>原型连接只有在检索值的时候才会被用到。如果我们尝试去获取对象的某个属性值，且该对象没有这个属性名，那么JavaScript会尝试从原型对象中获取。终点Object.prototype。 如果最后还是找不到，结果为undefined，这个过程称为委托。</strong></p>
-</li>
-<li><p>反射</p>
-<pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> flight = &#123;</span><br><span class="line">    number: <span class="number">815</span></span><br><span class="line">    departure: &#123;</span><br><span class="line">        IATA: <span class="string">"SYD"</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></code></pre></li>
-</ul>
-<ul>
-<li><p>typeof <code>typeof flight.number</code></p>
-<blockquote>
-<p>原型链中的任何属性也会产生一个值</p>
-<p><code>typeof flgiht.toString</code>  //‘function’</p>
-</blockquote>
-</li>
-<li><p>hasOwnProperty(不检查原型链)</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flight.hasOwnProperty(<span class="string">'number'</span>) <span class="comment">//true</span></span><br><span class="line">flight.hasOwnProperty(<span class="string">'xxx'</span>) <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<ul>
-<li><p>枚举(<code>Enumeration</code>)</p>
-<ul>
-<li><input checked disabled type="checkbox"> for in 遍历对象中的属性名–包括函数和原型中的属性，所以有必要过滤掉不想要的值</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name;</span><br><span class="line"><span class="keyword">for</span>(name <span class="keyword">in</span> another_stooge) &#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">typeof</span> another_stooge[name] !== <span class="string">'function'</span>) &#123;</span><br><span class="line">		<span class="built_in">document</span>,writeln(name + <span class="string">':'</span> + another_stooge[name];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><input checked disabled type="checkbox"> 属性名出现的顺序不确定。最好的方法是完全避免使用for in语句</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i;</span><br><span class="line"><span class="keyword">var</span> properties = &#123;</span><br><span class="line">	<span class="string">'first-name'</span>,</span><br><span class="line">	<span class="string">'middle-name'</span>,</span><br><span class="line">	<span class="string">'last-name'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i &lt; properties.length; i+=<span class="number">1</span>) &#123;</span><br><span class="line">	<span class="built_in">document</span>.writeln(properties[i] + <span class="string">':'</span> + another_stooge[properties[i]];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>删除</p>
-<ul>
-<li><input checked disabled type="checkbox"> delete用来删除对象的属性。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">another_stooge.nickname = <span class="string">"Andy"</span>;</span><br><span class="line"><span class="comment">//删除another_stooge.nickname属性，暴露原型的nickname属性，因为检索的时候会调用原型链</span></span><br><span class="line"><span class="keyword">delete</span> another_stooge.nickname;</span><br><span class="line"><span class="built_in">console</span>.log(another_stooge.nickname)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>减少全局变量污染</p>
-</li>
-<li><input checked disabled type="checkbox"> <p>JavaScript可以很随意地定义那些可保存所有应用资源的全局变量。应使用<strong>闭包</strong>进行信息隐藏，这是一个有效减少全局污染的方法。</p>
-</li>
-</ul>
-<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p><img src="http://llllllllr.top/20200512145242.png" alt></p>
-<ul>
-<li><input checked disabled type="checkbox"> 函数对象</li>
-</ul>
-<blockquote>
-<p>在JavaScript中函数就是对象。</p>
-</blockquote>
-<ul>
-<li><p>函数对象连接到Function.prototype（该原型对象本身连接到Object.prototype)</p>
-</li>
-<li><p>每个函数对象创建时附加的隐藏属性 1-函数上下文 2-实现函数行为的代码</p>
-</li>
-<li><p>每个函数对象创建时也随带一个prototype属性，它的值是一个拥有constructor属性且值即为该函数的对象。这和隐藏连接到 Function.prototype完全不同</p>
-</li>
-<li><p>函数是对象，所以可以存放在变量，对象和数组中 </p>
-</li>
-<li><input checked disabled type="checkbox"> <p>函数字面量</p>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> add = <span class="function"><span class="keyword">function</span> (<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>包括：</p>
-<ul>
-<li>保留字function。</li>
-<li>函数名，可以被省略。</li>
-<li>圆括号中的一组参数。</li>
-<li>花括号中的一组语句。</li>
-</ul>
-<p><strong>闭包</strong></p>
-<blockquote>
-<p>函数字面量可以出现在任何允许表达式出现的地方。函数也可以被定义在其它函数中。一个内部函数自然可以访问自己的参数和变量，同时它也能访问它被嵌套在其中的那个函数的参数与变量，通过函数字面量创建的函数对象包含一个连到外部上下文的连接。这被称为闭包。</p>
-</blockquote>
-<ul>
-<li><input checked disabled type="checkbox"> 调用</li>
-</ul>
-<p>JavaScript中的四种调用模式：</p>
-<ul>
-<li><p>方法调用模式</p>
-</li>
-<li><p>函数调用模式</p>
-</li>
-<li><p>构造器调用模式</p>
-</li>
-<li><p>apply调用模式</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="keyword">var</span> sum = add.apply(<span class="literal">null</span>,array); <span class="comment">//sum的值为7</span></span><br><span class="line"><span class="comment">//构造一个包含status成员的对象</span></span><br><span class="line"><span class="keyword">var</span> statusObject = &#123;</span><br><span class="line">    status: <span class="string">'A-OK'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> Quo = <span class="function"><span class="keyword">function</span> (<span class="params">string</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.status = string;</span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">//给Quo所有的实例提供一个名为 get_status的公共方法</span></span><br><span class="line">Quo.prototype.get_status = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.status;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> status = Quo.prototype.get_status.apply(statusObject);</span><br></pre></td></tr></table></figure>
-
-<p>apply方法让我们构建一个参数数组并用其去调用函数。它也允许我们选择this的值。</p>
-</li>
-<li><input checked disabled type="checkbox"> <p>参数</p>
-</li>
-</ul>
-<p>当函数被调用时，会得到一个arguments数组，使得编写一个无需指定参数个数的函数称为可能。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sum = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> i,sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;<span class="built_in">arguments</span>.length;i++) &#123;</span><br><span class="line">        sum += <span class="built_in">arguments</span>[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>//todo ch6介绍更好的方法</p>
-<ul>
-<li><input checked disabled type="checkbox"> <p>返回</p>
-</li>
-<li><input checked disabled type="checkbox"> <p>异常</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> add = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> a !== <span class="string">'number'</span> || <span class="keyword">typeof</span> b !== <span class="string">'number'</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> &#123;</span><br><span class="line">            name: <span class="string">'TypeError'</span>,</span><br><span class="line">            message: <span class="string">'add needs numbers'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>throw 语句抛出一个exception对象，该对象包含可识别异常类型的name属性和一个描述性的message属性。</p>
-</li>
-<li><input checked disabled type="checkbox"> <p>给类型添加方法</p>
-<blockquote>
-<p>通过给Object.prototype添加方法使得该方法对所有对象可用。</p>
-</blockquote>
-<p>👇通过给Function.prototype增加一个method方法，我们就不必键入 prototype这个属性名。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.method = <span class="function"><span class="keyword">function</span> (<span class="params">name,func</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.prototype[name] = func;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>Number.prototype添加一个integer方法</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span>.method(<span class="string">'integer'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>[<span class="keyword">this</span> &lt; <span class="number">0</span> ? <span class="string">'ceiling'</span> : <span class="string">'floor'</span>](<span class="keyword">this</span>);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">document</span>.writeln((<span class="number">-10</span> / <span class="number">3</span>).integer()) <span class="comment">// -3</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>String.prototype添加一个trim方法</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>.method(<span class="string">'trim'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/^\s+|\s+$/g</span>,<span class="string">' '</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">document</span>.writeln(<span class="string">' " '</span> + <span class="string">"   neat    "</span> + <span class="string">' " '</span>)</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>给基本类型添加方法，我们可以大大地提高语言的表现力。因为JavaScript原型继承的动态本质，新的方法立刻被赋予到所有的值（对象实例）上，哪怕值（对象实例）是在方法创建之前就被创建好了。</p>
-<ul>
-<li><p>有条件地增加一个方法</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.method = <span class="function"><span class="keyword">function</span>(<span class="params">name,func</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="keyword">this</span>.prototype[name]) &#123;</span><br><span class="line">        <span class="keyword">this</span>.prototye[name] = func;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><input checked disabled type="checkbox"> <p>递归</p>
-</li>
-<li><input checked disabled type="checkbox"> <p>作用域：作用域控制着变量与参数的可见性与声明周期。</p>
-</li>
-<li><input checked disabled type="checkbox"> <p>闭包（closure)</p>
-<ul>
-<li><p>变量的作用域（全局变量和局部变量）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n = <span class="number">999</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(n);</span><br><span class="line">&#125;</span><br><span class="line">f1(); <span class="comment">//999</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在函数外部无法读取函数内的局部变量</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> n = <span class="number">999</span>;</span><br><span class="line">&#125;</span><br><span class="line">alert(n); <span class="comment">//error</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>函数内部声明变量的时候，一定要使用var命令，否则实际上是声明了一个全局变量。</strong></p>
-</li>
-<li><p>从外部读取局部变量</p>
-<p><strong>链式作用域</strong>结构，子对象会一级一级地向上寻找所有父对象的变量。所以父对象的所有变量对子对象都是可见的，反之不成立。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> n = <span class="number">999</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(n); <span class="comment">//999</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>在上面的代码中的f2函数就是闭包，闭包就是能够读取其它函数内部变量的函数。只有在函数内部的子函数才能读取局部变量，本质上闭包就是将函数内部和函数外部连接起来的一座桥梁。</strong></p>
-</li>
-<li><p>闭包的作用</p>
-<ul>
-<li>读取函数内部的变量</li>
-<li>让这些变量的值始终保持在内存中</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> n = <span class="number">999</span>;</span><br><span class="line">    nAdd = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; n+=<span class="number">1</span>; &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(n);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> f2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result  = f1();</span><br><span class="line">result(); <span class="comment">//999</span></span><br><span class="line">nAdd();</span><br><span class="line">result(); <span class="comment">//1000</span></span><br></pre></td></tr></table></figure>
-
-<p>result()实际上就是闭包f2函数。它一共运行了两次，结果证明f1函数的局部变量n一直保存在内存中，并没有在f1调用后被自动清除。因为<strong>f1是f2的夫函数，f2被赋值给了一个全局变量，这导致f2始终在内存中，而f2的存在依赖与f1，因此f1也是种在内存中，不会在调用结束之后被垃圾回收机制回收。</strong></p>
-<ul>
-<li>nAdd没有使用var,因此是一个全局变量，nAdd的值是一个匿名函数</li>
-<li>这个匿名函数本身也是一个闭包，所以nAdd相当于一个setter</li>
-</ul>
-<p>使用闭包的注意点：</p>
-<ul>
-<li>滥用闭包-内存消耗大-网页性能问题 解决方法：退出函数之前将不适用的局部变量全部删除</li>
-<li>闭包会在父函数外部，改变父函数内部的值–父函数当作对象使用，把闭包当公共方法，把内部变量当作私有属性一定要小心，不要随便改变父函数内部变量的值。</li>
-</ul>
-<p>对比两段代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">    　　<span class="keyword">var</span> name = <span class="string">"The Window"</span>;</span><br><span class="line">    </span><br><span class="line">    　　<span class="keyword">var</span> object = &#123;</span><br><span class="line">    　　　　name : <span class="string">"My Object"</span>,</span><br><span class="line">    </span><br><span class="line">    　　　　getNameFunc : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    　　　　　　<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    　　　　　　　　<span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">    　　　　　　&#125;;</span><br><span class="line">    </span><br><span class="line">    　　　　&#125;</span><br><span class="line">    </span><br><span class="line">    　　&#125;;</span><br><span class="line">    </span><br><span class="line">    　　alert(object.getNameFunc()());<span class="comment">//""</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">    　　<span class="keyword">var</span> name = <span class="string">"The Window"</span>;</span><br><span class="line">    </span><br><span class="line">    　　<span class="keyword">var</span> object = &#123;</span><br><span class="line">    　　　　name : <span class="string">"My Object"</span>,</span><br><span class="line">    </span><br><span class="line">    　　　　getNameFunc : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    　　　　　　<span class="keyword">var</span> that = <span class="keyword">this</span>;</span><br><span class="line">    　　　　　　<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    　　　　　　　　<span class="keyword">return</span> that.name;</span><br><span class="line">    　　　　　　&#125;;</span><br><span class="line">    </span><br><span class="line">    　　　　&#125;</span><br><span class="line">    </span><br><span class="line">    　　&#125;;</span><br><span class="line">    </span><br><span class="line">    　　alert(object.getNameFunc()());<span class="comment">//"My Object"</span></span><br></pre></td></tr></table></figure>
-
-<p> this的指向是由它所在函数调用的上下文决定的，而不是由它所在函数定义的上下文决定的。 </p>
-</li>
-</ul>
-</li>
-<li><input checked disabled type="checkbox"> <p>回调：异步返回</p>
-</li>
-<li><input checked disabled type="checkbox"> <p>模块</p>
-<p>可以使用函数和闭包来构造模块。模块是一个提供接口却隐藏状态与实现的函数或对象。</p>
-</li>
-<li><input checked disabled type="checkbox"> <p>级联</p>
-<p>有一些方法没有返回值，如果让这些方法返回this而不是undefine,就可以启用级联。在一个级联中，我们可以单数一条语句中依次调用同一个对象的很多方法。</p>
-</li>
-<li><input checked disabled type="checkbox"> <p>套用</p>
-</li>
-<li><input checked disabled type="checkbox"> <p>记忆：函数可以用对象去记住之前操作的结果，从而避免无谓的运算。这种优化称为记忆。</p>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">	user: <span class="string">"AA"</span>,</span><br><span class="line">	fn:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.user);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> b = a.fn;</span><br><span class="line">b();<span class="comment">// 'undefined'</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">	user: <span class="string">"AA"</span>,</span><br><span class="line">	fn:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.user);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">a.fn() <span class="comment">// 'AA'</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><input checked disabled type="checkbox"> <p>call</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">	user: <span class="string">"AA"</span>,</span><br><span class="line">	fn:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.user);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> b = a.fn;</span><br><span class="line">b.call(a)  <span class="comment">// 'AA'</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">	user: <span class="string">"AA"</span>,</span><br><span class="line">	fn:<span class="function"><span class="keyword">function</span>(<span class="params">e1,e2</span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.user);</span><br><span class="line">        <span class="built_in">console</span>.log(e1 + e2);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> b = a.fn;</span><br><span class="line">b.call(a,<span class="number">1</span>,<span class="number">2</span>)  <span class="comment">// 'AA' 3</span></span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<ul>
-<li><input checked disabled type="checkbox"> <p>apply</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">	user: <span class="string">"AA"</span>,</span><br><span class="line">	fn:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.user);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> b = a.fn;</span><br><span class="line">b.apply(a) <span class="comment">// 'AA'</span></span><br></pre></td></tr></table></figure>
-
-<p>和call不一样的是，第二个参数必须是数组</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">	user: <span class="string">"AA"</span>,</span><br><span class="line">	fn:<span class="function"><span class="keyword">function</span>(<span class="params">e1,e2</span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.user);</span><br><span class="line">        <span class="built_in">console</span>.log(e1 + e2)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> b = a.fn;</span><br><span class="line">b.apply(a,[<span class="number">10</span>,<span class="number">1</span>]) <span class="comment">// 'AA' 11</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>如果call和apply的第一个参数为null，那么指向的是window对象</strong></p>
-</li>
-<li><input checked disabled type="checkbox"> <p>bind</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">	user: <span class="string">"AA"</span>,</span><br><span class="line">	fn:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.user);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> b = a.fn;</span><br><span class="line"><span class="keyword">var</span> c = b.bind(a)  <span class="comment">//c返回的是函数</span></span><br><span class="line">c(); <span class="comment">// 'AA'</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p><strong>bind返回对应的函数，便于稍后调用，apply和call是立即调用</strong></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2668,7 +2375,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">51</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
